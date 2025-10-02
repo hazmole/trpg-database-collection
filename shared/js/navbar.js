@@ -12,9 +12,6 @@ const NavBarCtrl = {
     this.elemColle.menuElem        = document.getElementById("Menu");
     this.elemColle.iframeContext   = document.getElementById("Context");
 
-    // Write WebTitle
-    this.elemColle.headerTitleElem.textContent = SYSTEM_TITLE;
-    
     // Render Navigation Menu
     this.renderNavBar();
     this.goToDefaultPage();
@@ -66,23 +63,27 @@ const NavBarCtrl = {
   goToPage: function(indexTicket) {
     const idxArr = indexTicket.split("-");
     let arrPointer = INDEX;
-    let url = "";
+    let pageItem = null;
     for (idx of idxArr) {
       const item = arrPointer[parseInt(idx)];
       if (!!item.members) arrPointer = item.members;
       else {
-        url = item.url
+        pageItem = item;
       }
     }
 
     // Modify Iframe
-    this.elemColle.iframeContext.src = url;
+    this.elemColle.iframeContext.src = pageItem.url;
     // Modify URL
     const path = window.location.pathname
     window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, SYSTEM_TITLE, path+`?p=${indexTicket}`);
+    // Modify Title
+    const title = this.getTitleText(pageItem.title);
+    document.title = title;
+    this.elemColle.headerTitleElem.textContent = title;
 
     // find & Mark Active
-    this.markElemActive(index);
+    this.markElemActive(indexTicket);
   },
 
   markElemActive: function(index) {
@@ -105,6 +106,10 @@ const NavBarCtrl = {
       }
       elemPointer = elemPointer.parentElement;
     }
+  },
+
+  getTitleText: function(pageTitle) {
+    return `${SYSTEM_TITLE} - ${pageTitle}`;
   }
 }
 

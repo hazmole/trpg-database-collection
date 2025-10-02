@@ -1,9 +1,23 @@
+
+@font-face {
+  font-family: "HanyiSenty";
+  src: url("../fonts/HanyiSentyFoundation.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body { margin:0; overflow:hidden; }
+div { flex-shrink: 0; }
+
 #MainFrameOuter { display:flex; flex-direction:column; height:calc(100vh); width:calc(100vw); }
 #MainFrameInner { display:flex; flex-direction:row; flex-grow:1; }
 
-#Header { height:40px; color:azure; background:#141414; display:flex; align-items:center; justify-content:flex-start; }
-#Header-Title { margin-left:5px; padding:0 8px; font-size:18px; }
+#Header { height:60px; color:azure; background:#141414; display:flex; align-items:center; justify-content:flex-start; }
+#Header-Title { 
+  margin-left:5px; padding:0 8px;
+  font-family: "HanyiSenty";
+  font-size: 46px;
+}
 .Header-Btn { padding:5px; width:30px; text-align:center; cursor:pointer; font-size:22px; }
 
 #Menu { background:#141414; color:azure; height:calc(100vh - 40px); display:flex; flex-direction:column; gap:2px; overflow-y: auto;

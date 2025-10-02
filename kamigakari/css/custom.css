@@ -1,0 +1,15 @@
+#Header {
+  background:#4A593D;
+  color:azure;
+  text-shadow: 5px 5px 0em black;
+}
+#MainFrameInner {
+  background-color: #D9CD90;
+}
+#Menu.Unfold {
+  width:250px; min-width:250px;
+}
+.NavGroupTitle {
+    border: 4px double rgba(255, 255, 255, 0.3);
+    background: #40507e;
+}
