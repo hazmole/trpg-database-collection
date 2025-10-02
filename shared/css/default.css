@@ -1,0 +1,35 @@
+body { margin:0; overflow:hidden; }
+#MainFrameOuter { display:flex; flex-direction:column; height:calc(100vh); width:calc(100vw); }
+#MainFrameInner { display:flex; flex-direction:row; flex-grow:1; }
+
+#Header { height:40px; color:azure; background:#141414; display:flex; align-items:center; justify-content:flex-start; }
+#Header-Title { margin-left:5px; padding:0 8px; font-size:18px; }
+.Header-Btn { padding:5px; width:30px; text-align:center; cursor:pointer; font-size:22px; }
+
+#Menu { background:#141414; color:azure; height:calc(100vh - 40px); display:flex; flex-direction:column; gap:2px; overflow-y: auto;
+  width:0; min-width:0px;
+  -webkit-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  -moz-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  -o-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  transition: min-width .5s ease-in-out, width .5s ease-in-out;
+}
+#Menu.Unfold {
+  width:300px; min-width:300px;
+  padding: 0 1px;
+  -webkit-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  -moz-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  -o-transition: min-width .5s ease-in-out, width .5s ease-in-out;
+  transition: min-width .5s ease-in-out, width .5s ease-in-out;
+}
+.NavGroupTitle { cursor:pointer; padding:5px 10px; border:4px double #726681; background:#2f2a3d; }
+.NavGroupTitle::before { content:"▶"; margin-right:8px; }
+.NavGroupInner { display:flex; flex-direction:column; gap:2px; padding-left:10px; margin-top:2px; height:0; overflow: hidden; }
+
+.NavGroupOuter.Unfold > .NavGroupTitle::before { content:"▼"; margin-right:6px; }
+.NavGroupOuter.Unfold > .NavGroupInner { height: auto; }
+
+.NavLink { cursor:pointer; padding:5px 10px; border:1px solid #71757b; }
+.NavLink:hover { background-color:#515055 }
+.NavLink.Active { cursor:inherit; background-color:#515055; }
+
+#Context { flex-grow:1; border:0; }
