@@ -1,0 +1,22 @@
+<html>
+<head>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="../../shared/css/article.css">
+  <script src="../../shared/js/article-parser.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+	<script id="Document" src=""></script>
+	<script>
+    var DOC;
+		window.onload = function(){
+			const urlParams = new URLSearchParams(window.location.search);
+      const urlDocSrc = urlParams.get('file');
+
+			loadScript(urlDocSrc, ()=>{
+				if(DOC)	ArticleParser.Build("ArticleContainer", DOC);
+      }); 
+		};
+	</script>
+</head>
+<body id="ArticleContainer">
+</body>
+</html>

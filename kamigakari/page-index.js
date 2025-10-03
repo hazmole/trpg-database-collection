@@ -7,12 +7,18 @@ var INDEX = [
 		// { title: "超常存在組織", url: "" },
 	] },
 	{ title: "遊戲規則", members: [
-		{ title: "擴充《神魂的鎮魂曲》", members: [
-			//{ title: "世界設定補充", url: "pages/rules/ex-SpiritRequiem/01.html" },
-			//{ title: "魔境討伐", url: "pages/rules/ex-SpiritRequiem/02.html" },
-			{ title: "契約神獸", url: "pages/rules/ex-SpiritRequiem/03.html" },
-			{ title: "奇御魂的追加用途", 		 url: "pages/rules/ex-SpiritRequiem/04.html" },
-			{ title: "《複合技》的補充說明", url: "pages/rules/ex-SpiritRequiem/05.html" },
+		{ title: "核心規則", members: [
+		] },
+		{ title: "擴充《神魂的鎮魂曲》", style:"font-size:.9em;", members: [
+			// { title: "世界設定補充", 				url: "pages/article.html?file=rules/ex-SpiritRequiem/01-doc.js" },
+			{ title: "魔境討伐", 						url: "pages/article.html?file=rules/ex-SpiritRequiem/doc-makyou-conquer.js" },
+			{ title: "契約神獸", 						url: "pages/article.html?file=rules/ex-SpiritRequiem/doc-contrac-beast.js" },
+			{ title: "奇御魂的追加用途", 		 url: "pages/article.html?file=rules/ex-SpiritRequiem/doc-kushimitama.js" },
+			{ title: "《複合技》的補充說明", url: "pages/article.html?file=rules/ex-SpiritRequiem/doc-combine-technic.js" },
+		] },
+		{ title: "擴充《達摩克利斯的機神》", style:"font-size:.9em;", members: [
+		] },
+		{ title: "擴充《克羅諾斯的原初神器》", style:"font-size:.9em;", members: [
 		] },
 	] },
 	{ title: "資料庫", members: [

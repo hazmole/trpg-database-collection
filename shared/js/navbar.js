@@ -40,9 +40,10 @@ const NavBarCtrl = {
     }
     function genNavGroupElem(groupItem, groupIdx) {
       const idx_prefix = groupIdx + '-';
+      const groupStyle = groupItem.style || "";
       const memberArr = groupItem.members.map((item, idx) => genNavItemElem(item, idx_prefix + idx));
       return `<div class="NavGroupOuter">
-        <div class="NavGroupTitle" onClick="toggleGroup(this)">${groupItem.title}</div>
+        <div class="NavGroupTitle" style="${groupStyle}" onClick="toggleGroup(this)">${groupItem.title}</div>
         <div class="NavGroupInner">${memberArr.join('')}</div>
       </div>`;
     }
