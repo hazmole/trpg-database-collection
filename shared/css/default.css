@@ -9,6 +9,8 @@
 body { margin:0; overflow:hidden; }
 div { flex-shrink: 0; }
 
+.easyRow { display:flex; flex-direction:row; } 
+
 #MainFrameOuter { display:flex; flex-direction:column; height:calc(100vh); width:calc(100vw); }
 #MainFrameInner { display:flex; flex-direction:row; flex-grow:1; }
 
@@ -47,3 +49,17 @@ div { flex-shrink: 0; }
 .NavLink.Active { cursor:inherit; background-color:#515055; }
 
 #Context { flex-grow:1; border:0; }
+
+
+
+
+input[type=text] {
+  border: 2px solid black;
+  height: 30px;
+  width: 100%;
+  border-radius: 50px;
+  padding: 4px 11px 4px 31px;
+  font-size: 16px;
+  color: #555;
+}
+input[type=text]:focus { outline: none; }

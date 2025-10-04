@@ -1,0 +1,84 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="金鑰/驗證 - 秘逆書庫資料站">
+	<meta property="og:type" content="website">
+	<title>金鑰/驗證 - 秘逆書庫資料站</title>
+	<link rel="stylesheet" href="./shared/css/default.css">
+	<script src="./shared/js/authenticator.js"></script>
+	<style>
+		body { background-color: black; color: white; }
+		h2 { color: wheat; font-size: 46px; margin: 10px 0; }
+
+		#MainFrameOuter {
+			align-items: center;
+		}
+		#Info {
+			background-color: rgba(255, 255, 255, .2);
+			padding: .8em;
+			border-radius: 10px;
+			margin-bottom: 1em;
+		}
+		#LockImg { width: 200px; }
+		#AuthButton {
+			width: 100;
+			background-color: green;
+			border-color: green;
+		}
+		#AuthButton:hover {
+			background-color: #5caf5c;
+			border-color: #5caf5c;
+		}
+		#SystemName {
+			color: wheat;
+		}
+		#ErrorMessage {
+			margin: 1em 0;
+			color: #ff3636;
+		}
+	</style>
+	<script>
+		window.onload = () => {
+			const systemKey = getSystemByUrl();
+			const systemName = MyAuth.getSystemName(systemKey);
+
+			document.getElementById("SystemName").innerText = (systemName)? systemName: "未知";
+		};
+
+		function pressKey() {
+			if (event.key === 'Enter') { sendAuth() }
+		}
+
+		function sendAuth() {
+			const systemKey = getSystemByUrl();
+			const inputVal = document.getElementById("Password").value;
+			if (MyAuth.auth(systemKey, inputVal)) {
+				document.getElementById("ErrorMessage").innerText = "密碼錯誤！";
+			}
+		}
+
+		function getSystemByUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get('system') || "";
+		}
+	</script>
+</head>
+<body id="MainFrameOuter">
+	<h2>秘匿書庫/金鑰驗證</h2>
+
+	<img id="LockImg" src="./shared/img/lock-icon.svg">
+
+	<div id="Info">
+		<p>您正在嘗試造訪 <span id="SystemName"></span> 區域。</p>
+		<p>這個區域的內容受到版權保護，請確認您已經得到了正確的造訪權限。<br>在下方輸入驗證金鑰，方可進入此區域。</p>
+	</div>
+
+	<div class="easyRow" style="gap:5px">
+		<input id="Password" type="text" onkeyup="pressKey()">
+		<button id="AuthButton" onClick="sendAuth()">驗證</button>
+	</div>
+	<div id="ErrorMessage"></div>
+
+</body>
+</html>
