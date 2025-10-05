@@ -51,8 +51,17 @@ div { flex-shrink: 0; }
 #Context { flex-grow:1; border:0; }
 
 
+#ContextHeader {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  min-height: 50px;
+  background: #141414; color: white;
+}
 
 
+/* input [type=text] */
 input[type=text] {
   border: 2px solid black;
   height: 30px;
@@ -63,3 +72,53 @@ input[type=text] {
   color: #555;
 }
 input[type=text]:focus { outline: none; }
+
+/* select */
+select,
+::picker(select) {
+  appearance: base-select;
+}
+select {
+  border: 2px solid #dddddd;
+  background: #eeeeee; color: #000;
+  min-width: 250px;
+  padding: 4px 10px;
+  transition: 0.4s;
+  font-size: 1em;
+}
+select:hover, select:focus { background: #dddddd; }
+select::picker-icon { color: #999999; margin-top: 5px; }
+select:open::picker-icon { rotate: 180deg; margin-top: 1px; }
+
+::picker(select) {
+  border: none;
+  background: none;
+  top: calc(anchor(bottom) + 1px);
+  max-height: 460px;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+option:first-of-type { border-radius: 8px 8px 0 0; }
+option:last-of-type  { border-radius: 0 0 8px 8px; }
+option:not(option:last-of-type) { border-bottom: none; }
+option:nth-of-type(odd) { background: white; }
+
+option:hover,
+option:focus { background: #99939f; }
+option:checked { font-weight: bold; }
+option::checkmark { order: 1; margin-left: auto; content: "✔"; }
+
+::picker(select) { opacity: 0; transition: all 0.4s allow-discrete; }
+::picker(select):popover-open { opacity: 1; }
+@starting-style {
+  ::picker(select):popover-open { opacity: 0; }
+}

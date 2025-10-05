@@ -1,0 +1,64 @@
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../../../shared/css/default.css">
+  <script src="../../../shared/js/utils.js"></script>
+  <script src="../../data/races.js"></script>
+  <script>
+    var RACE_LIST;
+
+    window.onload = () => {
+      const selectElem = document.getElementById("DropdownMenu");
+      const tabID = getDefaultTab();
+
+      renderOptions(selectElem, tabID);
+      gotoPage(tabID);
+    };
+
+    function selectOption(elem) {
+      gotoPage(elem.value);
+    }
+    function gotoPage(tabID) {
+      setSearchParam("tab", tabID);
+      renderContext(tabID);
+    }
+
+    function renderOptions(elem, defaultKey) {
+      elem.innerHTML = Object.keys(RACE_LIST).map( (key, idx) => {
+        const raceObj = RACE_LIST[key];
+        const isSelected = (key === defaultKey)? "selected": "";
+        return `<option value="${key}" ${isSelected}><span class="label">${raceObj.name}</span></option>`
+      }).join('');
+    }
+    function renderContext(tabID) {
+      document.getElementById("ContextBody").innerHTML = tabID;
+    }
+    function getDefaultTab() {
+      var tabVal = getSearchParamByKey("tab");
+      if (tabVal === "") {
+        tabVal = Object.keys(RACE_LIST)[0];
+      }
+      return tabVal;
+    }
+
+    function getSearchParamByKey(key) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(key) || "";
+    }
+    function setSearchParam(key, val){
+      const data = {
+        type: "setSearchParam",
+        data: [{ key, value: val}],
+      };
+      window.parent.postMessage(data, "*");
+    }
+  </script>
+</head>
+<body>
+  <div id="ContextHeader" style="gap: 10px">
+    <span>種族</span>
+    <select id="DropdownMenu" onchange="selectOption(this)"></select>
+  </div>
+  <div id="ContextBody">
+    OAO
+  </div>
+</body>

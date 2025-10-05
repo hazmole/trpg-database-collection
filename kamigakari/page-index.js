@@ -22,7 +22,7 @@ var INDEX = [
 		] },
 	] },
 	{ title: "資料庫", members: [
-		{ title: "種族", url: "" },
+		{ title: "種族", url: "pages/database/race.html" },
 		{ title: "稱號", url: "" },
 		{ title: "表職業", url: "" },
 		{ title: "共通天賦", url: "" },

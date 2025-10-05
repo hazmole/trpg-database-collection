@@ -32,9 +32,11 @@ const NavBarCtrl = {
       }
     }
     function genNavLinkElem(linkItem, idx) {
+      const linkStyle = linkItem.style || "";
       const attr = [
         `onClick="link(this)"`,
-        `data-idx="${idx}"`
+        `data-idx="${idx}"`,
+        `style="${linkStyle}"`,
       ];
       return `<div class="NavLink" ${attr.join(' ')}">${linkItem.title}</div>`;
     }
@@ -74,7 +76,14 @@ const NavBarCtrl = {
     }
 
     // Modify Iframe
-    this.elemColle.iframeContext.src = pageItem.url;
+    const urlPortionArr = pageItem.url.split('?');
+    const pageUrlPath = urlPortionArr[0];
+    let pageUrlParams = urlPortionArr.slice(1).join('');
+    (new URLSearchParams(window.location.search)).forEach((value, key) => {
+      if (key === "p") return ;
+      pageUrlParams += `${key}=${value}`;
+    });
+    this.elemColle.iframeContext.src = `${pageUrlPath}?${pageUrlParams}`
     // Modify URL
     const path = window.location.pathname
     window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, SYSTEM_TITLE, path+`?p=${indexTicket}`);
