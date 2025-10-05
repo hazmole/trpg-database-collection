@@ -13,3 +13,40 @@
     border: 4px double rgba(255, 255, 255, 0.3);
     background: #40507e;
 }
+
+
+.Page { margin: 1rem; }
+.Page h2:first-child,
+.Page h3:first-child,
+.Page h4:first-child { margin-top: 0; }
+.Page h2,
+.Page h3,
+.Page h4 { margin-bottom: .5em; }
+
+.infoBlock1 {
+  border-radius: 10px;
+  max-width: 1080px;
+  background: white; color: black; border: 1px solid black;
+  padding: .5em;
+}
+.infoBlock2 {
+  border-radius: 10px;
+  max-width: 1080px;
+  background: #ffedad; color: black;
+  padding: .5em;
+}
+
+.raceStateTable {
+  border-spacing: 0;
+  margin: 0 5px;
+  border: 2px #777 solid;
+}
+.raceStateTable th,
+.raceStateTable td {
+  width: 50px;
+  text-align: center;
+}
+.raceStateTable th { background: #333; color: white; font-size: 14px; }
+.raceStateTable td { background: #fff; }
+.raceStateTable td.title { background-color: #ccc; }
+.raceStateTable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }

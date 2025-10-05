@@ -1,0 +1,79 @@
+.ListEntry {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
+
+	background: white;
+	color: black;
+	font-size: 14px;
+
+	width: auto;
+	border: 3px groove #ccc;
+	margin: 0 5px;
+}
+
+.ListEntry .TitleCell {
+	background: black;
+	color: white;
+	width: 160px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.ListEntry .TitleCell .tag {
+	position: relative;
+	margin: 0; padding: 0px 6px 0;
+
+	background-color: #484848;
+	color: #C9C9C9;
+	font-size: 10px;
+}
+.ListEntry .TitleCell .tag:before {
+	content: "";
+	position: absolute;
+	right: -6px;
+	bottom: 0; top: 0;
+	border-right: 0px;
+	border-left: 6px solid #484848;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+}
+.ListEntry .TitleCell .title {
+	align-self: stretch; text-align: center;
+	flex-grow: 1;
+	padding: 5px;
+	font-size: 16px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ListEntry .BlockCell {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	border-right: 1px solid black;
+	padding: 0 5px 5px 5px;
+	width: 60px;
+}
+.ListEntry .BlockCell div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+}
+.ListEntry .BlockCell div:before {
+	display: block;
+	font-size: 10px;
+	width: clac(100% + 10px);
+	background: #ccc; color: black;
+	margin: 0 -5px 5px -5px;
+}
+
+.ListEntry .Field {
+  padding: 5px;
+  align-self: center;
+  max-width: 1000px;
+}

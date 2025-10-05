@@ -1,10 +1,18 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../../shared/css/default.css">
+  <link rel="stylesheet" href="../../css/custom.css">
+  <link rel="stylesheet" href="../../css/list-entry.css">
+  <link rel="stylesheet" href="../../css/list-entry-custom.css">
   <script src="../../../shared/js/utils.js"></script>
+  <script src="../../js/parser-talent.js"></script>
+  <script src="../../js/sorter.js"></script>
   <script src="../../data/races.js"></script>
+  <script src="../../data/talents-race.js"></script>
   <script>
     var RACE_LIST;
+    var TALENTS;
+    var Parser;
 
     window.onload = () => {
       const selectElem = document.getElementById("DropdownMenu");
@@ -30,7 +38,7 @@
       }).join('');
     }
     function renderContext(tabID) {
-      document.getElementById("ContextBody").innerHTML = tabID;
+      document.getElementById("ContextBody").innerHTML = BuildRacePage(RACE_LIST[tabID]);
     }
     function getDefaultTab() {
       var tabVal = getSearchParamByKey("tab");
@@ -51,6 +59,32 @@
       };
       window.parent.postMessage(data, "*");
     }
+
+    function BuildRacePage(raceObj){
+      return `
+      <div class="Page">
+        <h2>${raceObj.name}</h2>
+        <div class="infoBlock2">${raceObj.desc.join('<br>')}</div>
+        
+        <h4>種族特典</h4>
+        <div class="infoBlock1">
+          <div><b>【${raceObj.feat.name}】</b></div>
+          <div>${raceObj.feat.effect.join('<br>')}</div>
+        </div>
+        
+        <h4>能力值</h4>
+        <table class="raceStateTable">
+          <tr><th>類型</th><th>體力</th><th>敏捷</th><th>知性</th><th>精神</th><th>幸運</th></tr>
+          <tr><td class="title">戰士</td>${Object.values(raceObj.states.phy).map(val => `<td>${val}</td>`).join('')}</tr>
+          <tr><td class="title">泛用</td>${Object.values(raceObj.states.gen).map(val => `<td>${val}</td>`).join('')}</tr>
+          <tr><td class="title">魔法</td>${Object.values(raceObj.states.mgc).map(val => `<td>${val}</td>`).join('')}</tr>
+        </table>
+        
+        <h4>種族天賦一覽</h4>
+        ${ TALENTS.filter( t => t.type == `race-${raceObj.name}`).sort(Sorter.talentCmpFunc).map( t => Parser.talent(t)).join('') }
+        
+      </div>`;
+    }
   </script>
 </head>
 <body>
@@ -59,6 +93,5 @@
     <select id="DropdownMenu" onchange="selectOption(this)"></select>
   </div>
   <div id="ContextBody">
-    OAO
   </div>
 </body>
