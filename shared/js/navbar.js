@@ -81,7 +81,7 @@ const NavBarCtrl = {
     let pageUrlParams = urlPortionArr.slice(1).join('');
     (new URLSearchParams(window.location.search)).forEach((value, key) => {
       if (key === "p") return ;
-      pageUrlParams += `${key}=${value}`;
+      pageUrlParams += `&${key}=${value}`;
     });
     this.elemColle.iframeContext.src = `${pageUrlPath}?${pageUrlParams}`
     // Modify URL
