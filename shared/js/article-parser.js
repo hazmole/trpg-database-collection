@@ -11,9 +11,21 @@ class ArticleParser {
 	}
 
 	static ParseQuickNav(docScript) {
-	var arr = docScript.map( obj => obj.title ).filter( txt => txt!=null );
-	return arr.map(txt=>`<div style="margin-bottom:5px;handleEntry"><a href="#tag_${txt}">${txt}</div>`);
-}
+		const arr = [];
+		docScript.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+			if (sectionObj.title) {
+				const title = sectionObj.title;
+				arr.push(`<div><a href="#tag_h2_${title}">${title}</a></div>`);
+			}
+			sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+				if (sectionObj.title) {
+					const title = sectionObj.title;
+					arr.push(`<div>．<a href="#tag_h3_${title}">${title}</a></div>`);
+				}
+			});
+		});
+		return arr;
+	}
 
 	static Parse(docScript) {
 		var outputArr = [];
@@ -63,6 +75,9 @@ class ArticleParser {
 	static handleSidebar(item, depth) {
 		// ReqField: entries
 		var ret = [];
+		if(item.title){
+			ret.push(`<div><b>${item.title}</b></div>`);
+		}
 		for(var entry of item.entries){
 			ret.push( this.handleEntry(entry, depth+1) );
 		}
@@ -133,8 +148,8 @@ class ArticleParser {
 	//====================
 	static getTitleElem(txt, depth){
 		switch(depth){
-		case 1: return `<h2 id="tag_${txt}">${txt}</h2>`;
-		case 2: return `<h3>${txt}</h3>`;
+		case 1: return `<h2 id="tag_h2_${txt}">${txt}</h2>`;
+		case 2: return `<h3 id="tag_h3_${txt}">${txt}</h3>`;
 		case 3: return `<h4>${txt}</h4>`;
 		default:
 			return `<h5>${txt}</h5>`;

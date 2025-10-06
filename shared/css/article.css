@@ -20,6 +20,7 @@ h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
 }
 
 #QuickNav {
+  display: flex; flex-direction: column; gap: 1px;
   margin:1rem; position:fixed; padding:10px; background:#f1e6ab;
   min-width: 200px;
   min-height: 20px;
@@ -32,12 +33,26 @@ h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
   padding: 5px 10px 5px 10px;
   margin-bottom: 1rem;
 }
-.section > p {
+.section p {
   text-indent: 1em;
-  margin: .5em 0;
+  margin: .3em 0;
+}
+.section li > p {
+  text-indent: 0;
 }
 .section p:first-child, h3+p, h4+p { margin-top:0; }
 .section p:last-child { margin-bottom:0; }
 
 .section li { margin-top: .5em; }
 .section li:first-child { margin-top: 0px; }
+
+
+/* Component: Sidebar */
+.section .sidebar {
+	margin: 1em 0 1em 8em;
+	padding: 0.5em;
+  border-radius: 10px;
+
+	font-size: 0.8em;
+	background: rgba(0,0,0,.3);
+}

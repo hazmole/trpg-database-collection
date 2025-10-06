@@ -8,6 +8,10 @@ var INDEX = [
 	] },
 	{ title: "遊戲規則", members: [
 		{ title: "核心規則", members: [
+			{ title: "Ⅲ. 規則章節", members: [
+				{ title: "判定", url: "pages/article.html?file=rules/corebook/rule-chapter/doc-check.js" },
+				{ title: "狀態變化", url: "pages/article.html?file=rules/corebook/rule-chapter/doc-condition.js" },
+			] },	
 		] },
 		{ title: "擴充《神魂的鎮魂曲》", style:"font-size:.9em;", members: [
 			// { title: "世界設定補充", 				url: "pages/article.html?file=rules/ex-SpiritRequiem/01-doc.js" },
