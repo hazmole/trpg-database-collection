@@ -100,10 +100,9 @@ class ArticleParser {
 		return `<ul>${ret.join('')}</ul>`;
 	}
 	static handleTable(item, depth) {
-		// ReqField: (caption), rows, colStyles, (bodyStyle), (bodyStyle)
+		// ReqField: rows, colStyles, (caption), (bodyClass), (bodyStyle), (withoutHeader)
 		var rowArr = [];
 		var columeCount = item.colStyles.length;
-		var rowCount = item.rows.length;
 
 		if(item.caption){
 			rowArr.push(`<tr><th class="caption" colspan="${columeCount}">${item.caption}</th></tr>`);
@@ -111,8 +110,9 @@ class ArticleParser {
 		item.rows.forEach( (row, rIdx) => {
 			if(rIdx==0 && row.length==1 && row[0]=="") return ;
 
-			const tag   = (rIdx == 0)? "th": "td";
-			const rClass = (rIdx == 0)? "header": "";
+			const isHeader = (rIdx == 0 && !item.withoutHeader);
+			const tag    = (isHeader)? "th": "td";
+			const rClass = (isHeader)? "header": "";
 
 			var cellArr = [];
 			row.forEach( (cell, cIdx, arr) => {

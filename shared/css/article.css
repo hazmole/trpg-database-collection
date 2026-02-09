@@ -3,8 +3,9 @@
 h2:first-child,
 h3:first-child,
 h4:first-child { margin-top: 0; }
-h2, h3, h4 { margin-bottom: 0; }
+h2, h3, h4, h5 { margin-bottom: 0; }
 h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
+h5 { font-size: 1em; }
 
 #ArticleContainer {
   display: flex;
@@ -30,12 +31,12 @@ h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
 .section {
   background-color: white;
   border: 1px solid;
-  padding: 5px 10px 5px 10px;
+  padding: 10px;
   margin-bottom: 1rem;
 }
 .section p {
   text-indent: 1em;
-  margin: .3em 0;
+  margin: .3em;
 }
 .section li > p {
   text-indent: 0;
@@ -54,5 +55,20 @@ h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
   border-radius: 10px;
 
 	font-size: 0.8em;
-	background: rgba(0,0,0,.3);
+	background: rgba(0,0,0,.2);
 }
+
+/* Component: Table */
+.section .dicTableOuter {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+.section table.docTable { border-spacing: 0; }
+.section table.docTable th, .section table.docTable td { padding: .2em .5em; }
+.section table.docTable th {
+	background: #1c1c1c;
+	color: white;
+}
+.section table.docTable tr                { background: white; }
+.section table.docTable tr:nth-child(odd) { background: rgba(0,0,0,.1); }

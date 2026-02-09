@@ -11,7 +11,11 @@ var INDEX = [
 			{ title: "Ⅲ. 規則章節", members: [
 				{ title: "判定", url: "pages/article.html?file=rules/corebook/rule-chapter/doc-check.js" },
 				{ title: "狀態變化", url: "pages/article.html?file=rules/corebook/rule-chapter/doc-condition.js" },
-			] },	
+			] },
+			{ title: "Ⅳ. GM章節", members: [
+				{ title: "遊戲主持人", 	url: "pages/article.html?file=rules/corebook/gm/doc-gm.js" },
+				{ title: "創建 NPC",  url: "pages/article.html?file=rules/corebook/gm/doc-npc-creation.js" },
+			] },
 		] },
 		{ title: "擴充《神魂的鎮魂曲》", style:"font-size:.9em;", members: [
 			// { title: "世界設定補充", 				url: "pages/article.html?file=rules/ex-SpiritRequiem/01-doc.js" },
