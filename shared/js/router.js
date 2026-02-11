@@ -7,7 +7,7 @@ class CoreRouter {
 		this.currentPid = null; // for record
 
 		// define shunt
-		this.shunt = config.shunt;
+		this.shuntClass = config.shunt;
 		this.SITE_TITLE = config.title;
 		this.PAGE_MAP = config.pageMap;
 
@@ -35,15 +35,20 @@ class CoreRouter {
 		try {
 			this.currentPid = pid;
 
-			const pageItem = this.PAGE_MAP[pid];
-			this.renderSiteTitle(pageItem.title);
-			if (this.shunt) {
-				this.renderLayout(this.shunt.getLayoutUrl(pageItem));
-				this.shunt.runHandler(pageItem);
+			const pageInfo = this.PAGE_MAP[pid];
+			this.renderSiteTitle(pageInfo.title);
+			if (this.shuntClass) {
+				const pageHdlr = new this.shuntClass(pageInfo);
+
+				BlockUtils.block();
+				await this.renderLayout(pageHdlr.layoutUrl);
+				await this.runScript(pageHdlr.scriptUrl, pageHdlr.params);
 			}
 		} catch (error) {
 			this.renderSiteTitle('');
 			this.renderMainContainer('<h2 style="margin-left:1em;">404 - 找不到頁面</h2>');
+		} finally {
+			BlockUtils.unblock();
 		}
 	}
 
@@ -68,19 +73,24 @@ class CoreRouter {
 	}
 
 	async renderLayout(layoutUrl) {
+		if (!layoutUrl) return ;
 		const template = await Fetcher.fetchHTML(`${this.baseUrl}${layoutUrl}`);
 		this.renderMainContainer(template);
 	}
+	async runScript(scriptUrl, scriptParams) {
+		if (!scriptUrl) return ;
+		const module = await import(`${this.baseUrl}${scriptUrl}`);
+		module.run(scriptParams);
+	}
 };
 
-class ShuntInterface {
+class ShuntBase {
 
-	static getLayoutUrl(pageItem) {
-		throw new Error("ShuntInterface must be implemented.");
+	constructor(_pageItem) {
+		this.layoutUrl = '';
+    this.scriptUrl = '';
+    this.params = null;
 	}
 
-	static runHandler(pageItem) {
-    throw new Error("ShuntInterface must be implemented.");
-  }
 
 }

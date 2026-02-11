@@ -75,7 +75,6 @@ div { flex-shrink: 0; }
   }
 }
 
-
 /* Menu */
 .NavGroupTitle { cursor:pointer; padding:5px 10px; border:4px double #726681; background:#2f2a3d; }
 .NavGroupTitle::before { content:"▶"; margin-right:8px; }
@@ -88,7 +87,43 @@ div { flex-shrink: 0; }
 .NavLink:hover { background-color:#515055 }
 .NavLink.Active { cursor:inherit; background-color:#515055; }
 
+/* Block Loading */
+@keyframes lds-dual-ring {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+/* <div class="lds-dual-ring"></div> */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+#BlockUI-background {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 2000;
+  width: calc(100vw);
+  height: calc(100vh);
+  background: rgba(0, 0, 0, 0.5);
+}
+#BlockUI-loading-icon {
+  position: fixed;
+  top: calc(50vh); left: calc(50vw);
+  z-index: 2001;
+  margin-left: -40px;
+}
 
 
 #ContextHeader {
@@ -100,7 +135,7 @@ div { flex-shrink: 0; }
   background: #141414; color: white;
 }
 #ContextBody {
-  height: calc(100vh - 70px);
+  /*height: calc(100vh - 70px);*/
   overflow: auto;
 }
 

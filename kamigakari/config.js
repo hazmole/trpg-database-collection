@@ -1,4 +1,4 @@
-var INDEX = [
+const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "核心規則書", members: [
 		{ title: "Ⅲ. 規則章節", members: [
@@ -25,7 +25,7 @@ var INDEX = [
 		] },
 	] },
 	{ title: "資料庫", members: [
-		//{ title: "種族", pid: "data-races" },
+		{ title: "種族", pid: "data-races" },
 		//{ title: "稱號", url: "" },
 		//{ title: "表職業", url: "" },
 		//{ title: "共通天賦", url: "" },
@@ -36,6 +36,39 @@ var INDEX = [
 	] },
 ];
 
+const MAP = {
+	"home": { title: "首頁", handler: "home" },
+
+	"data-races": {
+		title: "種族一覽", handler: 'custom', params: {
+			layout: 'pages/player-races.html',
+			script: 'pages/player-races.js',
+		}},
+
+	"doc-core-gamerule-conditions": {
+		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
+
+	"doc-core-gm-about": {
+		title: "遊戲主持人", handler: 'docs', url: 'docs/core-doc-gm.json' },
+	
+	"doc-core-gm-npc-creation": {
+		title: "創建 NPC", handler: 'docs', url: 'docs/core-doc-gm-npc-creation.json' },
+
+
+	// 擴充:神魂的鎮魂曲 Spirit Requiem
+	"docs-exSpiritRequiem-makyou-conquer": {
+		title: "魔境討伐", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-makyou-conquer.json' },
+	
+	"docs-exSpiritRequiem-contract-beast": {
+		title: "契約神獸", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-contrac-beast.json' },
+
+	"docs-exSpiritRequiem-kushimitama": {
+		title: "奇御魂的追加用途", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-kushimitama.json' },
+
+	"docs-exSpiritRequiem-combine-technic": {
+		title: "《複合技》的補充說明", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-combine-technic.json' },
+}
+
 const Config = {
 	Title: "神我狩",
 	
@@ -43,44 +76,5 @@ const Config = {
 	NavbarIndex: INDEX,
 
 	// for Page handling
-	PageHandlerMap: {
-		"home": { title: "首頁", handler: "home" },
-
-		"doc-core-gamerule-conditions": {
-			title: "狀態變化", handler: 'docs', params: {
-				jsonUrl: 'docs/core-doc-conditions.json'
-			}},
-
-		"doc-core-gm-about": {
-			title: "遊戲主持人", handler: 'docs', params: {
-				jsonUrl: 'docs/core-doc-gm.json'
-			}},
-		
-		"doc-core-gm-npc-creation": {
-			title: "創建 NPC", handler: 'docs', params: {
-				jsonUrl: 'docs/core-doc-gm-npc-creation.json'
-			}},
-
-
-		// 擴充:神魂的鎮魂曲 Spirit Requiem
-		"docs-exSpiritRequiem-makyou-conquer": {
-			title: "魔境討伐", handler: 'docs', params: {
-				jsonUrl: 'docs/ex-spiritrequiem-doc-makyou-conquer.json'
-			}},
-		
-		"docs-exSpiritRequiem-contract-beast": {
-			title: "契約神獸", handler: 'docs', params: {
-				jsonUrl: 'docs/ex-spiritrequiem-doc-contrac-beast.json'
-			}},
-
-		"docs-exSpiritRequiem-kushimitama": {
-			title: "奇御魂的追加用途", handler: 'docs', params: {
-				jsonUrl: 'docs/ex-spiritrequiem-doc-kushimitama.json'
-			}},
-
-		"docs-exSpiritRequiem-combine-technic": {
-			title: "《複合技》的補充說明", handler: 'docs', params: {
-				jsonUrl: 'docs/ex-spiritrequiem-doc-combine-technic.json'
-			}},
-	},
+	PageHandlerMap: MAP,
 };
