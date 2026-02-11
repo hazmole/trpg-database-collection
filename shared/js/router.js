@@ -83,7 +83,7 @@ class CoreRouter {
 	async runScript(scriptUrl, scriptParams) {
 		if (!scriptUrl) return ;
 		const module = await import(`${this.baseUrl}${scriptUrl}`);
-		module.run(scriptParams);
+		await module.run(scriptParams);
 	}
 
 
