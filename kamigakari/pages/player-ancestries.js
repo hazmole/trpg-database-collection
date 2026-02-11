@@ -1,13 +1,14 @@
 export async function run() {
   // Get JSON Data
-  const itemData   = await Fetcher.fetchJSON('./data/classes.json');
-  // const talentData = await Fetcher.fetchJSON('./data/talents-race.json');
+  const itemData   = await Fetcher.fetchJSON('./data/ancestries.json');
+  const talentData = await Fetcher.fetchJSON('./data/talents-ancestry.json');
   const itemNameList = Object.keys(itemData);
 
   // Get DOM Element
   const dropdownElem = document.getElementById('DropdownMenu');
   // Get RID from URL Params
   const itemID = getUrlItemID();
+  CoreRouter.setUrlParams('key', itemID);
   
   // Main Tasks
   appendOptions();
@@ -17,8 +18,8 @@ export async function run() {
   //=======================
   function getUrlItemID() {
     const urlParams = new URLSearchParams(window.location.search);
-    const urlItemID = urlParams.get('class');
-    return (itemNameList.includes(urlItemID))? urlItemID: itemNameList[0];
+    const urlRaceID = urlParams.get('key');
+    return (itemNameList.includes(urlRaceID))? urlRaceID: itemNameList[0];
   }
   function appendOptions() {
     dropdownElem.innerHTML = itemNameList.map( key => {
@@ -28,33 +29,27 @@ export async function run() {
   }
   function initListener() {
     dropdownElem.addEventListener('change', (e) => {
-      const newitemID = e.target.value;
+      const newItemID = e.target.value;
       // Write URL Params
-      CoreRouter.setUrlParams('class', newitemID);
-      renderPage(newitemID);
+      CoreRouter.setUrlParams('key', newItemID);
+      renderPage(newItemID);
     });
   }
   function renderPage(itemID) {
     const itemObj = itemData[itemID];
-
-    CoreRouter.setSiteTitle(`稱號 - ${itemID}`);
-    document.getElementById("Name").textContent = `【${itemObj.category}系】${itemObj.name} ${itemObj.alias[0]}`;
-    document.getElementById("Description").innerHTML = itemObj.desc.join('<br>');
-
-    /*
-    
     const talentList = talentData
-      .filter( t => t.type===`race-${raceID}` )
+      .filter( t => t.type===`ancestry-${itemID}` )
       .sort(SorterUtils.compareTalent(talentData));
 
-    document.getElementById("Description").innerHTML = raceObj.desc.join('<br>');
-    document.getElementById("FeatName").textContent = raceObj.feat.name;
-    document.getElementById("FeatEffect").innerHTML = raceObj.feat.effect.join('<br>');
-    document.getElementById("RaceAttrPhysical").innerHTML = _renderAttributeRow("戰士", raceObj.states.phy);
-    document.getElementById("RaceAttrGeneral").innerHTML = _renderAttributeRow("泛用", raceObj.states.gen);
-    document.getElementById("RaceAttrMagical").innerHTML = _renderAttributeRow("魔法", raceObj.states.mgc);
-    document.getElementById("RaceTalentsContainer").innerHTML = _renderTalents(talentList);
-    */
+    CoreRouter.setSiteTitle(`種族 - ${itemID}`);
+    document.getElementById("Name").textContent = itemObj.name;
+    document.getElementById("Description").innerHTML = itemObj.desc.join('<br>');
+    document.getElementById("FeatName").textContent = itemObj.feat.name;
+    document.getElementById("FeatEffect").innerHTML = itemObj.feat.effect.join('<br>');
+    document.getElementById("AttrPhysical").innerHTML = _renderAttributeRow("戰士", itemObj.states.phy);
+    document.getElementById("AttrGeneral").innerHTML = _renderAttributeRow("泛用", itemObj.states.gen);
+    document.getElementById("AttrMagical").innerHTML = _renderAttributeRow("魔法", itemObj.states.mgc);
+    document.getElementById("TalentsContainer").innerHTML = _renderTalents(talentList);
   }
   //=======================
   function _renderAttributeRow(labelText, data) {

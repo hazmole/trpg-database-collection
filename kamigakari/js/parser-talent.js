@@ -29,10 +29,11 @@ Parser.talent = function(talent) {
     function getCategoryText(){
       var arr = talent.type.split('-');
       switch(arr[0]){
-        case "race": arr[0]="種族"; break;
-        case "class": arr[0]="稱號"; break;
+        case "ancestry": arr[0]="種族"; break;
+        case "AS":       arr[0]="稱號"; break;
         case "common":
           switch(arr[1]){
+            case "ancestry":   arr[0]="共通種族"; arr.length=1; break;
             case "normal":     arr[0]="共通"; arr.length=1; break;
             case "advanced5":  arr[0]="高等"; arr[1]="5等"; break;
             case "advanced10": arr[0]="高等"; arr[1]="10等"; break;

@@ -1,27 +1,25 @@
 <link rel="stylesheet" href="./css/list-entry.css">
 <link rel="stylesheet" href="./css/list-entry-custom.css">
 <style>
-	h2 { margin: 0; }
-
 	.info-block.type2 { font-size: .9em; }
 
-	.RaceStateTable {
+	.StateTable {
 		border-spacing: 0;
 		border: 2px #777 solid;
 	}
-	.RaceStateTable th,
-	.RaceStateTable td {
+	.StateTable th,
+	.StateTable td {
 		width: 50px;
 		text-align: center;
 	}
-	.RaceStateTable th { background: #333; color: white; font-size: 14px; }
-	.RaceStateTable td { background: #fff; font-family: system-ui; }
-	.RaceStateTable td.title { background-color: #ccc; font-family: auto; }
-	.RaceStateTable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
+	.StateTable th { background: #333; color: white; font-size: 14px; }
+	.StateTable td { background: #fff; font-family: system-ui; }
+	.StateTable td.title { background-color: #ccc; font-family: auto; }
+	.StateTable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
 </style>
 <div id="ContextHeader" style="gap: 10px">
 	<span>種族</span>
-	<select id="DropdownMenu"></select>
+	<select id="DropdownMenu" style="min-width: 160px;"></select>
 </div>
 <div id="ContextBody" class="Page">
 	<h2 id="Name"></h2>
@@ -34,13 +32,13 @@
 	</div>
 
 	<h4>能力值</h4>
-	<table class="RaceStateTable">
+	<table class="StateTable">
 		<tr><th>類型</th><th>體力</th><th>敏捷</th><th>知性</th><th>精神</th><th>幸運</th></tr>
-		<tr id="RaceAttrPhysical"></tr>
-		<tr id="RaceAttrGeneral"></tr>
-		<tr id="RaceAttrMagical"></tr>
+		<tr id="AttrPhysical"></tr>
+		<tr id="AttrGeneral"></tr>
+		<tr id="AttrMagical"></tr>
 	</table>
 	
 	<h4>種族天賦一覽</h4>
-	<div id="RaceTalentsContainer" class="Item-list talent"></div>
+	<div id="TalentsContainer" class="Item-list talent"></div>
 </div>

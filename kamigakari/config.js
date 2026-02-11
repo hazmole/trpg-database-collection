@@ -25,10 +25,10 @@ const INDEX = [
 		] },
 	] },
 	{ title: "資料庫", members: [
-		{ title: "種族", pid: "data-races" },
-		{ title: "稱號", pid: "data-classes" },
+		{ title: "種族", pid: "data-ancestries" },
+		{ title: "稱號", pid: "data-arm-systems" },
 		//{ title: "表職業", url: "" },
-		//{ title: "共通天賦", url: "" },
+		{ title: "共通天賦", pid: "data-common-talents" },
 		//{ title: "道具", url: "" },
 		//{ title: "精怪", url: "" },
 		//{ title: "BOSS天賦", url: "" },
@@ -39,16 +39,22 @@ const INDEX = [
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
-	"data-races": {
+	"data-ancestries": {
 		title: "種族一覽", handler: 'custom', params: {
-			layout: 'pages/player-races.html',
-			script: 'pages/player-races.js',
+			layout: 'pages/player-ancestries.html',
+			script: 'pages/player-ancestries.js',
 		}},
 
-	"data-classes": {
+	"data-arm-systems": {
 		title: "稱號一覽", handler: 'custom', params: {
-			layout: 'pages/player-classes.html',
-			script: 'pages/player-classes.js',
+			layout: 'pages/player-arm-systems.html',
+			script: 'pages/player-arm-systems.js',
+		}},
+
+	"data-common-talents": {
+		title: "共通天賦一覽", handler: 'custom', params: {
+			layout: 'pages/player-common-talents.html',
+			script: 'pages/player-common-talents.js',
 		}},
 
 	"doc-core-gamerule-conditions": {
