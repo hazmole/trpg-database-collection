@@ -26,7 +26,7 @@ const INDEX = [
 	] },
 	{ title: "資料庫", members: [
 		{ title: "種族", pid: "data-races" },
-		//{ title: "稱號", url: "" },
+		{ title: "稱號", pid: "data-classes" },
 		//{ title: "表職業", url: "" },
 		//{ title: "共通天賦", url: "" },
 		//{ title: "道具", url: "" },
@@ -43,6 +43,12 @@ const MAP = {
 		title: "種族一覽", handler: 'custom', params: {
 			layout: 'pages/player-races.html',
 			script: 'pages/player-races.js',
+		}},
+
+	"data-classes": {
+		title: "稱號一覽", handler: 'custom', params: {
+			layout: 'pages/player-classes.html',
+			script: 'pages/player-classes.js',
 		}},
 
 	"doc-core-gamerule-conditions": {
