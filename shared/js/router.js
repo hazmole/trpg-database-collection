@@ -1,4 +1,7 @@
 class CoreRouter {
+
+	static SITE_TITLE = "";
+
 	constructor(config) {
 		// define baseURL
 		const isGitHub = window.location.hostname.includes('github.io');
@@ -8,8 +11,8 @@ class CoreRouter {
 
 		// define shunt
 		this.shuntClass = config.shunt;
-		this.SITE_TITLE = config.title;
 		this.PAGE_MAP = config.pageMap;
+		CoreRouter.SITE_TITLE = config.title;
 
 		console.log("Router Initialized");
 	}
@@ -57,12 +60,12 @@ class CoreRouter {
 	}
 
 	renderSiteTitle(titleText) {
-		document.title = `${this.SITE_TITLE} - ${titleText}`;
+		document.title = `${CoreRouter.SITE_TITLE} - ${titleText}`;
 
 		const siteTitleElem = document.getElementById("SiteTitle");
 		if (siteTitleElem) {
 			if (!titleText) titleText = "???";
-			siteTitleElem.textContent = `${this.SITE_TITLE} - ${titleText}`;
+			siteTitleElem.textContent = `${CoreRouter.SITE_TITLE} - ${titleText}`;
 		}
 	}
 	renderMainContainer(htmlText) {
@@ -81,6 +84,18 @@ class CoreRouter {
 		if (!scriptUrl) return ;
 		const module = await import(`${this.baseUrl}${scriptUrl}`);
 		module.run(scriptParams);
+	}
+
+
+	static setSiteTitle(titleText) {
+		document.title = `${CoreRouter.SITE_TITLE} - ${titleText}`;
+	}
+	static setUrlParams(key, val) {
+		const urlParams = new URLSearchParams(window.location.search);
+		urlParams.set(key, val);
+
+		const path = window.location.pathname;
+		window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, '', path+`?${urlParams.toString()}`);
 	}
 };
 

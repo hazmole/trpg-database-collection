@@ -3,9 +3,11 @@
  ------------------*/
 /* Talent */
 .ListEntry.Talent .TitleCell .title { text-align: left; padding-left:.5rem; }
-.ListEntry.Talent .BlockCell .phase:before  { content: "時機"; }
+.ListEntry.Talent .BlockCell .timing:before { content: "時機"; }
 .ListEntry.Talent .BlockCell .range:before  { content: "距離"; }
 .ListEntry.Talent .BlockCell .target:before { content: "對象"; }
 .ListEntry.Talent .BlockCell .cost:before   { content: "代價"; }
 
+
+.ListEntry .PrefixIcon { font-family: cursive; }
 .ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }

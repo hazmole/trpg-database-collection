@@ -1,10 +1,44 @@
+<link rel="stylesheet" href="./css/list-entry.css">
+<link rel="stylesheet" href="./css/list-entry-custom.css">
+<style>
+	h2 { margin: 0; }
+
+	.RaceStateTable {
+		border-spacing: 0;
+		border: 2px #777 solid;
+	}
+	.RaceStateTable th,
+	.RaceStateTable td {
+		width: 50px;
+		text-align: center;
+	}
+	.RaceStateTable th { background: #333; color: white; font-size: 14px; }
+	.RaceStateTable td { background: #fff; }
+	.RaceStateTable td.title { background-color: #ccc; }
+	.RaceStateTable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
+</style>
 <div id="ContextHeader" style="gap: 10px">
-  <span>種族</span>
-  <select id="DropdownMenu" onchange="selectOption(this)"></select>
+	<span>種族</span>
+	<select id="DropdownMenu"></select>
 </div>
-<div id="ContextBody">
-  <h2 >${raceObj.name}</h2>
+<div id="ContextBody" class="Page">
+	<h2 id="Name"></h2>
+	<div id="Description" class="info-block type2"></div>
 
+	<h4>種族特典</h4>
+	<div class="info-block type1">
+		<div><b id="FeatName"></b></div>
+		<div id="FeatEffect"></div>
+	</div>
 
-
+	<h4>能力值</h4>
+	<table class="RaceStateTable">
+		<tr><th>類型</th><th>體力</th><th>敏捷</th><th>知性</th><th>精神</th><th>幸運</th></tr>
+		<tr id="RaceAttrPhysical"></tr>
+		<tr id="RaceAttrGeneral"></tr>
+		<tr id="RaceAttrMagical"></tr>
+	</table>
+	
+	<h4>種族天賦一覽</h4>
+	<div id="RaceTalentsContainer" class="Item-list talent"></div>
 </div>

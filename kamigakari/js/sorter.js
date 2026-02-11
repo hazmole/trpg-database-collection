@@ -1,7 +1,9 @@
-var Sorter = {};
+var SorterUtils = {};
 
-Sorter.talentCmpFunc = function(a, b){
-  if(a.type != b.type) return TALENTS.indexOf(a) - TALENTS.indexOf(b);
-  if(a.isLimit != b.isLimit) return (a.isLimit - b.isLimit);
-  return TALENTS.indexOf(a) - TALENTS.indexOf(b);
+SorterUtils.compareTalent = function(list){
+  return function(a, b) {
+    if(a.type != b.type) return list.indexOf(a) - list.indexOf(b);
+    if(a.isLimit != b.isLimit) return (a.isLimit - b.isLimit);
+    return list.indexOf(a) - list.indexOf(b);
+  };
 };

@@ -133,10 +133,15 @@ div { flex-shrink: 0; }
   padding: 0 10px;
   height: 50px;
   background: #141414; color: white;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 #ContextBody {
-  /*height: calc(100vh - 70px);*/
   overflow: auto;
+  padding: 1rem;
+  max-width: 1024px;
 }
 
 

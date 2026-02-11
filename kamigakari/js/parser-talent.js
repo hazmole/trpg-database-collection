@@ -2,14 +2,17 @@ var Parser;
 if(!Parser) Parser = {};
 
 Parser.talent = function(talent) {
+  
+  const titleModifyStyle = (talent.name.length > 8)? `style="font-size:0.9em;"`: "";
+  
   return `
     <div class="ListEntry Talent">
       <div class="TitleCell fixWidth">
         <div class="tag">${getCategoryText()}</div>
-        <div class="title"><div>${getName()}</div></div>
+        <div class="title"><div ${titleModifyStyle}>${getName()}</div></div>
       </div>
       <div class="blockCell fixWidth">
-        <div class="phase"><div>${talent.phase.join('/')}</div></div>
+        <div class="timing"><div>${talent.phase.join('/')}</div></div>
       </div>
       <div class="blockCell fixWidth">
         <div class="range"><div>${talent.range}</div></div>
