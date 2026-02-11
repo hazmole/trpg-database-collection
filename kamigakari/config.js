@@ -27,9 +27,16 @@ const INDEX = [
 	{ title: "資料庫", members: [
 		{ title: "種族", pid: "data-ancestries" },
 		{ title: "稱號", pid: "data-arm-systems" },
-		//{ title: "表職業", url: "" },
 		{ title: "共通天賦", pid: "data-common-talents" },
-		//{ title: "道具", url: "" },
+		{ title: "道具", members: [
+			{ title: "武器", pid: "data-item-weapons" },
+			{ title: "防具", pid: "data-item-protectors" },
+			{ title: "裝飾", pid: "data-item-accessories" },
+			{ title: "消耗品", pid: "data-item-consumables" },
+			{ title: "常備品", pid: "data-item-sacraments" },
+			{ title: "探索者套裝", pid: "data-item-hunter-sets" },
+		] },
+		{ title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
 		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
