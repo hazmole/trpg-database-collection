@@ -1,18 +1,37 @@
 class ArticleParser {
-	static Build(elemID, docScript) {
-		setTimeout(function() {
-			const rootElem = document.getElementById(elemID);
-			rootElem.append(htmlToNode(`<div id="Articles"></div>`))
-			rootElem.append(htmlToNode(`<div><div id="QuickNav"></div></div>`));
 
-			document.getElementById("Articles").innerHTML = ArticleParser.Parse(docScript).join("");
-			document.getElementById("QuickNav").innerHTML = ArticleParser.ParseQuickNav(docScript).join("");
-		}, 0);
+	constructor() {
+		// initialize
+		this.MOBILE_WIDTH = 900;
+		this.elemColle = {};
 	}
 
-	static ParseQuickNav(docScript) {
+	build(docJsonData) {
+		// fetch Element from document
+		this.elemColle.main         = document.getElementById("ArticleContainer");
+		this.elemColle.toc          = document.getElementById("TocContainer");
+		this.elemColle.tocToggleBtn = document.getElementById("TocToggleBtn");
+
+		// Render
+		this._initTocToggleBtn();
+		this._renderToc(docJsonData);
+		this._renderMainContent(docJsonData);
+	}
+
+	_initTocToggleBtn() {
+		this.elemColle.tocToggleBtn.addEventListener('click', () => {
+			this.elemColle.toc.classList.toggle('active');
+		});
+		this.elemColle.main.addEventListener('click', () => {
+			if (window.innerWidth <= this.MOBILE_WIDTH) {
+				this.elemColle.toc.classList.remove('active');
+			}
+		});
+	}
+
+	_renderToc(docJsonData) {
 		const arr = [];
-		docScript.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+		docJsonData.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
 			if (sectionObj.title) {
 				const title = sectionObj.title;
 				arr.push(`<div><a href="#tag_h2_${title}">${title}</a></div>`);
@@ -24,7 +43,14 @@ class ArticleParser {
 				}
 			});
 		});
-		return arr;
+
+		this.elemColle.toc.innerHTML = arr.join("");
+	}
+
+	_renderMainContent(docJsonData) {
+		this.elemColle.main.innerHTML = `<div id="Articles">${
+			ArticleParser.Parse(docJsonData).join("")
+		}</div>`;
 	}
 
 	static Parse(docScript) {

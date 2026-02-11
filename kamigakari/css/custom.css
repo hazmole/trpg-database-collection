@@ -1,9 +1,9 @@
-#Header {
+#SiteHeader {
   background:#4A593D;
   color:azure;
   text-shadow: 5px 5px 0em black;
 }
-#MainFrameInner {
+#ContentBody {
   background-color: #D9CD90;
 }
 #Menu.Unfold {

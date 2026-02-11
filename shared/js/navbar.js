@@ -1,147 +1,115 @@
-const ScreenMinWidthConfig = 640;
-var SYSTEM_TITLE, INDEX;
+class NavBarCtrl {
 
-const NavBarCtrl = {
+	constructor(siteTitle, indexMap) {
+		// initialize
+		this.SITE_TITLE = siteTitle;
+		this.MOBILE_WIDTH = 768;
+		this.indexMap = indexMap;
+		this.elemColle = {};
 
-  elemColle: {},
-  pageIdxArr: [],
+		console.log("Navbar Initialized");
+	}
 
-  init: function() {
-    // Define Element ID
-    this.elemColle.headerTitleElem = document.getElementById("Header-Title");
-    this.elemColle.menuElem        = document.getElementById("Menu");
-    this.elemColle.iframeContext   = document.getElementById("Context");
+	run() {
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', () => this._run());
+		} else {
+			this.run();
+		}
+	}
 
-    // Render Navigation Menu
-    this.renderNavBar();
-    this.goToDefaultPage();
-  },
+	_run() {
+		// fetch Element from document
+		this.elemColle.menuElem        = document.getElementById("Menu");
+		this.elemColle.menuToggleBtn   = document.getElementById("MenuToggleBtn");
+		this.elemColle.iframeContext   = document.getElementById("ContentMain");
 
-  renderNavBar: function() {
-    const self = this;
-    var elemArr = INDEX.map((item, idx) => { return genNavItemElem(item, idx) });
-    this.elemColle.menuElem.innerHTML = elemArr.join('');
+		// Render
+		this._initMenuToggleBtn();
+		this._renderNavBar();
+		this._markElemActive();
+	}
 
-    // ================
-    function genNavItemElem(item, idx) {
-      if (!!item.members)
-        return genNavGroupElem(item, idx);
-      else {
-        self.pageIdxArr.push("" + idx);
-        return genNavLinkElem(item, idx)
-      }
-    }
-    function genNavLinkElem(linkItem, idx) {
-      const linkStyle = linkItem.style || "";
-      const attr = [
-        `onClick="link(this)"`,
-        `data-idx="${idx}"`,
-        `style="${linkStyle}"`,
-      ];
-      return `<div class="NavLink" ${attr.join(' ')}">${linkItem.title}</div>`;
-    }
-    function genNavGroupElem(groupItem, groupIdx) {
-      const idx_prefix = groupIdx + '-';
-      const groupStyle = groupItem.style || "";
-      const memberArr = groupItem.members.map((item, idx) => genNavItemElem(item, idx_prefix + idx));
-      return `<div class="NavGroupOuter">
-        <div class="NavGroupTitle" style="${groupStyle}" onClick="toggleGroup(this)">${groupItem.title}</div>
-        <div class="NavGroupInner">${memberArr.join('')}</div>
-      </div>`;
-    }
-  },
+	_initMenuToggleBtn() {
+		this.elemColle.menuToggleBtn.addEventListener('click', () => {
+			this.elemColle.menuElem.classList.toggle('Unfold');
+		});
+		this.elemColle.iframeContext.addEventListener('click', () => {
+			if (window.innerWidth <= this.MOBILE_WIDTH) {
+				this.elemColle.menuElem.classList.remove('Unfold');
+			}
+		});
+	}
 
-  goToDefaultPage: function() {
-    // Read URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlPageIdx = urlParams.get('p');
-    
-    if (this.pageIdxArr.includes(urlPageIdx)) {
-      this.goToPage(urlPageIdx);
-    } else {
-      this.goToPage(this.pageIdxArr[0]);
-    }
-  },
+	_renderNavBar() {
+		var elemArr = this.indexMap.map((item) => { return genNavItemElem(item) });
+		this.elemColle.menuElem.innerHTML = elemArr.join('');
 
-  goToPage: function(indexTicket) {
-    const idxArr = indexTicket.split("-");
-    let arrPointer = INDEX;
-    let pageItem = null;
-    for (idx of idxArr) {
-      const item = arrPointer[parseInt(idx)];
-      if (!!item.members) arrPointer = item.members;
-      else {
-        pageItem = item;
-      }
-    }
+		// ================
+		function genNavItemElem(item) {
+			if (!!item.members)
+				return genNavGroupElem(item);
+			else {
+				return genNavLinkElem(item)
+			}
+		}
+		function genNavLinkElem(linkItem) {
+			const linkStyle = linkItem.style || "";
+			const attr = [
+				`onClick="NavBarCtrl.link(this)"`,
+				`data-pid="${linkItem.pid}"`,
+				`style="${linkStyle}"`,
+			];
+			return `<div class="NavLink" ${attr.join(' ')}">${linkItem.title}</div>`;
+		}
+		function genNavGroupElem(groupItem) {
+			const groupStyle = groupItem.style || "";
+			const memberArr = groupItem.members.map((item) => genNavItemElem(item));
+			return `<div class="NavGroupOuter">
+				<div class="NavGroupTitle" style="${groupStyle}" onClick="NavBarCtrl.toggleGroup(this)">${groupItem.title}</div>
+				<div class="NavGroupInner">${memberArr.join('')}</div>
+			</div>`;
+		}
+	}
 
-    // Modify Iframe
-    const urlPortionArr = pageItem.url.split('?');
-    const pageUrlPath = urlPortionArr[0];
-    let pageUrlParams = urlPortionArr.slice(1).join('');
-    (new URLSearchParams(window.location.search)).forEach((value, key) => {
-      if (key === "p") return ;
-      pageUrlParams += `&${key}=${value}`;
-    });
-    this.elemColle.iframeContext.src = `${pageUrlPath}?${pageUrlParams}`
-    // Modify URL
-    const path = window.location.pathname
-    window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, SYSTEM_TITLE, path+`?p=${indexTicket}`);
-    // Modify Title
-    const title = this.getTitleText(pageItem.title);
-    document.title = title;
-    this.elemColle.headerTitleElem.textContent = title;
+	_markElemActive(pid) {
+		const elemArr = document.querySelectorAll(`[data-pid="${pid}"]`);
+		if (!elemArr || elemArr.length <= 0) return ;
+		
+		// toggle Active
+		const elem = elemArr[0];
+		elem.classList.add("Active");
+		if (this.elemColle.activePageBtn) {
+			this.elemColle.activePageBtn.classList.remove("Active");
+		}
+		this.elemColle.activePageBtn = elem;
+		
+		// unfold Parent Group
+		let elemPointer = elem;
+		while (elemPointer.id !== "Menu") {
+			if (elemPointer.classList.contains("NavGroupOuter")) {
+				elemPointer.classList.add("Unfold");
+			}
+			elemPointer = elemPointer.parentElement;
+		}
+	}
+	
 
-    // find & Mark Active
-    this.markElemActive(indexTicket);
-  },
+	static link(navLinkElem) {
+		const pid = navLinkElem.attributes["data-pid"].value;
+		const path = window.location.pathname;
 
-  markElemActive: function(index) {
-    const elemArr = document.querySelectorAll(`[data-idx="${index}"]`);
-    if (!elemArr || elemArr.length <= 0) return ;
-    
-    // toggle Active
-    const elem = elemArr[0];
-    elem.classList.add("Active");
-    if (this.elemColle.activePageBtn) {
-      this.elemColle.activePageBtn.classList.remove("Active");
-    }
-    this.elemColle.activePageBtn = elem;
-    
-    // unfold Parent Group
-    let elemPointer = elem;
-    while (elemPointer.id !== "Menu") {
-      if (elemPointer.classList.contains("NavGroupOuter")) {
-        elemPointer.classList.add("Unfold");
-      }
-      elemPointer = elemPointer.parentElement;
-    }
-  },
-
-  getTitleText: function(pageTitle) {
-    return `${SYSTEM_TITLE} - ${pageTitle}`;
-  }
-}
-
-
-/* interactive API for Elements */
-function link(elem) {
-  if (NavBarCtrl.elemColle.activePageBtn == elem) return ;
-
-  const elemIdx = elem.attributes["data-idx"].value;
-  NavBarCtrl.goToPage(elemIdx);
-}
-function toggleMenu() {
-  const navBarElem = document.getElementById("Menu");
-  toggle(navBarElem, "Unfold");
-}
-function toggleGroup(elem) {
-  toggle(elem.parentElement, "Unfold");
-}
-function toggle(elem, className) {
-  if (elem.classList.contains(className)) {
-    elem.classList.remove(className);
-  } else {
-    elem.classList.add(className);
-  }	
+		window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, this.SITE_TITLE, path+`?pid=${pid}`);
+		window.dispatchEvent(new CustomEvent('route-change'));
+	}
+	static toggleGroup(elem) {
+		this._toggle(elem.parentElement, "Unfold");
+	}
+	static _toggle(elem, className) {
+		if (elem.classList.contains(className)) {
+			elem.classList.remove(className);
+		} else {
+			elem.classList.add(className);
+		}	
+	}
 }

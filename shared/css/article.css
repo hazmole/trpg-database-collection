@@ -7,39 +7,75 @@ h2, h3, h4, h5 { margin-bottom: 0; }
 h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
 h5 { font-size: 1em; }
 
+/* Basic Layer */
+#PageWrapper {
+	display: grid;
+	grid-template-columns: 1fr 200px;
+	margin: 0;
+	max-width: 1000px;
+}
 #ArticleContainer {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	width: calc(100% - 2rem);
+}
+#Articles { width: 100%; }
+#TocContainer {
+	position: sticky;
+	top: 1rem;
+	height: fit-content;
+	background: rgba(255,255,255,.3);
+	padding: 1rem;
+}
+#TocContainer a { font-size: 0.8em; color: #360909; }
+#TocToggleBtn, .toc-close { display: none; }
+
+/* Site Layer for Mobile */
+@media (max-width: 900px) {
+	#PageWrapper {
+		grid-template-columns: 1fr;
+	}
+
+	#TocContainer {
+		position: fixed;
+		top: 0; right: -100%;
+		width: 200px; height: 100vh;
+		z-index: 500;
+		background: white;
+		box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+		transition: 0.3s ease;
+		border-left: none;
+	}
+	#TocContainer.active { right: 0; }
+
+	/* 浮動按鈕：位於右下角 */
+	#TocToggleBtn {
+		display: block;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 1000;
+		padding: 10px;
+		background: white;
+		border: none; border-radius: 50px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	}
 }
 
-#Articles { 
-  width: 100%;
-  max-width: 700px;
-  margin:1rem;
-  height: fit-content;
-  padding-bottom: 50px;
-}
-
-#QuickNav {
-  display: flex; flex-direction: column; gap: 1px;
-  margin:1rem; position:fixed; padding:10px; background:#f1e6ab;
-  min-width: 200px;
-  min-height: 20px;
-}
-#QuickNav a { font-size: 0.8em; color: #360909; }
-
+/* Article Styles */
 .section {
-  background-color: white;
-  border: 1px solid;
-  padding: 10px;
-  margin-bottom: 1rem;
+	background-color: white;
+	border: 1px solid;
+	padding: 10px;
+	margin-bottom: 1rem;
 }
 .section p {
-  text-indent: 1em;
-  margin: .3em;
+	text-indent: 1em;
+	margin: .3em;
 }
 .section li > p {
-  text-indent: 0;
+	text-indent: 0;
 }
 .section p:first-child, h3+p, h4+p { margin-top:0; }
 .section p:last-child { margin-bottom:0; }
@@ -52,7 +88,7 @@ h5 { font-size: 1em; }
 .section .sidebar {
 	margin: 1em 0 1em 8em;
 	padding: 0.5em;
-  border-radius: 10px;
+	border-radius: 10px;
 
 	font-size: 0.8em;
 	background: rgba(0,0,0,.2);
@@ -60,9 +96,9 @@ h5 { font-size: 1em; }
 
 /* Component: Table */
 .section .dicTableOuter {
-  display: flex;
-  justify-content: center;
-  margin: 1em 0;
+	display: flex;
+	justify-content: center;
+	margin: 1em 0;
 }
 .section table.docTable { border-spacing: 0; }
 .section table.docTable th, .section table.docTable td { padding: .2em .5em; }

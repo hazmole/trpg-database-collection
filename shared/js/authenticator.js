@@ -54,14 +54,4 @@ const MyAuth = {
 	},
 };
 
-// MyAuth.clearCypherStatus = function(){
-// 	localStorage.setItem(MyAuth.key, false);
-// }
-
-	// if(val !== MyAuth.password){
-	// 	document.getElementById("password").setCustomValidity('暗號錯誤');
-	// 	return;
-	// }
-
-
 MyAuth.run();

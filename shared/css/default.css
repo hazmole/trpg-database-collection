@@ -11,44 +11,84 @@ div { flex-shrink: 0; }
 
 .easyRow { display:flex; flex-direction:row; } 
 
-#MainFrameOuter { display:flex; flex-direction:column; height:calc(100vh); width:calc(100vw); }
-#MainFrameInner { display:flex; flex-direction:row; flex-grow:1; }
-
-#Header { height:60px; color:azure; background:#141414; display:flex; align-items:center; justify-content:flex-start; }
-#Header-Title { 
-  margin-left:5px; padding:0 8px;
+/* Site Layer */
+#SiteHeader {
+  color:azure; background:#141414;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#SiteTitle { 
+  margin-left: 13px;
   font-family: "HanyiSenty";
   font-size: 46px;
 }
-.Header-Btn { padding:5px; width:30px; text-align:center; cursor:pointer; font-size:22px; }
-
-#Menu { background:#141414; color:azure; height:calc(100vh - 40px); display:flex; flex-direction:column; gap:2px; overflow-y: auto;
-  width:0; min-width:0px;
-  -webkit-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  -moz-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  -o-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  transition: min-width .5s ease-in-out, width .5s ease-in-out;
+#ContentBody {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 60px);
 }
-#Menu.Unfold {
+#Menu {
+  background:#141414; color:azure;
+  display:flex; flex-direction:column; gap:2px; overflow-y: auto;
   width:300px; min-width:300px;
-  padding: 0 1px;
-  -webkit-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  -moz-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  -o-transition: min-width .5s ease-in-out, width .5s ease-in-out;
-  transition: min-width .5s ease-in-out, width .5s ease-in-out;
 }
+#ContentMain {
+  border:0;
+  height: inherit;
+  overflow: auto;
+}
+
+#MenuToggleBtn {
+  display: none; flex-shrink: 0;
+  background:none; color:#fff; border:1px solid #fff;
+  margin: 1em; width: 30px; height: 30px;
+  cursor:pointer;
+}
+
+/* Site Layer for Mobile */
+@media (max-width: 768px) {
+  #SiteTitle { 
+    margin-left: 0px;
+    font-size: 36px;
+  }
+  #ContentBody {
+    grid-template-columns: 1fr;
+  }
+
+  #Menu {
+    position: fixed;
+    left: -300px; /* 預設在畫面外 */
+    top: 60px;
+    height: 100%;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+  #Menu.Unfold {
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  #MenuToggleBtn {
+    display: block; /* 手機版顯示按鈕 */
+  }
+}
+
+
+/* Menu */
 .NavGroupTitle { cursor:pointer; padding:5px 10px; border:4px double #726681; background:#2f2a3d; }
 .NavGroupTitle::before { content:"▶"; margin-right:8px; }
 .NavGroupInner { display:flex; flex-direction:column; gap:2px; padding-left:10px; margin-top:2px; height:0; overflow: hidden; }
 
-.NavGroupOuter.Unfold > .NavGroupTitle::before { content:"▼"; margin-right:6px; }
+.NavGroupOuter.Unfold > .NavGroupTitle::before { content:"▼"; margin-right:6px; color: #90c8d9; }
 .NavGroupOuter.Unfold > .NavGroupInner { height: auto; }
 
 .NavLink { cursor:pointer; padding:5px 10px; border:1px solid #71757b; }
 .NavLink:hover { background-color:#515055 }
 .NavLink.Active { cursor:inherit; background-color:#515055; }
 
-#Context { flex-grow:1; border:0; }
+
 
 
 #ContextHeader {

@@ -1,27 +1,13 @@
-<html>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="../../shared/css/article.css">
-  <script src="../../shared/js/article-parser.js"></script>
-  <script src="../../shared/js/utils.js"></script>
-  <script id="Document" src=""></script>
-  <script>
-    var DOC;
-    window.onload = function(){
-      const urlParams = new URLSearchParams(window.location.search);
-      const urlDocSrc = urlParams.get('file');
-
-      loadScript(urlDocSrc, ()=>{
-        if(DOC)  ArticleParser.Build("ArticleContainer", DOC);
-      }); 
-    };
-  </script>
+  <link rel="stylesheet" href="../shared/css/article.css">
   <style>
     h3 { padding-left: .3em; background-color: #2b4910; color: white; padding-bottom: .1em; }
     h4 { padding-left: .3em; background-color: #d5ebcf; }
     h5 { padding-left: .3em; text-decoration: underline; }
   </style>
 </head>
-<body id="ArticleContainer">
-</body>
-</html>
+<div id="PageWrapper">
+  <main id="ArticleContainer"></main>
+  <aside id="TocContainer"></aside>
+  <div id="TocToggleBtn"><img src="../shared/img/toc.svg" class="book-icon" alt="Table of Contents"></div>
+</div>
