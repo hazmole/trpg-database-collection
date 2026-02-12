@@ -91,7 +91,7 @@ export async function run() {
   }
   //=======================
   function _renderTalents(dataList) {
-    return dataList.map( data => Parser.talent(data) ).join('');
+    return dataList.map( data => CustomParser.talent(data) ).join('');
   }
 }
 

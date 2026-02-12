@@ -1,6 +1,6 @@
 [
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "強化禮裝",
 		"require": [],
 		"evd": -1,
@@ -11,7 +11,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "抗魔外套",
 		"require": [],
 		"evd": -1,
@@ -22,7 +22,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "鎖子板甲",
 		"require": [],
 		"evd": -1,
@@ -33,7 +33,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神職禮裝",
 		"require": [],
 		"evd": 0,
@@ -44,7 +44,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "合金外套",
 		"require": [],
 		"evd": 0,
@@ -55,7 +55,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔術披風",
 		"require": [],
 		"evd": 0,
@@ -66,7 +66,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "緊身衣",
 		"require": [],
 		"evd": 1,
@@ -77,7 +77,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔法師套裝",
 		"require": [
 			"魔導系"
@@ -90,7 +90,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈伐外套",
 		"require": [],
 		"evd": 0,
@@ -101,7 +101,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "風衣",
 		"require": [],
 		"evd": 0,
@@ -112,7 +112,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "防術背心",
 		"require": [],
 		"evd": 1,
@@ -123,7 +123,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "退魔禮裝",
 		"require": [],
 		"evd": 0,
@@ -134,7 +134,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "聖別防衣",
 		"require": [],
 		"evd": 0,
@@ -145,7 +145,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "防彈衣",
 		"require": [],
 		"evd": 0,
@@ -156,7 +156,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈力胸甲",
 		"require": [
 			"戰鬥系"
@@ -169,7 +169,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "行動防彈衣",
 		"require": [
 			"戰鬥系",
@@ -183,7 +183,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈毛衣",
 		"require": [],
 		"evd": 0,
@@ -194,7 +194,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "對魔術背心",
 		"require": [],
 		"evd": 0,
@@ -205,7 +205,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔術補強大衣",
 		"require": [
 			"魔導系"
@@ -218,7 +218,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "裝甲外套",
 		"require": [],
 		"evd": 0,
@@ -229,7 +229,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "強化衣",
 		"require": [
 			"戰鬥系",
@@ -243,7 +243,7 @@
 		"effect": "［裝備］中，1輪1次，【體力】判定的達成值獲得+5修正。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "反應裝甲",
 		"require": [
 			"戰鬥系"
@@ -256,7 +256,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈毛大衣",
 		"require": [],
 		"evd": 0,
@@ -267,7 +267,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，【行動值】獲得+5修正。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "碳素結晶大衣",
 		"require": [],
 		"evd": 0,
@@ -278,7 +278,7 @@
 		"effect": "［裝備］中，受到的［屬性：電擊、魔毒］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "留魂之衣",
 		"require": [
 			"魔導系"
@@ -291,7 +291,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "咒帶輕甲",
 		"require": [
 			"戰鬥系",
@@ -305,7 +305,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "液態裝甲",
 		"require": [
 			"戰鬥系",
@@ -319,7 +319,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "執行者之衣",
 		"require": [
 			"戰鬥系",
@@ -333,7 +333,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "特工服裝",
 		"require": [
 			"戰鬥系"
@@ -346,7 +346,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "生化皮膚套裝",
 		"require": [
 			"龍脈承載者"
@@ -359,7 +359,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "電磁裝甲",
 		"require": [
 			"戰鬥系"
@@ -372,7 +372,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "試做型外骨骼",
 		"require": [
 			"戰鬥系"
@@ -385,7 +385,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "退魔鎧",
 		"require": [
 			"戰鬥系"
@@ -398,7 +398,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "聖騎士的僧衣",
 		"require": [
 			"戰鬥系",
@@ -412,7 +412,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "變化合金",
 		"require": [
 			"龍脈承載者"
@@ -425,7 +425,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "特殊戰鬥服",
 		"require": [
 			"泛用系"
@@ -438,7 +438,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "決鬥禮裝",
 		"require": [
 			"魔導系"
@@ -451,7 +451,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "咒解裝甲",
 		"require": [],
 		"evd": 0,
@@ -462,7 +462,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神秘鎖子甲",
 		"require": [
 			"戰鬥系"
@@ -475,7 +475,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "封神鬥衣",
 		"require": [
 			"封神"
@@ -488,7 +488,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "皇家歌德套裝",
 		"require": [
 			"夜魔"
@@ -501,7 +501,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "大妖怪的靈衣",
 		"require": [
 			"半妖"
@@ -514,7 +514,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "真理的大衣",
 		"require": [
 			"魔術師"
@@ -527,7 +527,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "龍鱗帷子",
 		"require": [
 			"龍王"
@@ -540,7 +540,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "古代的大鎧",
 		"require": [
 			"英魂"
@@ -553,7 +553,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神衣",
 		"require": [
 			"神靈"
@@ -566,7 +566,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "超越格鬥特裝",
 		"require": [
 			"天帝之手"
@@ -579,7 +579,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神秘皮革連身衣",
 		"require": [
 			"契約馭士"
@@ -592,7 +592,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "言魂的法衣",
 		"require": [
 			"聖語詠唱者"
@@ -605,7 +605,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "數碼套裝",
 		"require": [
 			"數碼異術士"
@@ -618,7 +618,7 @@
 		"effect": "［裝備］中，視為滿足［稱號：數碼異術士］的《稱號天賦》的使用條件。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA毒蛇",
 		"require": [
 			"改造人"
@@ -631,7 +631,7 @@
 		"effect": "［裝備］中，1輪1次，［攻擊行動］的［距離／對象］變為［5格／範圍］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA迅雷",
 		"require": [
 			"改造人"
@@ -644,7 +644,7 @@
 		"effect": "［裝備］中，1輪1次，在［時機：攻擊］後無視［接近狀態］移動2格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA金甲蟲",
 		"require": [
 			"改造人"
@@ -657,7 +657,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "邪視靈衣",
 		"require": [
 			"魔眼"
@@ -670,7 +670,7 @@
 		"effect": "［裝備］中，1輪1次，在使用［種族：魔眼／時機：攻擊］的《種族天賦》時，［主動判定］的達成值+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "異界戰衣",
 		"require": [
 			"英魂",
@@ -684,7 +684,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "明光鎧",
 		"require": [],
 		"evd": 0,
@@ -695,7 +695,7 @@
 		"effect": "［裝備］中，受到［屬性：磁力、閃光］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "血戰裝衣",
 		"require": [],
 		"evd": 0,
@@ -706,7 +706,7 @@
 		"effect": "［裝備］中，消耗1次［開始］及3點【生命力】，在1場戰鬥中，［物理傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "隱者兜帽",
 		"require": [],
 		"evd": 1,
@@ -717,7 +717,7 @@
 		"effect": "［裝備］中，1場戰鬥（場景）1次，對象在1場戰鬥（場景）中，即便位於周遭沒有［障礙物］的格子（場所）也能變為［狀態變化：隱密］（視為［行為：隱身／達成值：15］）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈力緊身衣",
 		"require": [],
 		"evd": 0,
@@ -728,7 +728,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面±2（也能同1個［靈力］±4，無法變為0以下、7以上）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "渡界的黑衣",
 		"require": [
 			"英魂",
@@ -742,7 +742,7 @@
 		"effect": "［裝備］中，受到［形狀：斧、錘］的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "全金屬外套",
 		"require": [],
 		"evd": 1,
@@ -753,7 +753,7 @@
 		"effect": "［裝備］中，【精神】及【抵抗】判定的達成值+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "護靈髮衣",
 		"require": [],
 		"evd": 0,
@@ -764,7 +764,7 @@
 		"effect": "［裝備］中，使用【幸運】的［行為］的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "極戰裝衣",
 		"require": [
 			"戰鬥系",
@@ -778,7 +778,7 @@
 		"effect": "［裝備］中，消耗1次［開始］及5點【生命力】，1場戰鬥中，在［傷害計算］時+4。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "電腦控制套裝",
 		"require": [
 			"數碼異術士"
@@ -791,7 +791,7 @@
 		"effect": "［裝備］中，視為滿足［稱號：數碼異術士］的《稱號天賦》的使用條件。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA蝗蟲",
 		"require": [
 			"改造人"
@@ -804,7 +804,7 @@
 		"effect": "［裝備］中，無視「立足點不好的場所」所致的懲罰。\n此外，1輪1次，藉由消耗1次［開始］來移動2格（［接近狀態］的話則無法移動）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA暴風雨",
 		"require": [
 			"改造人"
@@ -817,7 +817,7 @@
 		"effect": "［裝備］中，以［肉搏武器］進行［攻擊行動］的［物理傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "妖精之羽",
 		"require": [],
 		"evd": 1,
@@ -828,7 +828,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，消耗1次［開始］，能使［距離：5格／對象：1體］的【行動值】-1D（最低為1）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "白絲威",
 		"require": [],
 		"evd": 0,
@@ -839,7 +839,7 @@
 		"effect": "［裝備］中，【敏捷】的達成值及［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "紅紗威",
 		"require": [],
 		"evd": 1,
@@ -850,7 +850,7 @@
 		"effect": "［裝備］中，【知性】的達成值及［魔法傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "提督大衣",
 		"require": [],
 		"evd": 0,
@@ -861,7 +861,7 @@
 		"effect": "［裝備］中，1場遊戲1次，消耗1次［開始］，能使［距離：戰鬥地帶／對象：戰鬥地帶］的【行動值】與［傷害計算］時+1D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神秘鎧甲",
 		"require": [
 			"戰鬥系",
@@ -875,7 +875,7 @@
 		"effect": "［裝備］中，受到［武器攻擊］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA阿修羅",
 		"require": [
 			"改造人"
@@ -888,7 +888,7 @@
 		"effect": "［裝備］中，1輪1次，獲得①或②其中1項效果。\n①［傷害計算］時+1D。\n②受到的［傷害］-1D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA伊弗利特",
 		"require": [
 			"改造人"
@@ -901,7 +901,7 @@
 		"effect": "［裝備］中，1輪1次，［攻擊行動］的［距離／對象］變為［7格／範圍］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神格裝衣",
 		"require": [
 			"戰鬥系"
@@ -914,7 +914,7 @@
 		"effect": "［裝備］中，消耗1次［開始］及3點【靈紋】，1場戰鬥中，在［傷害計算］時+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "唐皮鎧",
 		"require": [
 			"戰鬥系",
@@ -928,7 +928,7 @@
 		"effect": "［裝備］中，受到［形狀：射擊］的［物理傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "無貌的長袍",
 		"require": [],
 		"evd": 0,
@@ -939,7 +939,7 @@
 		"effect": "［裝備］中，向［種類：混沌］進行［傷害計算］時［階級］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "龍鱗甲",
 		"require": [
 			"戰鬥系",
@@ -953,7 +953,7 @@
 		"effect": "［裝備］中，受到的［魔法傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈力動盔甲",
 		"require": [
 			"戰鬥系",
@@ -967,7 +967,7 @@
 		"effect": "［裝備］中，1輪1次，在［時機：準備］前無視［接近狀態］移動2格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "楯無鎧",
 		"require": [
 			"戰鬥系"
@@ -980,7 +980,7 @@
 		"effect": "［裝備］中，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈威裝束",
 		"require": [],
 		"evd": 0,
@@ -991,7 +991,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "傳統禮裝",
 		"require": [],
 		"evd": 0,
@@ -1002,7 +1002,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "強化緊身衣",
 		"require": [],
 		"evd": 1,
@@ -1013,7 +1013,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "忍裝束",
 		"require": [
 			"黑暗追獵者"
@@ -1026,7 +1026,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［行為：隱身］的達成值+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "對神戰外套",
 		"require": [
 			"無雙戰將"
@@ -1039,7 +1039,7 @@
 		"effect": "［裝備］中，［形狀：射擊］的［物理傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "渡時的大衣",
 		"require": [
 			"時空魔導師"
@@ -1052,7 +1052,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，到該輪的［結束］為止【行動值】+1D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "搜索者背心",
 		"require": [],
 		"evd": 1,
@@ -1063,7 +1063,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，即便以［時機：準備］進行［⑦：使用道具］也不會消耗［準備］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "深綠的外套",
 		"require": [],
 		"evd": 0,
@@ -1074,7 +1074,7 @@
 		"effect": "［裝備］中，受到［屬性：風壓、幻覺］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈毛半纏",
 		"require": [],
 		"evd": 0,
@@ -1085,7 +1085,7 @@
 		"effect": "［裝備］中，受到［屬性：火炎、寒氣］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "英知的白衣",
 		"require": [],
 		"evd": 0,
@@ -1096,7 +1096,7 @@
 		"effect": "［裝備］中，【知性】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魅惑術衣",
 		"require": [],
 		"evd": 0,
@@ -1107,7 +1107,7 @@
 		"effect": "［裝備］中，【精神】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔忍戰衣",
 		"require": [
 			"黑暗追獵者"
@@ -1120,7 +1120,7 @@
 		"effect": "［裝備］中，【敏捷】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "竹甲",
 		"require": [],
 		"evd": 0,
@@ -1131,7 +1131,7 @@
 		"effect": "［裝備］中，受到［形狀：劍、槍、射擊］的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈威大衣",
 		"require": [],
 		"evd": 0,
@@ -1142,7 +1142,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "簡易強化服",
 		"require": [],
 		"evd": 0,
@@ -1153,7 +1153,7 @@
 		"effect": "［裝備］中，【體力】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "變化之衣",
 		"require": [],
 		"evd": 1,
@@ -1164,7 +1164,7 @@
 		"effect": "［裝備］中，1個場景1次，對象可以變身為任意人物的姿態（［行為：偽裝／達成值：15］），持續1個場景，此效果可以拒絕）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "時空靈衣",
 		"require": [
 			"時空魔導師"
@@ -1177,7 +1177,7 @@
 		"effect": "［裝備］中，1輪1次，到該輪的［結束］為止【行動值】+1D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "戰術外套",
 		"require": [],
 		"evd": 0,
@@ -1188,7 +1188,7 @@
 		"effect": "［裝備］中，受到的［形狀：射擊］的［物理傷害］-2。此外，1場戰鬥（場景）1次，即便以［時機：準備］進行［⑦：使用道具］也不會消耗［準備］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神力夾克",
 		"require": [],
 		"evd": 0,
@@ -1199,7 +1199,7 @@
 		"effect": "［裝備］中，1場戰鬥（場景）1次，受到的［物理傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "特殊防彈服",
 		"require": [],
 		"evd": 0,
@@ -1210,7 +1210,7 @@
 		"effect": "［裝備］中，1輪1次，受到［形狀：射擊］的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "陸地武士系統",
 		"require": [
 			"無雙戰將"
@@ -1223,7 +1223,7 @@
 		"effect": "［裝備］中，［稱號：無雙戰將］的《稱號天賦》在［傷害計算］時+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "黑紗威",
 		"require": [],
 		"evd": 1,
@@ -1234,7 +1234,7 @@
 		"effect": "［裝備］中，【體力】判定的達成值及［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "永劫衣",
 		"require": [
 			"時空魔導師"
@@ -1247,7 +1247,7 @@
 		"effect": "［裝備］中，1場遊戲1次，［稱號：時空魔導師］的《稱號天賦》任1個［代價］視為已消耗。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神獸的皮衣",
 		"require": [],
 		"evd": 1,
@@ -1258,7 +1258,7 @@
 		"effect": "［裝備］中，1場戰鬥（場景）1次，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "筋肉套裝",
 		"require": [],
 		"evd": 1,
@@ -1269,7 +1269,7 @@
 		"effect": "［裝備］中，【體力】及【敏捷】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "青紗威",
 		"require": [],
 		"evd": 0,
@@ -1280,7 +1280,7 @@
 		"effect": "［裝備］中，【精神】判定的達成值及［魔法傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神威防護套裝",
 		"require": [
 			"無雙戰將"
@@ -1293,7 +1293,7 @@
 		"effect": "［裝備］中，受到［形狀：劍、斧、射擊］的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "戰術套裝",
 		"require": [
 			"戰鬥系"
@@ -1306,7 +1306,7 @@
 		"effect": "［裝備］中，受到的［形狀：射擊］的［物理傷害］-5。此外，1場戰鬥（場景）1次，即便以［時機：準備］進行［⑦：使用道具］也不會消耗［準備］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "夢幻的羽衣",
 		"require": [],
 		"evd": 0,
@@ -1317,7 +1317,7 @@
 		"effect": "［裝備］中，受到［種類：魔獸、怪蟲、幻獸、混沌］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "奈米覆膜套裝",
 		"require": [
 			"戰鬥系"
@@ -1330,7 +1330,7 @@
 		"effect": "［裝備］中，【體力】及【敏捷】判定的達成值及［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "龍宮衣",
 		"require": [],
 		"evd": 1,
@@ -1341,7 +1341,7 @@
 		"effect": "［裝備］中，無視［水中］所致的懲罰。此外，［行為：游泳］的達成值+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "蜘蛛神之衣",
 		"require": [],
 		"evd": 0,
@@ -1352,7 +1352,7 @@
 		"effect": "［裝備］中，［行為：攀登］及［行為：隱身、雜技］的達成值+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "八幡胴鋼",
 		"require": [
 			"戰鬥系"
@@ -1365,7 +1365,7 @@
 		"effect": "［裝備］中，受到［形狀：劍、槍］的［物理傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "光學迷彩服",
 		"require": [
 			"戰鬥系"
@@ -1378,7 +1378,7 @@
 		"effect": "［裝備］中，1場戰鬥（場景）1次，對象在1場戰鬥（場景）中，即便位於周遭沒有［障礙物］的格子（場所）也能變為［狀態變化：隱密］（視為［行為：隱身／達成值：20］）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈力強化骨骼",
 		"require": [
 			"戰鬥系"
@@ -1391,7 +1391,7 @@
 		"effect": "［裝備］中，受到［傷害］-5。此外，獲得［解除：猛毒］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "避來矢",
 		"require": [
 			"戰鬥系"
@@ -1404,7 +1404,7 @@
 		"effect": "［裝備］中，受到［形狀：射擊］的［傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "咒破重甲",
 		"require": [
 			"戰鬥系"
@@ -1417,7 +1417,7 @@
 		"effect": "［裝備］中，受到［魔法傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "大神靈裝",
 		"require": [
 			"戰鬥系"
@@ -1430,7 +1430,7 @@
 		"effect": "［裝備］中，進行［物理攻擊］時［物理階級］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神聖外套",
 		"require": [
 			"戰鬥系"
@@ -1443,7 +1443,7 @@
 		"effect": "［裝備］中，受到［物理傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "強化制服",
 		"require": [
 			"魔導系"
@@ -1456,7 +1456,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈符裝衣",
 		"require": [
 			"魔導系"
@@ -1469,7 +1469,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈衣",
 		"require": [
 			"英魂",
@@ -1483,7 +1483,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "起源靈衣",
 		"require": [
 			"至高元素使"
@@ -1496,7 +1496,7 @@
 		"effect": "［裝備］中，賦有［起源屬性］的［傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "詛咒裝束",
 		"require": [],
 		"evd": -1,
@@ -1507,7 +1507,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，使［距離：戰鬥地帶／對象：1體］的「受到的［傷害］-n」的［追加效果］無效化。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "術式輔助大衣",
 		"require": [
 			"魔導系"
@@ -1520,7 +1520,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［攻擊行動］的［對象］+1體。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "對靈背心",
 		"require": [],
 		"evd": 0,
@@ -1531,7 +1531,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "高位神格衣",
 		"require": [
 			"英魂",
@@ -1545,7 +1545,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "陰陽鬥衣",
 		"require": [],
 		"evd": 1,
@@ -1556,7 +1556,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "皮膜夾克",
 		"require": [],
 		"evd": 0,
@@ -1567,7 +1567,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，【迴避】判定的達成值+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "大馬士革鋼鎧甲",
 		"require": [],
 		"evd": 0,
@@ -1578,7 +1578,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［簡易移動、戰鬥移動］能移動的［距離］+1格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "無名都市裝束",
 		"require": [
 			"半妖",
@@ -1592,7 +1592,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［魔法傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "冷的護符",
 		"require": [],
 		"evd": 0,
@@ -1603,7 +1603,7 @@
 		"effect": "［裝備］中，1場遊戲3次，在［魔境討伐］中，「［時限］進行」的1個骰面結果-1（最低為1）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "空鬼的革鎧",
 		"require": [],
 		"evd": 0,
@@ -1614,7 +1614,7 @@
 		"effect": "［裝備］中，1場遊戲1次，到該輪（場景）的［結束］為止，即便位於周遭沒有［障礙物］的格子（場所）也能變為［狀態變化：隱密］（視為［行為：隱身／達成值：15］）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "生物裝甲",
 		"require": [],
 		"evd": -1,
@@ -1625,7 +1625,7 @@
 		"effect": "［裝備］中，受到［屬性：火炎、電擊］的［傷害］-8。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "奧利哈鋼裝甲",
 		"require": [
 			"戰鬥系"
@@ -1638,7 +1638,7 @@
 		"effect": "［裝備］中，受到［Boss］外［精怪］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "人造神兵",
 		"require": [],
 		"evd": 0,
@@ -1649,7 +1649,7 @@
 		"effect": "［裝備］中，［體型］+2。此外，受到［種類：混沌］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "王之黃衣",
 		"require": [],
 		"evd": 0,
@@ -1660,7 +1660,7 @@
 		"effect": "［裝備］中，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "簡易鬥衣",
 		"require": [
 			"戰鬥系",
@@ -1674,7 +1674,7 @@
 		"effect": "［裝備］中，［物理傷害］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "近代法衣",
 		"require": [
 			"泛用系",
@@ -1688,7 +1688,7 @@
 		"effect": "［裝備］中，1場遊戲1次，【行動值】+1D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "腹卷鎧",
 		"require": [
 			"戰鬥系",
@@ -1702,7 +1702,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，【迴避】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魚鱗甲",
 		"require": [
 			"戰鬥系"
@@ -1715,7 +1715,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "胴丸",
 		"require": [
 			"戰鬥系",
@@ -1729,7 +1729,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，到該輪的［結束］為止【行動值】+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "肌肉胸甲",
 		"require": [
 			"戰鬥系",
@@ -1743,7 +1743,7 @@
 		"effect": "［裝備］中，1輪1次，進行［物理攻擊］時，［物理傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "當世具足",
 		"require": [
 			"戰鬥系",
@@ -1757,7 +1757,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，到該輪的［結束］為止【行動值】+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "高級哥特式板甲",
 		"require": [
 			"戰鬥系"
@@ -1770,7 +1770,7 @@
 		"effect": "［裝備］中，受到「［名稱］內標有「×n」的精怪」的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "馬克西米利安裝甲",
 		"require": [
 			"戰鬥系"
@@ -1783,7 +1783,7 @@
 		"effect": "［裝備］中，受到［Boss］外［精怪］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA阻塞",
 		"require": [
 			"改造人"
@@ -1796,7 +1796,7 @@
 		"effect": "［裝備］中，消耗1次［開始］，不需與［障礙物］相鄰，到該輪的［結束］為止變為［狀態變化：遮蔽］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "吸血之衣",
 		"require": [
 			"夜魔"
@@ -1809,7 +1809,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［傷害計算］後［回復］10點【生命力】。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "錦蝶",
 		"require": [
 			"半妖"
@@ -1822,7 +1822,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面±1（也能同1個［靈力］±2。無法變為0以下、7以上）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "詠唱導衣",
 		"require": [
 			"魔術師"
@@ -1835,7 +1835,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［魔法攻擊］的［對象］+1體"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA鋼砦",
 		"require": [
 			"改造人"
@@ -1848,7 +1848,7 @@
 		"effect": "［裝備］中，消耗1次［開始］，［設置］1個【生命力】為20以下的［障礙物］於沒有［角色、障礙物］存在的鄰近1格中。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔性的靈衣",
 		"require": [],
 		"evd": 0,
@@ -1859,7 +1859,7 @@
 		"effect": "［裝備］中，受到［神我狩］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "反射F",
 		"require": [],
 		"evd": 0,
@@ -1870,7 +1870,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［物理傷害］-「【生命力】的最大值-【生命力】的現在值」（最多+15）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "反射M",
 		"require": [],
 		"evd": 0,
@@ -1881,7 +1881,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［魔法傷害］-「【生命力】的最大值-【生命力】的現在值」（最多+15）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "皇帝的靈衣",
 		"require": [],
 		"evd": 1,
@@ -1892,7 +1892,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "天狼之風",
 		"require": [
 			"協會"
@@ -1905,7 +1905,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，【行動值】+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA準心",
 		"require": [
 			"改造人"
@@ -1918,7 +1918,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，以［射擊武器］進行［物理攻擊］的［距離］+3格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA夜輪",
 		"require": [
 			"改造人"
@@ -1931,7 +1931,7 @@
 		"effect": "［裝備］中，以［肉搏武器］進行［物理攻擊］時【命中】判定+1、［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA金剛",
 		"require": [
 			"改造人"
@@ -1944,7 +1944,7 @@
 		"effect": "［裝備］中，以［肉搏武器］進行［物理攻擊］時，［物理傷害］+4。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "破邪禮裝",
 		"require": [],
 		"evd": 0,
@@ -1955,7 +1955,7 @@
 		"effect": "［裝備］中，受到［種類：不死、混沌］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "格擋夾克",
 		"require": [
 			"戰鬥系",
@@ -1969,7 +1969,7 @@
 		"effect": "［裝備］中，1輪1次，成為［距離：接近狀態、移動n格］的［攻擊行動］的［對象］時，［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "退魔大衣",
 		"require": [
 			"連盟",
@@ -1983,7 +1983,7 @@
 		"effect": "［裝備］中，1場遊戲1次，［被動判定］成功後能進行1次［武器攻擊］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "咒裝禮衣",
 		"require": [
 			"泛用系",
@@ -1997,7 +1997,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "百合水仙",
 		"require": [
 			"半妖"
@@ -2010,7 +2010,7 @@
 		"effect": "［裝備］中，1場遊戲1次，3個［靈力］的骰面±1（也能同1個［靈力］±3。無法變為0以下、7以上）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA雙蛇杖",
 		"require": [
 			"改造人"
@@ -2023,7 +2023,7 @@
 		"effect": "［裝備］中，每當［開始、結束］其中1項時，便使［距離：接近狀態／對象：1體］回復2D點【生命力】。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "荒風纏衣",
 		"require": [],
 		"evd": 0,
@@ -2034,7 +2034,7 @@
 		"effect": "［裝備］中，［攻擊行動］的［距離］能變為［移動1格］。\n此外，視為滿足［稱號：契約馭士A］的《稱號天賦》的使用條件。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "黃金鎖鏈",
 		"require": [],
 		"evd": 0,
@@ -2045,7 +2045,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "裝甲套裝",
 		"require": [],
 		"evd": 1,
@@ -2056,7 +2056,7 @@
 		"effect": "［裝備］中，1輪1次，【體力】判定的達成值及［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "黑斗篷",
 		"require": [],
 		"evd": 0,
@@ -2067,7 +2067,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，到該輪的［結束］為止【行動值】+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "板金大衣",
 		"require": [],
 		"evd": 0,
@@ -2078,7 +2078,7 @@
 		"effect": "［裝備］中，受到［武器攻擊］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA夜叉",
 		"require": [
 			"改造人"
@@ -2091,7 +2091,7 @@
 		"effect": "［裝備］中，1輪1次，以［魔法武器］進行［魔法攻擊］時，［魔法傷害］+4。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA鷹眼",
 		"require": [
 			"改造人"
@@ -2104,7 +2104,7 @@
 		"effect": "［裝備］中，1輪1次，以［射擊武器］進行［物理攻擊］時【命中】判定+1、［物理傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "啜血之衣",
 		"require": [
 			"夜魔"
@@ -2117,7 +2117,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［傷害計算］後［回復］20點【生命力】。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "紡魔長袍",
 		"require": [
 			"魔術師"
@@ -2130,7 +2130,7 @@
 		"effect": "［裝備］中，1輪1次，進行［魔法攻擊］時［魔法階級］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "活化劑夾克",
 		"require": [
 			"戰鬥系"
@@ -2143,7 +2143,7 @@
 		"effect": "［裝備］中，使用［道具：消耗］時，使【生命力】受到［回復］的效果+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA星虎",
 		"require": [
 			"改造人"
@@ -2156,7 +2156,7 @@
 		"effect": "［裝備］中，1輪1次，向［距離：接近狀態］的目標進行［物理攻擊］時，［物理階級］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔術防護背心",
 		"require": [],
 		"evd": 1,
@@ -2167,7 +2167,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［魔法傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "高級靈毛服飾",
 		"require": [],
 		"evd": 0,
@@ -2178,7 +2178,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "超動作套裝",
 		"require": [
 			"戰鬥系"
@@ -2191,7 +2191,7 @@
 		"effect": "［裝備］中，【體力】、【敏捷】判定的達成值及［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔術強化大衣",
 		"require": [
 			"魔導系"
@@ -2204,7 +2204,7 @@
 		"effect": "［裝備］中，1輪1次，消耗1次［開始］，能無視［接近狀態］移動1格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "對術背心",
 		"require": [],
 		"evd": 0,
@@ -2215,7 +2215,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "風暴套裝",
 		"require": [],
 		"evd": 1,
@@ -2226,7 +2226,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，到該輪的［結束］為止【行動值】+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "達人套裝",
 		"require": [
 			"魔導系"
@@ -2239,7 +2239,7 @@
 		"effect": "［裝備］中，1輪1次，進行［魔法攻擊］時［魔法傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "靈滅夾克",
 		"require": [],
 		"evd": 0,
@@ -2250,7 +2250,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA旅鷹",
 		"require": [
 			"改造人"
@@ -2263,7 +2263,7 @@
 		"effect": "［裝備］中，1輪1次，消耗1次［開始］，能無視［接近狀態］移動2格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA烈風",
 		"require": [
 			"改造人"
@@ -2276,7 +2276,7 @@
 		"effect": "［裝備］中，1輪1次，［主動判定、被動判定］其中1項成功時，無視［接近狀態］移動2格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA雷擊",
 		"require": [
 			"改造人"
@@ -2289,7 +2289,7 @@
 		"effect": "［裝備］中，1輪1次，以［射擊武器］進行［物理攻擊］時，［物理傷害］+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "飢血之衣",
 		"require": [
 			"夜魔"
@@ -2302,7 +2302,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［傷害計算］後［回復］20點【生命力】。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA殲滅者",
 		"require": [
 			"改造人"
@@ -2315,7 +2315,7 @@
 		"effect": "［裝備］中，以［肉搏武器］進行［物理攻擊］時，［對象］的［裝甲］-5（最低0）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "神力胸甲",
 		"require": [],
 		"evd": 0,
@@ -2326,7 +2326,7 @@
 		"effect": "［裝備］中，受到的［魔法傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "菊花繚亂",
 		"require": [
 			"半妖"
@@ -2339,7 +2339,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面±2（能使2個［靈力］分別±3及±1，也能同1個［靈力］±4，無法變為0以下、7以上）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "全身裝甲",
 		"require": [],
 		"evd": 0,
@@ -2350,7 +2350,7 @@
 		"effect": "［裝備］中，受到［屬性：火炎、寒氣、風壓、魔毒］的［傷害］-10。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "鎧化防衣",
 		"require": [],
 		"evd": 0,
@@ -2361,7 +2361,7 @@
 		"effect": "［裝備］中，受到的［物理傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "反射X",
 		"require": [],
 		"evd": 0,
@@ -2372,7 +2372,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［傷害］-「【生命力】的最大值-【生命力】的現在值」（最多+15）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "破神裝衣",
 		"require": [
 			"始源滅殺者"
@@ -2385,7 +2385,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「4」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "龍血",
 		"require": [
 			"龍脈承載者"
@@ -2398,7 +2398,7 @@
 		"effect": "［裝備］中，使用《結晶變身》或《結晶裝備》時，［裝甲］及［結界］+3（即便同時使用《結晶變身》及《結晶裝備》，效果也不會累積）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "曉之鍊衣",
 		"require": [
 			"黑暗追獵者"
@@ -2411,7 +2411,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「2」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "萬象奏",
 		"require": [
 			"至高元素使"
@@ -2424,7 +2424,7 @@
 		"effect": "［裝備］中，1輪1次，賦有［起源屬性A、B］其中1項的場合，進行［傷害計算］時［階級］+1。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "阿迦奢長袍",
 		"require": [
 			"太古魔法使"
@@ -2437,7 +2437,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「6」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "代碼環面儀",
 		"require": [
 			"數碼異術士"
@@ -2450,7 +2450,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「1」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "無雙力帶",
 		"require": [
 			"天帝之手"
@@ -2463,7 +2463,7 @@
 		"effect": "［裝備］中，［空手］的［物理傷害］+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "夜行之衣",
 		"require": [
 			"契約馭士"
@@ -2476,7 +2476,7 @@
 		"effect": "［裝備］中，標有［距離：移動n格］的［武器］或［契約神獸］的［攻擊行動］的［傷害］+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "誓言神衣",
 		"require": [
 			"聖語詠唱者"
@@ -2489,7 +2489,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「3」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "帝國套裝",
 		"require": [
 			"無雙戰將"
@@ -2502,7 +2502,7 @@
 		"effect": "［裝備］中，1場遊戲1次，2個［靈力］的骰面變為「5」。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "力量維度",
 		"require": [
 			"時空魔導師"
@@ -2515,7 +2515,7 @@
 		"effect": "［裝備］中，1場遊戲1次，給予［距離：戰鬥地帶／對象：1體］1個［超越靈力］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "鍊金・靈鎧",
 		"require": [],
 		"evd": 0,
@@ -2526,7 +2526,7 @@
 		"effect": "［裝備］中，受到［精怪］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "鍊金法衣",
 		"require": [
 			"終創鍊金士"
@@ -2539,7 +2539,7 @@
 		"effect": "［裝備］中，［魔法傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA鐵人",
 		"require": [
 			"改造人"
@@ -2552,7 +2552,7 @@
 		"effect": "［裝備］中，受到［距離：接近狀態］以外的［傷害］-3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "黑翼衣",
 		"require": [
 			"噬魂咒者"
@@ -2565,7 +2565,7 @@
 		"effect": "［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "改造胴衣",
 		"require": [
 			"神技操者"
@@ -2578,7 +2578,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，【迴避】判定的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA戰鬼",
 		"require": [
 			"改造人"
@@ -2591,7 +2591,7 @@
 		"effect": "［裝備］中，以［肉搏武器］進行［攻擊行動］的［傷害］+3。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "魔術徒弟衣",
 		"require": [
 			"魔術師",
@@ -2605,7 +2605,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，使［距離：7格／對象：1體］的2個［靈力］±1（也能同1個［靈力］±2。無法變為0以下、7以上）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "近代魔術兵裝",
 		"require": [
 			"魔術師",
@@ -2619,7 +2619,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，消耗1次［開始］，使［距離：7格／對象：1體］的【行動值】-2D（最低1）。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "強襲鎧",
 		"require": [
 			"稀人"
@@ -2632,7 +2632,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，變為［狀態變化：強襲］。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "二重鳶",
 		"require": [
 			"泛用系",
@@ -2646,7 +2646,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，消耗1次［開始］，無視［接近狀態］移動2格。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "黑神的外套",
 		"require": [
 			"噬魂咒者"
@@ -2659,7 +2659,7 @@
 		"effect": "［裝備］中，1場遊戲1次，【行動值】+2D。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "織女的和服",
 		"require": [],
 		"evd": 0,
@@ -2670,7 +2670,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA護衛",
 		"require": [
 			"改造人"
@@ -2683,7 +2683,7 @@
 		"effect": "［裝備］中，受到［距離：接近狀態］以外的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "幻獸鎧",
 		"require": [
 			"稀人"
@@ -2696,7 +2696,7 @@
 		"effect": "［裝備］中，受到［屬性：火炎、電擊、魔毒］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "六芒星之鎧",
 		"require": [
 			"稀人"
@@ -2709,7 +2709,7 @@
 		"effect": "［裝備］中，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "墮天之衣",
 		"require": [
 			"噬魂咒者"
@@ -2722,7 +2722,7 @@
 		"effect": "［裝備］中，給予［精怪］的［物理傷害］+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "退魔白衣",
 		"require": [],
 		"evd": 0,
@@ -2733,7 +2733,7 @@
 		"effect": "［裝備］中，使用［道具：消耗］的［回復］效果+5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "道士的靈裝",
 		"require": [],
 		"evd": 1,
@@ -2744,7 +2744,7 @@
 		"effect": "［裝備］中，受到［距離：接近狀態］的［傷害］-5。"
 	},
 	{
-		"type": "armor-鎧",
+		"type": "protector-鎧",
 		"name": "AA愛國者",
 		"require": [
 			"改造人"
@@ -2757,7 +2757,7 @@
 		"effect": "［裝備］中，受到［距離：接近狀態］以外的［傷害］-10。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "盾牌",
 		"require": [],
 		"equip": "one-hand",
@@ -2769,7 +2769,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "三角盾",
 		"require": [
 			"戰鬥系"
@@ -2783,7 +2783,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "手甲",
 		"require": [
 			"戰鬥系"
@@ -2797,7 +2797,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "防彈盾牌",
 		"require": [
 			"戰鬥系"
@@ -2811,7 +2811,7 @@
 		"effect": "［裝備］中，「極度昏暗的場所」所致的懲罰無效化。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鏡之盾",
 		"require": [
 			"戰鬥系",
@@ -2826,7 +2826,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鬥士的手甲",
 		"require": [
 			"戰鬥系"
@@ -2840,7 +2840,7 @@
 		"effect": "［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "邪眼之盾",
 		"require": [
 			"戰鬥系",
@@ -2855,7 +2855,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "靈力偏轉盾",
 		"require": [],
 		"equip": "one-hand",
@@ -2867,7 +2867,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "不屈之盾",
 		"require": [
 			"戰鬥系"
@@ -2881,7 +2881,7 @@
 		"effect": "［裝備］中，【生命力】獲得+10修正。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鬥牛士紅布",
 		"require": [],
 		"equip": "one-hand",
@@ -2893,7 +2893,7 @@
 		"effect": "［裝備］中，1輪1次，成為［距離：接近狀態、移動n格］的［攻擊行動］的［對象］時，【迴避】判定的達成值+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "圓盾",
 		"require": [],
 		"equip": "one-hand",
@@ -2905,7 +2905,7 @@
 		"effect": "［裝備］中，1輪1次，【迴避】判定的達成值+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔力的手甲",
 		"require": [
 			"泛用系",
@@ -2920,7 +2920,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "以太之門",
 		"require": [
 			"戰鬥系"
@@ -2934,7 +2934,7 @@
 		"effect": "［裝備］中，1輪1次，成為［距離：接近狀態、移動n格］的［攻擊行動］的［對象］時，［被動判定］的達成值+1"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "決鬥盾",
 		"require": [
 			"戰鬥系",
@@ -2949,7 +2949,7 @@
 		"effect": "［裝備］中，進行［物理攻擊］時［物理傷害］+3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "騎士盾",
 		"require": [
 			"戰鬥系"
@@ -2963,7 +2963,7 @@
 		"effect": "無"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "力之手甲",
 		"require": [],
 		"equip": "one-hand",
@@ -2975,7 +2975,7 @@
 		"effect": "［裝備］中，【體力】判定的達成值+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鋸盾",
 		"require": [
 			"戰鬥系"
@@ -2989,7 +2989,7 @@
 		"effect": "［裝備］中，進行［物理攻擊］時［物理傷害］+4。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "巨人之盾",
 		"require": [
 			"戰鬥系"
@@ -3003,7 +3003,7 @@
 		"effect": "［裝備］中，對象的［體型］+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔法生物的夥伴",
 		"require": [
 			"泛用系",
@@ -3018,7 +3018,7 @@
 		"effect": "只有同時［裝備］著［名稱］中包含「魔法生物」一詞的［魔法武器］時，1輪1次，進行［魔法攻擊］時［對象］+1體。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "補助媒介",
 		"require": [
 			"泛用系",
@@ -3033,7 +3033,7 @@
 		"effect": "當［補助媒介］與原本［價格］為［1000G］以下的［魔法武器］同時［裝備］中，［魔法攻擊］的［距離］+1格。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "戰鬥媒介",
 		"require": [
 			"泛用系",
@@ -3048,7 +3048,7 @@
 		"effect": "當［戰鬥媒介］與原本［價格］為［1000G］以下的［魔法武器］同時［裝備］中，［魔法傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "守護識神",
 		"require": [
 			"魔術師",
@@ -3063,7 +3063,7 @@
 		"effect": "［裝備］中，1輪（場景）1次，【體力】及【敏捷】判定的達成值+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "攻擊式鬼",
 		"require": [
 			"魔術師",
@@ -3078,7 +3078,7 @@
 		"effect": "［裝備］中，進行［攻擊行動］的［傷害計算］時+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鐵鞘",
 		"require": [
 			"戰鬥系"
@@ -3092,7 +3092,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "羅馬圓盾",
 		"require": [],
 		"equip": "one-hand",
@@ -3104,7 +3104,7 @@
 		"effect": "［裝備］中，1輪1次，受到［距離：接近狀態］的［物理攻擊］時，【迴避】判定+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "藤牌",
 		"require": [
 			"戰鬥系",
@@ -3119,7 +3119,7 @@
 		"effect": "與［羅欽］同時［裝備］中，【迴避】判定的達成值+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "祝福的十字架",
 		"require": [],
 		"equip": "one-hand",
@@ -3131,7 +3131,7 @@
 		"effect": "［裝備］中，1輪1次，受到［種類：不死、混沌］的［傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "蠻牌",
 		"require": [
 			"戰鬥系"
@@ -3145,7 +3145,7 @@
 		"effect": "［裝備］中，1輪1次，受到［距離：接近狀態］以外的［物理攻擊］時，［裝甲］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔法生物的朋友",
 		"require": [
 			"泛用系",
@@ -3160,7 +3160,7 @@
 		"effect": "只有同時［裝備］著［名稱］中包含「魔法生物」、「吉祥物」一詞的［魔法武器］時，1輪1次，進行［魔法攻擊］時［對象］+1體。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "分析手甲",
 		"require": [],
 		"equip": "one-hand",
@@ -3172,7 +3172,7 @@
 		"effect": "［裝備］中，視為［裝備］著［限制：數碼異術士］的［道具］。\n此外，1場戰鬥1次，［識別【知性】］的達成值+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "仇恨吸收者",
 		"require": [
 			"戰鬥系"
@@ -3186,7 +3186,7 @@
 		"effect": "［裝備］中，1輪1次，消耗1次［開始］，能使［Boss］外［距離：接近狀態／對象：1體］的［精怪］的［智能］到下輪的［結束］為止變為「低」。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "八卦鏡",
 		"require": [],
 		"equip": "one-hand",
@@ -3198,7 +3198,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "赤鏽釘牆盾",
 		"require": [
 			"戰鬥系"
@@ -3212,7 +3212,7 @@
 		"effect": "［裝備］中，1場遊戲1次，使進行［傷害計算］的［距離：接近狀態／對象：1體］消耗1D點【生命力】。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "疾風的鐵鞘",
 		"require": [
 			"戰鬥系"
@@ -3226,7 +3226,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鞘盾",
 		"require": [
 			"戰鬥系"
@@ -3240,7 +3240,7 @@
 		"effect": "與［形狀：劍、槍／用法：單手］的［肉搏武器］同時［裝備］中，也能適用《單手武器集中》的效果。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "七難護符",
 		"require": [
 			"魔導系"
@@ -3254,7 +3254,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［傷害］-1D（最低0）。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "交叉領域",
 		"require": [
 			"戰鬥系"
@@ -3268,7 +3268,7 @@
 		"effect": "［裝備］中，1輪1次，［攻擊行動］的［距離］變為［2格］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "高位識神",
 		"require": [
 			"魔術師",
@@ -3283,7 +3283,7 @@
 		"effect": "［裝備］中，1輪（場景）1次，【主能力值】判定的達成值+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "豪華刀鞘",
 		"require": [
 			"戰鬥系"
@@ -3297,7 +3297,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔法生物的戰友",
 		"require": [
 			"泛用系",
@@ -3312,7 +3312,7 @@
 		"effect": "只有同時［裝備］著［名稱］中包含「魔法生物」、「吉祥物」一詞的［魔法武器］時，1輪1次，［魔法攻擊］的［對象］+1體。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "增強媒介",
 		"require": [
 			"泛用系",
@@ -3327,7 +3327,7 @@
 		"effect": "當［增強媒介］與原本［價格］為［3000G］以下的［魔法武器］同時［裝備］中，［魔法攻擊］的［距離］+2格。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "資料庫手甲",
 		"require": [
 			"戰鬥系"
@@ -3341,7 +3341,7 @@
 		"effect": "［裝備］中，視為［裝備］著［限制：數碼異術士］的［道具］。\n此外，1場戰鬥1次，【知性】判定的達成值+4。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "詛咒的魁儡",
 		"require": [
 			"魔術師"
@@ -3355,7 +3355,7 @@
 		"effect": "［裝備］中，1輪1次，［攻擊行動］的［對象］+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "迅雷的鐵鞘",
 		"require": [
 			"戰鬥系"
@@ -3369,7 +3369,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "槍盾",
 		"require": [],
 		"equip": "one-hand",
@@ -3381,7 +3381,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，變為［狀態變化：強襲］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "強襲媒介",
 		"require": [
 			"魔術師",
@@ -3396,7 +3396,7 @@
 		"effect": "當［強襲媒介］與原本［價格］為［3000G］以下的［魔法武器］同時［裝備］中，［魔法傷害］+3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "霧之盾",
 		"require": [
 			"戰鬥系"
@@ -3410,7 +3410,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，使用1個具有［回復］效果的［道具：消耗］時，［距離／對象］變為［接近狀態／範圍］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "上級式鬼",
 		"require": [
 			"魔術師"
@@ -3424,7 +3424,7 @@
 		"effect": "［裝備］中，進行［攻擊行動］的［傷害計算］時+3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "心神戰吼",
 		"require": [
 			"戰鬥系"
@@ -3438,7 +3438,7 @@
 		"effect": "［裝備］中，消耗1次［開始］及［準備］，能使［Boss］外［距離：接近狀態／對象：1體］的［精怪］的［智能］到下輪的［結束］為止變為「低」。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "特製鐵鞘",
 		"require": [
 			"戰鬥系"
@@ -3452,7 +3452,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "提燈盾",
 		"require": [],
 		"equip": "one-hand",
@@ -3464,7 +3464,7 @@
 		"effect": "［裝備］中，［極度昏暗的場所］所致的懲罰無效化。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "斯巴達盾",
 		"require": [],
 		"equip": "one-hand",
@@ -3476,7 +3476,7 @@
 		"effect": "［裝備］中，1輪1次，進行［物理攻擊］時［物理階級］+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "靈力人偶",
 		"require": [],
 		"equip": "one-hand",
@@ -3488,7 +3488,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "靈壁戒指",
 		"require": [],
 		"equip": "one-hand",
@@ -3500,7 +3500,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "吉祥物的夥伴",
 		"require": [],
 		"equip": "one-hand",
@@ -3512,7 +3512,7 @@
 		"effect": "只有同時［裝備］著［名稱］中包含「吉祥物」一詞的［魔法武器］時，［魔法攻擊］的［對象］+1體。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鐵環",
 		"require": [
 			"戰鬥系"
@@ -3526,7 +3526,7 @@
 		"effect": "［裝備］中，向［距離：接近狀態］的目標進行［物理攻擊］時，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "防護木偶",
 		"require": [],
 		"equip": "one-hand",
@@ -3538,7 +3538,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［魔法傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "吉祥物的摯友",
 		"require": [],
 		"equip": "one-hand",
@@ -3550,7 +3550,7 @@
 		"effect": "只有同時［裝備］著［名稱］中包含「吉祥物」一詞的［魔法武器］時，［魔法攻擊］的［對象］+1體。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "改造鐵鞘",
 		"require": [
 			"戰鬥系",
@@ -3565,7 +3565,7 @@
 		"effect": "與［肉搏武器／形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鋼環",
 		"require": [
 			"戰鬥系"
@@ -3579,7 +3579,7 @@
 		"effect": "［裝備］中，向［距離：接近狀態］的目標進行［物理攻擊］時，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "守護戒指",
 		"require": [
 			"魔導系"
@@ -3593,7 +3593,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［物理傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "真紅的鐵鞘",
 		"require": [
 			"戰鬥系"
@@ -3607,7 +3607,7 @@
 		"effect": "與［肉搏武器／形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "疾拔的鐵鞘",
 		"require": [
 			"泛用系"
@@ -3621,7 +3621,7 @@
 		"effect": "與［肉搏武器／形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "銀之盾",
 		"require": [
 			"騎士團"
@@ -3635,7 +3635,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，使進行［魔法傷害］的［距離：戰鬥地帶／對象：1體］受到［生命力傷害：2D／不可被動］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鋼鐵手套",
 		"require": [
 			"戰鬥系"
@@ -3649,7 +3649,7 @@
 		"effect": "此［形狀：盾］能與［形狀：武器／用法：雙手］同時［裝備］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "聖靈的十字架",
 		"require": [
 			"騎士團"
@@ -3663,7 +3663,7 @@
 		"effect": "［裝備］中，受到［不死、混沌］的［傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鋼鐵之腕",
 		"require": [
 			"戰鬥系"
@@ -3677,7 +3677,7 @@
 		"effect": "［裝備］中，1輪1次，受到［武器攻擊］的［傷害］-5。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "神靈的鬥牛布",
 		"require": [
 			"戰鬥系"
@@ -3691,7 +3691,7 @@
 		"effect": "［裝備］中，1輪1次，成為［距離：接近狀態、移動n格］的［攻擊行動］的［對象］時，【迴避】判定的達成值+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "古之紋章",
 		"require": [
 			"阿克漢"
@@ -3705,7 +3705,7 @@
 		"effect": "［裝備］中，受到［混沌］的［傷害］-5。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "靈鏡之盾",
 		"require": [
 			"戰鬥系"
@@ -3719,7 +3719,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，使進行［魔法傷害］的［距離：戰鬥地帶／對象：1體］受到［生命力傷害：2D／不可被動］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "絢爛之鞘",
 		"require": [],
 		"equip": "one-hand",
@@ -3731,7 +3731,7 @@
 		"effect": "與［肉搏武器／形狀：劍］的［武器］同時［裝備］中，［物理傷害］+3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "鍊金・靈盾",
 		"require": [],
 		"equip": "one-hand",
@@ -3743,7 +3743,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［傷害］-5。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "吸血鞘",
 		"require": [
 			"噬魂咒者"
@@ -3757,7 +3757,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "神的領巾",
 		"require": [
 			"神靈"
@@ -3771,7 +3771,7 @@
 		"effect": "［裝備］中，受到［種類：不死、混沌］的［傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔性的外套",
 		"require": [
 			"夜魔"
@@ -3785,7 +3785,7 @@
 		"effect": "［裝備］中，受到［種類：人型、混沌］的［傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "魔肉之盾",
 		"require": [
 			"魔術師"
@@ -3799,7 +3799,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到的［魔法傷害］-2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "暗器鎖",
 		"require": [
 			"黑暗追獵者"
@@ -3813,7 +3813,7 @@
 		"effect": "［裝備］中，1輪1次，［物理攻擊］的［距離］+2格。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "異界隨從",
 		"require": [
 			"稀人"
@@ -3827,7 +3827,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "大妖怪的一部分",
 		"require": [
 			"半妖"
@@ -3841,7 +3841,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，給予［精怪、神我狩］的［傷害］+5。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "龍鱗",
 		"require": [
 			"龍王"
@@ -3855,7 +3855,7 @@
 		"effect": "此［形狀：盾］能與［形狀：武器／用法：雙手］同時［裝備］。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "龍之眷族",
 		"require": [
 			"龍王"
@@ -3869,7 +3869,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，進行［攻擊行動］時［階級］+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "惡鬼的籠手",
 		"require": [
 			"夜魔"
@@ -3883,7 +3883,7 @@
 		"effect": "［裝備］中，給予［接近狀態］目標的［物理傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "水銀靈線",
 		"require": [
 			"魔術師",
@@ -3898,7 +3898,7 @@
 		"effect": "［裝備］中，1輪1次，受到的［傷害］-3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "大型裝甲",
 		"require": [
 			"改造人"
@@ -3912,7 +3912,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，受到［武器攻擊］的［傷害］-10。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "神刀的鐵鞘",
 		"require": [
 			"封神"
@@ -3926,7 +3926,7 @@
 		"effect": "與［形狀：劍］的［武器］同時［裝備］中，［物理傷害］+3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "浴血重盾",
 		"require": [
 			"英魂"
@@ -3940,7 +3940,7 @@
 		"effect": "［裝備］中，向［種類：人型、混沌］進行［攻擊行動］時，［階級］+1。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "數碼護盾",
 		"require": [
 			"數碼異術士"
@@ -3954,7 +3954,7 @@
 		"effect": "［裝備］中，以［稱號：數碼異術士］的《天賦》進行［魔法攻擊］時，［魔法傷害］+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "爪牙的肉塊",
 		"require": [
 			"魔術師"
@@ -3968,7 +3968,7 @@
 		"effect": "［裝備］中，受到［距離：接近狀態］的［傷害］-3。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "守護神符",
 		"require": [
 			"魔術師",
@@ -3983,7 +3983,7 @@
 		"effect": "［裝備］中，1場戰鬥1次，［被動判定］的達成值+2。"
 	},
 	{
-		"type": "armor-盾",
+		"type": "protector-盾",
 		"name": "活體水銀",
 		"require": [
 			"魔術師",

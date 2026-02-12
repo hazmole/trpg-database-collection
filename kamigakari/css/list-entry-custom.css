@@ -1,13 +1,30 @@
 /*------------------
   Here you can write down those Customize CSS
  ------------------*/
-/* Talent */
-.ListEntry.Talent .TitleCell .title { text-align: left; padding-left:.5rem; }
+/* General Setting */
+.ListEntry .TitleCell .title { text-align: left; padding-left:.5rem; }
+.ListEntry .PrefixIcon { font-family: cursive; }
+.ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
+.ListEntry .BlockCell.w80 { width: 80px; }
+
+ /* Talent */
 .ListEntry.Talent .BlockCell .timing:before { content: "時機"; }
 .ListEntry.Talent .BlockCell .range:before  { content: "距離"; }
 .ListEntry.Talent .BlockCell .target:before { content: "對象"; }
 .ListEntry.Talent .BlockCell .cost:before   { content: "代價"; }
 
+/* Item */
+.ListEntry.Item .BlockCell .equip:before  { content: "部位"; }
+.ListEntry.Item .BlockCell .usage:before  { content: "用途"; }
+.ListEntry.Item .BlockCell .cost:before   { content: "價格"; }
+.ListEntry.Item.accessory  .TitleCell { background: #183311; }
+.ListEntry.Item.sacrament  .TitleCell { background: #2f223f; }
+.ListEntry.Item.consumable .TitleCell { background: #2f223f; }
 
-.ListEntry .PrefixIcon { font-family: cursive; }
-.ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
+/* Item: HunterSets */
+.ListEntry.Item .HunterSet { flex-grow: 1; }
+.ListEntry.Item .HunterSet .content-title { background: #c1c1c1; font-weight: bold; padding: 2px 5px; }
+.ListEntry.Item .HunterSet .content { padding: 2px 5px; padding-left: 10px; border-top: 1px dotted;}
+.ListEntry.Item .HunterSet .content b { font-weight: 500; }
+
+

@@ -1,7 +1,7 @@
-var Parser;
-if(!Parser) Parser = {};
+var CustomParser;
+if(!CustomParser) CustomParser = {};
 
-Parser.talent = function(talent) {
+CustomParser.talent = function(talent) {
   
   const titleModifyStyle = (talent.name.length > 8)? `style="font-size:0.9em;"`: "";
   
@@ -27,22 +27,22 @@ Parser.talent = function(talent) {
     </div>`;
     // ================
     function getCategoryText(){
-      var arr = talent.type.split('-');
-      switch(arr[0]){
-        case "ancestry": arr[0]="種族"; break;
-        case "AS":       arr[0]="稱號"; break;
+      const parts = talent.type.split('-');
+      switch(parts[0]){
+        case "ancestry": parts[0]="種族"; break;
+        case "AS":       parts[0]="稱號"; break;
         case "common":
-          switch(arr[1]){
-            case "ancestry":   arr[0]="共通種族"; arr.length=1; break;
-            case "normal":     arr[0]="共通"; arr.length=1; break;
-            case "advanced5":  arr[0]="高等"; arr[1]="5等"; break;
-            case "advanced10": arr[0]="高等"; arr[1]="10等"; break;
-            case "advanced15": arr[0]="高等"; arr[1]="15等"; break;
-            case "advanced20": arr[0]="高等"; arr[1]="20等"; break;
+          switch(parts[1]){
+            case "ancestry":   parts[0]="共通種族"; parts.length=1; break;
+            case "normal":     parts[0]="共通"; parts.length=1; break;
+            case "advanced5":  parts[0]="高等"; parts[1]="5等"; break;
+            case "advanced10": parts[0]="高等"; parts[1]="10等"; break;
+            case "advanced15": parts[0]="高等"; parts[1]="15等"; break;
+            case "advanced20": parts[0]="高等"; parts[1]="20等"; break;
           }
           break;
       }
-      return `${arr.join('-')}`;
+      return `${parts.join('-')}`;
     }
     function getName(){
       var prefix = "";

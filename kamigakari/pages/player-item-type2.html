@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="./css/list-entry.css">
+<link rel="stylesheet" href="./css/list-entry-custom.css">
+<style>
+	.info-block.type2 { font-size: .9em; margin: 1rem 0; }
+	.SortGroup { margin-bottom: .5rem; }
+</style>
+<div id="ContextBody" class="Page">
+	<h2 id="Name"></h2>
+	<div id="Description" class="info-block type2"></div>
+
+	<div class="SortGroup">
+		<div class="SortPrefix">
+			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<path d="M3 6h18M6 12h12m-9 6h6"></path>
+			</svg>
+			<span>排序</span>
+		</div>
+		<select id="SortingSelect" class="SelectSort" style="min-width: 80px;"></select>
+	</div>
+
+	<div id="DatasContainer" class="Item-list talent"></div>
+</div>

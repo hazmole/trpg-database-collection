@@ -64,6 +64,30 @@ const MAP = {
 			script: 'pages/player-common-talents.js',
 		}},
 
+	"data-item-accessories": {
+		title: "消耗品", handler: 'custom', params: {
+			layout: 'pages/player-item-type1.html',
+			script: 'pages/player-item-type1-accessories.js',
+		}},
+
+	"data-item-consumables": {
+		title: "消耗品", handler: 'custom', params: {
+			layout: 'pages/player-item-type2.html',
+			script: 'pages/player-item-type2-consumables.js',
+		}},
+
+	"data-item-sacraments": {
+		title: "常備品", handler: 'custom', params: {
+			layout: 'pages/player-item-type2.html',
+			script: 'pages/player-item-type2-sacraments.js',
+		}},
+
+	"data-item-hunter-sets": {
+		title: "探索者套裝", handler: 'custom', params: {
+			layout: 'pages/player-item-hunter-sets.html',
+			script: 'pages/player-item-hunter-sets.js',
+		}},
+
 	"doc-core-gamerule-conditions": {
 		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
 

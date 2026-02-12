@@ -58,7 +58,6 @@
 	width: 60px;
 }
 .ListEntry .BlockCell div {
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	flex-grow: 1;
