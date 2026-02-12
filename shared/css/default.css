@@ -84,8 +84,9 @@ div { flex-shrink: 0; }
 .NavGroupOuter.Unfold > .NavGroupInner { height: auto; }
 
 .NavLink { cursor:pointer; padding:5px 10px; border:1px solid #71757b; }
+.NavLink { text-decoration: none; color: white; }
 .NavLink:hover { background-color:#515055 }
-.NavLink.Active { cursor:inherit; background-color:#515055; }
+.NavLink.Active { background-color:#515055; }
 
 /* Block Loading */
 @keyframes lds-dual-ring {

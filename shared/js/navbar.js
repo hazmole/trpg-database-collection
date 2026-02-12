@@ -25,9 +25,13 @@ class NavBarCtrl {
 		this.elemColle.iframeContext   = document.getElementById("ContentMain");
 
 		// Render
+		const urlParams = new URLSearchParams(window.location.search);
+		const pid = urlParams.get('pid') || undefined;
+
 		this._initMenuToggleBtn();
+		this._initClickListener();
 		this._renderNavBar();
-		this._markElemActive();
+		NavBarCtrl.markElemActive(pid);
 	}
 
 	_initMenuToggleBtn() {
@@ -38,6 +42,19 @@ class NavBarCtrl {
 			if (window.innerWidth <= this.MOBILE_WIDTH) {
 				this.elemColle.menuElem.classList.remove('Unfold');
 			}
+		});
+	}
+
+	_initClickListener() {
+		this.elemColle.menuElem.addEventListener('click', (e) => {
+			const linkElem = e.target.closest('.NavLink');
+			if (!linkElem) return ;
+
+			// Mouse's MiddleBtn || CtrlBtn + Click 
+			if (e.button === 1 || e.ctrlKey || e.metaKey) return ;
+			
+			e.preventDefault();
+			NavBarCtrl.link(linkElem);
 		});
 	}
 
@@ -56,11 +73,12 @@ class NavBarCtrl {
 		function genNavLinkElem(linkItem) {
 			const linkStyle = linkItem.style || "";
 			const attr = [
-				`onClick="NavBarCtrl.link(this)"`,
+				//`onClick="NavBarCtrl.link(this)"`,
+				`href="?pid=${linkItem.pid}"`,
 				`data-pid="${linkItem.pid}"`,
 				`style="${linkStyle}"`,
 			];
-			return `<div class="NavLink" ${attr.join(' ')}">${linkItem.title}</div>`;
+			return `<a class="NavLink" ${attr.join(' ')}">${linkItem.title}</a>`;
 		}
 		function genNavGroupElem(groupItem) {
 			const groupStyle = groupItem.style || "";
@@ -72,17 +90,20 @@ class NavBarCtrl {
 		}
 	}
 
-	_markElemActive(pid) {
+	static activePageBtnElem = null;
+
+	static markElemActive(pid) {
 		const elemArr = document.querySelectorAll(`[data-pid="${pid}"]`);
 		if (!elemArr || elemArr.length <= 0) return ;
 		
 		// toggle Active
 		const elem = elemArr[0];
 		elem.classList.add("Active");
-		if (this.elemColle.activePageBtn) {
-			this.elemColle.activePageBtn.classList.remove("Active");
+		if (NavBarCtrl.activePageBtnElem == elem) return ;
+		if (NavBarCtrl.activePageBtnElem) {
+			NavBarCtrl.activePageBtnElem.classList.remove("Active");
 		}
-		this.elemColle.activePageBtn = elem;
+		NavBarCtrl.activePageBtnElem = elem;
 		
 		// unfold Parent Group
 		let elemPointer = elem;
@@ -99,9 +120,15 @@ class NavBarCtrl {
 		const pid = navLinkElem.attributes["data-pid"].value;
 		const path = window.location.pathname;
 
+		NavBarCtrl.markElemActive(pid);
 		window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, this.SITE_TITLE, path+`?pid=${pid}`);
 		window.dispatchEvent(new CustomEvent('route-change'));
 	}
+
+	static openInTab(navLinkElem) {
+
+	}
+
 	static toggleGroup(elem) {
 		this._toggle(elem.parentElement, "Unfold");
 	}
