@@ -15,6 +15,10 @@ BlockUtils.block = function(){
 	document.body.append(bgElem, iconElem);
 }
 BlockUtils.unblock = function(){
-  document.getElementById('BlockUI-background').remove();
-  document.getElementById('BlockUI-loading-icon').remove();
+  if (document.getElementById('BlockUI-background')) {
+    document.getElementById('BlockUI-background').remove();
+  }
+  if (document.getElementById('BlockUI-loading-icon')) {
+    document.getElementById('BlockUI-loading-icon').remove();
+  }
 }

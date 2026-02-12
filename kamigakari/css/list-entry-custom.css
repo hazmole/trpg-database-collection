@@ -17,6 +17,8 @@
 .ListEntry.Item .BlockCell .equip:before  { content: "部位"; }
 .ListEntry.Item .BlockCell .usage:before  { content: "用途"; }
 .ListEntry.Item .BlockCell .cost:before   { content: "價格"; }
+.ListEntry.Item.weapon     .TitleCell { background: #331111; }
+.ListEntry.Item.protector  .TitleCell { background: #1e446d; }
 .ListEntry.Item.accessory  .TitleCell { background: #183311; }
 .ListEntry.Item.sacrament  .TitleCell { background: #2f223f; }
 .ListEntry.Item.consumable .TitleCell { background: #2f223f; }

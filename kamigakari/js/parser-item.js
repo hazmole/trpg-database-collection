@@ -46,6 +46,7 @@ CustomParser.item = function(itemData) {
 			case "consumable": return getItemsDOMs();
 			case "hunterset":  return getHunterSetDOMs();
 		}
+		return [];
 	}
 	// ======================
 	function getAccessoryDOMs() {

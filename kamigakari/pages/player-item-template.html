@@ -33,16 +33,12 @@
 		width: 100%;
 	}
 </style>
-<div id="ContextHeader" style="gap: 20px; padding-left: 15px;">
-	<div id="Tab-normal"  class="TabItem"><a href="javascript:void(0)">一般道具</a></div>
-	<div id="Tab-relic"   class="TabItem"><a href="javascript:void(0)">神成神器</a></div>
-	<div id="Tab-upgrade" class="TabItem"><a href="javascript:void(0)">追加效果</a></div>
-</div>
+<div id="ContextHeader" style="gap: 20px; padding-left: 15px;"></div>
 <div id="ContextBody" class="Page">
 	<h2 id="Name"></h2>
 	<div id="Description" class="info-block type2"></div>
 
-	<div class="SortGroup">
+	<div id="SortingGroup" class="SortGroup">
 		<div class="SortPrefix">
 			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 				<path d="M3 6h18M6 12h12m-9 6h6"></path>
@@ -52,5 +48,5 @@
 		<select id="SortingSelect" class="SelectSort" style="min-width: 80px;"></select>
 	</div>
 
-	<div id="DatasContainer" class="Item-list talent"></div>
+	<div id="DataContainer" class="Item-list gear"></div>
 </div>

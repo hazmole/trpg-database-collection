@@ -29,8 +29,16 @@ const INDEX = [
 		{ title: "稱號", pid: "data-arm-systems" },
 		{ title: "共通天賦", pid: "data-common-talents" },
 		{ title: "道具", members: [
-			{ title: "武器", pid: "data-item-weapons" },
-			{ title: "防具", pid: "data-item-protectors" },
+			{ title: "武器", members: [
+				{ title: "形狀：劍", pid: "data-item-weapons-sword" },
+				{ title: "形狀：槍", pid: "data-item-weapons-lance" },
+				{ title: "形狀：斧", pid: "data-item-weapons-axe" },
+				{ title: "形狀：錘", pid: "data-item-weapons-hammer" },
+			] },
+			{ title: "防具", members: [
+				{ title: "鎧", pid: "data-item-protectors-armor" },
+				{ title: "盾", pid: "data-item-protectors-shield" },
+			] },
 			{ title: "裝飾", pid: "data-item-accessories" },
 			{ title: "消耗品", pid: "data-item-consumables" },
 			{ title: "常備品", pid: "data-item-sacraments" },
@@ -64,27 +72,39 @@ const MAP = {
 			script: 'pages/player-common-talents.js',
 		}},
 
+	"data-item-weapons-sword": {
+		title: "武器／劍", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-sword.js',
+		}},
+
+	"data-item-protectors-armor": {
+		title: "防具／鎧", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-protector-armor.js',
+		}},
+
 	"data-item-accessories": {
-		title: "消耗品", handler: 'custom', params: {
-			layout: 'pages/player-item-type1.html',
-			script: 'pages/player-item-type1-accessories.js',
+		title: "裝飾", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-accessories.js',
 		}},
 
 	"data-item-consumables": {
 		title: "消耗品", handler: 'custom', params: {
-			layout: 'pages/player-item-type2.html',
-			script: 'pages/player-item-type2-consumables.js',
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-consumables.js',
 		}},
 
 	"data-item-sacraments": {
 		title: "常備品", handler: 'custom', params: {
-			layout: 'pages/player-item-type2.html',
-			script: 'pages/player-item-type2-sacraments.js',
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-sacraments.js',
 		}},
 
 	"data-item-hunter-sets": {
 		title: "探索者套裝", handler: 'custom', params: {
-			layout: 'pages/player-item-hunter-sets.html',
+			layout: 'pages/player-item-template.html',
 			script: 'pages/player-item-hunter-sets.js',
 		}},
 
