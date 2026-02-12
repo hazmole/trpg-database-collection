@@ -34,6 +34,8 @@ const INDEX = [
 				{ title: "形狀：槍", pid: "data-item-weapons-lance" },
 				{ title: "形狀：斧", pid: "data-item-weapons-axe" },
 				{ title: "形狀：錘", pid: "data-item-weapons-hammer" },
+				{ title: "形狀：射擊", pid: "data-item-weapons-projectile" },
+				{ title: "形狀：魔法", pid: "data-item-weapons-magic" },
 			] },
 			{ title: "防具", members: [
 				{ title: "鎧", pid: "data-item-protectors-armor" },
@@ -82,6 +84,12 @@ const MAP = {
 		title: "防具／鎧", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/player-item-protector-armor.js',
+		}},
+
+	"data-item-protectors-shield": {
+		title: "防具／盾", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-protector-shield.js',
 		}},
 
 	"data-item-accessories": {

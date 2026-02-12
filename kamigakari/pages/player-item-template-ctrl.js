@@ -75,7 +75,8 @@ export class PlayerItemTemplateCtrl {
       .join('');
     
     // set default value
-    const defaultVal = cfg.options[0].value;
+    const urlParams = new URLSearchParams(window.location.search);
+    const defaultVal = urlParams.get('tab') || cfg.options[0].value;
     this.elemRef.header.querySelector(`#Tab-${defaultVal}`).classList.add('active');
 
     // add listener
@@ -83,6 +84,7 @@ export class PlayerItemTemplateCtrl {
       const tabElem = this.elemRef.header.querySelector(`#Tab-${opt.value}`);
       tabElem.addEventListener('click', () => {
         // toggle active
+        CoreRouter.setUrlParams('tab', opt.value);
         this.elemRef.header.querySelector(`#Tab-${this.tabCfg.tabID}`).classList.remove('active');
         this.elemRef.header.querySelector(`#Tab-${opt.value}`).classList.add('active');
         this.tabCfg.tabID = opt.value;

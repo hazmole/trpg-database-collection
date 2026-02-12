@@ -73,6 +73,6 @@
 .ListEntry .Field {
   padding: 5px;
   align-self: center;
-  flex: 1 1 400px;
+  flex: 1 1 300px;
 	max-width: 800px;
 }

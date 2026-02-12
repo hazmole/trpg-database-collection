@@ -6,6 +6,8 @@
 .ListEntry .PrefixIcon { font-family: cursive; }
 .ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
 .ListEntry .BlockCell.w80 { width: 80px; }
+.ListEntry .BlockCell.w45 { width: 45px; }
+.ListEntry .BlockCell.number div:last-child { font-family: system-ui; font-size: 1.1em; }
 
  /* Talent */
 .ListEntry.Talent .BlockCell .timing:before { content: "時機"; }
@@ -14,9 +16,16 @@
 .ListEntry.Talent .BlockCell .cost:before   { content: "代價"; }
 
 /* Item */
-.ListEntry.Item .BlockCell .equip:before  { content: "部位"; }
-.ListEntry.Item .BlockCell .usage:before  { content: "用途"; }
-.ListEntry.Item .BlockCell .cost:before   { content: "價格"; }
+.ListEntry.Item .BlockCell .equip:before   { content: "部位"; }
+.ListEntry.Item .BlockCell .wield:before   { content: "持握"; }
+.ListEntry.Item .BlockCell .require:before { content: "限制"; }
+.ListEntry.Item .BlockCell .usage:before   { content: "用途"; }
+.ListEntry.Item .BlockCell .cost:before    { content: "價格"; }
+.ListEntry.Item .BlockCell .state-evade:before  { content: "迴避"; }
+.ListEntry.Item .BlockCell .state-speed:before  { content: "行動值"; }
+.ListEntry.Item .BlockCell .state-phydef:before { content: "裝甲"; }
+.ListEntry.Item .BlockCell .state-mgcdef:before { content: "結界"; }
+
 .ListEntry.Item.weapon     .TitleCell { background: #331111; }
 .ListEntry.Item.protector  .TitleCell { background: #1e446d; }
 .ListEntry.Item.accessory  .TitleCell { background: #183311; }

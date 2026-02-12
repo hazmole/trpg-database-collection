@@ -6,7 +6,7 @@ CustomParser.item = function(itemData) {
 	const titleModifyStyle = (itemData.name.length > 8)? `style="font-size:0.9em;"`: "";
 	const DOMArr = getDOMs();
 	return `
-		<div class="ListEntry Item ${itemRef.category}">
+		<div class="ListEntry Item ${getCategoryColorTheme()}">
 			<div class="TitleCell fixWidth">
 				<div class="tag">${getCategoryText()}</div>
 				<div class="title"><div ${titleModifyStyle}>${getNameDOM()}</div></div>
@@ -15,6 +15,14 @@ CustomParser.item = function(itemData) {
 		</div>`;
 
 	// =================
+	function getCategoryColorTheme() {
+		if (isWeapon())    return 'weapon';
+		if (isProtector()) return 'protector';
+		if (isAccessory()) return 'accessory';
+		
+		const parts = itemData.type.split('-');
+		return parts[0];
+	}
 	function getCategoryText() {
 		const parts = itemData.type.split('-');
 		switch(parts[0]){
@@ -25,6 +33,7 @@ CustomParser.item = function(itemData) {
 			case "sacrament":  parts[0]="常備品"; break;
 			case "hunterset":  parts[0]="探索者套裝"; break;
 			case "legacy":     parts[0]="神成神器"; break;
+			case "upgrade":    parts[0]="追加效果"; break;
 		}
 		return `${parts.join('-')}`;
 	}
@@ -41,6 +50,7 @@ CustomParser.item = function(itemData) {
 	}
 	function getDOMs() {
 		switch(itemRef.category) {
+			case "protector":  return getProtectorDOMs();
 			case "accessory":  return getAccessoryDOMs();
 			case "sacrament":  return getItemsDOMs();
 			case "consumable": return getItemsDOMs();
@@ -49,6 +59,20 @@ CustomParser.item = function(itemData) {
 		return [];
 	}
 	// ======================
+	function getProtectorDOMs() {
+		const DOMArr = [];
+		DOMArr.push(renderBlockCellDOM('require', getRequireText(), 'w80'));
+		if (itemData.equip) {
+			DOMArr.push(renderBlockCellDOM('wield', getEquipmentText(), 'w45'));
+		}
+		DOMArr.push(renderBlockCellDOM('state-evade',  getModifierText(itemData.evd), 'number w45'));
+		DOMArr.push(renderBlockCellDOM('state-speed',  getModifierText(itemData.spd), 'number w45'));
+		DOMArr.push(renderBlockCellDOM('state-phydef', getModifierText(itemData.phyArmor), 'number w45'));
+		DOMArr.push(renderBlockCellDOM('state-mgcdef', getModifierText(itemData.mgcArmor), 'number w45'));
+		DOMArr.push(renderBlockCellDOM('cost',  getCostText()));
+		DOMArr.push(`<div class="field">${getEffectText()}</div>`);
+		return DOMArr;
+	}
 	function getAccessoryDOMs() {
 		const DOMArr = [];
 		DOMArr.push(renderBlockCellDOM('equip', getEquipmentText(), 'w80'));
@@ -94,6 +118,10 @@ CustomParser.item = function(itemData) {
 		if (Number.isInteger(costVal)) return `${costVal}G`;
 		return costVal;
 	}
+	function getRequireText() {
+		if(itemData.require.length==0) return '-';
+		return itemData.require.join('<br>/');
+	}
 	function getUsageText() {
 		const UsageTextMap = {
 			"other": "其他",
@@ -122,6 +150,11 @@ CustomParser.item = function(itemData) {
 	function getEffectText() {
 		if (Array.isArray(itemData.effect)) return itemData.effect.join('<br>');
 		return itemData.effect.replace(/\n/, '<br>');
+	}
+	function getModifierText(num){
+		if(num==0) return '-';
+		if(num>0) return '+'+num;
+		return ''+num;
 	}
 	// ======================
 	function initItemRef() {
