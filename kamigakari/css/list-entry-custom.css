@@ -35,16 +35,21 @@
 .ListEntry.Item .property { display: flex; gap: 2px; }
 .ListEntry.Item .property .tag { padding: 2px 5px; background: #fbdcdc; font-family: system-ui;  }
 
+.ListEntry.Facade          .TitleCell { background: #05443d; }
 .ListEntry.Item.weapon     .TitleCell { background: #331111; }
 .ListEntry.Item.protector  .TitleCell { background: #1e446d; }
 .ListEntry.Item.accessory  .TitleCell { background: #183311; }
 .ListEntry.Item.sacrament  .TitleCell { background: #2f223f; }
 .ListEntry.Item.consumable .TitleCell { background: #2f223f; }
 
-/* Item: HunterSets */
-.ListEntry.Item .HunterSet { flex-grow: 1; }
-.ListEntry.Item .HunterSet .content-title { background: #c1c1c1; font-weight: bold; padding: 2px 5px; }
-.ListEntry.Item .HunterSet .content { padding: 2px 5px; padding-left: 10px; border-top: 1px dotted;}
-.ListEntry.Item .HunterSet .content b { font-weight: 500; }
-
+.ListEntry .content-group { flex: 1 0 400px; }
+.ListEntry .content-group .content-title { background: #c1c1c1; font-weight: bold; padding: 2px 5px; }
+.ListEntry .content-group .content { padding: 2px 5px; padding-left: 10px; border-top: 1px dotted;}
+.ListEntry .content-group .content b { font-weight: 500; }
+.ListEntry .content-group .description { 
+  border-top: 1px solid gray;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #555;
+}
 

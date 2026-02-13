@@ -32,13 +32,10 @@ export class PlayerItemTemplateCtrl {
   setDescription(textArr) {
     this.elemRef.description.innerHTML = textArr.join('<br>');
   }
-  setDataList(list) {
-    this.dataList = list;
-  }
   
-  renderDataList(dataList) {
+  renderDataList(dataList, parserFunc) {
     this.elemRef.dataContainer.innerHTML = dataList
-      .map( data => CustomParser.item(data) )
+      .map( data => parserFunc(data) )
       .join('');
   }
 
@@ -102,6 +99,33 @@ export class PlayerItemTemplateCtrl {
     this.tabCfg.tabID = defaultVal;
   }
 
+  // ================
+  // Tabs (dropdown-style)
+  enableDropdownTabs(cfg) {
+    // render options
+    const elemArr = cfg.options
+      .map(opt => `<option value="${opt.value}"><span class="label">${opt.text}</span></option>`);
+    this.elemRef.header.innerHTML = `<select id="DropdownMenu">${elemArr.join('')}</select>`;
+    const dropdownElem = this.elemRef.header.querySelector(`#DropdownMenu`);
+
+    // set default value
+    const urlParams = new URLSearchParams(window.location.search);
+    const defaultVal = urlParams.get('tab') || cfg.options[0].value;
+    dropdownElem.value = defaultVal;
+
+    // add listener
+    dropdownElem.addEventListener('change', (e) => {
+      // toggle active
+      CoreRouter.setUrlParams('tab', e.target.value);
+      this.tabCfg.tabID = e.target.value;
+      this.tabCfg.onChangeFunc(e.target.value);
+    });
+
+    // set config
+    this.tabCfg.enable = true;
+    this.tabCfg.onChangeFunc = cfg.onChangeFunc;
+    this.tabCfg.tabID = defaultVal;
+  }
 
   // disable functionality
   disableHeader() { this.elemRef.header.style.display = 'none'; }

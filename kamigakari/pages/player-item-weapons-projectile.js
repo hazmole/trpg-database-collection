@@ -56,7 +56,7 @@ export async function run() {
 		const sortFunc = sortFuncFactory(sortKey, dataList);
 
 		const newList = [...dataList].sort(sortFunc);
-		ctrl.renderDataList(newList);
+		ctrl.renderDataList(newList, CustomParser.item);
 	}
 	function sortFuncFactory(sortKey, dataListRef) {
 		// define Sorting Order

@@ -16,6 +16,6 @@ export async function run() {
   ctrl.elemRef.dataContainer.style.display = 'flex';
   ctrl.elemRef.dataContainer.style.flexDirection = 'column';
   ctrl.elemRef.dataContainer.style.gap = '5px';
-  ctrl.renderDataList(dataList);
+  ctrl.renderDataList(dataList, CustomParser.item);
 }
 

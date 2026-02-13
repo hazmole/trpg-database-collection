@@ -46,7 +46,7 @@ const INDEX = [
 			{ title: "常備品", pid: "data-item-sacraments" },
 			{ title: "探索者套裝", pid: "data-item-hunter-sets" },
 		] },
-		// { title: "表職業", pid: "data-facades" },
+		{ title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
 		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
@@ -144,6 +144,12 @@ const MAP = {
 		title: "探索者套裝", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/player-item-hunter-sets.js',
+		}},
+
+	"data-facades": {
+		title: "表職業", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-facades.js',
 		}},
 
 	"doc-core-gamerule-conditions": {

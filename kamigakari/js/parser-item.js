@@ -124,7 +124,7 @@ CustomParser.item = function(itemData) {
 		itemData.consumable.forEach(entry => {
 			DOMArr.push(`<div class="content"><b>${entry.name}</b>：${entry.effect}</div>`);
 		});
-		return [`<div class="HunterSet">${DOMArr.join('')}</div>`];
+		return [`<div class="content-group">${DOMArr.join('')}</div>`];
 	}
 
 
