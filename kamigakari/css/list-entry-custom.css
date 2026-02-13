@@ -7,6 +7,7 @@
 .ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
 .ListEntry .BlockCell.w80 { width: 80px; }
 .ListEntry .BlockCell.w45 { width: 45px; }
+.ListEntry .BlockCell.small { font-size: .9em; }
 .ListEntry .BlockCell.number div:last-child { font-family: system-ui; font-size: 1.1em; }
 
  /* Talent */
@@ -21,10 +22,18 @@
 .ListEntry.Item .BlockCell .require:before { content: "限制"; }
 .ListEntry.Item .BlockCell .usage:before   { content: "用途"; }
 .ListEntry.Item .BlockCell .cost:before    { content: "價格"; }
+.ListEntry.Item .BlockCell .value:before    { content: "效果值"; }
+.ListEntry.Item .BlockCell .state-phyhit:before  { content: "命中"; }
+.ListEntry.Item .BlockCell .state-mgchit:before  { content: "發動"; }
+.ListEntry.Item .BlockCell .state-phydmg:before  { content: "物Ｄ"; }
+.ListEntry.Item .BlockCell .state-mgcdmg:before  { content: "魔Ｄ"; }
 .ListEntry.Item .BlockCell .state-evade:before  { content: "迴避"; }
 .ListEntry.Item .BlockCell .state-speed:before  { content: "行動值"; }
 .ListEntry.Item .BlockCell .state-phydef:before { content: "裝甲"; }
 .ListEntry.Item .BlockCell .state-mgcdef:before { content: "結界"; }
+
+.ListEntry.Item .property { display: flex; gap: 2px; }
+.ListEntry.Item .property .tag { padding: 2px 5px; background: #fbdcdc; font-family: system-ui;  }
 
 .ListEntry.Item.weapon     .TitleCell { background: #331111; }
 .ListEntry.Item.protector  .TitleCell { background: #1e446d; }

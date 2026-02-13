@@ -50,6 +50,8 @@ CustomParser.item = function(itemData) {
 	}
 	function getDOMs() {
 		switch(itemRef.category) {
+			case "upgrade":    return getUpgradeDOMs();
+			case "weapon":     return getWeaponDOMs();
 			case "protector":  return getProtectorDOMs();
 			case "accessory":  return getAccessoryDOMs();
 			case "sacrament":  return getItemsDOMs();
@@ -59,6 +61,30 @@ CustomParser.item = function(itemData) {
 		return [];
 	}
 	// ======================
+	function getUpgradeDOMs() {
+		const DOMArr = [];
+		DOMArr.push(renderBlockCellDOM('value', itemData.value, 'number w45'));
+		DOMArr.push(renderBlockCellDOM('cost',  getCostText()));
+		DOMArr.push(`<div class="field">${getEffectText()}</div>`);
+		return DOMArr;
+	}
+	function getWeaponDOMs() {
+		const type = isMagicWeapon()? "mgc": "phy";
+		const isVersatile = (itemData.equip === "versatile");
+
+		const DOMArr = [];
+		DOMArr.push(renderBlockCellDOM('require', getRequireText(), 'w80'));
+		DOMArr.push(renderBlockCellDOM('wield', getEquipmentText(), 'w45'));
+		DOMArr.push(renderBlockCellDOM(`state-${type}hit`, getModifierText(itemData.hit), 'number w45'));
+		DOMArr.push(renderBlockCellDOM(`state-${type}dmg`, getDamageText(), `number ${isVersatile? "small": ""}`));
+		DOMArr.push(renderBlockCellDOM(`state-speed`, getModifierTexts(itemData.spd), `number w45 ${isVersatile? "small": ""}`));
+		DOMArr.push(renderBlockCellDOM('cost',  getCostText()));
+		DOMArr.push(`<div style="flex:1 1 300px;">
+			<div class="property">${getWeaponProperty()}</div>
+			<div class="field">${getEffectText()}</div>
+			</div>`);
+		return DOMArr;
+	}
 	function getProtectorDOMs() {
 		const DOMArr = [];
 		DOMArr.push(renderBlockCellDOM('require', getRequireText(), 'w80'));
@@ -66,7 +92,7 @@ CustomParser.item = function(itemData) {
 			DOMArr.push(renderBlockCellDOM('wield', getEquipmentText(), 'w45'));
 		}
 		DOMArr.push(renderBlockCellDOM('state-evade',  getModifierText(itemData.evd), 'number w45'));
-		DOMArr.push(renderBlockCellDOM('state-speed',  getModifierText(itemData.spd), 'number w45'));
+		DOMArr.push(renderBlockCellDOM('state-speed',  getModifierTexts(itemData.spd), 'number w45'));
 		DOMArr.push(renderBlockCellDOM('state-phydef', getModifierText(itemData.phyArmor), 'number w45'));
 		DOMArr.push(renderBlockCellDOM('state-mgcdef', getModifierText(itemData.mgcArmor), 'number w45'));
 		DOMArr.push(renderBlockCellDOM('cost',  getCostText()));
@@ -122,6 +148,23 @@ CustomParser.item = function(itemData) {
 		if(itemData.require.length==0) return '-';
 		return itemData.require.join('<br>/');
 	}
+	function getDamageText() {
+		const arr = (Array.isArray(itemData.dmg))? itemData.dmg: [itemData.dmg];
+		return arr.map(value => {
+			if (itemData.isFirearm) return `(${value})`;
+			return getModifierText(value);
+		}).join('/');
+	}
+	function getWeaponProperty() {
+		var p = itemData.property;
+		var arr = [];
+		arr.push(`距離：${p.range}`);
+		arr.push(`對象：${p.target}`);
+		if(p.resist)    arr.push(`抵抗：${p.resist}`);
+		if(p.elemental) arr.push(`屬性：${p.elemental}`);
+		if(p.rank)      arr.push(`階級：${p.rank}`);
+		return arr.map( tag => `<div class="tag">${tag}</div>` ).join('');
+	}
 	function getUsageText() {
 		const UsageTextMap = {
 			"other": "其他",
@@ -151,9 +194,16 @@ CustomParser.item = function(itemData) {
 		if (Array.isArray(itemData.effect)) return itemData.effect.join('<br>');
 		return itemData.effect.replace(/\n/, '<br>');
 	}
-	function getModifierText(num){
-		if(num==0) return '-';
-		if(num>0) return '+'+num;
+	function getModifierTexts(values) {
+		const arr = (Array.isArray(values))? values: [values];
+		const isMultiple = arr.length > 1;
+		return arr.map(value => {
+			return getModifierText(value, isMultiple);
+		}).join('/');
+	}
+	function getModifierText(num, remainZero){
+		if(num==0 && !remainZero) return '-';
+		if(num>=0) return '+'+num;
 		return ''+num;
 	}
 	// ======================
@@ -172,6 +222,10 @@ CustomParser.item = function(itemData) {
 			isSacrament:  (typeParts[0] === "sacrament"),
 			isHunterSet:  (typeParts[0] === "hunterset"),
 		};
+	}
+	function isMagicWeapon() {
+		if(itemData.type.indexOf('魔法')>=0) return true;
+		return false;
 	}
 	function isWeapon() {
 		const keywordArr = ["劍","槍","斧","錘","射擊","魔法"];

@@ -46,7 +46,7 @@ const INDEX = [
 			{ title: "常備品", pid: "data-item-sacraments" },
 			{ title: "探索者套裝", pid: "data-item-hunter-sets" },
 		] },
-		{ title: "表職業", pid: "data-facades" },
+		// { title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
 		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
@@ -78,6 +78,36 @@ const MAP = {
 		title: "武器／劍", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/player-item-weapons-sword.js',
+		}},
+
+	"data-item-weapons-lance": {
+		title: "武器／槍", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-lance.js',
+		}},
+
+	"data-item-weapons-axe": {
+		title: "武器／斧", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-axe.js',
+		}},
+
+	"data-item-weapons-hammer": {
+		title: "武器／錘", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-hammer.js',
+		}},
+
+	"data-item-weapons-projectile": {
+		title: "武器／射擊", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-projectile.js',
+		}},
+
+	"data-item-weapons-magic": {
+		title: "武器／魔法", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-magic.js',
 		}},
 
 	"data-item-protectors-armor": {

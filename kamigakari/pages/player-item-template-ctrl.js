@@ -51,7 +51,11 @@ export class PlayerItemTemplateCtrl {
       .join('');
 
     // set default value
-    const defaultVal = cfg.options[0].value;
+    var defaultVal = cfg.options[0].value;
+    if (this.sortCfg.sortKey !== null
+      && cfg.options.map(opt => opt.value).includes(this.sortCfg.sortKey)) {
+        defaultVal = this.sortCfg.sortKey;
+    }
     this.elemRef.sorterSelect.value = defaultVal;
 
     // add listener

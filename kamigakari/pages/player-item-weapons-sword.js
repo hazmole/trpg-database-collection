@@ -9,8 +9,18 @@ export async function run() {
 
 	ctrl.setTitle("肉搏武器／形狀：劍");
 	ctrl.setDescription([
-			"..."
+		"最正統的白刃戰專用人造神器。透過讓靈力滲透進刀身，能將任何物體連同其概念一同斬斷。"
 	]);
+
+	const upgradeSortOps = [
+		{ text:"價格", value: "cost" },
+	];
+	const weaponSortOpts = [
+		{ text:"價格", value: "cost" },
+		{ text:"命中", value: "hit" },
+		{ text:"物Ｄ", value: "dmg" },
+		{ text:"行動值", value: "speed" },
+	];
 
 	ctrl.enableTabs({
 		options: [
@@ -18,19 +28,24 @@ export async function run() {
 			{ text: "神成神器", value: "legacy" },
 			{ text: "追加效果", value: "upgrade" },
 		],
-		onChangeFunc: () => renderDataList(),
-	});
-	ctrl.enableSorter({
-		options: [
-			{ text:"價格", value: "cost" },
-		],
-		onChangeFunc: () => renderDataList(),
+		onChangeFunc: (tabID) => {
+			setSorter(tabID);
+			renderDataList();
+		},
 	});
 
-	renderDataList()
+	setSorter(ctrl.tabCfg.tabID);
+	renderDataList();
 
 
 	// ==============================
+	function setSorter(tabID) {
+		const optList = (tabID === "upgrade")? upgradeSortOps: weaponSortOpts;
+		ctrl.enableSorter({
+			options: optList,
+			onChangeFunc: () => renderDataList(),
+		});
+	}
 	function renderDataList() {
 		const sortKey = ctrl.sortCfg.sortKey;
 		const tabID   = ctrl.tabCfg.tabID;
@@ -55,6 +70,9 @@ export async function run() {
 		const refFactory = (item) => {
 			return {
 				cost: item.cost=='-'? Number.MAX_SAFE_INTEGER: item.cost,
+				hit: item.hit,
+				dmg: Array.isArray(item.dmg)? item.dmg[0]: item.dmg,
+				speed: Array.isArray(item.spd)? item.spd[0]: item.spd,
 			};
 		};
 

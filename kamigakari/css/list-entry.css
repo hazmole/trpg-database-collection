@@ -57,12 +57,10 @@
 	padding: 0 5px 5px 5px;
 	width: 60px;
 }
-.ListEntry .BlockCell div {
-	flex-direction: column;
-	justify-content: center;
+.ListEntry .BlockCell > div {
 	flex-grow: 1;
 }
-.ListEntry .BlockCell div:before {
+.ListEntry .BlockCell > div:before {
 	display: block;
 	font-size: 10px;
 	width: clac(100% + 10px);

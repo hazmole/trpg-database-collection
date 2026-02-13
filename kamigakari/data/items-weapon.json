@@ -4373,7 +4373,7 @@
 		"equip": "one-hand",
 		"hit": 0,
 		"dmg": [
-			null
+			3
 		],
 		"spd": [
 			0
@@ -4397,10 +4397,10 @@
 		"equip": "versatile",
 		"hit": 0,
 		"dmg": [
-			null
+			5, 6
 		],
 		"spd": [
-			null
+			-2, -1
 		],
 		"cost": 1500,
 		"property": {
@@ -4421,10 +4421,10 @@
 		"equip": "two-hand",
 		"hit": 0,
 		"dmg": [
-			null
+			6
 		],
 		"spd": [
-			null
+			-2
 		],
 		"cost": 1500,
 		"property": {
@@ -4445,10 +4445,10 @@
 		"equip": "two-hand",
 		"hit": 0,
 		"dmg": [
-			null
+			7
 		],
 		"spd": [
-			null
+			-3
 		],
 		"cost": 1500,
 		"property": {
@@ -4469,10 +4469,10 @@
 		"equip": "one-hand",
 		"hit": 0,
 		"dmg": [
-			null
+			5
 		],
 		"spd": [
-			null
+			1
 		],
 		"cost": 2250,
 		"property": {

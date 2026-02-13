@@ -1,39 +1,51 @@
 export async function run() {
-	const filterFunc = (item) => item.type.includes("鎧");
-	const normalDataList = (await Fetcher.fetchJSON('./data/items-protector.json')).filter(filterFunc);
+	const filterFunc = (item) => item.type.includes("斧");
+	const normalDataList = (await Fetcher.fetchJSON('./data/items-weapon.json')).filter(filterFunc);
 	const relicDataList = (await Fetcher.fetchJSON('./data/items-legacy.json')).filter(filterFunc);
+	const upgradeDataList = (await Fetcher.fetchJSON('./data/items-weapon-upgrade.json')).filter(filterFunc);
 
 	const module = await import(`./player-item-template-ctrl.js`);
 	const ctrl = new module.PlayerItemTemplateCtrl();
 
-	ctrl.setTitle("防具／鎧");
+	ctrl.setTitle("肉搏武器／形狀：斧");
 	ctrl.setDescription([
-		"泛指守護全身的［形狀：鎧］的［防具］。",
-		"在未［裝備］［形狀：鎧］的情況下，受到來自《天賦》的［生命力傷害］將變為 2 倍。"
+		"著重於破壞力的斧型人造神器。雖然稍微有些難以操作，但其足以彌補缺點的破壞力極具魅力。"
 	]);
+
+	const upgradeSortOps = [
+		{ text:"價格", value: "cost" },
+	];
+	const weaponSortOpts = [
+		{ text:"價格", value: "cost" },
+		{ text:"命中", value: "hit" },
+		{ text:"物Ｄ", value: "dmg" },
+		{ text:"行動值", value: "speed" },
+	];
 
 	ctrl.enableTabs({
 		options: [
 			{ text: "人造神器", value: "normal" },
 			{ text: "神成神器", value: "legacy" },
+			{ text: "追加效果", value: "upgrade" },
 		],
-		onChangeFunc: () => renderDataList(),
-	});
-	ctrl.enableSorter({
-		options: [
-			{ text:"價格", value: "cost" },
-			{ text:"迴避", value: "evade" },
-			{ text:"行動值", value: "speed" },
-			{ text:"裝甲", value: "phydef" },
-			{ text:"結界", value: "mgcdef" },
-		],
-		onChangeFunc: () => renderDataList(),
+		onChangeFunc: (tabID) => {
+			setSorter(tabID);
+			renderDataList();
+		},
 	});
 
-	renderDataList()
+	setSorter(ctrl.tabCfg.tabID);
+	renderDataList();
 
 
 	// ==============================
+	function setSorter(tabID) {
+		const optList = (tabID === "upgrade")? upgradeSortOps: weaponSortOpts;
+		ctrl.enableSorter({
+			options: optList,
+			onChangeFunc: () => renderDataList(),
+		});
+	}
 	function renderDataList() {
 		const sortKey = ctrl.sortCfg.sortKey;
 		const tabID   = ctrl.tabCfg.tabID;
@@ -58,10 +70,9 @@ export async function run() {
 		const refFactory = (item) => {
 			return {
 				cost: item.cost=='-'? Number.MAX_SAFE_INTEGER: item.cost,
-				evade: item.evd,
-				speed: item.spd,
-				phydef: item.phyArmor,
-				mgcdef: item.mgcArmor,
+				hit: item.hit,
+				dmg: Array.isArray(item.dmg)? item.dmg[0]: item.dmg,
+				speed: Array.isArray(item.spd)? item.spd[0]: item.spd,
 			};
 		};
 

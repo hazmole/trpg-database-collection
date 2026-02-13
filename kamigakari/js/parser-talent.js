@@ -12,16 +12,16 @@ CustomParser.talent = function(talent) {
         <div class="title"><div ${titleModifyStyle}>${getName()}</div></div>
       </div>
       <div class="blockCell fixWidth">
-        <div class="timing"><div>${talent.phase.join('/')}</div></div>
+        <div class="timing"></div><div>${talent.phase.join('/')}</div>
       </div>
       <div class="blockCell fixWidth">
-        <div class="range"><div>${talent.range}</div></div>
+        <div class="range"></div><div>${talent.range}</div>
       </div>
       <div class="blockCell fixWidth">
-        <div class="target"><div>${getFmtTarget()}</div></div>
+        <div class="target"></div><div>${getFmtTarget()}</div>
       </div>
       <div class="blockCell fixWidth">
-        <div class="cost"><div>${talent.cost.join('、')}</div></div>
+        <div class="cost"></div><div>${talent.cost.join('、')}</div>
       </div>
       <div class="field">${getEffect()}</div>
     </div>`;

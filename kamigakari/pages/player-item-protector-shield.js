@@ -6,9 +6,10 @@ export async function run() {
 	const module = await import(`./player-item-template-ctrl.js`);
 	const ctrl = new module.PlayerItemTemplateCtrl();
 
-	ctrl.setTitle("防具／鎧");
+	ctrl.setTitle("防具／盾");
 	ctrl.setDescription([
-			"..."
+		"守護身體的［形狀：盾］的人造神器。",
+		"從使用皮革打底並釘上板金的木製圓盾，強化過後的金屬板，到覆蓋整隻手臂的護手型等，造型各式各樣。",
 	]);
 
 	ctrl.enableTabs({
@@ -21,6 +22,10 @@ export async function run() {
 	ctrl.enableSorter({
 		options: [
 			{ text:"價格", value: "cost" },
+			{ text:"迴避", value: "evade" },
+			{ text:"行動值", value: "speed" },
+			{ text:"裝甲", value: "phydef" },
+			{ text:"結界", value: "mgcdef" },
 		],
 		onChangeFunc: () => renderDataList(),
 	});
@@ -53,6 +58,10 @@ export async function run() {
 		const refFactory = (item) => {
 			return {
 				cost: item.cost=='-'? Number.MAX_SAFE_INTEGER: item.cost,
+				evade: item.evd,
+				speed: item.spd,
+				phydef: item.phyArmor,
+				mgcdef: item.mgcArmor,
 			};
 		};
 
