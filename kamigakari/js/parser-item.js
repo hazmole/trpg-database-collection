@@ -12,6 +12,7 @@ CustomParser.item = function(itemData) {
 				<div class="title"><div ${titleModifyStyle}>${getNameDOM()}</div></div>
 			</div>
 			${ DOMArr.join('') }
+			${ getLegacyDOMs() }
 		</div>`;
 
 	// =================
@@ -125,6 +126,28 @@ CustomParser.item = function(itemData) {
 			DOMArr.push(`<div class="content"><b>${entry.name}</b>：${entry.effect}</div>`);
 		});
 		return [`<div class="content-group">${DOMArr.join('')}</div>`];
+	}
+	function getLegacyDOMs() {
+		if (!isLegacy()) return '';
+
+		const DOMArr = [];
+		itemData.upgrades.forEach(upgrade => {
+			DOMArr.push(`<div class="legacy-upgrade">
+					<div class="lvl">Lv.${upgrade.lvl}</div>
+					<div class="cost">${upgrade.cost==0? '免費': (upgrade.cost+'G')}</div>
+					<div class="effect">${upgrade.effect}</div>
+				</div>`);
+		});
+
+		return `<div class="ExpandInfoWrapper">
+				<button class="ExpandInfoToggle" onclick="ToggleUtils.click(this)">
+					<div class="ExpandIconBox">
+						<span class="ExpandIconPlus">+</span>
+					</div>
+					<span class="ExpandInfoLabel">展開神器能力細節</span>
+				</button>
+				<div class="ExpandInfoContent">${DOMArr.join('')}</div>
+			</div>`;
 	}
 
 

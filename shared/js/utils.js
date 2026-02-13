@@ -22,3 +22,10 @@ BlockUtils.unblock = function(){
     document.getElementById('BlockUI-loading-icon').remove();
   }
 }
+
+
+const ToggleUtils = {};
+ToggleUtils.click = function(elem) {
+  const siblingElem = elem.nextElementSibling;
+  siblingElem.classList.toggle('active');
+}

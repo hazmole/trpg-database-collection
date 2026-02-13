@@ -53,3 +53,8 @@
   color: #555;
 }
 
+.ListEntry .legacy-upgrade { width: 100%; border-top: 1px solid; display: flex; align-items: center; }
+.ListEntry .legacy-upgrade:hover { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.ListEntry .legacy-upgrade .lvl    { padding: 3px; width: 40px; text-align: center; color: white; font-weight: bold; font-family: system-ui; background-color: #413920; }
+.ListEntry .legacy-upgrade .cost   { padding: 2px; width: 60px; text-align: center; color: #aaa; border-right: 1px solid #444444;  }
+.ListEntry .legacy-upgrade .effect { padding: 2px 5px; color: #aaa; }
