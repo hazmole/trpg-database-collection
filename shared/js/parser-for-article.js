@@ -6,7 +6,7 @@ class ArticleParser {
 		this.elemColle = {};
 	}
 
-	build(docJsonData) {
+	build(docJsonData, tocDepth = 2) {
 		// fetch Element from document
 		this.elemColle.main         = document.getElementById("ArticleContainer");
 		this.elemColle.toc          = document.getElementById("TocContainer");
@@ -14,7 +14,7 @@ class ArticleParser {
 
 		// Render
 		this._initTocToggleBtn();
-		this._renderToc(docJsonData);
+		this._renderToc(docJsonData, tocDepth);
 		this._renderMainContent(docJsonData);
 	}
 
@@ -29,7 +29,7 @@ class ArticleParser {
 		});
 	}
 
-	_renderToc(docJsonData) {
+	_renderToc(docJsonData, tocDepth) {
 		const arr = [];
 		docJsonData.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
 			if (sectionObj.title) {
@@ -40,6 +40,14 @@ class ArticleParser {
 				if (sectionObj.title) {
 					const title = sectionObj.title;
 					arr.push(`<div>．<a href="#tag_h3_${title}">${title}</a></div>`);
+				}
+				if (tocDepth >= 3) {
+					sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+						if (sectionObj.title) {
+							const title = sectionObj.title;
+							arr.push(`<div>　 <a href="#tag_h4_${title}">${title}</a></div>`);
+						}
+					});
 				}
 			});
 		});
@@ -176,9 +184,10 @@ class ArticleParser {
 		switch(depth){
 		case 1: return `<h2 id="tag_h2_${txt}">${txt}</h2>`;
 		case 2: return `<h3 id="tag_h3_${txt}">${txt}</h3>`;
-		case 3: return `<h4>${txt}</h4>`;
+		case 3: return `<h4 id="tag_h4_${txt}">${txt}</h4>`;
+		case 4: return `<h5>${txt}</h5>`;
 		default:
-			return `<h5>${txt}</h5>`;
+			return `<h6>${txt}</h6>`;
 		}
 	}
 }

@@ -1,6 +1,8 @@
 const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "核心規則書", members: [
+		//{ title: "Ⅰ. 世界章節", members: [] },
+		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
@@ -9,11 +11,11 @@ const INDEX = [
 			{ title: "遊戲主持人", pid: "doc-core-gm-about" },
 			{ title: "創建 NPC", pid: "doc-core-gm-npc-creation" },
 			//{ title: "BOSS天賦一覽", pid: "doc-core-gm-boss-talents" },
-			//{ title: "劇本創作", pid: "doc-core-gm-scenario-creation" },
+			{ title: "創作劇本", pid: "doc-core-gm-scenario-writing" },
 			//{ title: "關於法則障礙", pid: "doc-core-gm-anomalies-detail" },
 			//{ title: "法則障礙一覽", pid: "doc-core-gm-anomalies-list" },
 			//{ title: "關於素材", pid: "doc-core-gm-materials" },
-			//{ title: "關於精怪", pid: "doc-core-gm-mononoke" },
+			{ title: "關於精怪", pid: "doc-core-gm-about-mononoke" },
 		] },
 	] },
 	{ title: "擴充書", members: [
@@ -24,7 +26,7 @@ const INDEX = [
 			{ title: "《複合技》的補充說明", pid: "docs-exSpiritRequiem-combine-technic" },
 		] },
 	] },
-	{ title: "資料庫", members: [
+	{ title: "玩家資料庫", members: [
 		{ title: "種族", pid: "data-ancestries" },
 		{ title: "稱號", pid: "data-arm-systems" },
 		{ title: "共通天賦", pid: "data-common-talents" },
@@ -52,6 +54,9 @@ const INDEX = [
 		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
 	] },
+	//{ title: "GM 資料庫", members: [
+	//	{ title: "BOSS天賦", pid: "data-boss-talents" },
+	//] }
 ];
 
 const MAP = {
@@ -159,6 +164,7 @@ const MAP = {
 			script: 'pages/player-facades.js',
 		}},
 
+	// 規則文件
 	"doc-core-gamerule-conditions": {
 		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
 
@@ -168,13 +174,18 @@ const MAP = {
 	"doc-core-gm-npc-creation": {
 		title: "創建 NPC", handler: 'docs', url: 'docs/core-doc-gm-npc-creation.json' },
 
+	"doc-core-gm-scenario-writing": {
+		title: "關於劇本創作", handler: 'docs', url: 'docs/core-doc-gm-scenario-writing.json' },
+
+	"doc-core-gm-about-mononoke": {
+		title: "關於精怪", handler: 'docs', url: 'docs/core-doc-gm-about-mononoke.json', depth: 3 },
 
 	// 擴充:神魂的鎮魂曲 Spirit Requiem
 	"docs-exSpiritRequiem-makyou-conquer": {
 		title: "魔境討伐", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-makyou-conquer.json' },
 	
 	"docs-exSpiritRequiem-contract-beast": {
-		title: "契約神獸", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-contrac-beast.json' },
+		title: "契約神獸", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-contrac-beast.json', depth: 3 },
 
 	"docs-exSpiritRequiem-kushimitama": {
 		title: "奇御魂的追加用途", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-kushimitama.json' },

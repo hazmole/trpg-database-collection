@@ -25,7 +25,10 @@ class KamigakariShunt extends ShuntBase {
     }
     function getParams(pageItem) {
       switch(pageItem.handler) {
-        case "docs":   return { url: pageItem.url };
+        case "docs":   return { 
+          url: pageItem.url,
+          depth: pageItem.depth,
+        };
         case "custom": return pageItem.params;
       }
     }
