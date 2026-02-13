@@ -34,6 +34,15 @@ CustomParser.item = function(itemData) {
 			case "sacrament":  parts[0]="常備品"; break;
 			case "hunterset":  parts[0]="探索者套裝"; break;
 			case "legacy":     parts[0]="神成神器"; break;
+			case "legacyFeat":
+				parts[0]="神器能力";
+				switch(parts[1]){
+					case "common":    parts[1]='共通'; break;
+					case "weapon":    parts[1]='武器'; break;
+					case "protector": parts[1]='防具'; break;
+					case "accessory": parts[1]='裝飾'; break;
+				}
+				break;
 			case "upgrade":    parts[0]="追加效果"; break;
 		}
 		return `${parts.join('-')}`;
@@ -58,6 +67,7 @@ CustomParser.item = function(itemData) {
 			case "sacrament":  return getItemsDOMs();
 			case "consumable": return getItemsDOMs();
 			case "hunterset":  return getHunterSetDOMs();
+			case "legacyFeat": return getLegacyFeatDOMs();
 		}
 		return [];
 	}
@@ -149,7 +159,9 @@ CustomParser.item = function(itemData) {
 				<div class="ExpandInfoContent">${DOMArr.join('')}</div>
 			</div>`;
 	}
-
+	function getLegacyFeatDOMs() {
+		return [`<div class="field">${getEffectText()}</div>`]
+	}
 
 	// ======================
 	function renderBlockCellDOM(labelClass, content, addiClass = '') {

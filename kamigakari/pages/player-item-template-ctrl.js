@@ -130,6 +130,6 @@ export class PlayerItemTemplateCtrl {
   // disable functionality
   disableHeader() { this.elemRef.header.style.display = 'none'; }
   disableSorter() { this.elemRef.sorterGroup.style.display = 'none'; }
-
+  disableDescription() { this.elemRef.description.style.display = 'none'; }
 
 }

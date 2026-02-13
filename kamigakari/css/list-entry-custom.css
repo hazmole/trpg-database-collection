@@ -41,6 +41,7 @@
 .ListEntry.Item.accessory  .TitleCell { background: #183311; }
 .ListEntry.Item.sacrament  .TitleCell { background: #2f223f; }
 .ListEntry.Item.consumable .TitleCell { background: #2f223f; }
+.ListEntry.Item.legacyFeat .TitleCell { background: #303c47; }
 
 .ListEntry .content-group { flex: 1 0 400px; }
 .ListEntry .content-group .content-title { background: #c1c1c1; font-weight: bold; padding: 2px 5px; }

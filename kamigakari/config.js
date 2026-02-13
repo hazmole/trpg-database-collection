@@ -45,6 +45,7 @@ const INDEX = [
 			{ title: "消耗品", pid: "data-item-consumables" },
 			{ title: "常備品", pid: "data-item-sacraments" },
 			{ title: "探索者套裝", pid: "data-item-hunter-sets" },
+			{ title: "神器能力", pid: "data-item-legacy-feats" },
 		] },
 		{ title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
@@ -144,6 +145,12 @@ const MAP = {
 		title: "探索者套裝", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/player-item-hunter-sets.js',
+		}},
+
+	"data-item-legacy-feats": {
+		title: "神器能力", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-legacy-feats.js',
 		}},
 
 	"data-facades": {
