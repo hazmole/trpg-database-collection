@@ -32,20 +32,39 @@
 	.TabItem.active::after {
 		width: 100%;
 	}
+
+	.toolbar {
+		display: flex;
+    gap: 10px;
+    width: 100%;
+	}
+	@media (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+	}
 </style>
 <div id="ContextHeader" style="gap: 20px; padding-left: 15px;"></div>
 <div id="ContextBody" class="Page">
 	<h2 id="Name"></h2>
 	<div id="Description" class="info-block type2"></div>
 
-	<div id="SortingGroup" class="SortGroup">
-		<div class="SortPrefix">
-			<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				<path d="M3 6h18M6 12h12m-9 6h6"></path>
-			</svg>
-			<span>排序</span>
+	<div class="toolbar">
+		<div id="SortingGroup" class="SortGroup">
+			<div class="SortPrefix">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M3 6h18M6 12h12m-9 6h6"></path>
+				</svg>
+				<span>排序</span>
+			</div>
+			<select id="SortingSelect" class="SelectSort" style="min-width: 80px;"></select>
 		</div>
-		<select id="SortingSelect" class="SelectSort" style="min-width: 80px;"></select>
+
+		<div id="SearchGroup" class="SearchGroup">
+			<div class="SearchPrefix"></div>
+			<input id="SearchInput" class="SearchInput" type="text" placeholder="搜尋名稱、效果..." />
+		</div>
 	</div>
 
 	<div id="DataContainer" class="Item-list gear"></div>

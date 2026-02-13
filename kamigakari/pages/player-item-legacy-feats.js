@@ -6,6 +6,7 @@ export async function run() {
   
   ctrl.disableSorter();
   ctrl.disableDescription();
+  
   ctrl.enableTabs({
     options: [
       { text: "共通", value: "common" },

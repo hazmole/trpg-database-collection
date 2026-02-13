@@ -33,7 +33,13 @@ export async function run() {
 			renderDataList();
 		},
 	});
-
+	ctrl.enableSearching({
+		placeholder: "搜尋武器的名稱、效果...",
+		onChangeFunc: () => {
+			renderDataList();
+		}
+	});
+	
 	setSorter(ctrl.tabCfg.tabID);
 	renderDataList();
 
@@ -54,9 +60,18 @@ export async function run() {
 			(tabID === "legacy")? relicDataList: upgradeDataList;
 		const sortFunc = sortFuncFactory(sortKey, dataList);
 
-		const newList = [...dataList].sort(sortFunc);
+		const newList = [...dataList]
+			.filter(data => searchData(data, ctrl.searchCfg.keyword))
+			.sort(sortFunc);
 		ctrl.renderDataList(newList, CustomParser.item);
 	}
+	function searchData(data, keyword) {
+		if (!keyword) return true;
+		if (data.name.includes(keyword)) return true;
+		if (data.effect.includes(keyword)) return true;
+		return false;
+	}
+
 	function sortFuncFactory(sortKey, dataListRef) {
 		// define Sorting Order
 		const defaultSortingOrder = ["cost"];

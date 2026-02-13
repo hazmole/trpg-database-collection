@@ -35,3 +35,39 @@
   border: 0;
 }
 
+
+.SearchGroup {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    height: 36px;
+    flex: 1 1 200px;
+    margin-bottom: 10px;
+}
+.SearchPrefix {
+    width: 40px;
+    height: 100%;
+    background-color: #333;
+    
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+}
+.SearchInput {
+    border: none !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+    height: 100% !important;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent;
+}
+.SearchInput::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}

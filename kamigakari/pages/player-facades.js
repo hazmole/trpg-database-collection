@@ -28,6 +28,12 @@ export async function run() {
 			renderDataList();
 		}
 	});
+	ctrl.enableSearching({
+		placeholder: "搜尋表職業的名稱、特徵...",
+		onChangeFunc: () => {
+			renderDataList();
+		}
+	});
 	ctrl.disableSorter();
 
 	
@@ -46,9 +52,18 @@ export async function run() {
 		}
 	}
 	function renderDataList() {
-		const newList = dataList.filter(data => data.type == ctrl.tabCfg.tabID);
+		const newList = dataList
+			.filter(data => data.type == ctrl.tabCfg.tabID)
+			.filter(data => searchData(data, ctrl.searchCfg.keyword));
 		ctrl.renderDataList(newList, facadeParser);
 	}
+	function searchData(data, keyword) {
+		if (!keyword) return true;
+		if (data.name.includes(keyword)) return true;
+		if (data.feat.includes(keyword)) return true;
+		return false;
+	}
+
 	function facadeParser(itemData) {
 		const DOMArr = [];
 		DOMArr.push(`<div class="description">${itemData.desc}</div>`);

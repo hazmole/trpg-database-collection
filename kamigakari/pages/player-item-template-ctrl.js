@@ -8,6 +8,8 @@ export class PlayerItemTemplateCtrl {
     this.elemRef.description   = document.getElementById("Description");
     this.elemRef.sorterGroup   = document.getElementById("SortingGroup");
     this.elemRef.sorterSelect  = document.getElementById("SortingSelect");
+    this.elemRef.searchGroup   = document.getElementById("SearchGroup");
+    this.elemRef.searchInput   = document.getElementById("SearchInput");
     this.elemRef.dataContainer = document.getElementById("DataContainer");
 
     // define config
@@ -21,6 +23,14 @@ export class PlayerItemTemplateCtrl {
       sortKey: null,
       onChangeFunc: null,
     };
+
+    this.disableSearcher();
+    this.searchCfg = {
+      enable: false,
+      keyword: '',
+      onChangeFunc: null,
+    };
+
   }
 
 
@@ -127,9 +137,31 @@ export class PlayerItemTemplateCtrl {
     this.tabCfg.tabID = defaultVal;
   }
 
+  // ================
+  // Searching
+  enableSearching(cfg) {
+    this.elemRef.searchGroup.style.display = 'inline-flex';
+
+    // add listener
+    this.elemRef.searchInput.addEventListener('change', (e) => {
+      // toggle active
+      this.searchCfg.keyword = e.target.value;
+      this.searchCfg.onChangeFunc(e.target.value);
+    });
+
+    // set placeholder
+    if (cfg.placeholder)
+      this.elemRef.searchInput.placeholder = cfg.placeholder;
+
+    // set config
+    this.searchCfg.enable = true;
+    this.searchCfg.onChangeFunc = cfg.onChangeFunc;
+    this.searchCfg.keyword = '';
+  }
+
   // disable functionality
   disableHeader() { this.elemRef.header.style.display = 'none'; }
   disableSorter() { this.elemRef.sorterGroup.style.display = 'none'; }
   disableDescription() { this.elemRef.description.style.display = 'none'; }
-
+  disableSearcher() { this.elemRef.searchGroup.style.display = 'none'; }
 }
