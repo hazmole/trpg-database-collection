@@ -1,13 +1,55 @@
 /*------------------
   Here you can write down those Customize CSS
  ------------------*/
-/* Talent */
-.ListEntry.Talent .TitleCell .title { text-align: left; padding-left:.5rem; }
+/* General Setting */
+.ListEntry .TitleCell .title { text-align: left; padding-left:.5rem; }
+.ListEntry .PrefixIcon { font-family: cursive; }
+.ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
+.ListEntry .BlockCell.w80 { width: 80px; }
+.ListEntry .BlockCell.w45 { width: 45px; }
+.ListEntry .BlockCell.small { font-size: .9em; }
+.ListEntry .BlockCell.number div:last-child { font-family: system-ui; font-size: 1.1em; }
+
+ /* Talent */
 .ListEntry.Talent .BlockCell .timing:before { content: "時機"; }
 .ListEntry.Talent .BlockCell .range:before  { content: "距離"; }
 .ListEntry.Talent .BlockCell .target:before { content: "對象"; }
 .ListEntry.Talent .BlockCell .cost:before   { content: "代價"; }
 
+/* Item */
+.ListEntry.Item .BlockCell .equip:before   { content: "部位"; }
+.ListEntry.Item .BlockCell .wield:before   { content: "持握"; }
+.ListEntry.Item .BlockCell .require:before { content: "限制"; }
+.ListEntry.Item .BlockCell .usage:before   { content: "用途"; }
+.ListEntry.Item .BlockCell .cost:before    { content: "價格"; }
+.ListEntry.Item .BlockCell .value:before    { content: "效果值"; }
+.ListEntry.Item .BlockCell .state-phyhit:before  { content: "命中"; }
+.ListEntry.Item .BlockCell .state-mgchit:before  { content: "發動"; }
+.ListEntry.Item .BlockCell .state-phydmg:before  { content: "物Ｄ"; }
+.ListEntry.Item .BlockCell .state-mgcdmg:before  { content: "魔Ｄ"; }
+.ListEntry.Item .BlockCell .state-evade:before  { content: "迴避"; }
+.ListEntry.Item .BlockCell .state-speed:before  { content: "行動值"; }
+.ListEntry.Item .BlockCell .state-phydef:before { content: "裝甲"; }
+.ListEntry.Item .BlockCell .state-mgcdef:before { content: "結界"; }
 
-.ListEntry .PrefixIcon { font-family: cursive; }
-.ListEntry .PrefixIcon.IndentSpace { margin-left: .8em; }
+.ListEntry.Item .property { display: flex; gap: 2px; }
+.ListEntry.Item .property .tag { padding: 2px 5px; background: #fbdcdc; font-family: system-ui;  }
+
+.ListEntry.Facade          .TitleCell { background: #05443d; }
+.ListEntry.Item.weapon     .TitleCell { background: #331111; }
+.ListEntry.Item.protector  .TitleCell { background: #1e446d; }
+.ListEntry.Item.accessory  .TitleCell { background: #183311; }
+.ListEntry.Item.sacrament  .TitleCell { background: #2f223f; }
+.ListEntry.Item.consumable .TitleCell { background: #2f223f; }
+
+.ListEntry .content-group { flex: 1 0 400px; }
+.ListEntry .content-group .content-title { background: #c1c1c1; font-weight: bold; padding: 2px 5px; }
+.ListEntry .content-group .content { padding: 2px 5px; padding-left: 10px; border-top: 1px dotted;}
+.ListEntry .content-group .content b { font-weight: 500; }
+.ListEntry .content-group .description { 
+  border-top: 1px solid gray;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #555;
+}
+

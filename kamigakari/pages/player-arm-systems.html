@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="./css/list-entry.css">
+<link rel="stylesheet" href="./css/list-entry-custom.css">
+<style>
+	.info-block.type2 { font-size: .9em; }
+
+	.StateTable {
+		border-spacing: 0;
+		border: 2px #777 solid;
+	}
+	.StateTable th,
+	.StateTable td {
+		width: 50px;
+		text-align: center;
+	}
+	.StateTable th { background: #333; color: white; font-size: 14px; }
+	.StateTable td { background: #fff; font-family: system-ui; }
+	.StateTable td.title { background-color: #ccc; font-family: auto; }
+	.StateTable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
+	.StateTable td:not(:last-child) { border-right: 1px solid gray; }
+</style>
+<div id="ContextHeader" style="gap: 10px">
+	<span>稱號</span>
+	<select id="DropdownMenu" style="min-width: 160px;"></select>
+	<select id="DropdownMenu2" style="min-width: 60px;"></select>
+</div>
+<div id="ContextBody" class="Page">
+	<h2 id="Name"></h2>
+	<div id="Description" class="info-block type2"></div>
+
+	<h4>戰鬥修正</h4>
+	<table class="StateTable">
+		<tr>
+			<th>命中</th>
+			<th>迴避</th>
+			<th>發動</th>
+			<th>抵抗</th>
+			<th>看破</th>
+			<th>物Ｄ</th>
+			<th>魔Ｄ</th>
+			<th>行動值</th>
+			<th>生命力</th>
+		</tr>
+		<tr id="ArmSystemStateModifier"></tr>
+	</table>
+
+	<h4>稱號效果</h4>
+	<div class="info-block type1">
+		<div id="ArmSystemEffect"></div>
+	</div>
+	<div class="info-block type1" style="margin-top: .5rem;">
+		<div id="ArmSystemTypeEffect"></div>
+	</div>
+
+	<h4>稱號天賦一覽</h4>
+	<div id="TalentsContainer" class="Item-list talent"></div>
+</div>

@@ -1,6 +1,6 @@
 [
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《銳之一擊》",
 		"phase": [
 			"攻擊"
@@ -14,7 +14,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《封神降臨》",
 		"phase": [
 			"特殊"
@@ -28,7 +28,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《九十九的神器》",
 		"phase": [
 			"特殊"
@@ -42,7 +42,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《怪力無雙》",
 		"phase": [
 			"特殊"
@@ -56,7 +56,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《太古的記憶》",
 		"phase": [
 			"特殊"
@@ -70,7 +70,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《神秘的威嚴》",
 		"phase": [
 			"特殊"
@@ -84,7 +84,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《異能的瞳術》",
 		"phase": [
 			"常駐"
@@ -98,7 +98,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《武技強化》",
 		"phase": [
 			"常駐"
@@ -112,7 +112,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《神話的一擊》",
 		"phase": [
 			"特殊"
@@ -126,7 +126,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《天神之業》",
 		"phase": [
 			"特殊"
@@ -140,7 +140,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《神力音叉》",
 		"phase": [
 			"特殊"
@@ -154,7 +154,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《特殊詠唱》",
 		"phase": [
 			"常駐"
@@ -168,7 +168,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《半神的異能》",
 		"phase": [
 			"常駐"
@@ -182,7 +182,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《不詳的血脈》",
 		"phase": [
 			"常駐"
@@ -196,7 +196,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《鬥神靈壓》",
 		"phase": [
 			"特殊"
@@ -210,7 +210,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《封神技》",
 		"phase": [
 			"特殊"
@@ -224,7 +224,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《封神靈性》",
 		"phase": [
 			"常駐"
@@ -238,7 +238,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《鬥神逆襲》",
 		"phase": [
 			"防禦"
@@ -252,7 +252,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《縮地妨礙》",
 		"phase": [
 			"特殊"
@@ -266,7 +266,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《封神結界》",
 		"phase": [
 			"特殊"
@@ -280,7 +280,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-封神",
+		"type": "ancestry-封神",
 		"name": "《鬥氣解放》",
 		"phase": [
 			"常駐"
@@ -294,7 +294,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《獸魔變身》",
 		"phase": [
 			"開始"
@@ -308,7 +308,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《血風之王》",
 		"phase": [
 			"開始"
@@ -322,7 +322,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《魅惑的魔力》",
 		"phase": [
 			"攻擊"
@@ -336,7 +336,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《夜魔的妖眼》",
 		"phase": [
 			"攻擊"
@@ -350,7 +350,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《夜魔的臂力》",
 		"phase": [
 			"特殊"
@@ -364,7 +364,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《獸魔疾走》",
 		"phase": [
 			"常駐"
@@ -378,7 +378,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《牆面行走》",
 		"phase": [
 			"常駐"
@@ -392,7 +392,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《霧散變異》",
 		"phase": [
 			"常駐"
@@ -406,7 +406,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《靈力吸引》",
 		"phase": [
 			"特殊"
@@ -420,7 +420,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《迅雷疾驅》",
 		"phase": [
 			"特殊"
@@ -434,7 +434,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《邪眼》",
 		"phase": [
 			"常駐"
@@ -448,7 +448,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《異能戰鬥》",
 		"phase": [
 			"常駐"
@@ -462,7 +462,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《肉搏耐性》",
 		"phase": [
 			"常駐"
@@ -476,7 +476,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《真祖的因子》",
 		"phase": [
 			"常駐"
@@ -490,7 +490,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《夜魔的一擊》",
 		"phase": [
 			"攻擊"
@@ -504,7 +504,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《魂魄剝奪》",
 		"phase": [
 			"特殊"
@@ -518,7 +518,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《怪力移動》",
 		"phase": [
 			"特殊"
@@ -532,7 +532,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《超常威力》",
 		"phase": [
 			"特殊"
@@ -546,7 +546,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《夜魔的肉體》",
 		"phase": [
 			"特殊"
@@ -560,7 +560,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《夜魔的血脈》",
 		"phase": [
 			"常駐"
@@ -574,7 +574,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-夜魔",
+		"type": "ancestry-夜魔",
 		"name": "《黃泉歸返》",
 		"phase": [
 			"常駐"
@@ -588,7 +588,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《飛行》",
 		"phase": [
 			"開始"
@@ -603,7 +603,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《太刀風》",
 		"phase": [
 			"攻擊"
@@ -617,7 +617,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《黃金招來》",
 		"phase": [
 			"特殊"
@@ -631,7 +631,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《動物疏通》",
 		"phase": [
 			"特殊"
@@ -645,7 +645,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《次元的漏洞》",
 		"phase": [
 			"特殊"
@@ -659,7 +659,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《好機招來》",
 		"phase": [
 			"特殊"
@@ -673,7 +673,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《呼喚幸運》",
 		"phase": [
 			"常駐"
@@ -687,7 +687,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《肉體變化》",
 		"phase": [
 			"常駐"
@@ -701,7 +701,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《轉禍為福》",
 		"phase": [
 			"特殊"
@@ -715,7 +715,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《命運干涉》",
 		"phase": [
 			"特殊"
@@ -729,7 +729,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《隨興的偶然》",
 		"phase": [
 			"特殊"
@@ -743,7 +743,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《機會強化》",
 		"phase": [
 			"特殊"
@@ -757,7 +757,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《幸運的眷族》",
 		"phase": [
 			"常駐"
@@ -771,7 +771,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《風神嵐》",
 		"phase": [
 			"常駐"
@@ -785,7 +785,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《妖力發現》",
 		"phase": [
 			"攻擊"
@@ -799,7 +799,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《解咒牽引》",
 		"phase": [
 			"特殊"
@@ -813,7 +813,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《妖力看破》",
 		"phase": [
 			"特殊"
@@ -827,7 +827,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《妖力循環》",
 		"phase": [
 			"特殊"
@@ -841,7 +841,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《護法結界》",
 		"phase": [
 			"防禦"
@@ -855,7 +855,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《武運長久》",
 		"phase": [
 			"常駐"
@@ -869,7 +869,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-半妖",
+		"type": "ancestry-半妖",
 		"name": "《妖力解放》",
 		"phase": [
 			"常駐"
@@ -883,7 +883,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《攻擊魔術》",
 		"phase": [
 			"攻擊"
@@ -897,7 +897,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《治癒魔術》",
 		"phase": [
 			"攻擊"
@@ -911,7 +911,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《魔術暗示》",
 		"phase": [
 			"攻擊"
@@ -925,7 +925,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《飛行媒介》",
 		"phase": [
 			"特殊"
@@ -939,7 +939,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《魔術調查》",
 		"phase": [
 			"特殊"
@@ -953,7 +953,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《魔術的名門》",
 		"phase": [
 			"常駐"
@@ -967,7 +967,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《使魔》",
 		"phase": [
 			"常駐"
@@ -981,7 +981,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《鍊金技巧》",
 		"phase": [
 			"常駐"
@@ -995,7 +995,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《媒介燃燒》",
 		"phase": [
 			"特殊"
@@ -1009,7 +1009,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《蟲使》",
 		"phase": [
 			"特殊"
@@ -1023,7 +1023,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《賦予身體強化》",
 		"phase": [
 			"常駐"
@@ -1037,7 +1037,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《適應屬性》",
 		"phase": [
 			"常駐"
@@ -1051,7 +1051,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《武器重量操作》",
 		"phase": [
 			"常駐"
@@ -1065,7 +1065,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《防具重量操作》",
 		"phase": [
 			"常駐"
@@ -1079,7 +1079,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《亞空間跳躍》",
 		"phase": [
 			"開始"
@@ -1093,7 +1093,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《術式擴張》",
 		"phase": [
 			"特殊"
@@ -1107,7 +1107,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《變身魔術》",
 		"phase": [
 			"常駐"
@@ -1121,7 +1121,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《靈威衝破》",
 		"phase": [
 			"特殊"
@@ -1135,7 +1135,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《決鬥聖句》",
 		"phase": [
 			"特殊"
@@ -1149,7 +1149,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《獨自防禦式》",
 		"phase": [
 			"特殊"
@@ -1163,7 +1163,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔術師",
+		"type": "ancestry-魔術師",
 		"name": "《凶兆觀測》",
 		"phase": [
 			"特殊"
@@ -1177,7 +1177,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《靈力操作》",
 		"phase": [
 			"特殊"
@@ -1191,7 +1191,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《瞬間的光明》",
 		"phase": [
 			"特殊"
@@ -1205,7 +1205,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《人生經驗》",
 		"phase": [
 			"常駐"
@@ -1219,7 +1219,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《泛用能力》",
 		"phase": [
 			"常駐"
@@ -1233,7 +1233,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《適應能力》",
 		"phase": [
 			"常駐"
@@ -1247,7 +1247,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《秘奧取得》",
 		"phase": [
 			"常駐"
@@ -1261,7 +1261,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《近戰熟練》",
 		"phase": [
 			"常駐"
@@ -1275,7 +1275,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《術式熟練》",
 		"phase": [
 			"常駐"
@@ -1289,7 +1289,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《高階佯攻》",
 		"phase": [
 			"特殊"
@@ -1303,7 +1303,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《致命迴避》",
 		"phase": [
 			"特殊"
@@ -1317,7 +1317,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《適應強化》",
 		"phase": [
 			"常駐"
@@ -1331,7 +1331,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《秘奧熟練》",
 		"phase": [
 			"常駐"
@@ -1345,7 +1345,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《武器使》",
 		"phase": [
 			"常駐"
@@ -1359,7 +1359,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《對魔力》",
 		"phase": [
 			"常駐"
@@ -1373,7 +1373,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《極限體術》",
 		"phase": [
 			"開始",
@@ -1388,7 +1388,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《一意專心》",
 		"phase": [
 			"特殊"
@@ -1402,7 +1402,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《異能感覺》",
 		"phase": [
 			"常駐"
@@ -1416,7 +1416,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《共感覺》",
 		"phase": [
 			"特殊"
@@ -1430,7 +1430,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《同時並行》",
 		"phase": [
 			"特殊"
@@ -1444,7 +1444,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《直覺記憶》",
 		"phase": [
 			"特殊"
@@ -1458,7 +1458,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人類",
+		"type": "ancestry-人類",
 		"name": "《異能色覺》",
 		"phase": [
 			"常駐"
@@ -1472,7 +1472,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《傾國的美貌》",
 		"phase": [
 			"攻擊"
@@ -1486,7 +1486,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍脈破》",
 		"phase": [
 			"攻擊"
@@ -1500,7 +1500,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍脈刃》",
 		"phase": [
 			"攻擊"
@@ -1515,7 +1515,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍脈集束》",
 		"phase": [
 			"特殊"
@@ -1529,7 +1529,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍脈變異》",
 		"phase": [
 			"特殊"
@@ -1543,7 +1543,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍王的加護》",
 		"phase": [
 			"特殊"
@@ -1557,7 +1557,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍王之鱗》",
 		"phase": [
 			"防禦"
@@ -1571,7 +1571,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《起源龍之力》",
 		"phase": [
 			"常駐"
@@ -1585,7 +1585,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍神鬥氣》",
 		"phase": [
 			"開始"
@@ -1599,7 +1599,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍血解放》",
 		"phase": [
 			"開始"
@@ -1613,7 +1613,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍王之瞳》",
 		"phase": [
 			"特殊"
@@ -1627,7 +1627,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍王之鎧》",
 		"phase": [
 			"常駐"
@@ -1641,7 +1641,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍王重壓》",
 		"phase": [
 			"特殊"
@@ -1655,7 +1655,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍脈之王》",
 		"phase": [
 			"常駐"
@@ -1669,7 +1669,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍翼飛翔》",
 		"phase": [
 			"特殊"
@@ -1683,7 +1683,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍之神性》",
 		"phase": [
 			"常駐"
@@ -1697,7 +1697,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍吼閃》",
 		"phase": [
 			"常駐"
@@ -1711,7 +1711,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《祖龍顯現》",
 		"phase": [
 			"開始"
@@ -1725,7 +1725,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍神的靈威》",
 		"phase": [
 			"特殊"
@@ -1739,7 +1739,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《逆鱗具現》",
 		"phase": [
 			"特殊"
@@ -1753,7 +1753,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-龍王",
+		"type": "ancestry-龍王",
 		"name": "《龍血的靈力》",
 		"phase": [
 			"常駐"
@@ -1767,7 +1767,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神力操作》",
 		"phase": [
 			"開始"
@@ -1781,7 +1781,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《靈力清淨》",
 		"phase": [
 			"攻擊"
@@ -1795,7 +1795,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神靈天眼》",
 		"phase": [
 			"攻擊"
@@ -1809,7 +1809,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神靈天耳》",
 		"phase": [
 			"特殊"
@@ -1823,7 +1823,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神足通》",
 		"phase": [
 			"特殊"
@@ -1837,7 +1837,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《病魔退散》",
 		"phase": [
 			"攻擊"
@@ -1851,7 +1851,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神力蘇生》",
 		"phase": [
 			"攻擊"
@@ -1865,7 +1865,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《保食神》",
 		"phase": [
 			"攻擊"
@@ -1879,7 +1879,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《天候神》",
 		"phase": [
 			"攻擊"
@@ -1893,7 +1893,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《基石》",
 		"phase": [
 			"攻擊"
@@ -1907,7 +1907,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神器創造》",
 		"phase": [
 			"攻擊"
@@ -1921,7 +1921,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神力宿命》",
 		"phase": [
 			"常駐"
@@ -1935,7 +1935,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《治癒的靈威》",
 		"phase": [
 			"常駐"
@@ -1949,7 +1949,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神力漏盡》",
 		"phase": [
 			"常駐"
@@ -1963,7 +1963,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《狂暴的神威》",
 		"phase": [
 			"攻擊"
@@ -1977,7 +1977,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《神諭》",
 		"phase": [
 			"特殊"
@@ -1991,7 +1991,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《武神》",
 		"phase": [
 			"常駐"
@@ -2005,7 +2005,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《聖域化》",
 		"phase": [
 			"開始"
@@ -2019,7 +2019,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《本性顯現》",
 		"phase": [
 			"開始"
@@ -2033,7 +2033,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《靈驗強化》",
 		"phase": [
 			"常駐"
@@ -2047,7 +2047,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-神靈",
+		"type": "ancestry-神靈",
 		"name": "《高等的神使》",
 		"phase": [
 			"常駐"
@@ -2061,7 +2061,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《氣息消失》",
 		"phase": [
 			"開始"
@@ -2075,7 +2075,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《英魂的一擊》",
 		"phase": [
 			"攻擊"
@@ -2089,7 +2089,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《鍊金達人》",
 		"phase": [
 			"攻擊"
@@ -2103,7 +2103,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《靈力化》",
 		"phase": [
 			"特殊"
@@ -2117,7 +2117,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《異能耐性》",
 		"phase": [
 			"特殊"
@@ -2131,7 +2131,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《據點創造》",
 		"phase": [
 			"常駐"
@@ -2145,7 +2145,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《騎乘特性》",
 		"phase": [
 			"常駐"
@@ -2159,7 +2159,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《傳說的寶具》",
 		"phase": [
 			"常駐"
@@ -2173,7 +2173,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《自我領域》",
 		"phase": [
 			"開始"
@@ -2188,7 +2188,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《對空間能力》",
 		"phase": [
 			"特殊"
@@ -2202,7 +2202,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《偉業回想》",
 		"phase": [
 			"特殊"
@@ -2216,7 +2216,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《改變歷史的一擊》",
 		"phase": [
 			"特殊"
@@ -2230,7 +2230,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《異能耐性強化》",
 		"phase": [
 			"常駐"
@@ -2244,7 +2244,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《屠殺者》",
 		"phase": [
 			"常駐"
@@ -2258,7 +2258,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《狂戰士》",
 		"phase": [
 			"開始"
@@ -2272,7 +2272,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《傳說的財寶》",
 		"phase": [
 			"攻擊"
@@ -2286,7 +2286,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《威壓的靈威》",
 		"phase": [
 			"特殊"
@@ -2300,7 +2300,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《異能的肉體》",
 		"phase": [
 			"防禦"
@@ -2314,7 +2314,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《英魂秘奧》",
 		"phase": [
 			"特殊"
@@ -2328,7 +2328,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《神性發現》",
 		"phase": [
 			"特殊"
@@ -2342,7 +2342,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-英魂",
+		"type": "ancestry-英魂",
 		"name": "《靈威隱蔽》",
 		"phase": [
 			"常駐"
@@ -2356,7 +2356,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《加速機能》",
 		"phase": [
 			"開始",
@@ -2371,7 +2371,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《收納兵器》",
 		"phase": [
 			"攻擊"
@@ -2385,7 +2385,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《高出力器官》",
 		"phase": [
 			"特殊"
@@ -2399,7 +2399,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《電子潛入》",
 		"phase": [
 			"特殊"
@@ -2413,7 +2413,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《精密補正》",
 		"phase": [
 			"特殊"
@@ -2427,7 +2427,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《皮膚裝甲》",
 		"phase": [
 			"特殊"
@@ -2441,7 +2441,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《對衝擊機能》",
 		"phase": [
 			"常駐"
@@ -2455,7 +2455,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《極限奔馳》",
 		"phase": [
 			"常駐"
@@ -2469,7 +2469,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《毀滅模式》",
 		"phase": [
 			"開始"
@@ -2483,7 +2483,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《全金屬爆發》",
 		"phase": [
 			"攻擊"
@@ -2498,7 +2498,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《虐殺機能》",
 		"phase": [
 			"特殊"
@@ -2512,7 +2512,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《防禦突破》",
 		"phase": [
 			"特殊"
@@ -2526,7 +2526,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《彈道解析》",
 		"phase": [
 			"特殊"
@@ -2540,7 +2540,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《高性能靈力機關》",
 		"phase": [
 			"常駐"
@@ -2554,7 +2554,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《制震系統》",
 		"phase": [
 			"特殊"
@@ -2568,7 +2568,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《加速模式》",
 		"phase": [
 			"特殊"
@@ -2582,7 +2582,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《軍火庫系統》",
 		"phase": [
 			"常駐"
@@ -2596,7 +2596,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《光學迷彩》",
 		"phase": [
 			"開始"
@@ -2610,7 +2610,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《戰術義眼》",
 		"phase": [
 			"常駐"
@@ -2624,7 +2624,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《極限改造》",
 		"phase": [
 			"常駐"
@@ -2638,7 +2638,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-改造人",
+		"type": "ancestry-改造人",
 		"name": "《強化反射神經》",
 		"phase": [
 			"常駐"
@@ -2652,7 +2652,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《破滅的魔眼》",
 		"phase": [
 			"攻擊"
@@ -2666,7 +2666,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《幻惑的邪視》",
 		"phase": [
 			"攻擊"
@@ -2680,7 +2680,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《催眠瞳術》",
 		"phase": [
 			"攻擊"
@@ -2694,7 +2694,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《時流延遲》",
 		"phase": [
 			"防禦"
@@ -2708,7 +2708,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《軌道看破》",
 		"phase": [
 			"特殊"
@@ -2722,7 +2722,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《死線的魔眼》",
 		"phase": [
 			"特殊"
@@ -2736,7 +2736,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《千里眼》",
 		"phase": [
 			"特殊"
@@ -2750,7 +2750,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《死神之瞳》",
 		"phase": [
 			"特殊"
@@ -2764,7 +2764,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《即死的魔眼》",
 		"phase": [
 			"特殊"
@@ -2778,7 +2778,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《石化的魔眼》",
 		"phase": [
 			"開始"
@@ -2792,7 +2792,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《全方位視野》",
 		"phase": [
 			"特殊"
@@ -2806,7 +2806,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《未來視》",
 		"phase": [
 			"特殊"
@@ -2820,7 +2820,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《過去視》",
 		"phase": [
 			"特殊"
@@ -2834,7 +2834,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《龍眼咒縛》",
 		"phase": [
 			"特殊"
@@ -2848,7 +2848,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《遲速的邪視》",
 		"phase": [
 			"特殊"
@@ -2862,7 +2862,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《虛脫的邪視》",
 		"phase": [
 			"特殊"
@@ -2876,7 +2876,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《束縛的邪視》",
 		"phase": [
 			"特殊"
@@ -2890,7 +2890,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《詛咒的邪視》",
 		"phase": [
 			"特殊"
@@ -2904,7 +2904,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《要害透視》",
 		"phase": [
 			"特殊"
@@ -2918,7 +2918,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《破邪的神眼》",
 		"phase": [
 			"特殊"
@@ -2932,7 +2932,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-魔眼",
+		"type": "ancestry-魔眼",
 		"name": "《不動束縛》",
 		"phase": [
 			"常駐"
@@ -2946,7 +2946,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《魔王的鬥氣》",
 		"phase": [
 			"開始"
@@ -2960,7 +2960,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《異界戰技》",
 		"phase": [
 			"攻擊"
@@ -2974,7 +2974,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《異界魔法》",
 		"phase": [
 			"攻擊"
@@ -2988,7 +2988,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《記憶混濁》",
 		"phase": [
 			"攻擊"
@@ -3002,7 +3002,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《溢出的靈力》",
 		"phase": [
 			"特殊"
@@ -3016,7 +3016,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《禁斷的知識》",
 		"phase": [
 			"特殊"
@@ -3030,7 +3030,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《形態超越》",
 		"phase": [
 			"常駐"
@@ -3044,7 +3044,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《異界特性》",
 		"phase": [
 			"常駐"
@@ -3058,7 +3058,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《勇者的迴廊》",
 		"phase": [
 			"準備"
@@ -3072,7 +3072,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《虛空擊》",
 		"phase": [
 			"特殊"
@@ -3086,7 +3086,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《高次元再生》",
 		"phase": [
 			"開始",
@@ -3101,7 +3101,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《極大秘奧》",
 		"phase": [
 			"特殊"
@@ -3115,7 +3115,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《魔王的結界》",
 		"phase": [
 			"開始"
@@ -3129,7 +3129,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《被選中之人》",
 		"phase": [
 			"常駐"
@@ -3143,7 +3143,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《加速咒文》",
 		"phase": [
 			"開始"
@@ -3157,7 +3157,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《強化法力》",
 		"phase": [
 			"特殊"
@@ -3171,7 +3171,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《防禦魔法》",
 		"phase": [
 			"特殊"
@@ -3185,7 +3185,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《異能加護》",
 		"phase": [
 			"特殊"
@@ -3199,7 +3199,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《勇者的靈威》",
 		"phase": [
 			"特殊"
@@ -3213,7 +3213,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《勇者的祈禱》",
 		"phase": [
 			"特殊"
@@ -3227,7 +3227,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-稀人",
+		"type": "ancestry-稀人",
 		"name": "《歷戰的勇者》",
 		"phase": [
 			"常駐"
@@ -3241,7 +3241,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力疾走》",
 		"phase": [
 			"開始"
@@ -3255,7 +3255,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力擊破》",
 		"phase": [
 			"攻擊"
@@ -3269,7 +3269,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《魔境化》",
 		"phase": [
 			"攻擊"
@@ -3284,7 +3284,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力轉移》",
 		"phase": [
 			"特殊"
@@ -3298,7 +3298,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《巨大》",
 		"phase": [
 			"常駐"
@@ -3312,7 +3312,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《微小》",
 		"phase": [
 			"常駐"
@@ -3326,7 +3326,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《血統的祖神》",
 		"phase": [
 			"常駐"
@@ -3340,7 +3340,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力秘奧》",
 		"phase": [
 			"常駐"
@@ -3354,7 +3354,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力掃射》",
 		"phase": [
 			"攻擊"
@@ -3368,7 +3368,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《靈魂捕食》",
 		"phase": [
 			"特殊"
@@ -3382,7 +3382,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《真正的妖力》",
 		"phase": [
 			"特殊"
@@ -3396,7 +3396,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《領域視界》",
 		"phase": [
 			"常駐"
@@ -3410,7 +3410,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《妖力的化身》",
 		"phase": [
 			"常駐"
@@ -3424,7 +3424,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-幸御魂",
+		"type": "ancestry-幸御魂",
 		"name": "《神域化》",
 		"phase": [
 			"常駐"
@@ -3438,7 +3438,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《內藏火器》",
 		"phase": [
 			"攻擊"
@@ -3452,7 +3452,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《特殊合金軀體》",
 		"phase": [
 			"防禦"
@@ -3466,7 +3466,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《球體關節》",
 		"phase": [
 			"特殊"
@@ -3480,7 +3480,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《輪軸更換》",
 		"phase": [
 			"特殊"
@@ -3494,7 +3494,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《高速演算》",
 		"phase": [
 			"特殊"
@@ -3508,7 +3508,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《反射加速》",
 		"phase": [
 			"特殊"
@@ -3522,7 +3522,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《加速追擊》",
 		"phase": [
 			"特殊"
@@ -3536,7 +3536,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《加速移動》",
 		"phase": [
 			"常駐"
@@ -3550,7 +3550,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《靈力變換機構》",
 		"phase": [
 			"特殊"
@@ -3564,7 +3564,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《靈壁展開》",
 		"phase": [
 			"特殊"
@@ -3578,7 +3578,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《以太分析》",
 		"phase": [
 			"常駐"
@@ -3592,7 +3592,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《對靈威機構》",
 		"phase": [
 			"防禦"
@@ -3606,7 +3606,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《自我修復機構》",
 		"phase": [
 			"特殊"
@@ -3620,7 +3620,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《超高速機動》",
 		"phase": [
 			"特殊"
@@ -3634,7 +3634,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《立體機動》",
 		"phase": [
 			"常駐"
@@ -3648,7 +3648,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《對衝擊機構》",
 		"phase": [
 			"常駐"
@@ -3662,7 +3662,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《人造神器化》",
 		"phase": [
 			"常駐"
@@ -3676,7 +3676,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《以太干擾》",
 		"phase": [
 			"開始"
@@ -3690,7 +3690,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《引導》",
 		"phase": [
 			"特殊"
@@ -3704,7 +3704,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《自動支援掃射》",
 		"phase": [
 			"特殊"
@@ -3718,7 +3718,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-仿生機械",
+		"type": "ancestry-仿生機械",
 		"name": "《追加對彈裝甲》",
 		"phase": [
 			"常駐"
@@ -3732,7 +3732,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《生命變換》",
 		"phase": [
 			"準備"
@@ -3746,7 +3746,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力的波動》",
 		"phase": [
 			"攻擊"
@@ -3760,7 +3760,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力的視線》",
 		"phase": [
 			"攻擊"
@@ -3774,7 +3774,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力操作》",
 		"phase": [
 			"攻擊"
@@ -3788,7 +3788,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力浮游》",
 		"phase": [
 			"特殊"
@@ -3802,7 +3802,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《無言詠唱》",
 		"phase": [
 			"特殊"
@@ -3817,7 +3817,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《與生俱來的知性》",
 		"phase": [
 			"特殊"
@@ -3831,7 +3831,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔術存在》",
 		"phase": [
 			"常駐"
@@ -3845,7 +3845,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力重擊》",
 		"phase": [
 			"攻擊"
@@ -3859,7 +3859,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《術式伸長》",
 		"phase": [
 			"特殊"
@@ -3873,7 +3873,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《高次元的精神》",
 		"phase": [
 			"特殊"
@@ -3887,7 +3887,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力過濾》",
 		"phase": [
 			"開始"
@@ -3901,7 +3901,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《殘像轉移》",
 		"phase": [
 			"特殊"
@@ -3915,7 +3915,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力的奔流》",
 		"phase": [
 			"常駐"
@@ -3929,7 +3929,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《干涉強化》",
 		"phase": [
 			"常駐"
@@ -3943,7 +3943,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《防衛魔眼》",
 		"phase": [
 			"常駐"
@@ -3957,7 +3957,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《小規模具現》",
 		"phase": [
 			"常駐"
@@ -3971,7 +3971,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《思念詠唱》",
 		"phase": [
 			"特殊"
@@ -3985,7 +3985,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《防壁突破》",
 		"phase": [
 			"特殊"
@@ -3999,7 +3999,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《靈威燒卻》",
 		"phase": [
 			"特殊"
@@ -4013,7 +4013,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-人造生命",
+		"type": "ancestry-人造生命",
 		"name": "《魔力光條》",
 		"phase": [
 			"特殊"
@@ -4027,7 +4027,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《飄浮》",
 		"phase": [
 			"開始"
@@ -4041,7 +4041,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《超能爆裂》",
 		"phase": [
 			"攻擊"
@@ -4055,7 +4055,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《催眠》",
 		"phase": [
 			"攻擊"
@@ -4069,7 +4069,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《搬運》",
 		"phase": [
 			"特殊"
@@ -4083,7 +4083,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《念力》",
 		"phase": [
 			"特殊"
@@ -4097,7 +4097,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《接觸感應》",
 		"phase": [
 			"特殊"
@@ -4111,7 +4111,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《長距離傳送》",
 		"phase": [
 			"特殊"
@@ -4125,7 +4125,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《心電感應》",
 		"phase": [
 			"常駐"
@@ -4139,7 +4139,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《治癒》",
 		"phase": [
 			"攻擊"
@@ -4153,7 +4153,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《念寫》",
 		"phase": [
 			"攻擊"
@@ -4167,7 +4167,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《超能之盾》",
 		"phase": [
 			"防禦"
@@ -4181,7 +4181,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《短距離傳送》",
 		"phase": [
 			"開始"
@@ -4195,7 +4195,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《超能毀滅》",
 		"phase": [
 			"攻擊"
@@ -4210,7 +4210,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《轉移》",
 		"phase": [
 			"特殊"
@@ -4224,7 +4224,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《讀心》",
 		"phase": [
 			"特殊"
@@ -4238,7 +4238,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《透視》",
 		"phase": [
 			"常駐"
@@ -4252,7 +4252,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《預知》",
 		"phase": [
 			"特殊"
@@ -4266,7 +4266,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《共感》",
 		"phase": [
 			"開始"
@@ -4280,7 +4280,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《超能護罩》",
 		"phase": [
 			"特殊"
@@ -4294,7 +4294,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《心靈治療》",
 		"phase": [
 			"常駐"
@@ -4308,7 +4308,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-超能力者",
+		"type": "ancestry-超能力者",
 		"name": "《超能領域》",
 		"phase": [
 			"常駐"
@@ -4322,7 +4322,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《戰鬥形態》",
 		"phase": [
 			"開始"
@@ -4336,7 +4336,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《惡鬼的咆哮》",
 		"phase": [
 			"準備"
@@ -4350,7 +4350,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《餓蟲蹂躪》",
 		"phase": [
 			"攻擊"
@@ -4364,7 +4364,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《蹴地異形》",
 		"phase": [
 			"特殊"
@@ -4378,7 +4378,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《身體能力解放》",
 		"phase": [
 			"特殊"
@@ -4392,7 +4392,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《甲殼展開》",
 		"phase": [
 			"特殊"
@@ -4406,7 +4406,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《完全變身》",
 		"phase": [
 			"常駐"
@@ -4420,7 +4420,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《秘藏的獸性》",
 		"phase": [
 			"常駐"
@@ -4434,7 +4434,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《猛毒生成》",
 		"phase": [
 			"防禦"
@@ -4448,7 +4448,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《魔蟲複眼》",
 		"phase": [
 			"常駐"
@@ -4462,7 +4462,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《變異移動》",
 		"phase": [
 			"常駐"
@@ -4476,7 +4476,7 @@
 		"isLimit": false
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《經絡暴走》",
 		"phase": [
 			"開始"
@@ -4490,7 +4490,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《惡食的肉體》",
 		"phase": [
 			"特殊"
@@ -4504,7 +4504,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《經絡再生》",
 		"phase": [
 			"特殊"
@@ -4518,7 +4518,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《進化形態》",
 		"phase": [
 			"常駐"
@@ -4532,7 +4532,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《惡鬼降臨》",
 		"phase": [
 			"常駐"
@@ -4546,7 +4546,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《甲殼獸》",
 		"phase": [
 			"常駐"
@@ -4560,7 +4560,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《腦內麻藥操作》",
 		"phase": [
 			"特殊"
@@ -4574,7 +4574,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《觸手掃射》",
 		"phase": [
 			"特殊"
@@ -4588,7 +4588,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《異形防禦》",
 		"phase": [
 			"特殊"
@@ -4602,7 +4602,7 @@
 		"isLimit": 1
 	},
 	{
-		"type": "race-適合者",
+		"type": "ancestry-適合者",
 		"name": "《經絡控制》",
 		"phase": [
 			"常駐"
@@ -4613,426 +4613,6 @@
 			"無"
 		],
 		"effect": "常駐效果。必須取得《進化形態》。當對象使用［種族：適合者／時機：特殊／代價：n］的《種族天賦》時，任1個［代價］視為已消耗。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《跳躍能力》",
-		"phase": [
-			"開始"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象無視［接近狀態］移動3格。\n此《天賦》不消耗［開始］，1場戰鬥（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威加速》",
-		"phase": [
-			"開始"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象的【行動值】獲得+1D修正。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《空間移動》",
-		"phase": [
-			"準備"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象將自己［設置］於3格內的任意格子（並非移動）。\n此《天賦》不消耗［準備］，1場戰鬥中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《自我修復》",
-		"phase": [
-			"準備"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"奇"
-		],
-		"effect": "特殊效果。對象回復「使用者的任意【主能力值】」點【生命力】。\n此《天賦》不消耗［準備］，1輪中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威擊》",
-		"phase": [
-			"攻擊"
-		],
-		"range": "道具",
-		"target": "1體",
-		"cost": [
-			"偶"
-		],
-		"effect": "物理攻擊。使用者在［傷害計算］時［物理階級］+1。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威魔術》",
-		"phase": [
-			"攻擊"
-		],
-		"range": "道具",
-		"target": "1體",
-		"cost": [
-			"奇"
-		],
-		"effect": "魔法攻擊。給予對象［階級：1］的［魔法傷害］（抵抗［減半］）。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《超常攻擊》",
-		"phase": [
-			"攻擊"
-		],
-		"range": "5格",
-		"target": "範圍",
-		"cost": [
-			"對數"
-		],
-		"effect": "物理攻擊。此《天賦》只有使用者鄰近1格內有［障礙物］時才能使用。使用者能藉由消滅鄰近1格內的1個［障礙物］來向對象進行［物理攻擊］，在［傷害計算］時［階級］+1。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈紋贈與》",
-		"phase": [
-			"攻擊"
-		],
-		"range": "其他",
-		"target": "其他",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。只能在［戰鬥外］使用。使用者指定［登場］中的［對象：1體］，［回復］3D點【靈紋】。之後使用者的【靈紋】消耗［對象：1體］所［回復］的數值。\n此《天賦》在1場遊戲中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈氣律》",
-		"phase": [
-			"結束"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象的1個［靈力］骰面±1（無法變為0以下、7以上）。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈力再生》",
-		"phase": [
-			"結束"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"偶"
-		],
-		"effect": "特殊效果。對象的［回復］「使用者的任意【主能力值】」點【生命力】。\n此《天賦》不消耗［結束］，1輪（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威放出》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。隨時都能使用。對象獲得1個［超越靈力］。\r\n此《天賦》在1場戰鬥（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《驚人的力氣》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"奇"
-		],
-		"effect": "特殊效果。在對象的［回合］中，隨時都能使用。對象能［設置］大小相當於「巨岩」的［障礙物］於［距離］內且沒有角色及［障礙物］存在的1格中。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《超體術》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。每當對象的［被動判定］成功時，便無視［接近狀態］往任意方向移動2格。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《異常回復》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。對象使用《天賦》、［道具］、［小休］、［大休］的［回復］效果獲得+5修正。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《混血之神》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。任1種【主能力值】+1。此外，選擇1種與現在［種族］相異的［種族］，將雙方的【主能力值】及［種族特典］組合起來進行PC再創造。例如選擇［封神］及［人類］時，可以選擇［封神］的【主能力值】以及［人類］的［種族特典］來再創造PC（無法同時適用雙方的內容，再創造時只能取得新［種族特典］所指定的《種族天賦》。［成長］時若更換下《混血之神》，則此效果消滅）。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈奪》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。在對象給予［傷害］的目標變為［狀態變化：昏厥、無法戰鬥、死亡］其中1項後使用。對象獲得1個［超越靈力］。即便目標為複數，獲得的［超越靈力］最大數量也為1個。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《過剩靈威》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。當對象使用《天賦》時，任1個［代價］視為已消耗。\n此《天賦》在1場戰鬥（場景）中只能使用1次。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《強力的妖氣》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。對象的【生命力】獲得+10修正。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《能力》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。對象以［對數］或［連號］為［代價］的《種族天賦》也能以［代價：偶］來使用。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《具現強化》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。當對象使用會進行［傷害計算］的［時機：攻擊］的《種族天賦》時，［階級］再+1。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈力高揚》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。在對象使用［時機：開始］的《種族天賦》後發揮效果。對象使用［時機：開始］的《種族天賦》後，在1場戰鬥（場景）中，［傷害計算］時獲得+5修正。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈旋陣》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。在對象使用［時機：開始］的《種族天賦》後發揮效果。對象使用［時機：開始］的《種族天賦》後，在1場戰鬥（場景）中，因［射擊武器］而受到的［物理傷害］-「使用者的任意【主能力值】」。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《武運的一擊》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"奇"
-		],
-		"effect": "傷害計算時使用。對象在［傷害計算］時獲得+「使用者的【幸運】」修正。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威機動》",
-		"phase": [
-			"開始"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象進行［目標值：12］的［登場判定］，判定成功時，【行動值】獲得+5修正。\n此《天賦》不消耗［開始］，1輪中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威神眼》",
-		"phase": [
-			"準備"
-		],
-		"range": "7格",
-		"target": "範圍",
-		"cost": [
-			"偶"
-		],
-		"effect": "特殊效果。給予對象［解除：隱密］。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威的氣息》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "特殊效果。對象進行「行動⑪：儲存靈力」時，可以再將1個（合計2個）［靈力］變更為任意骰面。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈力強打》",
-		"phase": [
-			"特殊"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"偶"
-		],
-		"effect": "傷害計算時使用。必須取得《武器熟練》。對象以［肉搏攻擊］使用［時機：攻擊］的《天賦》的場合，在［傷害計算］時獲得+5修正。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": false
-	},
-	{
-		"type": "race-共通",
-		"name": "《幸運的引導》",
-		"phase": [
-			"特殊"
-		],
-		"range": "戰鬥地帶",
-		"target": "1體",
-		"cost": [
-			"奇"
-		],
-		"effect": "【主能力值】判定時使用。只能對使用者以外的對象使用。給予對象的【主能力值】判定達成值+「使用者的【幸運】÷3」修正。\n此《天賦》在1輪（場景）中只能使用1次。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《金鵄之瞳》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。必須取得《靈威神眼》。對象在消耗1次［時機：準備］後，到該輪的［時機：結束］為止，使用［時機：攻擊］的《稱號天賦》進行［物理攻擊］的［主動判定］達成值及［物理階級］+1。",
-		"isLimit": 1
-	},
-	{
-		"type": "race-共通",
-		"name": "《靈威粉碎》",
-		"phase": [
-			"常駐"
-		],
-		"range": "使用者",
-		"target": "使用者",
-		"cost": [
-			"無"
-		],
-		"effect": "常駐效果。必須取得《靈力強打》。對象的《靈力強打》效果變為「對象以［肉搏武器］進行［傷害計算］時獲得+『使用者的任意【主能力值】修正』」。",
 		"isLimit": 1
 	}
 ]

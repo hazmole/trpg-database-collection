@@ -47,9 +47,10 @@ class CoreRouter {
 				await this.renderLayout(pageHdlr.layoutUrl);
 				await this.runScript(pageHdlr.scriptUrl, pageHdlr.params);
 			}
-		} catch (error) {
+		} catch (err) {
 			this.renderSiteTitle('');
 			this.renderMainContainer('<h2 style="margin-left:1em;">404 - 找不到頁面</h2>');
+			console.error(err);
 		} finally {
 			BlockUtils.unblock();
 		}

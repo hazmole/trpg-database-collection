@@ -1,9 +1,9 @@
 
 @font-face {
-  font-family: "HanyiSenty";
-  src: url("../fonts/HanyiSentyFoundation.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
+	font-family: "HanyiSenty";
+	src: url("../fonts/HanyiSentyFoundation.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body { margin:0; overflow:hidden; }
@@ -13,183 +13,184 @@ div { flex-shrink: 0; }
 
 /* Site Layer */
 #SiteHeader {
-  color:azure; background:#141414;
-  height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	color:azure; background:#141414;
+	height: 60px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 #SiteTitle { 
-  margin-left: 13px;
-  font-family: "HanyiSenty";
-  font-size: 46px;
+	margin-left: 13px;
+	font-family: "HanyiSenty";
+	font-size: 46px;
 }
 #ContentBody {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  height: calc(100vh - 60px);
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	height: calc(100vh - 60px);
 }
 #Menu {
-  background:#141414; color:azure;
-  display:flex; flex-direction:column; gap:2px; overflow-y: auto;
-  width:300px; min-width:300px;
+	background:#141414; color:azure;
+	display:flex; flex-direction:column; gap:2px; overflow-y: auto;
+	width:300px; min-width:300px;
 }
 #ContentMain {
-  border:0;
-  height: inherit;
-  overflow: auto;
+	border:0;
+	height: inherit;
+	overflow: auto;
 }
 
 #MenuToggleBtn {
-  display: none; flex-shrink: 0;
-  background:none; color:#fff; border:1px solid #fff;
-  margin: 1em; width: 30px; height: 30px;
-  cursor:pointer;
+	display: none; flex-shrink: 0;
+	background:none; color:#fff; border:1px solid #fff;
+	margin: 1em; width: 30px; height: 30px;
+	cursor:pointer;
 }
 
 /* Site Layer for Mobile */
 @media (max-width: 768px) {
-  #SiteTitle { 
-    margin-left: 0px;
-    font-size: 36px;
-  }
-  #ContentBody {
-    grid-template-columns: 1fr;
-  }
+	#SiteTitle { 
+		margin-left: 0px;
+		font-size: 36px;
+	}
+	#ContentBody {
+		grid-template-columns: 1fr;
+	}
 
-  #Menu {
-    position: fixed;
-    left: -300px; /* 預設在畫面外 */
-    top: 60px;
-    height: 100%;
-    transition: 0.3s;
-    z-index: 1000;
-  }
-  #Menu.Unfold {
-    left: 0;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  }
+	#Menu {
+		position: fixed;
+		left: -300px; /* 預設在畫面外 */
+		top: 60px;
+		height: 100%;
+		transition: 0.3s;
+		z-index: 1000;
+	}
+	#Menu.Unfold {
+		left: 0;
+		box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+	}
 
-  #MenuToggleBtn {
-    display: block; /* 手機版顯示按鈕 */
-  }
+	#MenuToggleBtn {
+		display: block; /* 手機版顯示按鈕 */
+	}
 }
 
 /* Menu */
-.NavGroupTitle { cursor:pointer; padding:5px 10px; border:4px double #726681; background:#2f2a3d; }
+.NavGroupTitle { cursor:pointer; padding:5px 10px; border:4px double #858585; background:#3f3f3f; }
 .NavGroupTitle::before { content:"▶"; margin-right:8px; }
 .NavGroupInner { display:flex; flex-direction:column; gap:2px; padding-left:10px; margin-top:2px; height:0; overflow: hidden; }
 
-.NavGroupOuter.Unfold > .NavGroupTitle::before { content:"▼"; margin-right:6px; color: #90c8d9; }
+.NavGroupOuter.Unfold > .NavGroupTitle::before { content:"▼"; margin-right:6px; }
 .NavGroupOuter.Unfold > .NavGroupInner { height: auto; }
 
 .NavLink { cursor:pointer; padding:5px 10px; border:1px solid #71757b; }
-.NavLink:hover { background-color:#515055 }
-.NavLink.Active { cursor:inherit; background-color:#515055; }
+.NavLink { text-decoration: none; color: #999; }
+.NavLink:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.NavLink.Active { color: #fff; }
 
 /* Block Loading */
 @keyframes lds-dual-ring {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
 
 /* <div class="lds-dual-ring"></div> */
 .lds-dual-ring {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
 }
 .lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	border-color: #fff transparent #fff transparent;
+	animation: lds-dual-ring 1.2s linear infinite;
 }
 #BlockUI-background {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: 2000;
-  width: calc(100vw);
-  height: calc(100vh);
-  background: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0; left: 0;
+	z-index: 2000;
+	width: calc(100vw);
+	height: calc(100vh);
+	background: rgba(0, 0, 0, 0.5);
 }
 #BlockUI-loading-icon {
-  position: fixed;
-  top: calc(50vh); left: calc(50vw);
-  z-index: 2001;
-  margin-left: -40px;
+	position: fixed;
+	top: calc(50vh); left: calc(50vw);
+	z-index: 2001;
+	margin-left: -40px;
 }
 
 
 #ContextHeader {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 10px;
-  height: 50px;
-  background: #141414; color: white;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0 10px;
+	height: 50px;
+	background: #141414; color: white;
 
-  position: sticky;
-  top: 0;
-  z-index: 100;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
 #ContextBody {
-  overflow: auto;
-  padding: 1rem;
-  max-width: 1024px;
+	overflow: auto;
+	padding: 1rem;
+	max-width: 1024px;
 }
 
 
 /* input [type=text] */
 input[type=text] {
-  border: 2px solid black;
-  height: 30px;
-  width: 100%;
-  border-radius: 50px;
-  padding: 4px 11px 4px 31px;
-  font-size: 16px;
-  color: #555;
+	border: 2px solid black;
+	height: 30px;
+	width: 100%;
+	border-radius: 50px;
+	padding: 4px 11px 4px 31px;
+	font-size: 16px;
+	color: #555;
 }
 input[type=text]:focus { outline: none; }
 
 /* select */
 select,
 ::picker(select) {
-  appearance: base-select;
+	appearance: base-select;
 }
 select {
-  border: 2px solid #dddddd;
-  background: #eeeeee; color: #000;
-  min-width: 250px;
-  padding: 4px 10px;
-  transition: 0.4s;
-  font-size: 1em;
+	border: 2px solid #dddddd;
+	background: #eeeeee; color: #000;
+	min-width: 250px;
+	padding: 4px 10px;
+	transition: 0.4s;
+	font-size: 1em;
 }
 select:hover, select:focus { background: #dddddd; }
 select::picker-icon { color: #999999; margin-top: 5px; }
 select:open::picker-icon { rotate: 180deg; margin-top: 1px; }
 
 ::picker(select) {
-  border: none;
-  background: none;
-  top: calc(anchor(bottom) + 1px);
-  max-height: 460px;
+	border: none;
+	background: none;
+	top: calc(anchor(bottom) + 1px);
+	max-height: 460px;
 }
 
 option {
-  display: flex;
-  justify-content: flex-start;
-  gap: 20px;
+	display: flex;
+	justify-content: flex-start;
+	gap: 20px;
 
-  border: 2px solid #dddddd;
-  background: #eeeeee;
-  padding: 10px;
-  transition: 0.4s;
+	border: 2px solid #dddddd;
+	background: #eeeeee;
+	padding: 10px;
+	transition: 0.4s;
 }
 option:first-of-type { border-radius: 8px 8px 0 0; }
 option:last-of-type  { border-radius: 0 0 8px 8px; }
@@ -204,5 +205,47 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 ::picker(select) { opacity: 0; transition: all 0.4s allow-discrete; }
 ::picker(select):popover-open { opacity: 1; }
 @starting-style {
-  ::picker(select):popover-open { opacity: 0; }
+	::picker(select):popover-open { opacity: 0; }
 }
+
+/* select: sort */
+.SortGroup {
+	display: inline-flex;
+	align-items: center;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 4px;
+	overflow: hidden;
+	height: 36px;
+}
+.SortGroup:hover {
+	border-color: #555;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.SortGroup .SortPrefix {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 0 10px;
+	background-color: #333; 
+	color: #fff;
+	font-size: 13px;
+	font-weight: 500;
+	height: 100%;
+	user-select: none;
+}
+.SortGroup select.SelectSort {
+	border: none !important; 
+	border-radius: 0 !important;
+	padding: 0 30px 0 12px !important;
+	margin: 0 !important;
+	height: 100% !important;
+	
+	font-size: 14px;
+	color: #333;
+	background-color: transparent;
+	cursor: pointer;
+	
+	appearance: none;
+}
+.SortGroup select.SelectSort:focus { outline: none; }

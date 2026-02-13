@@ -57,13 +57,10 @@
 	padding: 0 5px 5px 5px;
 	width: 60px;
 }
-.ListEntry .BlockCell div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.ListEntry .BlockCell > div {
 	flex-grow: 1;
 }
-.ListEntry .BlockCell div:before {
+.ListEntry .BlockCell > div:before {
 	display: block;
 	font-size: 10px;
 	width: clac(100% + 10px);
@@ -74,6 +71,6 @@
 .ListEntry .Field {
   padding: 5px;
   align-self: center;
-  flex: 1 1 400px;
+  flex: 1 1 300px;
 	max-width: 800px;
 }

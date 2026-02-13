@@ -25,11 +25,28 @@ const INDEX = [
 		] },
 	] },
 	{ title: "資料庫", members: [
-		{ title: "種族", pid: "data-races" },
-		//{ title: "稱號", url: "" },
-		//{ title: "表職業", url: "" },
-		//{ title: "共通天賦", url: "" },
-		//{ title: "道具", url: "" },
+		{ title: "種族", pid: "data-ancestries" },
+		{ title: "稱號", pid: "data-arm-systems" },
+		{ title: "共通天賦", pid: "data-common-talents" },
+		{ title: "道具", members: [
+			{ title: "武器", members: [
+				{ title: "形狀：劍", pid: "data-item-weapons-sword" },
+				{ title: "形狀：槍", pid: "data-item-weapons-lance" },
+				{ title: "形狀：斧", pid: "data-item-weapons-axe" },
+				{ title: "形狀：錘", pid: "data-item-weapons-hammer" },
+				{ title: "形狀：射擊", pid: "data-item-weapons-projectile" },
+				{ title: "形狀：魔法", pid: "data-item-weapons-magic" },
+			] },
+			{ title: "防具", members: [
+				{ title: "鎧", pid: "data-item-protectors-armor" },
+				{ title: "盾", pid: "data-item-protectors-shield" },
+			] },
+			{ title: "裝飾", pid: "data-item-accessories" },
+			{ title: "消耗品", pid: "data-item-consumables" },
+			{ title: "常備品", pid: "data-item-sacraments" },
+			{ title: "探索者套裝", pid: "data-item-hunter-sets" },
+		] },
+		{ title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
 		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
@@ -39,10 +56,100 @@ const INDEX = [
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
-	"data-races": {
+	"data-ancestries": {
 		title: "種族一覽", handler: 'custom', params: {
-			layout: 'pages/player-races.html',
-			script: 'pages/player-races.js',
+			layout: 'pages/player-ancestries.html',
+			script: 'pages/player-ancestries.js',
+		}},
+
+	"data-arm-systems": {
+		title: "稱號一覽", handler: 'custom', params: {
+			layout: 'pages/player-arm-systems.html',
+			script: 'pages/player-arm-systems.js',
+		}},
+
+	"data-common-talents": {
+		title: "共通天賦一覽", handler: 'custom', params: {
+			layout: 'pages/player-common-talents.html',
+			script: 'pages/player-common-talents.js',
+		}},
+
+	"data-item-weapons-sword": {
+		title: "武器／劍", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-sword.js',
+		}},
+
+	"data-item-weapons-lance": {
+		title: "武器／槍", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-lance.js',
+		}},
+
+	"data-item-weapons-axe": {
+		title: "武器／斧", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-axe.js',
+		}},
+
+	"data-item-weapons-hammer": {
+		title: "武器／錘", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-hammer.js',
+		}},
+
+	"data-item-weapons-projectile": {
+		title: "武器／射擊", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-projectile.js',
+		}},
+
+	"data-item-weapons-magic": {
+		title: "武器／魔法", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-weapons-magic.js',
+		}},
+
+	"data-item-protectors-armor": {
+		title: "防具／鎧", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-protector-armor.js',
+		}},
+
+	"data-item-protectors-shield": {
+		title: "防具／盾", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-protector-shield.js',
+		}},
+
+	"data-item-accessories": {
+		title: "裝飾", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-accessories.js',
+		}},
+
+	"data-item-consumables": {
+		title: "消耗品", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-consumables.js',
+		}},
+
+	"data-item-sacraments": {
+		title: "常備品", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-sacraments.js',
+		}},
+
+	"data-item-hunter-sets": {
+		title: "探索者套裝", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-item-hunter-sets.js',
+		}},
+
+	"data-facades": {
+		title: "表職業", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/player-facades.js',
 		}},
 
 	"doc-core-gamerule-conditions": {
