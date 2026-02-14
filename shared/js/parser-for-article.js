@@ -111,8 +111,6 @@ class ArticleParser {
 			const linkText = parts[0];
 			const linkPid = parts[1];
 			
-			console.log(result[0]);
-
 			fmtText = fmtText.replace(result[0], `<a href="?pid=${linkPid}">${linkText}</a>`);
 		});
 		return fmtText;
