@@ -12,9 +12,9 @@ const INDEX = [
 			{ title: "創建 NPC", pid: "doc-core-gm-npc-creation" },
 			//{ title: "BOSS天賦一覽", pid: "doc-core-gm-boss-talents" },
 			{ title: "創作劇本", pid: "doc-core-gm-scenario-writing" },
-			//{ title: "關於法則障礙", pid: "doc-core-gm-anomalies-detail" },
+			{ title: "關於法則障礙", pid: "doc-core-gm-about-anomaly" },
 			//{ title: "法則障礙一覽", pid: "doc-core-gm-anomalies-list" },
-			//{ title: "關於素材", pid: "doc-core-gm-materials" },
+			{ title: "關於素材", pid: "doc-core-gm-about-material" },
 			{ title: "關於精怪", pid: "doc-core-gm-about-mononoke" },
 		] },
 	] },
@@ -51,12 +51,11 @@ const INDEX = [
 		] },
 		{ title: "表職業", pid: "data-facades" },
 		//{ title: "精怪", url: "" },
-		//{ title: "BOSS天賦", url: "" },
 		//{ title: "法則障礙", url: "" },
 	] },
-	//{ title: "GM 資料庫", members: [
-	//	{ title: "BOSS天賦", pid: "data-boss-talents" },
-	//] }
+	{ title: "GM 資料庫", members: [
+		{ title: "BOSS天賦", pid: "data-boss-talents" },
+	] }
 ];
 
 const MAP = {
@@ -163,6 +162,12 @@ const MAP = {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/player-facades.js',
 		}},
+	
+	"data-boss-talents": {
+		title: "BOSS天賦", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/gm-boss-talents.js',
+		}},
 
 	// 規則文件
 	"doc-core-gamerule-conditions": {
@@ -176,6 +181,12 @@ const MAP = {
 
 	"doc-core-gm-scenario-writing": {
 		title: "關於劇本創作", handler: 'docs', url: 'docs/core-doc-gm-scenario-writing.json' },
+
+	"doc-core-gm-about-anomaly": {
+		title: "關於法則障礙", handler: 'docs', url: 'docs/core-doc-gm-about-anomaly.json', depth: 3 },
+
+	"doc-core-gm-about-material": {
+		title: "關於素材", handler: 'docs', url: 'docs/core-doc-gm-about-material.json', depth: 3 },
 
 	"doc-core-gm-about-mononoke": {
 		title: "關於精怪", handler: 'docs', url: 'docs/core-doc-gm-about-mononoke.json', depth: 3 },

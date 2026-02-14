@@ -24,11 +24,13 @@ CustomParser.talent = function(talent) {
         <div class="cost"></div><div>${talent.cost.join('、')}</div>
       </div>
       <div class="field">${getEffect()}</div>
+      ${getInfoIcon()}
     </div>`;
     // ================
     function getCategoryText(){
       const parts = talent.type.split('-');
       switch(parts[0]){
+        case "boss":     parts[0]="BOSS"; break;
         case "ancestry": parts[0]="種族"; break;
         case "AS":       parts[0]="稱號"; break;
         case "common":
@@ -43,6 +45,10 @@ CustomParser.talent = function(talent) {
           break;
       }
       return `${parts.join('-')}`;
+    }
+    function getInfoIcon() {
+      if (!talent.desc)  return "";
+      return `<div class="info-box" data-tooltip="${talent.desc}"></div>`;
     }
     function getName(){
       var prefix = "";

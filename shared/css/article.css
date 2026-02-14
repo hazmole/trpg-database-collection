@@ -5,7 +5,7 @@ h3:first-child,
 h4:first-child { margin-top: 0; }
 h2, h3, h4, h5, h6 { margin-bottom: 0; }
 h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
-h5 { font-size: 1em; }
+h5 { font-size: 1em; margin-top: 1em; }
 h6 { font-size: 1em; margin-top: 1em; }
 
 /* Basic Layer */
@@ -109,3 +109,6 @@ h6 { font-size: 1em; margin-top: 1em; }
 }
 .section table.docTable tr                { background: white; }
 .section table.docTable tr:nth-child(odd) { background: rgba(0,0,0,.1); }
+
+.section table td > p,
+.section table th > p { text-indent: 0; }
