@@ -55,6 +55,7 @@ const INDEX = [
 	] },
 	{ title: "GM 資料庫", members: [
 		{ title: "BOSS天賦", pid: "data-boss-talents" },
+		{ title: "法則障礙", pid: "data-anomalies" },
 	] }
 ];
 
@@ -167,6 +168,11 @@ const MAP = {
 		title: "BOSS天賦", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/gm-boss-talents.js',
+		}},
+	"data-anomalies": {
+		title: "法則障礙一覽", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/gm-anomalies.js',
 		}},
 
 	// 規則文件

@@ -101,7 +101,8 @@ h6 { font-size: 1em; margin-top: 1em; }
 	justify-content: center;
 	margin: 1em 0;
 }
-.section table.docTable { border-spacing: 0; }
+.section table.docTable { border-spacing: 0; max-width: 100%; }
+.section table.docTable th.caption { background: white; color: inherit; }
 .section table.docTable th, .section table.docTable td { padding: .2em .5em; }
 .section table.docTable th {
 	background: #1c1c1c;
@@ -112,3 +113,12 @@ h6 { font-size: 1em; margin-top: 1em; }
 
 .section table td > p,
 .section table th > p { text-indent: 0; }
+
+/* Component: flexRow */
+.section .flexRow {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	justify-content: center;
+	align-items: flex-start;
+}

@@ -96,8 +96,28 @@ class ArticleParser {
 
 	//====================
 	static handleString(item) {
-		return `<p>${item.replace(/\n/g, '<br/>')}</p>`;
+		var fmtText = item.replace(/\n/g, '<br/>');
+		fmtText = ArticleParser.replaceLinkInString(fmtText);
+
+		return `<p>${fmtText}</p>`;
 	}
+	static replaceLinkInString(text) {
+		const regexp = /\{\@link\|(.*?)\}/gm;
+		const resultArr = [...text.matchAll(regexp)];
+
+		var fmtText =  text;
+		resultArr.forEach( result => {
+			const parts = result[1].split('|');
+			const linkText = parts[0];
+			const linkPid = parts[1];
+			
+			console.log(result[0]);
+
+			fmtText = fmtText.replace(result[0], `<a href="?pid=${linkPid}">${linkText}</a>`);
+		});
+		return fmtText;
+	}
+
 	static handleImage(item) {
 		// ReqField: url, (style)
 		return `<img src=${item.url} style="${item.style}"/>`;

@@ -10,7 +10,14 @@
 .ListEntry .BlockCell.small { font-size: .9em; }
 .ListEntry .BlockCell.number div:last-child { font-family: system-ui; font-size: 1.1em; }
 
- /* Talent */
+/* Anomaly */
+.ListEntry.Anomaly .BlockCell .sense:before { content: "察覺"; }
+.ListEntry.Anomaly .BlockCell .rating:before { content: "強度"; }
+.ListEntry.Anomaly .BlockCell .require:before { content: "必要人數"; }
+.ListEntry.Anomaly .BlockCell .dispel:before { content: "消去"; }
+.ListEntry.Anomaly .BlockCell .target:before { content: "對象"; }
+
+/* Talent */
 .ListEntry.Talent .BlockCell .timing:before { content: "時機"; }
 .ListEntry.Talent .BlockCell .range:before  { content: "距離"; }
 .ListEntry.Talent .BlockCell .target:before { content: "對象"; }
