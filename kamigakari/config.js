@@ -5,6 +5,7 @@ const INDEX = [
 		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
+			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
 		] },
 		{ title: "Ⅳ. GM章節", members: [
@@ -176,6 +177,9 @@ const MAP = {
 		}},
 
 	// 規則文件
+	"doc-core-gamerule-behaviors": {
+		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-behavior.json' },
+
 	"doc-core-gamerule-conditions": {
 		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
 
