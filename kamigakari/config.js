@@ -1,7 +1,9 @@
 const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "核心規則書", members: [
-		//{ title: "Ⅰ. 世界章節", members: [] },
+		{ title: "Ⅰ. 世界章節", members: [
+			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
+		] },
 		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
@@ -57,6 +59,7 @@ const INDEX = [
 	{ title: "GM 資料庫", members: [
 		{ title: "BOSS天賦", pid: "data-boss-talents" },
 		{ title: "法則障礙", pid: "data-anomalies" },
+		{ title: "NPC 一覽", pid: "data-npc-cards" },
 	] }
 ];
 
@@ -175,8 +178,16 @@ const MAP = {
 			layout: 'pages/player-item-template.html',
 			script: 'pages/gm-anomalies.js',
 		}},
+	"data-npc-cards": {
+		title: "NPC 一覽", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/gm-npc-cards.js',
+		}},
 
 	// 規則文件
+	"doc-core-world-organizations": {
+		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
+
 	"doc-core-gamerule-behaviors": {
 		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-behavior.json' },
 

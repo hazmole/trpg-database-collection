@@ -66,3 +66,26 @@
 .ListEntry .legacy-upgrade .lvl    { padding: 3px; width: 40px; text-align: center; color: white; font-weight: bold; font-family: system-ui; background-color: #413920; }
 .ListEntry .legacy-upgrade .cost   { padding: 2px; width: 60px; text-align: center; color: #aaa; border-right: 1px solid #444444;  }
 .ListEntry .legacy-upgrade .effect { padding: 2px 5px; color: #aaa; }
+
+
+.ListEntry.NPC-Card .TitleCell {
+  width: 100%;
+  line-height: 35px; font-size: 16px;
+}
+.ListEntry.NPC-Card .InfoCell {
+  display: flex; flex-direction: row;
+  margin: 5px 10px;
+  gap: 10px;
+}
+.ListEntry.NPC-Card .BodyCell {
+  width: 100%;
+}
+.ListEntry.NPC-Card .BodyCell .portrait { width: 150px; height: 195; margin:10px; float: left }
+.ListEntry.NPC-Card .BodyCell .quote { color: #333; font-style: italic; margin: 15px; text-shadow: 0 1px 2px #8b8b8b; }
+.ListEntry.NPC-Card .BodyCell .description {
+  width: calc(100% - 10px); margin:10px 5px;
+}
+.ListEntry.NPC-Card .BodyCell .description p {
+	text-indent: 1em;
+	margin: .3em 0;
+}
