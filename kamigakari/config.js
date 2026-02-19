@@ -2,14 +2,16 @@ const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "核心規則書", members: [
 		{ title: "Ⅰ. 世界章節", members: [
+			{ title: "世界觀", pid: "doc-core-world-about" },
 			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
 		] },
 		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
-			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
+			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
+			{ title: "角色成長", pid: "doc-core-gamerule-advancement" },
 		] },
 		{ title: "Ⅳ. GM章節", members: [
 			{ title: "遊戲主持人", pid: "doc-core-gm-about" },
@@ -186,6 +188,9 @@ const MAP = {
 		}},
 
 	// 規則文件
+	"doc-core-world-about": {
+		title: "世界觀", handler: 'docs', url: 'docs/core-doc-world-about.json' },
+
 	"doc-core-world-organizations": {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
 
@@ -197,6 +202,9 @@ const MAP = {
 
 	"doc-core-gamerule-conditions": {
 		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
+
+	"doc-core-gamerule-advancement": {
+		title: "角色成長", handler: 'docs', url: 'docs/core-doc-rule-advancement.json' },
 
 	"doc-core-gm-about": {
 		title: "遊戲主持人", handler: 'docs', url: 'docs/core-doc-gm.json' },
