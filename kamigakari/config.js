@@ -3,6 +3,7 @@ const INDEX = [
 	{ title: "核心規則書", members: [
 		{ title: "Ⅰ. 世界章節", members: [
 			{ title: "世界觀", pid: "doc-core-world-about" },
+			{ title: "世界的情勢", pid: "doc-core-world-society" },
 			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
 		] },
 		//{ title: "Ⅱ. 玩家章節", members: [] },
@@ -191,6 +192,9 @@ const MAP = {
 	"doc-core-world-about": {
 		title: "世界觀", handler: 'docs', url: 'docs/core-doc-world-about.json' },
 
+	"doc-core-world-society": {
+		title: "世界的情勢", handler: 'docs', url: 'docs/core-doc-world-society.json' },
+
 	"doc-core-world-organizations": {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
 
@@ -198,7 +202,7 @@ const MAP = {
 		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-behavior.json' },
 
 	"doc-core-gamerule-elements": {
-		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-elements.json' },
+		title: "屬性", handler: 'docs', url: 'docs/core-doc-rule-elements.json' },
 
 	"doc-core-gamerule-conditions": {
 		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
