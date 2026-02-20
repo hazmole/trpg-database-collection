@@ -10,9 +10,11 @@ const INDEX = [
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
+			{ title: "時機與行動", pid: "doc-core-gamerule-timing-and-actions" },
 			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
 			{ title: "角色成長", pid: "doc-core-gamerule-advancement" },
+			{ title: "其他規則補充", pid: "doc-core-gamerule-misc" },
 		] },
 		{ title: "Ⅳ. GM章節", members: [
 			{ title: "遊戲主持人", pid: "doc-core-gm-about" },
@@ -201,14 +203,20 @@ const MAP = {
 	"doc-core-gamerule-behaviors": {
 		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-behavior.json' },
 
+	"doc-core-gamerule-timing-and-actions": {
+		title: "時機與行動", handler: 'docs', url: 'docs/core-doc-rule-timing-and-actions.json', depth: 3 },
+
 	"doc-core-gamerule-elements": {
 		title: "屬性", handler: 'docs', url: 'docs/core-doc-rule-elements.json' },
 
 	"doc-core-gamerule-conditions": {
-		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-conditions.json' },
+		title: "狀態變化", handler: 'docs', url: 'docs/core-doc-rule-conditions.json' },
 
 	"doc-core-gamerule-advancement": {
 		title: "角色成長", handler: 'docs', url: 'docs/core-doc-rule-advancement.json' },
+
+	"doc-core-gamerule-misc": {
+		title: "其他規則補充", handler: 'docs', url: 'docs/core-doc-rule-misc.json' },
 
 	"doc-core-gm-about": {
 		title: "遊戲主持人", handler: 'docs', url: 'docs/core-doc-gm.json' },
