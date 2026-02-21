@@ -84,6 +84,7 @@ class ArticleParser {
 					case "image":   return this.handleImage(entry);
 					case "sidebar": return this.handleSidebar(entry, depth);
 					case "note":    return this.handleNote(entry);
+					case "flowchart": return this.handleFlowChart(entry);
 					default:
 						console.error("Unknown entry type!", entry.type);
 						return "";
@@ -182,7 +183,7 @@ class ArticleParser {
 						</div>`;
 	}
 	static handleSection(item, depth) {
-		// ReqField: (title), (entries)
+		// ReqField: (title), entries
 		var ret = [];
 		if(item.title != null){
 			ret.push(this.getTitleElem(item.title, depth));
@@ -195,7 +196,15 @@ class ArticleParser {
 		if(depth==1) return `<div class="section">${section}</div>`;
 		else 				 return section;
 	}
-
+	static handleFlowChart(item) {
+		// ReqField: entries, (bodyStyle)
+		const bodyStyle = item.bodyStyle || "";
+		const retArr = [];
+		for(var entry of item.entries) {
+			retArr.push(`<div class="flowChartSection" style="${bodyStyle}">${this.handleEntry(entry, 3)}</div>`);
+		}
+		return `<div class="flowChartContainer">${retArr.join('<div class="flowChartSpliter">▼</div>')}</div>`;
+	}
 
 	//====================
 	static getTitleElem(txt, depth){
