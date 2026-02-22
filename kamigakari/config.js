@@ -10,7 +10,13 @@ const INDEX = [
 		{ title: "Ⅲ. 規則章節", members: [
 			// { title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
+			//{ title: "靈力", pid: "doc-core-gamerule-spirit" },
+			//{ title: "潛在特性", pid: "doc-core-gamerule-innate-power" },
+			//{ title: "戰鬥規則", pid: "doc-core-gamerule-combat" },
 			{ title: "時機與行動", pid: "doc-core-gamerule-timing-and-actions" },
+			//{ title: "距離與對象", pid: "doc-core-gamerule-range-and-target" },
+			//{ title: "移動與接近狀態", pid: "doc-core-gamerule-movement" },
+			{ title: "攻擊行為與傷害", pid: "doc-core-gamerule-attack-and-damage" },
 			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
 			{ title: "團務進行", pid: "doc-core-gamerule-session" },
@@ -206,6 +212,9 @@ const MAP = {
 
 	"doc-core-gamerule-timing-and-actions": {
 		title: "時機與行動", handler: 'docs', url: 'docs/core-doc-rule-timing-and-actions.json', depth: 3 },
+
+	"doc-core-gamerule-attack-and-damage": {
+		title: "攻擊行動與傷害", handler: 'docs', url: 'docs/core-doc-rule-attack-and-damage.json' },
 
 	"doc-core-gamerule-elements": {
 		title: "屬性", handler: 'docs', url: 'docs/core-doc-rule-elements.json' },

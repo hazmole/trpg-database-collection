@@ -74,6 +74,7 @@ class ArticleParser {
 
 	static handleEntry(entry, depth) {
 		switch(typeof entry){
+			case "number": return this.handleString(entry+"");
 			case "string": return this.handleString(entry);
 			case "object":
 				switch(entry.type){
