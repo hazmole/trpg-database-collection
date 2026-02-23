@@ -8,14 +8,14 @@ const INDEX = [
 		] },
 		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
-			// { title: "判定", pid: "doc-core-gamerule-check" },
+			//{ title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
 			//{ title: "靈力", pid: "doc-core-gamerule-spirit" },
 			//{ title: "潛在特性", pid: "doc-core-gamerule-innate-power" },
-			//{ title: "戰鬥規則", pid: "doc-core-gamerule-combat" },
+			//{ title: "戰鬥", pid: "doc-core-gamerule-combat" },
 			{ title: "時機與行動", pid: "doc-core-gamerule-timing-and-actions" },
 			//{ title: "距離與對象", pid: "doc-core-gamerule-range-and-target" },
-			//{ title: "移動與接近狀態", pid: "doc-core-gamerule-movement" },
+			{ title: "移動與接近狀態", pid: "doc-core-gamerule-movement" },
 			{ title: "攻擊行為與傷害", pid: "doc-core-gamerule-attack-and-damage" },
 			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
@@ -26,10 +26,8 @@ const INDEX = [
 		{ title: "Ⅳ. GM章節", members: [
 			{ title: "遊戲主持人", pid: "doc-core-gm-about" },
 			{ title: "創建 NPC", pid: "doc-core-gm-npc-creation" },
-			//{ title: "BOSS天賦一覽", pid: "doc-core-gm-boss-talents" },
 			{ title: "創作劇本", pid: "doc-core-gm-scenario-writing" },
 			{ title: "關於法則障礙", pid: "doc-core-gm-about-anomaly" },
-			//{ title: "法則障礙一覽", pid: "doc-core-gm-anomalies-list" },
 			{ title: "關於素材", pid: "doc-core-gm-about-material" },
 			{ title: "關於精怪", pid: "doc-core-gm-about-mononoke" },
 		] },
@@ -212,6 +210,9 @@ const MAP = {
 
 	"doc-core-gamerule-timing-and-actions": {
 		title: "時機與行動", handler: 'docs', url: 'docs/core-doc-rule-timing-and-actions.json', depth: 3 },
+
+	"doc-core-gamerule-movement": {
+		title: "移動與接近狀態", handler: 'docs', url: 'docs/core-doc-rule-movement.json', depth: 3 },
 
 	"doc-core-gamerule-attack-and-damage": {
 		title: "攻擊行動與傷害", handler: 'docs', url: 'docs/core-doc-rule-attack-and-damage.json' },

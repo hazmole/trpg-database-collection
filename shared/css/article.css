@@ -123,6 +123,13 @@ h6 { font-size: 1em; margin-top: 1em; }
 	align-items: flex-start;
 }
 
+/* Component: Image */
+.section .Image {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
 /* Component: flowChart */
 .flowChartContainer {
 	text-align: center;

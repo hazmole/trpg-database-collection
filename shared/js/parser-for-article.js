@@ -120,7 +120,7 @@ class ArticleParser {
 
 	static handleImage(item) {
 		// ReqField: url, (style)
-		return `<img src=${item.url} style="${item.style}"/>`;
+		return `<div class="Image"><img src=${item.url} style="${item.style}"/></div>`;
 	}
 	static handleNote(item) {
 		// ReqField: text
