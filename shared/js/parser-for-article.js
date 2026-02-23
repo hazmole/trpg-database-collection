@@ -146,12 +146,14 @@ class ArticleParser {
 		return `<div class="flexRow">${ret.join('')}</div>`;
 	}
 	static handleList(item, depth) {
-		// ReqField: entries
+		// ReqField: entries, (number)
+		const tag = (item.number)? 'ol': 'ul';
+
 		var ret = [];
 		for(var entry of item.entries){
 			ret.push(`<li>${this.handleEntry(entry, depth+1)}</li>`);
 		}
-		return `<ul>${ret.join('')}</ul>`;
+		return `<${tag}>${ret.join('')}</${tag}>`;
 	}
 	static handleTable(item, depth) {
 		// ReqField: rows, colStyles, (caption), (bodyClass), (bodyStyle), (withoutHeader)
