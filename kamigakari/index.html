@@ -18,6 +18,8 @@
   <script src="./js/parser-item.js"></script>
   <script src="./js/sorter.js"></script>
   <script>
+    ArticleParser.register('talent', CustomParser.talent);
+
     const router = new CoreRouter({
       shunt:   KamigakariShunt,
       title:   Config.Title,

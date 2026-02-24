@@ -8,10 +8,10 @@ const INDEX = [
 		] },
 		//{ title: "Ⅱ. 玩家章節", members: [] },
 		{ title: "Ⅲ. 規則章節", members: [
-			//{ title: "判定", pid: "doc-core-gamerule-check" },
+			{ title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
 			{ title: "靈力", pid: "doc-core-gamerule-spirit" },
-			//{ title: "潛在特性", pid: "doc-core-gamerule-innate-power" },
+			{ title: "潛在特性", pid: "doc-core-gamerule-innate-power" },
 			{ title: "關於戰鬥", pid: "doc-core-gamerule-combat" },
 			{ title: "時機與行動", pid: "doc-core-gamerule-timing-and-actions" },
 			{ title: "距離與對象", pid: "doc-core-gamerule-range-and-target" },
@@ -20,6 +20,7 @@ const INDEX = [
 			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
 			{ title: "團務進行", pid: "doc-core-gamerule-session" },
+			//{ title: "法則障礙", pid: "doc-core-gamerule-anomalies" },
 			{ title: "角色成長", pid: "doc-core-gamerule-advancement" },
 			{ title: "其他規則補充", pid: "doc-core-gamerule-misc" },
 		] },
@@ -205,11 +206,17 @@ const MAP = {
 	"doc-core-world-organizations": {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
 
+ 	"doc-core-gamerule-check": {
+		title: "判定", handler: 'docs', url: 'docs/core-doc-rule-check.json' },
+
 	"doc-core-gamerule-behaviors": {
 		title: "行為", handler: 'docs', url: 'docs/core-doc-rule-behavior.json' },
 
 	"doc-core-gamerule-spirit": {
 		title: "靈力", handler: 'docs', url: 'docs/core-doc-rule-spirit.json', depth: 3 },
+
+	"doc-core-gamerule-innate-power": {
+		title: "潛在特性", handler: 'docs', url: 'docs/core-doc-rule-innate-power.json' },
 
 	"doc-core-gamerule-combat": {
 		title: "關於戰鬥", handler: 'docs', url: 'docs/core-doc-rule-combat.json' },

@@ -148,3 +148,8 @@ h6 { font-size: 1em; margin-top: 1em; }
 	text-indent: 0;
 }
 
+/* Component: custom */
+.customDataList {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

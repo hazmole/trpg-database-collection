@@ -31,6 +31,7 @@ CustomParser.talent = function(talent) {
       const parts = talent.type.split('-');
       switch(parts[0]){
         case "boss":     parts[0]="BOSS"; break;
+        case "innate":   parts[0]="潛在特性"; break;
         case "ancestry": parts[0]="種族"; break;
         case "AS":       parts[0]="稱號"; break;
         case "common":

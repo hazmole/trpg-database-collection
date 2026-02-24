@@ -1,5 +1,7 @@
 class ArticleParser {
 
+	static ParserPlugin = {};
+
 	constructor() {
 		// initialize
 		this.MOBILE_WIDTH = 900;
@@ -61,6 +63,10 @@ class ArticleParser {
 		}</div>`;
 	}
 
+	static register(key, parser) {
+		this.ParserPlugin[key] = parser;
+	}
+
 	static Parse(docScript) {
 		var outputArr = [];
 		var depth = 1;
@@ -86,6 +92,7 @@ class ArticleParser {
 					case "sidebar": return this.handleSidebar(entry, depth);
 					case "note":    return this.handleNote(entry);
 					case "flowchart": return this.handleFlowChart(entry);
+					case "custom":  return this.handleCustomParser(entry);
 					default:
 						console.error("Unknown entry type!", entry.type);
 						return "";
@@ -207,6 +214,22 @@ class ArticleParser {
 			retArr.push(`<div class="flowChartSection" style="${bodyStyle}">${this.handleEntry(entry, 3)}</div>`);
 		}
 		return `<div class="flowChartContainer">${retArr.join('<div class="flowChartSpliter">▼</div>')}</div>`;
+	}
+	static handleCustomParser(item) {
+		// ReqField: parser, datas
+		if (!this.ParserPlugin[item.parser]) {
+			console.error('找不到對應的 custom parser:', item.parser);
+			return '';
+		}
+
+		const parserFunc = this.ParserPlugin[item.parser]
+		const retArr = [];
+
+		item.datas.forEach(data => {
+			retArr.push(parserFunc(data));
+		});
+
+		return `<div class="customDataList">${retArr.join('')}</div>`;
 	}
 
 	//====================
