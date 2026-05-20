@@ -1,0 +1,352 @@
+[
+	{
+		"type": "section",
+		"title": "官方網站 FAQ",
+		"entries": [
+      "最後更新日期: 2026/02/27",
+			"{@link|官網連結|https://r-r.arclight.co.jp/support/kamigakari/}",
+      {
+        "type": "section",
+        "title": "公告",
+        "entries": [
+          "衷心感謝各位玩家一直以來對《武裝傳奇 RPG 神我狩》的支持與愛護。",
+          "本次，我們對至今為止所收到的 FAQ 進行了整理與整頓。與此同時，伴隨對以往回答的檢視，我們也針對過去曾發生矛盾，或是處理上較為複雜的部分進行了變更。",
+          "此外，從本次開始，關於《神我狩》相關書籍 FAQ 的利用方式，我們設立了以下條約。儘管可能帶來諸多不便，但在利用使還請務必進行確認，在此由衷感謝您的配合。"
+        ]
+      },
+      {
+        "type": "section",
+        "title": "關於 FAQ 使用條約",
+        "entries": [
+          {
+            "type": "list",
+            "entries": [
+              "《神我狩》的 FAQ，僅限於為了使團務順暢進行的目的下，允許進行複製或無償散佈。",
+              "《神我狩》的 FAQ，嚴禁變更其內容。",
+              "《神我狩》的 FAQ，若未經許可，嚴禁將其內容刊載於同人誌、書籍、網頁或 SNS 等處。",
+              "《神我狩》的 FAQ 內容，有可能在無預告的情況下進行變更，還請見諒。"
+            ]
+          }
+        ]
+      }
+		]
+	},
+  {
+    "type": "section",
+    "title": "基本規則書",
+    "entries": [
+      {
+        "type": "section",
+        "title": "世界觀章節",
+        "entries": [
+          {
+            "type": "custom",
+            "parser": "faq",
+            "datas": [
+              {
+                "title": "基本－W－001",
+                "reference": "p.016 「斷片」",
+                "Q": "寄宿在神我狩靈魂中的斷片，是否能透過外科手術等物理手段來去除？",
+                "A": "不行。由於斷片是寄宿在靈魂之中，因此無法透過物理手段去除。"
+              },
+              {
+                "title": "基本－W－002",
+                "reference": "p.024 「靈紋」",
+                "Q": "〈人造神器〉中是否存在［靈紋］？",
+                "A": "存在。但是其無法被用於［靈紋燃燒］等功能。"
+              },
+              {
+                "title": "基本－W－003",
+                "reference": "p.024 「靈肉」",
+                "Q": "假設遭遇被變成「靈肉」的受害者。是否能僅憑靈肉來特定受害者的身分，或是掌握其容貌？",
+                "A": "不行。靈肉無法用來辨識個人身分，也無法從中獲得指紋或 DNA 等情報。因此，基本上只能透過周遭遺留的物品來推測受害者的身分。"
+              },
+              {
+                "title": "基本－W－004",
+                "reference": "p.035 「久代市」",
+                "Q": "請問與久代市相鄰的海叫什麼名字？",
+                "A": "是太平洋。詳情請參閱基本規則書的「久代市概要」章節。"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "玩家章節",
+        "entries": [
+          {
+            "type": "custom",
+            "parser": "faq",
+            "datas": [
+              {
+                "title": "基本－P－001",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－002",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－003",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－004",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－005",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－006",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－007",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－008",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－009",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－010",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－011",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－012",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－013",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－014",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－015",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－016",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－017",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              },
+              {
+                "title": "基本－P－018",
+                "reference": "",
+                "Q": "",
+                "A": ""
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［種族：封神］的《種族天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－封神－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［種族：夜魔］的《種族天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－夜魔－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［種族：半妖］的《種族天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－半妖－001",
+                    "reference": "p.072　《好機招來》",
+                    "Q": "［半妖］的《好機招來》的重新擲骰效果，可以對使用過［物理超越］的［擲骰］使用嗎？",
+                    "A": "可以。但要注意的是，在進行重新擲骰時，先前［擲骰］中所使用的［物理超越］效果將會被消滅。"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［種族：魔術師］的《種族天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－魔術師－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［種族：人類］的《種族天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－人類－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於《共通天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－共通－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［稱號：始源滅殺者A］的《稱號天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－始源A－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "title": "關於［稱號：始源滅殺者B］的《稱號天賦》",
+            "entries": [
+              {
+                "type": "custom",
+                "parser": "faq",
+                "datas": [
+                  {
+                    "title": "基本－P－始源B－001",
+                    "reference": "",
+                    "Q": "",
+                    "A": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "規則章節",
+        "entries": []
+      },
+      {
+        "type": "section",
+        "title": "GM 章節",
+        "entries": []
+      }
+
+
+    ]
+  }
+]

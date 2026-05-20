@@ -16,9 +16,11 @@
   <script src="../shared/js/utils.js"></script>
   <script src="./js/parser-talent.js"></script>
   <script src="./js/parser-item.js"></script>
+  <script src="./js/parser-faq.js"></script>
   <script src="./js/sorter.js"></script>
   <script>
     ArticleParser.register('talent', CustomParser.talent);
+    ArticleParser.register('faq', CustomParser.faq);
 
     const router = new CoreRouter({
       shunt:   KamigakariShunt,

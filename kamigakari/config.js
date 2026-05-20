@@ -72,7 +72,8 @@ const INDEX = [
 		{ title: "BOSS天賦", pid: "data-boss-talents" },
 		{ title: "法則障礙", pid: "data-anomalies" },
 		{ title: "NPC 一覽", pid: "data-npc-cards" },
-	] }
+	] },
+	{ title: "官方 FAQ", pid: "doc-official-faq" },
 ];
 
 const MAP = {
@@ -278,6 +279,9 @@ const MAP = {
 
 	"docs-exSpiritRequiem-combine-technic": {
 		title: "《複合技》的補充說明", handler: 'docs', url: 'docs/ex-spiritrequiem-doc-combine-technic.json' },
+
+	"doc-official-faq": {
+		title: "官方 FAQ", handler: 'docs', url: 'docs/faq.json' },
 }
 
 const Config = {

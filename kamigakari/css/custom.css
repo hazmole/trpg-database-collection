@@ -21,6 +21,25 @@
 .Page h3,
 .Page h4 { margin-bottom: .5em; }
 
+.faq-entry { margin-bottom: .8em; }
+.faq-entry > .faq-title {
+  background-color: #cecece;
+  font-weight: bold;
+  font-size: .9em;
+  padding-left: 5px;
+}
+.faq-entry > .faq-ref {
+  width: fit-content;
+  font-weight: bold;
+  font-size: .8em;
+  margin: .3em 0;
+  padding: .1em .4em;
+}
+.faq-entry > .faq-text {
+  margin: .4em 0;
+  text-indent: 1em hanging;
+}
+
 .info-block {
   border-radius: 10px;
   padding: .5em;
