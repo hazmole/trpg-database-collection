@@ -30,15 +30,18 @@
 }
 .faq-entry > .faq-ref {
   width: fit-content;
-  font-weight: bold;
+  background-color: black; color: #ededed;
   font-size: .8em;
   margin: .3em 0;
   padding: .1em .4em;
 }
 .faq-entry > .faq-text {
   margin: .4em 0;
-  text-indent: 1em hanging;
+  font-size: .9em;
+  text-indent: 1.3em hanging;
 }
+.faq-entry ul,
+.faq-entry ul > li { margin-top: 0; }
 
 .info-block {
   border-radius: 10px;

@@ -120,7 +120,11 @@ class ArticleParser {
 			const linkText = parts[0];
 			const linkPid = parts[1];
 			
-			fmtText = fmtText.replace(result[0], `<a href="?pid=${linkPid}">${linkText}</a>`);
+			if(linkPid.startsWith("http:") || linkPid.startsWith("https:")) {
+				fmtText = fmtText.replace(result[0], `<a href="${linkPid}" target="_blank">${linkText}</a>`);
+			} else {
+				fmtText = fmtText.replace(result[0], `<a href="?pid=${linkPid}">${linkText}</a>`);
+			}
 		});
 		return fmtText;
 	}
