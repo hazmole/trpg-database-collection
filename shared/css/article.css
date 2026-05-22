@@ -132,20 +132,58 @@ h6 { font-size: 1em; margin-top: 1em; }
 
 /* Component: flowChart */
 .flowChartContainer {
-	text-align: center;
-	margin: 1em 0;
-	width: fit-content;
-	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+  text-align: center;
+  margin: 1em 0;
+  max-width: 100%;
+  box-sizing: border-box;
 	justify-self: center;
 }
 .flowChartContainer .flowChartSection {
-	background-color: #ddd;
-	padding: 5px 25px;
-	border-radius: 10px;
-	font-size: 0.9em;
+  background-color: #ddd;
+  padding: 8px 25px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  box-sizing: border-box;
+	width: 100%;
 }
 .flowChartContainer .flowChartSection p {
-	text-indent: 0;
+  text-indent: 0;
+  margin: 0;
+}
+.flowChartSpliter {
+  color: #888;
+  margin-top: 5px;
+  font-size: 0.85em;
+  user-select: none;
+  display: block;
+}
+.flowChartSpliter.branchStart,
+.flowChartSpliter.branchEnd {
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+.flowChartSplitWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  margin: 0;
+  position: relative;
+}
+.flowChartBranch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  position: relative;
+}
+
+.flowChartSection + .flowChartSpliter:has(+ .flowChartSplitWrapper),
+.flowChartSplitWrapper + .flowChartSpliter {
+  display: none;
 }
 
 /* Component: custom */

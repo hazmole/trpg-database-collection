@@ -20,7 +20,7 @@ const INDEX = [
 			{ title: "屬性", pid: "doc-core-gamerule-elements" },
 			{ title: "狀態變化", pid: "doc-core-gamerule-conditions" },
 			{ title: "團務進行", pid: "doc-core-gamerule-session" },
-			//{ title: "法則障礙", pid: "doc-core-gamerule-anomalies" },
+			{ title: "法則障礙", pid: "doc-core-gamerule-anomalies" },
 			{ title: "角色成長", pid: "doc-core-gamerule-advancement" },
 			{ title: "其他規則補充", pid: "doc-core-gamerule-misc" },
 		] },
@@ -242,6 +242,9 @@ const MAP = {
 
 	"doc-core-gamerule-session": {
 		title: "團務進行", handler: 'docs', url: 'docs/core-doc-rule-session.json' },
+
+	"doc-core-gamerule-anomalies": {
+		title: "法則障礙", handler: 'docs', url: 'docs/core-doc-rule-anomalies.json'	},
 
 	"doc-core-gamerule-advancement": {
 		title: "角色成長", handler: 'docs', url: 'docs/core-doc-rule-advancement.json' },

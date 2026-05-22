@@ -211,13 +211,42 @@ class ArticleParser {
 		else 				 return section;
 	}
 	static handleFlowChart(item) {
-		// ReqField: entries, (bodyStyle)
 		const bodyStyle = item.bodyStyle || "";
-		const retArr = [];
-		for(var entry of item.entries) {
-			retArr.push(`<div class="flowChartSection" style="${bodyStyle}">${this.handleEntry(entry, 3)}</div>`);
-		}
-		return `<div class="flowChartContainer">${retArr.join('<div class="flowChartSpliter">▼</div>')}</div>`;
+		// define recursive function
+		const renderSequence = (sequence, isNestedBranch = false, isNoRemain = true) => {
+			let retArr = [];
+
+			sequence.forEach((node, index) => {
+				const isFirst = (index === 0);
+      	const isLast = (index === sequence.length - 1);
+
+				if (isNestedBranch && isFirst) {
+					retArr.push(`<div class="flowChartSpliter branchStart">▼</div>`);
+				} else if (!isFirst) {
+					retArr.push(`<div class="flowChartSpliter">▼</div>`);
+				}
+
+				if (node && typeof node === 'object' && node.branch) {
+					// Branch
+					const branchSegments = node.branch.map(subSeq => {
+						return `<div class="flowChartBranch">${renderSequence(subSeq, true, isLast)}</div>`;
+					});
+					retArr.push(`<div class="flowChartSplitWrapper">${branchSegments.join('')}</div>`);
+				} else {
+					// Node
+					retArr.push(`<div class="flowChartSection" style="${bodyStyle}">${this.handleEntry(node, 3)}</div>`);
+				}
+
+				if (isNestedBranch && isLast && !isNoRemain) {
+					retArr.push(`<div class="flowChartSpliter branchEnd">▼</div>`);
+				}
+			});
+
+			return retArr.join('');
+		};
+
+		const finalContent = renderSequence(item.entries, false, true);
+		return `<div class="flowChartContainer">${finalContent}</div>`;
 	}
 	static handleCustomParser(item) {
 		// ReqField: parser, datas
