@@ -6,7 +6,9 @@ const INDEX = [
 			{ title: "世界的情勢", pid: "doc-core-world-society" },
 			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
 		] },
-		//{ title: "Ⅱ. 玩家章節", members: [] },
+		{ title: "Ⅱ. 玩家章節", members: [
+			{ title: "天賦", pid: "doc-core-player-talents" },
+		] },
 		{ title: "Ⅲ. 規則章節", members: [
 			{ title: "判定", pid: "doc-core-gamerule-check" },
 			{ title: "行為", pid: "doc-core-gamerule-behaviors" },
@@ -206,6 +208,9 @@ const MAP = {
 
 	"doc-core-world-organizations": {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
+
+	"doc-core-player-talents": {
+		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talents.json' },
 
  	"doc-core-gamerule-check": {
 		title: "判定", handler: 'docs', url: 'docs/core-doc-rule-check.json' },
