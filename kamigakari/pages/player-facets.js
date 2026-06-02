@@ -1,7 +1,7 @@
 export async function run() {
   // Get JSON Data
-  const itemData   = await Fetcher.fetchJSON('./data/arm-systems.json');
-  const talentData = await Fetcher.fetchJSON('./data/talents-arm-system.json');
+  const itemData   = await Fetcher.fetchJSON('./data/facets.json');
+  const talentData = await Fetcher.fetchJSON('./data/talents-facet.json');
   const itemNameList = Object.keys(itemData);
 
   // Get DOM Element

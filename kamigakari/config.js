@@ -8,6 +8,7 @@ const INDEX = [
 		] },
 		{ title: "Ⅱ. 玩家章節", members: [
 			{ title: "天賦", pid: "doc-core-player-talents" },
+			{ title: "武裝系統", pid: "doc-core-player-arm-system" },
 		] },
 		{ title: "Ⅲ. 規則章節", members: [
 			{ title: "判定", pid: "doc-core-gamerule-check" },
@@ -45,7 +46,7 @@ const INDEX = [
 	] },
 	{ title: "玩家資料庫", members: [
 		{ title: "種族", pid: "data-ancestries" },
-		{ title: "稱號", pid: "data-arm-systems" },
+		{ title: "稱號", pid: "data-facets" },
 		{ title: "共通天賦", pid: "data-common-talents" },
 		{ title: "道具", members: [
 			{ title: "武器", members: [
@@ -87,10 +88,10 @@ const MAP = {
 			script: 'pages/player-ancestries.js',
 		}},
 
-	"data-arm-systems": {
+	"data-facets": {
 		title: "稱號一覽", handler: 'custom', params: {
-			layout: 'pages/player-arm-systems.html',
-			script: 'pages/player-arm-systems.js',
+			layout: 'pages/player-facets.html',
+			script: 'pages/player-facets.js',
 		}},
 
 	"data-common-talents": {
@@ -211,6 +212,9 @@ const MAP = {
 
 	"doc-core-player-talents": {
 		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talents.json' },
+
+	"doc-core-player-arm-system": {
+		title: "武裝系統", handler: 'docs', url: 'docs/core-doc-player-arm-system.json' },
 
  	"doc-core-gamerule-check": {
 		title: "判定", handler: 'docs', url: 'docs/core-doc-rule-check.json' },
