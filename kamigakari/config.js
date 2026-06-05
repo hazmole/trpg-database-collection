@@ -8,6 +8,7 @@ const INDEX = [
 		] },
 		{ title: "Ⅱ. 玩家章節", members: [
 			{ title: "天賦", pid: "doc-core-player-talents" },
+			{ title: "人造神器－道具", pid: "doc-core-player-item" },
 			{ title: "武裝系統", pid: "doc-core-player-arm-system" },
 		] },
 		{ title: "Ⅲ. 規則章節", members: [
@@ -212,6 +213,9 @@ const MAP = {
 
 	"doc-core-player-talents": {
 		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talents.json' },
+
+	"doc-core-player-item": {
+		title: "人造神器－道具", handler: 'docs', url: 'docs/core-doc-player-item.json' },
 
 	"doc-core-player-arm-system": {
 		title: "武裝系統", handler: 'docs', url: 'docs/core-doc-player-arm-system.json' },
