@@ -7,6 +7,7 @@ const INDEX = [
 			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
 		] },
 		{ title: "Ⅱ. 玩家章節", members: [
+			{ title: "角色創建", pid: "doc-core-player-character-creation" },
 			{ title: "天賦", pid: "doc-core-player-talents" },
 			{ title: "人造神器－道具", pid: "doc-core-player-item" },
 			{ title: "武裝系統", pid: "doc-core-player-arm-system" },
@@ -210,6 +211,9 @@ const MAP = {
 
 	"doc-core-world-organizations": {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
+
+	"doc-core-player-character-creation": {
+		title: "角色創建", handler: 'docs', url: 'docs/core-doc-player-character-creation.json' },
 
 	"doc-core-player-talents": {
 		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talents.json' },
