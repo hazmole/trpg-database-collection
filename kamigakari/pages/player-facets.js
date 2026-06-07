@@ -65,6 +65,7 @@ export async function run() {
 
     CoreRouter.setSiteTitle(`稱號 - ${itemID}`);
     document.getElementById("Name").textContent = `【${itemObj.category}系】${itemObj.name} ${itemObj.alias[0]}`;
+    document.getElementById("TypeName").textContent = typeID;
     document.getElementById("Description").innerHTML = itemObj.desc.join('<br>');
     document.getElementById("ArmSystemStateModifier").innerHTML = _renderAttributeRow(itemObj.states);
     document.getElementById("ArmSystemEffect").innerHTML = itemObj.effect.join('<br>');

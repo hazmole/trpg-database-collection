@@ -8,7 +8,9 @@ const INDEX = [
 		] },
 		{ title: "Ⅱ. 玩家章節", members: [
 			{ title: "角色創建", pid: "doc-core-player-character-creation" },
-			{ title: "天賦", pid: "doc-core-player-talents" },
+			{ title: "天賦", pid: "doc-core-player-talent" },
+			{ title: "種族", pid: "doc-core-player-ancestry" },
+			{ title: "稱號", pid: "doc-core-player-facet" },
 			{ title: "人造神器－道具", pid: "doc-core-player-item" },
 			{ title: "武裝系統", pid: "doc-core-player-arm-system" },
 		] },
@@ -215,8 +217,14 @@ const MAP = {
 	"doc-core-player-character-creation": {
 		title: "角色創建", handler: 'docs', url: 'docs/core-doc-player-character-creation.json' },
 
-	"doc-core-player-talents": {
-		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talents.json' },
+	"doc-core-player-talent": {
+		title: "天賦", handler: 'docs', url: 'docs/core-doc-player-talent.json' },
+
+	"doc-core-player-ancestry": {
+		title: "種族", handler: 'docs', url: 'docs/core-doc-player-ancestry.json' },
+	
+	"doc-core-player-facet": {
+		title: "稱號", handler: 'docs', url: 'docs/core-doc-player-facet.json' },
 
 	"doc-core-player-item": {
 		title: "人造神器－道具", handler: 'docs', url: 'docs/core-doc-player-item.json' },

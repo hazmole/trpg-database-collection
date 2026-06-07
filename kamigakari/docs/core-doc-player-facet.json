@@ -1,0 +1,65 @@
+[
+  {
+    "type": "section",
+    "title": "稱號",
+    "entries": [
+      "玩家在創建 PC 時，需要決定 2 個［種族］。",
+      "基本規則中刊載了 6 種［稱號］。",
+      {
+        "type": "section",
+        "title": "稱號的欄位說明",
+        "entries": [
+          "［稱號］的標示方式如下：",
+          { "type": "image", "url": "imgs/core-p078-1.jpg", "style": "max-width:95%" },
+          { "type": "image", "url": "imgs/core-p078-2.jpg", "style": "max-width:95%" },
+          {
+            "type": "section",
+            "title": "① 稱號名",
+            "entries": ["該［稱號］的名稱。"]
+          },
+          {
+            "type": "section",
+            "title": "② 系統",
+            "entries": [
+              "將該［稱號］作為［主要稱號］時所決定的［系統］。","［系統］存在［戰鬥］［泛用］［魔導］3 個種類。"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "③ 說明",
+            "entries": ["關於該［稱號］的說明文字。"]
+          },
+          {
+            "type": "section",
+            "title": "④ 戰鬥修正",
+            "entries": [
+              "將該［稱號］作為［主要稱號］時所決定的［戰鬥修正］。"
+            ]
+          },
+          {
+            "type": "section",
+            "title": "⑤ 稱號特典",
+            "entries": ["將該［稱號］作為［主要稱號］時能得到的特典等資訊。"]
+          },
+          {
+            "type": "section",
+            "title": "⑥ ［類型：A］",
+            "entries": ["該［稱號］在［類型：A］時的《稱號天賦》傾向與使用條件等。"]
+          },
+          {
+            "type": "section",
+            "title": "⑦ ［類型：B］",
+            "entries": ["該［稱號］在［類型：B］時的《稱號天賦》傾向與使用條件等。"]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "稱號一覽",
+        "entries": [
+          "請參閱「{@link|稱號一覽|data-facets}」頁面。"
+        ]
+      }
+    ]
+  }
+]
