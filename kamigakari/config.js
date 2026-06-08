@@ -5,7 +5,7 @@ const INDEX = [
 			{ title: "世界觀", pid: "doc-core-world-about" },
 			{ title: "世界的情勢", pid: "doc-core-world-society" },
 			{ title: "超常存在組織", pid: "doc-core-world-organizations" },
-			{ title: "範例都市：久代市", pid: "doc-core-world-sample-city" }
+			{ title: "範例都市「久代市」", pid: "doc-core-world-sample-city" }
 		] },
 		{ title: "Ⅱ. 玩家章節", members: [
 			{ title: "角色創建", pid: "doc-core-player-character-creation" },
@@ -216,7 +216,7 @@ const MAP = {
 		title: "超常存在組織", handler: 'docs', url: 'docs/core-doc-world-organizations.json' },
 
 	"doc-core-world-sample-city": {
-		title: "範例都市-久代市", handler: 'docs', url: 'docs/core-doc-world-sample-city.json' },
+		title: "範例都市「久代市」", handler: 'docs', url: 'docs/core-doc-world-sample-city.json' },
 
 	"doc-core-player-character-creation": {
 		title: "角色創建", handler: 'docs', url: 'docs/core-doc-player-character-creation.json' },

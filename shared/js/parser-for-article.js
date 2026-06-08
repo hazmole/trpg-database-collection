@@ -63,6 +63,27 @@ class ArticleParser {
 		}</div>`;
 	}
 
+	static renderLightboxOverlay(imgSrc) {
+		const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+		overlay.innerHTML = `<img class="lightbox-img" src="${imgSrc}" alt="放大圖片">`;
+		document.body.appendChild(overlay);
+		setTimeout(() => {
+			overlay.classList.add('active');
+    }, 10);
+		
+		const closeLightbox = () => {
+			overlay.classList.remove('active');
+			setTimeout(() => {
+				overlay.remove();
+			}, 300);
+    };
+		overlay.addEventListener('click', (e) => {
+			if (e.target === overlay) { closeLightbox(); }
+    });
+		
+	}
+
 	static register(key, parser) {
 		this.ParserPlugin[key] = parser;
 	}
@@ -131,7 +152,7 @@ class ArticleParser {
 
 	static handleImage(item) {
 		// ReqField: url, (style)
-		return `<div class="Image"><img src=${item.url} style="${item.style}"/></div>`;
+		return `<div class="Image"><img src=${item.url} style="${item.style}" onclick="showLightbox(this)"/></div>`;
 	}
 	static handleNote(item) {
 		// ReqField: text
@@ -293,4 +314,8 @@ function htmlToNode(html) {
 		);
 	}
 	return template.content.firstChild;
+}
+
+function showLightbox(elem) {
+	ArticleParser.renderLightboxOverlay(elem.src);
 }
