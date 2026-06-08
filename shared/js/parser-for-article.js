@@ -66,7 +66,7 @@ class ArticleParser {
 	static renderLightboxOverlay(imgSrc) {
 		const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
-		overlay.innerHTML = `<img class="lightbox-img" src="${imgSrc}" alt="放大圖片">`;
+		overlay.innerHTML = `<span class="lightbox-close">&times;</span><img class="lightbox-img" src="${imgSrc}" alt="放大圖片">`;
 		document.body.appendChild(overlay);
 		setTimeout(() => {
 			overlay.classList.add('active');
@@ -81,7 +81,8 @@ class ArticleParser {
 		overlay.addEventListener('click', (e) => {
 			if (e.target === overlay) { closeLightbox(); }
     });
-		
+		const closeBtn = overlay.querySelector('.lightbox-close');
+    closeBtn.addEventListener('click', closeLightbox);
 	}
 
 	static register(key, parser) {

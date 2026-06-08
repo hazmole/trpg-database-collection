@@ -194,6 +194,20 @@ h6 { font-size: 1em; margin-top: 1em; }
 .Image > img:hover {
 	transform: scale(1.01);
 }
+.lightbox-close {
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+	transition: color 0.2s;
+}
+.lightbox-close:hover {
+	color: #ccc;
+}
 .lightbox-overlay {
 	display: flex;
 	position: fixed;
