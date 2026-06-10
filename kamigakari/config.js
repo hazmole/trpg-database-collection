@@ -77,6 +77,7 @@ const INDEX = [
 		//{ title: "法則障礙", url: "" },
 	] },
 	{ title: "GM 資料庫", members: [
+		{ title: "敵人一覽", pid: "data-enemies" },
 		{ title: "BOSS天賦", pid: "data-boss-talents" },
 		{ title: "法則障礙", pid: "data-anomalies" },
 		{ title: "NPC 一覽", pid: "data-npc-cards" },
@@ -189,6 +190,11 @@ const MAP = {
 			script: 'pages/player-facades.js',
 		}},
 	
+	"data-enemies": {
+		title: "敵人一覽", handler: 'custom', params: {
+			layout: 'pages/player-item-template.html',
+			script: 'pages/gm-enemies.js',
+		}},
 	"data-boss-talents": {
 		title: "BOSS天賦", handler: 'custom', params: {
 			layout: 'pages/player-item-template.html',
