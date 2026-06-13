@@ -1,5 +1,5 @@
 export async function run() {
-	const dataList = (await Fetcher.fetchJSON('./data/enemy.json'));
+	const dataList = (await Fetcher.fetchJSON('./data/enemies.json'));
 
 	const module = await import(`./player-item-template-ctrl.js`);
 	const ctrl = new module.PlayerItemTemplateCtrl();

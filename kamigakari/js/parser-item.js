@@ -149,15 +149,11 @@ CustomParser.item = function(itemData) {
 				</div>`);
 		});
 
-		return `<div class="ExpandInfoWrapper">
-				<button class="ExpandInfoToggle" onclick="ToggleUtils.click(this)">
-					<div class="ExpandIconBox">
-						<span class="ExpandIconPlus">+</span>
-					</div>
-					<span class="ExpandInfoLabel">展開神器能力細節</span>
-				</button>
-				<div class="ExpandInfoContent">${DOMArr.join('')}</div>
-			</div>`;
+		return `<button class="ToggleBtnWrapper" onclick="ToggleUtils.click(this)">
+						<div class="ToggleBtnBox"><span class="icon-chevron"></span></div>
+						<span class="ToggleBtnLabel">展開神器能力細節</span>
+					</button>
+					<div class="ToggleExpandContent">${DOMArr.join('')}</div>`;
 	}
 	function getLegacyFeatDOMs() {
 		return [`<div class="field">${getEffectText()}</div>`]

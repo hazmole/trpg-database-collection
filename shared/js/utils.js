@@ -25,7 +25,8 @@ BlockUtils.unblock = function(){
 
 
 const ToggleUtils = {};
-ToggleUtils.click = function(elem) {
-  const siblingElem = elem.nextElementSibling;
+ToggleUtils.click = function(currentElem) {
+  const siblingElem = currentElem.parentNode.querySelector('.ToggleExpandContent');
+  currentElem.classList.toggle('active');
   siblingElem.classList.toggle('active');
 }
