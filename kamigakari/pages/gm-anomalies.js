@@ -1,43 +1,34 @@
 export async function run() {
 	const dataList = (await Fetcher.fetchJSON('./data/anomalies.json'));
+	const moduleT = await import(`./general-data-page-template-ctrl.js`);
+	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
-	const module = await import(`./player-item-template-ctrl.js`);
-	const ctrl = new module.PlayerItemTemplateCtrl();
-
-	ctrl.setTitle("法則障礙");
-	ctrl.setDescription([
+	pageCtrl.setTitle("法則障礙");
+	pageCtrl.setDescription([
 		"這裡列出了關於［法則障礙］的範例和各項數據。",
 	]);
+	pageCtrl.disableHeader();
 
-	ctrl.enableSearching({
+	pageCtrl.enableSimpleSearch({
 		placeholder: "搜尋法則障礙的名稱、影響...",
-		onChangeFunc: () => {
-			renderDataList();
+		matchFunc: (item, keyword) => {
+			if (!keyword) return true;
+			if (item.name.includes(keyword)) return true;
+			if (item.specialDmg.includes(keyword)) return true;
+			if (item.penalty.includes(keyword)) return true;
+			if (item.fallout.A.includes(keyword)) return true;
+			if (item.fallout.B.includes(keyword)) return true;
+			return false;
 		}
 	});
-	ctrl.disableHeader();
-	ctrl.disableSorter();
 
-	renderDataList();
+	pageCtrl.setItems(dataList);
+	pageCtrl.setParseFunc(anomalyParser);
+	pageCtrl.displayItemList();
 
 
 	// ==============================
-	function renderDataList() {
-		const newList = dataList
-			.filter(data => searchData(data, ctrl.searchCfg.keyword));
-		ctrl.renderDataList(newList, facadeParser);
-	}
-	function searchData(data, keyword) {
-		if (!keyword) return true;
-		if (data.name.includes(keyword)) return true;
-		if (data.specialDmg.includes(keyword)) return true;
-		if (data.penalty.includes(keyword)) return true;
-		if (data.fallout.A.includes(keyword)) return true;
-		if (data.fallout.B.includes(keyword)) return true;
-		return false;
-	}
-
-	function facadeParser(itemData) {
+	function anomalyParser(itemData) {
 		const DOMArr = [];
 		
 		DOMArr.push(renderBlockCellDOM('sense',  getSenseText(), 'number'));

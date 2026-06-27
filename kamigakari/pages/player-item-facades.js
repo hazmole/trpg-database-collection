@@ -1,16 +1,7 @@
 export async function run() {
 	const dataList = (await Fetcher.fetchJSON('./data/facades.json'));
-
-	const module = await import(`./player-item-template-ctrl.js`);
-	const ctrl = new module.PlayerItemTemplateCtrl();
-
-	ctrl.setTitle("表職業");
-	ctrl.setDescription([
-		"［表職業］代表著角色在現代生活中所使用的立場或職業。",
-		"在初次角色創建階段時，需要從中決定一個［表職業］。",
-		"帶有 <span style='font-family:cursive'>□</span> 標誌的表職業，表示其適合初次接觸本系統的玩家遊玩。",
-		"帶有 <span style='font-family:cursive'>△</span> 標誌的表職業，表示其需要GM的許可才能選取。",
-	]);
+	const moduleT = await import(`./general-data-page-template-ctrl.js`);
+	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	const options = [
 		{ text: "表職業①／一般", value: "1" },
@@ -21,47 +12,54 @@ export async function run() {
 		{ text: "表職業⑥／仿生機械", value: "6" },
 		{ text: "表職業⑦／人造生命", value: "7" },
 	];
-	ctrl.enableDropdownTabs({
+	pageCtrl.setTitle("表職業");
+	pageCtrl.setDescription([
+		"［表職業］代表著角色在現代生活中所使用的立場或職業。",
+		"在初次角色創建階段時，需要從中決定一個［表職業］。",
+		"帶有 <span style='font-family:cursive'>□</span> 標誌的表職業，表示其適合初次接觸本系統的玩家遊玩。",
+		"帶有 <span style='font-family:cursive'>△</span> 標誌的表職業，表示其需要GM的許可才能選取。",
+	]);
+	pageCtrl.enableDropdownTabs({
 		options: options,
 		onChangeFunc: () => {
 			renderTitle();
 			renderDataList();
 		}
 	});
-	ctrl.enableSearching({
+
+	pageCtrl.enableSimpleSearch({
 		placeholder: "搜尋表職業的名稱、特徵...",
-		onChangeFunc: () => {
-			renderDataList();
+		matchFunc: (item, keyword) => {
+			if (!keyword) return true;
+			if (item.name.includes(keyword)) return true;
+			if (item.feat.includes(keyword)) return true;
+			return false;
 		}
 	});
-	ctrl.disableSorter();
 
-	
-	ctrl.elemRef.dataContainer.style.display = 'flex';
-	ctrl.elemRef.dataContainer.style.flexDirection = 'column';
-	ctrl.elemRef.dataContainer.style.gap = '5px';
+
+	const container = pageCtrl.getItemContainerDOM();
+	container.style.display = 'flex';
+	container.style.flexDirection = 'column';
+	container.style.gap = '5px';
+
+	pageCtrl.setParseFunc(facadeParser);
 	renderTitle();
 	renderDataList();
 
 
 	// ==============================
 	function renderTitle() {
-		const selectedOpt = options.find( opt => opt.value == ctrl.tabCfg.tabID );
+		const selectedOpt = options.find( opt => opt.value == pageCtrl.tabCfg.tabID );
 		if (selectedOpt) {
-			ctrl.setTitle(selectedOpt.text);
+			pageCtrl.setTitle(selectedOpt.text);
 		}
 	}
 	function renderDataList() {
-		const newList = dataList
-			.filter(data => data.type == ctrl.tabCfg.tabID)
-			.filter(data => searchData(data, ctrl.searchCfg.keyword));
-		ctrl.renderDataList(newList, facadeParser);
-	}
-	function searchData(data, keyword) {
-		if (!keyword) return true;
-		if (data.name.includes(keyword)) return true;
-		if (data.feat.includes(keyword)) return true;
-		return false;
+		const newDataList = dataList
+			.filter(data => data.type == pageCtrl.tabCfg.tabID);
+		pageCtrl.setItems(newDataList);
+		pageCtrl.displayItemList();
 	}
 
 	function facadeParser(itemData) {

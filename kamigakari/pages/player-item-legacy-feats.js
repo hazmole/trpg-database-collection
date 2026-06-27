@@ -1,13 +1,11 @@
 export async function run() {
   const dataList = await Fetcher.fetchJSON('./data/items-legacy-feat.json');
+	const moduleT = await import(`./general-data-page-template-ctrl.js`);
+	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
-  const module = await import(`./player-item-template-ctrl.js`);
-  const ctrl = new module.PlayerItemTemplateCtrl();
-  
-  ctrl.disableSorter();
-  ctrl.disableDescription();
-  
-  ctrl.enableTabs({
+  pageCtrl.setTitle("神器能力");
+  pageCtrl.disableDescription();
+  pageCtrl.enableTabs({
     options: [
       { text: "共通", value: "common" },
 			{ text: "武器", value: "weapon" },
@@ -19,15 +17,15 @@ export async function run() {
     }
   });
   
-  ctrl.setTitle("神器能力");
+  pageCtrl.setParseFunc(CustomParser.item);
   renderDataList();
 
   // ===================
   function renderDataList() {
-    const tabID = ctrl.tabCfg.tabID;
-    const newList = dataList.filter( data => data.type.includes(tabID) );
-
-    ctrl.renderDataList(newList, CustomParser.item);
+    const tabID = pageCtrl.tabCfg.tabID;
+    const newDataList = dataList.filter( data => data.type.includes(tabID) );
+    pageCtrl.setItems(newDataList);
+    pageCtrl.displayItemList();
   }
 }
 

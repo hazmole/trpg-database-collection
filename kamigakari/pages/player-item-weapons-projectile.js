@@ -4,102 +4,93 @@ export async function run() {
 	const relicDataList = (await Fetcher.fetchJSON('./data/items-legacy.json')).filter(filterFunc);
 	const upgradeDataList = (await Fetcher.fetchJSON('./data/items-weapon-upgrade.json')).filter(filterFunc);
 
-	const module = await import(`./player-item-template-ctrl.js`);
-	const ctrl = new module.PlayerItemTemplateCtrl();
+	const moduleT = await import(`./general-data-page-template-ctrl.js`);
+	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
-	ctrl.setTitle("射擊武器／形狀：射擊");
-	ctrl.setDescription([
+	pageCtrl.setTitle("射擊武器／形狀：射擊");
+	pageCtrl.setDescription([
 		"將弓或槍械等射擊武器人造神器化之後的產物。",
 		"要注意的是，名稱前標有「※」記號的［射擊武器］，在使用時不會加上角色【戰鬥值】中的【物D】的數值，而只會加上該武器【物D】的數值。"
 	]);
-
-	const upgradeSortOps = [
-		{ text:"價格", value: "cost" },
-	];
-	const weaponSortOpts = [
-		{ text:"價格", value: "cost" },
-		{ text:"命中", value: "hit" },
-		{ text:"物Ｄ", value: "dmg" },
-		{ text:"行動值", value: "speed" },
-	];
-
-	ctrl.enableTabs({
+	pageCtrl.enableTabs({
 		options: [
 			{ text: "人造神器", value: "normal" },
 			{ text: "神成神器", value: "legacy" },
 			{ text: "追加效果", value: "upgrade" },
 		],
-		onChangeFunc: (tabID) => {
-			setSorter(tabID);
-			renderDataList();
-		},
+		onChangeFunc: () => renderDataList(),
 	});
-	ctrl.enableSearching({
+
+	pageCtrl.enableSort({
+		options: getSortOpts(),
+		cmpFunc: sortCmpFunc,
+	});
+	pageCtrl.enableSimpleSearch({
 		placeholder: "搜尋武器的名稱、效果...",
-		onChangeFunc: () => {
-			renderDataList();
+		matchFunc: (item, keyword) => {
+			if (!keyword) return true;
+			if (item.name.includes(keyword)) return true;
+			if (item.effect.includes(keyword)) return true;
+			return false;
 		}
 	});
 
-	setSorter(ctrl.tabCfg.tabID);
+	pageCtrl.setParseFunc(CustomParser.item);
 	renderDataList();
 
 
 	// ==============================
-	function setSorter(tabID) {
-		const optList = (tabID === "upgrade")? upgradeSortOps: weaponSortOpts;
-		ctrl.enableSorter({
-			options: optList,
-			onChangeFunc: () => renderDataList(),
-		});
+	function getDataList() {
+		const tabID = pageCtrl.tabCfg.tabID;
+		return (tabID === "normal")? normalDataList: 
+					 (tabID === "legacy")? relicDataList: upgradeDataList;
 	}
-	function renderDataList() {
-		const sortKey = ctrl.sortCfg.sortKey;
-		const tabID   = ctrl.tabCfg.tabID;
-		const dataList = 
-			(tabID === "normal")? normalDataList: 
-			(tabID === "legacy")? relicDataList: upgradeDataList;
-		const sortFunc = sortFuncFactory(sortKey, dataList);
+	function getSortOpts() {
+		const tabID = pageCtrl.tabCfg.tabID;
+		return (tabID !== "upgrade")? 
+		[
+			{ text:"價格", value: "cost" },
+			{ text:"命中", value: "hit" },
+			{ text:"物Ｄ", value: "dmg" },
+			{ text:"行動值", value: "speed" },
+		]:
+		[
+			{ text:"價格", value: "cost" },
+		];
+	}
 
-		const newList = [...dataList]
-			.filter(data => searchData(data, ctrl.searchCfg.keyword))
-			.sort(sortFunc);
-		ctrl.renderDataList(newList, CustomParser.item);
+	function renderDataList() {
+		const dataList = getDataList();
+		pageCtrl.reassignSort({
+			options: getSortOpts()
+		});
+		pageCtrl.setItems(dataList);
+		pageCtrl.displayItemList();
 	}
-	function searchData(data, keyword) {
-		if (!keyword) return true;
-		if (data.name.includes(keyword)) return true;
-		if (data.effect.includes(keyword)) return true;
-		return false;
-	}
-	function sortFuncFactory(sortKey, dataListRef) {
-		// define Sorting Order
-		const defaultSortingOrder = ["cost"];
-		const newSortingOrder = [];
-		newSortingOrder.push(sortKey);
+
+	function sortCmpFunc(a, b, sortKey) {
+		const defaultSortingOrder = ["cost", "index"];
+		const newSortingOrder = [sortKey];
 		defaultSortingOrder.forEach(o => {
 			if (o != sortKey) newSortingOrder.push(o);
 		});
 
-		// define Reference Factory
-		const refFactory = (item) => {
-			return {
-				cost: item.cost=='-'? Number.MAX_SAFE_INTEGER: item.cost,
-				hit: item.hit,
-				dmg: Array.isArray(item.dmg)? item.dmg[0]: item.dmg,
-				speed: Array.isArray(item.spd)? item.spd[0]: item.spd,
-			};
-		};
-
-		return function(a, b) {
-			const aRef = refFactory(a);
-			const bRef = refFactory(b);
-			for(let i=0; i<newSortingOrder.length; i++) {
-				const key = newSortingOrder[i];
-				if (aRef[key] != bRef[key]) return (aRef[key] > bRef[key]? 1: -1);
-			}
-			return dataListRef.indexOf(a) - dataListRef.indexOf(b);
+		const aRef = toItemRef(a);
+		const bRef = toItemRef(b);
+		for(let i=0; i<newSortingOrder.length; i++) {
+			const key = newSortingOrder[i];
+			if (aRef[key] != bRef[key]) return (aRef[key] > bRef[key]? 1: -1);
 		}
 	}
-}
 
+	function toItemRef(item) {
+		const dataList = getDataList();
+		return {
+			cost: item.cost=='-'? Number.MAX_SAFE_INTEGER: item.cost,
+			hit: item.hit,
+			dmg: Array.isArray(item.dmg)? item.dmg[0]: item.dmg,
+			speed: Array.isArray(item.spd)? item.spd[0]: item.spd,
+			index: dataList.indexOf(item)
+		};
+	}
+}
