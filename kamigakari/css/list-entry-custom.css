@@ -1,5 +1,5 @@
 /*------------------
-  Here you can write down those Customize CSS
+	Here you can write down those Customize CSS
  ------------------*/
 /* General Setting */
 .ListEntry .TitleCell .title { text-align: left; padding-left:.5rem; }
@@ -55,37 +55,133 @@
 .ListEntry .content-group .content { padding: 2px 5px; padding-left: 10px; border-top: 1px dotted;}
 .ListEntry .content-group .content b { font-weight: 500; }
 .ListEntry .content-group .description { 
-  border-top: 1px solid gray;
-  padding: 5px 10px;
-  font-size: 12px;
-  color: #555;
+	border-top: 1px solid gray;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #555;
 }
 
+.ListEntry.Item .ToggleBtnWrapper, 
+.ListEntry.Item .ToggleExpandContent { width: 100%; } 
 .ListEntry .legacy-upgrade { width: 100%; border-top: 1px solid; display: flex; align-items: center; }
 .ListEntry .legacy-upgrade:hover { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
 .ListEntry .legacy-upgrade .lvl    { padding: 3px; width: 40px; text-align: center; color: white; font-weight: bold; font-family: system-ui; background-color: #413920; }
 .ListEntry .legacy-upgrade .cost   { padding: 2px; width: 60px; text-align: center; color: #aaa; border-right: 1px solid #444444;  }
 .ListEntry .legacy-upgrade .effect { padding: 2px 5px; color: #aaa; }
 
-
+/* NPC */
 .ListEntry.NPC-Card .TitleCell {
-  width: 100%;
-  line-height: 35px; font-size: 16px;
+	width: 100%;
+	line-height: 35px; font-size: 16px;
 }
 .ListEntry.NPC-Card .InfoCell {
-  display: flex; flex-direction: row;
-  margin: 5px 10px;
-  gap: 10px;
+	display: flex; flex-direction: row;
+	margin: 5px 10px;
+	gap: 10px;
 }
 .ListEntry.NPC-Card .BodyCell {
-  width: 100%;
+	width: 100%;
 }
 .ListEntry.NPC-Card .BodyCell .portrait { width: 150px; height: 195; margin:10px; float: left }
 .ListEntry.NPC-Card .BodyCell .quote { color: #333; font-style: italic; margin: 15px; text-shadow: 0 1px 2px #8b8b8b; }
 .ListEntry.NPC-Card .BodyCell .description {
-  width: calc(100% - 10px); margin:10px 5px;
+	width: calc(100% - 10px); margin:10px 5px;
 }
 .ListEntry.NPC-Card .BodyCell .description p {
 	text-indent: 1em;
 	margin: .3em 0;
+}
+
+/* Enemy */
+.ListEntry.Enemy { width: 100%; max-width: 980px; }
+.ListEntry.Enemy .level {
+	width: 55px;
+	padding-left: 10px;
+	color: #aaa;
+	background-color: black;
+}
+.ListEntry.Enemy .type { width:60px; color:#ccc; padding: 0 5px; }
+.ListEntry.Enemy .type-icon { width:25px; }
+.ListEntry.Enemy .type-text { margin-left:3px; text-align:left; }
+.ListEntry.Enemy .type.humanoid { background: #503535; }
+.ListEntry.Enemy .type.humanoid .type-icon::after { content: url("../imgs/icon-person.svg"); }
+.ListEntry.Enemy .type.beast { background: #5a482c; }
+.ListEntry.Enemy .type.beast .type-icon::after { content: url("../imgs/icon-wolf-head.svg"); }
+.ListEntry.Enemy .type.insect { background: #425a1a; }
+.ListEntry.Enemy .type.insect .type-icon::after { content: url("../imgs/icon-scarab-beetle.svg"); }
+.ListEntry.Enemy .type.machine { background: #44494c; }
+.ListEntry.Enemy .type.machine .type-icon::after { content: url("../imgs/icon-robot-grab.svg"); }
+.ListEntry.Enemy .type.plant { background: #2d5a3d; }
+.ListEntry.Enemy .type.plant .type-icon::after { content: url("../imgs/icon-sprout.svg"); }
+.ListEntry.Enemy .type.undead { background: #30424e; }
+.ListEntry.Enemy .type.undead .type-icon::after { content: url("../imgs/icon-chewed-skull.svg"); }
+.ListEntry.Enemy .type.eudemon { background: #50354d; }
+.ListEntry.Enemy .type.eudemon .type-icon::after { content: url("../imgs/icon-spiked-dragon-head.svg"); }
+.ListEntry.Enemy .type.demon { background: #2a305a; }
+.ListEntry.Enemy .type.demon .type-icon::after { content: url("../imgs/icon-curled-tentacle.svg"); }
+
+.ListEntry.Enemy .BlockCell > div.battle-state:before { background-color: #294629; color: white; }
+.ListEntry.Enemy .BlockCell > div.speed:before { background-color: #502885; color: white; }
+.ListEntry.Enemy .BlockCell > div.health:before { background-color: #7a1010; color: white; }
+.ListEntry.Enemy .BlockCell > div.armor:before { background-color: #26397e; color: white; }
+.ListEntry.Enemy .BlockCell .fame:before { content: "知名度"; }
+.ListEntry.Enemy .BlockCell .size:before { content: "體型"; }
+.ListEntry.Enemy .BlockCell .p_hit:before { content: "命中"; }
+.ListEntry.Enemy .BlockCell .p_evd:before { content: "迴避"; }
+.ListEntry.Enemy .BlockCell .m_hit:before { content: "發動"; }
+.ListEntry.Enemy .BlockCell .m_evd:before { content: "抵抗"; }
+.ListEntry.Enemy .BlockCell .s_evd:before { content: "看破"; }
+.ListEntry.Enemy .BlockCell .speed:before { content: "行動值"; }
+.ListEntry.Enemy .BlockCell .health:before { content: "生命力"; }
+.ListEntry.Enemy .BlockCell .p_armor:before { content: "裝甲"; }
+.ListEntry.Enemy .BlockCell .m_armor:before { content: "結界"; }
+.ListEntry.Enemy .BlockCell div .subVal { font-size: 0.8em; }
+
+.ListEntry.Enemy .ToggleBtnWrapper { flex-grow: 1; cursor: pointer; } 
+.ListEntry.Enemy .ToggleExpandContent { width: 100%; background-color: white; 	font-family: system-ui; } 
+.ListEntry.Enemy .Splitter { border-top: double 3px black; }
+.ListEntry.Enemy .TitleRow {
+	padding: 2px 5px;
+	color: white; background-color: #0a0a0a;
+	font-weight: bold;
+	font-size: .9em;
+}
+
+.ListEntry.Enemy .SubEntry { flex-wrap: wrap; border-bottom: 1px solid rgba(0,0,0,.3); }
+.ListEntry.Enemy .Info.SubEntry { gap: 2px; }
+.ListEntry.Enemy .Info.SubEntry .label-title { padding: 3px 5px; background: #bdbdbd; }
+.ListEntry.Enemy .Info.SubEntry .label-value { padding: 3px 10px; }
+.ListEntry.Enemy .Talent.SubEntry .title {
+	width: 140px;
+	text-align: center;
+	background: #bdbdbd;
+	font-size: 1em;
+	padding: 2px 0px;
+	word-break: keep-all;
+}
+.ListEntry.Enemy .Talent.SubEntry .tags {
+	background: #efefef;
+	font-size: .9em;
+	padding: 2px 5px;
+	word-break: keep-all;
+}
+.ListEntry.Enemy .Talent.SubEntry .effect {
+	width: 100%;
+	font-size: .9em;
+	padding: 5px;
+}
+.ListEntry.Enemy .Treasure.SubEntry .range {
+	width: 45px;
+	text-align: center;
+	background: #bdbdbd;
+	padding: 3px 2px;
+}
+.ListEntry.Enemy .Treasure.SubEntry .content {
+	padding: 3px 5px;
+}
+.ListEntry.Enemy .Description {
+	padding: 5px;
+	font-family: sans-serif;
+	font-size: .9em;
+	color: rgba(0, 0, 0, 0.7);
 }

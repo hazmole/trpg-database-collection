@@ -51,7 +51,12 @@
 	<div id="Description" class="info-block type2"></div>
 
 	<div class="toolbar">
-		<div id="SortingGroup" class="SortGroup">
+		<div id="AdvanceSearchBtn" class="AdvSearchBtn hide">
+			<span class="icon-filter"></span>
+			進階搜尋
+		</div>
+
+		<div id="SortingGroup" class="SortGroup hide">
 			<div class="SortPrefix">
 				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 					<path d="M3 6h18M6 12h12m-9 6h6"></path>
@@ -61,11 +66,30 @@
 			<select id="SortingSelect" class="SelectSort" style="min-width: 80px;"></select>
 		</div>
 
-		<div id="SearchGroup" class="SearchGroup">
+		<div id="SearchGroup" class="SearchGroup hide">
 			<div class="SearchPrefix"></div>
 			<input id="SearchInput" class="SearchInput" type="text" placeholder="搜尋名稱、效果..." />
 		</div>
 	</div>
 
 	<div id="DataContainer" class="Item-list gear"></div>
+</div>
+
+
+<div id="AdvanceSearchOverlay">
+  <div class="advsrch-modal-card">
+    <div class="advsrch-modal-header">
+      <h3>進階搜尋</h3>
+      <button class="modal-close-btn">&times;</button>
+    </div>
+    
+    <div class="advsrch-modal-body">
+    </div>
+    
+<!-- 
+		<div class="advsrch-modal-footer">
+      <button class="btn-primary">套用</button>
+    </div>
+-->
+  </div>
 </div>

@@ -77,6 +77,7 @@ const INDEX = [
 		//{ title: "法則障礙", url: "" },
 	] },
 	{ title: "GM 資料庫", members: [
+		{ title: "敵人一覽", pid: "data-enemies" },
 		{ title: "BOSS天賦", pid: "data-boss-talents" },
 		{ title: "法則障礙", pid: "data-anomalies" },
 		{ title: "NPC 一覽", pid: "data-npc-cards" },
@@ -101,107 +102,112 @@ const MAP = {
 
 	"data-common-talents": {
 		title: "共通天賦一覽", handler: 'custom', params: {
-			layout: 'pages/player-common-talents.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-common-talents.js',
 		}},
 
 	"data-item-weapons-sword": {
 		title: "武器／劍", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-sword.js',
 		}},
 
 	"data-item-weapons-lance": {
 		title: "武器／槍", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-lance.js',
 		}},
 
 	"data-item-weapons-axe": {
 		title: "武器／斧", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-axe.js',
 		}},
 
 	"data-item-weapons-hammer": {
 		title: "武器／錘", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-hammer.js',
 		}},
 
 	"data-item-weapons-projectile": {
 		title: "武器／射擊", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-projectile.js',
 		}},
 
 	"data-item-weapons-magic": {
 		title: "武器／魔法", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-weapons-magic.js',
 		}},
 
 	"data-item-protectors-armor": {
 		title: "防具／鎧", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-protector-armor.js',
 		}},
 
 	"data-item-protectors-shield": {
 		title: "防具／盾", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-protector-shield.js',
 		}},
 
 	"data-item-accessories": {
 		title: "裝飾", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-accessories.js',
 		}},
 
 	"data-item-consumables": {
 		title: "消耗品", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-consumables.js',
 		}},
 
 	"data-item-sacraments": {
 		title: "常備品", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-sacraments.js',
 		}},
 
 	"data-item-hunter-sets": {
 		title: "探索者套裝", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-hunter-sets.js',
 		}},
 
 	"data-item-legacy-feats": {
 		title: "神器能力", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-item-legacy-feats.js',
 		}},
 
 	"data-facades": {
 		title: "表職業", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
-			script: 'pages/player-facades.js',
+			layout: 'pages/general-data-page-template.html',
+			script: 'pages/player-item-facades.js',
 		}},
 	
+	"data-enemies": {
+		title: "敵人一覽", handler: 'custom', params: {
+			layout: 'pages/general-data-page-template.html',
+			script: 'pages/gm-enemies.js',
+		}},
 	"data-boss-talents": {
 		title: "BOSS天賦", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/gm-boss-talents.js',
 		}},
 	"data-anomalies": {
 		title: "法則障礙一覽", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/gm-anomalies.js',
 		}},
 	"data-npc-cards": {
 		title: "NPC 一覽", handler: 'custom', params: {
-			layout: 'pages/player-item-template.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/gm-npc-cards.js',
 		}},
 

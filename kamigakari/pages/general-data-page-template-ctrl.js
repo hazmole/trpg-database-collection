@@ -1,4 +1,6 @@
-export class PlayerItemTemplateCtrl {
+const modeleI = await import(`./item-list-controller.js`); 
+
+export class GeneralDataPageCtrl {
 
   constructor() {
     // init DOM Elem
@@ -6,11 +8,11 @@ export class PlayerItemTemplateCtrl {
     this.elemRef.header        = document.getElementById("ContextHeader");
     this.elemRef.title         = document.getElementById("Name");
     this.elemRef.description   = document.getElementById("Description");
-    this.elemRef.sorterGroup   = document.getElementById("SortingGroup");
-    this.elemRef.sorterSelect  = document.getElementById("SortingSelect");
-    this.elemRef.searchGroup   = document.getElementById("SearchGroup");
-    this.elemRef.searchInput   = document.getElementById("SearchInput");
-    this.elemRef.dataContainer = document.getElementById("DataContainer");
+
+    // item Controller
+    this.itemCtrl = new modeleI.ItemListCtrl({
+      itemContainerID: "DataContainer",
+    });
 
     // define config
     this.tabCfg = {
@@ -18,19 +20,6 @@ export class PlayerItemTemplateCtrl {
       tabID: null,
       onChangeFunc: null,
     };
-    this.sortCfg = {
-      enable: false,
-      sortKey: null,
-      onChangeFunc: null,
-    };
-
-    this.disableSearcher();
-    this.searchCfg = {
-      enable: false,
-      keyword: '',
-      onChangeFunc: null,
-    };
-
   }
 
 
@@ -43,40 +32,6 @@ export class PlayerItemTemplateCtrl {
     this.elemRef.description.innerHTML = textArr.join('<br>');
   }
   
-  renderDataList(dataList, parserFunc) {
-    this.elemRef.dataContainer.innerHTML = dataList
-      .map( data => parserFunc(data) )
-      .join('');
-  }
-
-  // ================
-  // Sorter
-  enableSorter(cfg) {
-    // render options
-    this.elemRef.sorterSelect.innerHTML = cfg.options
-      .map(opt => `<option value="${opt.value}"><span class="label">${opt.text}</span></option>`)
-      .join('');
-
-    // set default value
-    var defaultVal = cfg.options[0].value;
-    if (this.sortCfg.sortKey !== null
-      && cfg.options.map(opt => opt.value).includes(this.sortCfg.sortKey)) {
-        defaultVal = this.sortCfg.sortKey;
-    }
-    this.elemRef.sorterSelect.value = defaultVal;
-
-    // add listener
-    this.elemRef.sorterSelect.addEventListener('change', e => {
-      this.sortCfg.sortKey = e.target.value;
-      this.sortCfg.onChangeFunc(e.target.value);
-    });
-
-    // set config
-    this.sortCfg.enable = true;
-    this.sortCfg.onChangeFunc = cfg.onChangeFunc;
-    this.sortCfg.sortKey = defaultVal;
-  }
-
   // ================
   // Tabs
   enableTabs(cfg) {
@@ -137,31 +92,40 @@ export class PlayerItemTemplateCtrl {
     this.tabCfg.tabID = defaultVal;
   }
 
-  // ================
-  // Searching
-  enableSearching(cfg) {
-    this.elemRef.searchGroup.style.display = 'inline-flex';
-
-    // add listener
-    this.elemRef.searchInput.addEventListener('change', (e) => {
-      // toggle active
-      this.searchCfg.keyword = e.target.value;
-      this.searchCfg.onChangeFunc(e.target.value);
-    });
-
-    // set placeholder
-    if (cfg.placeholder)
-      this.elemRef.searchInput.placeholder = cfg.placeholder;
-
-    // set config
-    this.searchCfg.enable = true;
-    this.searchCfg.onChangeFunc = cfg.onChangeFunc;
-    this.searchCfg.keyword = '';
-  }
-
   // disable functionality
-  disableHeader() { this.elemRef.header.style.display = 'none'; }
-  disableSorter() { this.elemRef.sorterGroup.style.display = 'none'; }
-  disableDescription() { this.elemRef.description.style.display = 'none'; }
-  disableSearcher() { this.elemRef.searchGroup.style.display = 'none'; }
+  disableHeader() { this.elemRef.header.classList.add('hide'); }
+  disableDescription() { this.elemRef.description.classList.add('hide'); }
+
+
+  // ================
+  // Wrap ItemCtrl API
+  displayItemList() { this.itemCtrl.display(); }
+  setItems(newItems) { this.itemCtrl.setItems(newItems); }
+  setParseFunc(newFunc) { this.itemCtrl.setParseFunc(newFunc); }
+  reassignSort(cfg) { this.itemCtrl.reassignSort(cfg); }
+  enableSort(cfg) {
+    this.itemCtrl.enableSort({
+      elemID: "SortingGroup",
+      elemID_selector: "SortingSelect",
+      ...cfg,
+    });
+  }
+  enableSimpleSearch(cfg) {
+    this.itemCtrl.enableSimpleSearch({
+      elemID: "SearchGroup",
+      elemID_input: "SearchInput",
+      ...cfg,
+    });
+  }
+  enableAdvanceSearch(cfg) {
+    this.itemCtrl.enableAdvanceSearch({
+      elemID: "AdvanceSearchBtn",
+      elemID_btn: "AdvanceSearchBtn",
+      elemID_overlay: "AdvanceSearchOverlay",
+      ...cfg,
+    });
+  }
+  getItemContainerDOM() {
+    return this.itemCtrl.elemRef.itemContainer;
+  }
 }

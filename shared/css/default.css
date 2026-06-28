@@ -1,3 +1,8 @@
+:root {
+  --color-Select-Btn: #ccc;
+  --color-Select-Btn-Yes: #2a75ff;
+  --color-Select-Btn-No:  #bf1717;
+}
 
 @font-face {
 	font-family: "HanyiSenty";
@@ -10,6 +15,7 @@ body { margin:0; overflow:hidden; }
 div { flex-shrink: 0; }
 
 .easyRow { display:flex; flex-direction:row; } 
+.hide { display: none !important; }
 
 /* Site Layer */
 #SiteHeader {
@@ -92,6 +98,56 @@ div { flex-shrink: 0; }
 @keyframes lds-dual-ring {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
+}
+
+/* Toggle Btn & Content */
+/* Toggle Btn */
+.ToggleBtnWrapper {
+	display: flex; justify-content: flex-start; align-items: center; gap: 10px;
+	padding: 5px; border: 0;
+	
+	background: #2a2a2a;
+	color: #aaa;
+}
+.ToggleBtnWrapper .ToggleBtnBox {
+	width: 16px;
+	height: 16px;
+	border: 1px solid #d4af37;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(212, 175, 55, 0.1);
+}
+.ToggleBtnWrapper .icon-chevron {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #d4af37; 
+  
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M19 9l-7 7-7-7'/></svg>");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M19 9l-7 7-7-7'/></svg>");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  
+  transition: transform 0.2s ease;
+}
+.ToggleBtnWrapper:hover .ToggleBtn { border-color: #ffdb67; }
+.ToggleBtnWrapper:hover .icon-chevron { background-color: #ffdb67; }
+.ToggleBtnWrapper:hover .ToggleBtnLabel { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+.ToggleBtnWrapper.active .icon-chevron {
+  transform: rotate(180deg);
+}
+
+.ToggleExpandContent {
+	display: none;
+	overflow: hidden;
+	background: #1a1a1a;
+}
+.ToggleExpandContent.active {
+	display: block;
 }
 
 /* <div class="lds-dual-ring"></div> */
@@ -249,3 +305,122 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 	appearance: none;
 }
 .SortGroup select.SelectSort:focus { outline: none; }
+
+/* select: Advance search button */
+.AdvSearchBtn {
+	display: inline-flex;
+	gap: 5px; align-items: center;
+	background-color: #333; color: #aaa;
+	border: 1px solid #333; padding: 0 10px 0 5px;
+	border-radius: 4px;
+	font-size: 14px;
+	height: 36px;
+	cursor: pointer;
+}
+.AdvSearchBtn:hover {
+	color: #fff;
+	text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+.AdvSearchBtn > .icon-filter {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  
+	color: #d2af46;
+  background-color: currentColor; 
+  
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+#AdvanceSearchOverlay {
+	position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 9999; 
+}
+#AdvanceSearchOverlay.active {
+	opacity: 1; visibility: visible;
+}
+#AdvanceSearchOverlay .modal-card {
+  background-color: #333; border: #aaa double 3px;
+  width: 100%;
+  max-width: 1080px; /* 桌機版限制寬度 */
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh; /* 避免超出螢幕高度 */
+  
+  /* 卡片飄入動畫：預設稍微向下偏移並縮小 */
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.advsrch-modal-card {
+  background-color: #333; border: #666 double 3px;
+  width: 100%;
+  max-width: 1080px; max-height: 85vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.advsrch-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+.advsrch-modal-header h3 { margin: 0; font-size: 18px; color: #d2af46; }
+.advsrch-modal-footer {
+	display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 5px 16px;
+  border-top: 1px solid #555555;
+}
+.modal-close-btn {
+	background: none; border: none; font-size: 28px; color: #9ca3af; cursor: pointer; line-height: 1;
+}
+.modal-close-btn:hover { color: #4b5563; }
+.btn-primary, .btn-secondary { padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; }
+.btn-primary { background-color: #2563eb; color: white; }
+.btn-primary:hover { background-color: #1d4ed8; }
+.btn-secondary { background-color: #ffffff; border: 1px solid #d1d5db; color: #374151; }
+.btn-secondary:hover { background-color: #d1d1d1; }
+
+.advsrch-opt-entry {
+	margin: 10px 0;
+}
+
+.advsrch-opt-entry .title {
+  width: fit-content;
+  font-weight: bold;
+  padding: 2px 16px;
+  font-size: 16px;
+  color: white;
+}
+.advsrch-opt-entry .content-wrapper {
+  display: flex; flex-wrap: wrap; padding: 0 16px; gap: 3px;
+}
+
+/* Type: Selection */
+.advsrch-opt-entry .content-wrapper .select-item {
+  padding: 2px 10px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background: var(--color-Select-Btn);
+  cursor: pointer;
+	font-size: .9em;
+}
+.advsrch-opt-entry .content-wrapper .select-item.yes { background:var(--color-Select-Btn-Yes); color:white }
+.advsrch-opt-entry .content-wrapper .select-item.no {  background:var(--color-Select-Btn-No);  color:white; }
