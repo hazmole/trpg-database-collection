@@ -117,6 +117,14 @@ export class GeneralDataPageCtrl {
       ...cfg,
     });
   }
+  enableAdvanceSearch(cfg) {
+    this.itemCtrl.enableAdvanceSearch({
+      elemID: "AdvanceSearchBtn",
+      elemID_btn: "AdvanceSearchBtn",
+      elemID_overlay: "AdvanceSearchOverlay",
+      ...cfg,
+    });
+  }
   getItemContainerDOM() {
     return this.itemCtrl.elemRef.itemContainer;
   }

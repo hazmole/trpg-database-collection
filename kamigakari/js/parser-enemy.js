@@ -209,6 +209,7 @@ CustomParser.enemy = function(itemData) {
 		}
 	}
 	function getLvText() {
-		return `Lv.${itemData.level}`;
+		const rec = Math.ceil(itemData.level / 5);
+		return `Lv.${itemData.level} (${rec})`;
 	}
 }

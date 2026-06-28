@@ -102,7 +102,7 @@ const MAP = {
 
 	"data-common-talents": {
 		title: "共通天賦一覽", handler: 'custom', params: {
-			layout: 'pages/player-common-talents.html',
+			layout: 'pages/general-data-page-template.html',
 			script: 'pages/player-common-talents.js',
 		}},
 

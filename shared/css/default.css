@@ -310,14 +310,15 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 .AdvSearchBtn {
 	display: inline-flex;
 	gap: 5px; align-items: center;
-	background-color: #333; color: #ffffff;
-	border: 1px solid #333; padding: 0 10px;
+	background-color: #333; color: #aaa;
+	border: 1px solid #333; padding: 0 10px 0 5px;
 	border-radius: 4px;
 	font-size: 14px;
 	height: 36px;
 	cursor: pointer;
 }
 .AdvSearchBtn:hover {
+	color: #fff;
 	text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 .AdvSearchBtn > .icon-filter {
@@ -325,6 +326,7 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
   width: 18px;
   height: 18px;
   
+	color: #d2af46;
   background-color: currentColor; 
   
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;

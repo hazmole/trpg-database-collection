@@ -93,9 +93,9 @@
 }
 
 /* Enemy */
-.ListEntry.Enemy { width: 100%; max-width: 960px; }
+.ListEntry.Enemy { width: 100%; max-width: 980px; }
 .ListEntry.Enemy .level {
-	width: 35px;
+	width: 55px;
 	padding-left: 10px;
 	color: #aaa;
 	background-color: black;
@@ -137,7 +137,7 @@
 .ListEntry.Enemy .BlockCell .m_armor:before { content: "結界"; }
 .ListEntry.Enemy .BlockCell div .subVal { font-size: 0.8em; }
 
-.ListEntry.Enemy .ToggleBtnWrapper { flex-grow: 1; } 
+.ListEntry.Enemy .ToggleBtnWrapper { flex-grow: 1; cursor: pointer; } 
 .ListEntry.Enemy .ToggleExpandContent { width: 100%; background-color: white; 	font-family: system-ui; } 
 .ListEntry.Enemy .Splitter { border-top: double 3px black; }
 .ListEntry.Enemy .TitleRow {
