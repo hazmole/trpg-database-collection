@@ -25,6 +25,15 @@ export async function run() {
 	pageCtrl.enableAdvanceSearch({
 		options: [
 			{
+				title: "等級",
+				type: "range",
+				max: 20,
+				min: 1,
+				matchFunc: (item, filterVals) => {
+					return filterVals.min <= item.level && filterVals.max >= item.level;
+				}
+			},
+			{
 				title: '種類',
 				type: 'selection',
 				list: [

@@ -424,3 +424,71 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 }
 .advsrch-opt-entry .content-wrapper .select-item.yes { background:var(--color-Select-Btn-Yes); color:white }
 .advsrch-opt-entry .content-wrapper .select-item.no {  background:var(--color-Select-Btn-No);  color:white; }
+
+/* Type: Dual-Slider */
+.advsrch-opt-entry .content-wrapper .dual-slider {
+	margin: 8px 8px 0 8px;
+	width: 100%;
+	max-width: 680px;
+	margin-bottom: 32px;
+}
+.advsrch-opt-entry .content-wrapper .dual-slider-text {
+	font-family: 'system-ui';
+	color: #80d0ff;
+	width: 32px;
+	text-align: center;
+}
+
+/* ── 覆寫 noUiSlider 核心外觀 ── */
+.custom-nouislider.noUi-target {
+  background: #e5e7eb; /* 軌道底色（淺灰） */
+  border: none;
+  border-radius: 4px;
+  height: 6px; /* 讓軌道細一點，看起來精緻 */
+  box-shadow: none;
+}
+
+/* 選取區間的藍色條 */
+.custom-nouislider .noUi-connect {
+  background: #2563eb; 
+}
+
+/* 精細調整滑鈕（Thumb） */
+.custom-nouislider .noUi-handle {
+  width: 18px !important;
+  height: 18px !important;
+  right: -9px !important; /* 高度的一半，確保置中 */
+  top: -6px !important;   /* (軌道高6 - 按鈕高18)/2 */
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.custom-nouislider .noUi-handle:active {
+  cursor: grabbing;
+  transform: scale(1.15); /* 按住時微微放大，手機端體感極佳 */
+  background-color: #f0f6ff;
+}
+
+/* 拔掉 noUiSlider 預設按鈕上的兩條醜醜的裝飾豎線 */
+.custom-nouislider .noUi-handle::before,
+.custom-nouislider .noUi-handle::after {
+  display: none;
+}
+.custom-nouislider .noUi-marker-horizontal.noUi-marker-large {
+	height: 10px;
+}
+.custom-nouislider .noUi-value-horizontal {
+	font-size: 0.9em;
+	font-family: 'system-ui';
+}
+.custom-nouislider .noUi-pips-horizontal {
+	height: fit-content;
+}
+.custom-nouislider .noUi-marker,
+.custom-nouislider .noUi-marker-large {
+	background: #999999;
+}

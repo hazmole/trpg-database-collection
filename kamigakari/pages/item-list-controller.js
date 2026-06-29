@@ -96,6 +96,10 @@ export class ItemListCtrl {
             if (opt.values.length == 0) return true;
             return opt.matchFunc(item, opt.values);
           }
+          if (opt.type === "range") {
+            if (opt.values == null) return true;
+            return opt.matchFunc(item, opt.values);
+          }
           return true;
         });
       });
@@ -251,6 +255,7 @@ export class ItemListCtrl {
       const containerDOM = overlayBodyDOM.querySelector(".advsrch-opt-entry:last-child").querySelector(".content-wrapper");
       // draw contents
       switch(opt.type) {
+
       case "selection":
         optConfig.values = []; // array
         opt.list.forEach(selectOpt => {
@@ -271,6 +276,44 @@ export class ItemListCtrl {
           });
         });
         break;
+      
+      case "range":
+        optConfig.values = null;
+        containerDOM.insertAdjacentHTML('beforeend', this.#DOM_AdvSearchOpt_DualSlider());
+        const minValDOM = containerDOM.querySelector(".range-min-value");
+        const maxValDOM = containerDOM.querySelector(".range-max-value");
+        const sliderDOM = containerDOM.querySelector(".dual-slider");
+
+        var rangeWidth = (opt.max - opt.min +1);
+        var density = Math.floor(100 / rangeWidth);
+
+        noUiSlider.create(sliderDOM, {
+          start: [opt.min, opt.max],
+          connect: true,
+          step: 1,
+          range: {
+            'min': opt.min,
+            'max': opt.max,
+          },
+          pips: {
+            mode: 'values',
+            values: [1, 5, 10, 15, 20], // 這些數字上會顯示大刻度與數字文字
+            density: density,  // 刻度的密集度（百分比），數值越小，小刻度越多
+            stepped: true      // 讓小刻度自動對齊你的 step 步長（1等一格）
+          }
+        });
+        sliderDOM.noUiSlider.on('update', (values, handle) => {
+          const minVal = Math.round(values[0]);
+          const maxVal = Math.round(values[1]);
+          if (minVal == opt.min && maxVal == opt.max) {
+            optConfig.values = null;
+          } else {
+            optConfig.values = { min: minVal, max: maxVal };
+          }
+          minValDOM.textContent  = minVal;
+          maxValDOM.textContent  = maxVal;
+          this.display();
+        });
       }
     });
 
@@ -290,10 +333,6 @@ export class ItemListCtrl {
     if (!evt || evt.target === this.elemRef.advanceSearchOverlay)
       this.elemRef.advanceSearchOverlay.classList.remove('active');
   }
-  clickAdvanceSearchSelectBtn(evt) {
-
-  }
-
 
   // ========================
   // DOM render
@@ -308,5 +347,11 @@ export class ItemListCtrl {
   }
   #DOM_AdvSearchOpt_SelectionBtn(opt) {
     return `<div class="select-item" data-search-value="${opt.value}">${opt.text}</div>`;
+  }
+  #DOM_AdvSearchOpt_DualSlider() {
+    return `
+      <div class="dual-slider-text range-min-value"></div>
+      <div class="dual-slider custom-nouislider"></div>
+      <div class="dual-slider-text range-max-value"></div>`
   }
 }
