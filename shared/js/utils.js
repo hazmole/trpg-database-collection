@@ -2,24 +2,22 @@
 const BlockUtils = {};
 
 BlockUtils.block = function(){
-  if (document.getElementById('BlockUI-background')) return ;
-  if (document.getElementById('BlockUI-loading-icon')) return ;
+  if (document.getElementById('BlockUIOverlay')) return ;
 
   const bgElem = document.createElement("div");
-  bgElem.id = "BlockUI-background";
+  bgElem.id = "BlockUIOverlay";
+  bgElem.classList.add("block-ui__overlay");
 	
   const iconElem = document.createElement("div");
-  iconElem.id = "BlockUI-loading-icon";
+  iconElem.classList.add("block-ui__icon");
   iconElem.innerHTML = `<div class="lds-dual-ring"></div>`;
 
-	document.body.append(bgElem, iconElem);
+  bgElem.append(iconElem)
+	document.body.append(bgElem);
 }
 BlockUtils.unblock = function(){
-  if (document.getElementById('BlockUI-background')) {
-    document.getElementById('BlockUI-background').remove();
-  }
-  if (document.getElementById('BlockUI-loading-icon')) {
-    document.getElementById('BlockUI-loading-icon').remove();
+  if (document.getElementById('BlockUIOverlay')) {
+    document.getElementById('BlockUIOverlay').remove();
   }
 }
 

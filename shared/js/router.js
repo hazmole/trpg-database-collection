@@ -70,7 +70,7 @@ class CoreRouter {
 		}
 	}
 	renderMainContainer(htmlText) {
-		const containerElem = document.getElementById('ContentMain');
+		const containerElem = document.getElementById('SiteContent');
 		if (containerElem) {
 			containerElem.innerHTML = htmlText;
 		}

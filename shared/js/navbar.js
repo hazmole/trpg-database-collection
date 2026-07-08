@@ -20,9 +20,9 @@ class NavBarCtrl {
 
 	_run() {
 		// fetch Element from document
-		this.elemColle.menuElem        = document.getElementById("Menu");
-		this.elemColle.menuToggleBtn   = document.getElementById("MenuToggleBtn");
-		this.elemColle.iframeContext   = document.getElementById("ContentMain");
+		this.elemColle.menuElem        = document.getElementById("SiteMenu");
+		this.elemColle.menuToggleBtn   = document.getElementById("SiteMenu_ToggleBtn");
+		this.elemColle.iframeContext   = document.getElementById("SiteContent");
 
 		// Render
 		const urlParams = new URLSearchParams(window.location.search);
@@ -78,14 +78,14 @@ class NavBarCtrl {
 				`data-pid="${linkItem.pid}"`,
 				`style="${linkStyle}"`,
 			];
-			return `<a class="NavLink" ${attr.join(' ')}">${linkItem.title}</a>`;
+			return `<a class="menu__link" ${attr.join(' ')}">${linkItem.title}</a>`;
 		}
 		function genNavGroupElem(groupItem) {
 			const groupStyle = groupItem.style || "";
 			const memberArr = groupItem.members.map((item) => genNavItemElem(item));
-			return `<div class="NavGroupOuter">
-				<div class="NavGroupTitle" style="${groupStyle}" onClick="NavBarCtrl.toggleGroup(this)">${groupItem.title}</div>
-				<div class="NavGroupInner">${memberArr.join('')}</div>
+			return `<div class="menu__group-wrapper">
+				<div class="menu__group-title" style="${groupStyle}" onClick="NavBarCtrl.toggleGroup(this)">${groupItem.title}</div>
+				<div class="menu__group-inner">${memberArr.join('')}</div>
 			</div>`;
 		}
 	}
@@ -101,15 +101,15 @@ class NavBarCtrl {
 		elem.classList.add("Active");
 		if (NavBarCtrl.activePageBtnElem == elem) return ;
 		if (NavBarCtrl.activePageBtnElem) {
-			NavBarCtrl.activePageBtnElem.classList.remove("Active");
+			NavBarCtrl.activePageBtnElem.classList.remove("active");
 		}
 		NavBarCtrl.activePageBtnElem = elem;
 		
 		// unfold Parent Group
 		let elemPointer = elem;
-		while (elemPointer.id !== "Menu") {
-			if (elemPointer.classList.contains("NavGroupOuter")) {
-				elemPointer.classList.add("Unfold");
+		while (elemPointer.id !== "SiteMenu") {
+			if (elemPointer.classList.contains("menu__group-wrapper")) {
+				elemPointer.classList.add("unfold");
 			}
 			elemPointer = elemPointer.parentElement;
 		}
@@ -130,7 +130,7 @@ class NavBarCtrl {
 	}
 
 	static toggleGroup(elem) {
-		this._toggle(elem.parentElement, "Unfold");
+		this._toggle(elem.parentElement, "unfold");
 	}
 	static _toggle(elem, className) {
 		if (elem.classList.contains(className)) {

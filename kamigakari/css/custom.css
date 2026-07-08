@@ -1,42 +1,8 @@
-:root {
-  --color-SiteHeader-Background: #4A593D;
-}
-
-#SiteHeader {
-  background:var(--color-SiteHeader-Background);
-  color:azure;
-  text-shadow: 5px 5px 0em black;
-}
-#ContentBody {
-  background-color: #D9CD90;
-}
 #Menu.Unfold {
   width:250px; min-width:250px;
 }
-.NavGroupTitle {
-    /*border: 4px double rgba(255, 255, 255, 0.3);
-    background: #40507e;*/
-}
 
-number {
-/* 關鍵：將元素設為 inline-flex，方便讓數字在圈圈內完美居中 */
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* 關鍵：寬高必須相等，並加上 50% 的圓角才會是正圓形 */
-  width: 1em; height: 1em;
-  border-radius: 50%;
-  
-  /* 外框與文字樣式 */
-  border: 1px solid black;
-  background-color: black;
-  color: white;
-  font-size: .8em;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  padding: 2px;
-}
+
 
 .Page h2:first-child,
 .Page h3:first-child,
