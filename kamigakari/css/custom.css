@@ -1,5 +1,9 @@
+:root {
+  --color-SiteHeader-Background: #4A593D;
+}
+
 #SiteHeader {
-  background:#4A593D;
+  background:var(--color-SiteHeader-Background);
   color:azure;
   text-shadow: 5px 5px 0em black;
 }

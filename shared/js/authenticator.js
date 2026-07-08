@@ -1,6 +1,7 @@
 const MyAuth = {
 	pwdColle: {
 		kamigakari: "kamigakari",
+		amadeus:    "amadeus",
 	},
 
 	run: function() {
@@ -49,6 +50,7 @@ const MyAuth = {
 	getSystemName: function(systemKey) {
 		switch(systemKey) {
 			case "kamigakari": return "神我狩";
+			case "amadeus": return "神話創世";
 		}
 		return undefined;
 	},
