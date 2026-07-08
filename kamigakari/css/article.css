@@ -1,0 +1,19 @@
+:root {
+  --doc_color_toc-link-text: #360909;
+}
+
+.article__container h3,
+.article__container h4,
+.article__container h5,
+.article__container h6 {
+  padding-left: .3em;
+}
+
+.article__container h3 {
+  background-color: #2b4910;
+  color: white;
+  padding-bottom: .1em;
+}
+.article__container h4 {
+  background-color: #d5ebcf;
+}

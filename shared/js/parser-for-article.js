@@ -10,9 +10,9 @@ class ArticleParser {
 
 	build(docJsonData, tocDepth = 2) {
 		// fetch Element from document
-		this.elemColle.main         = document.getElementById("ArticleContainer");
-		this.elemColle.toc          = document.getElementById("TocContainer");
-		this.elemColle.tocToggleBtn = document.getElementById("TocToggleBtn");
+		this.elemColle.main         = document.querySelector(".article__colume");
+		this.elemColle.toc          = document.querySelector(".article__toc-container");
+		this.elemColle.tocToggleBtn = document.querySelector(".article__toc-toggle-btn");
 
 		// Render
 		this._initTocToggleBtn();
@@ -58,9 +58,7 @@ class ArticleParser {
 	}
 
 	_renderMainContent(docJsonData) {
-		this.elemColle.main.innerHTML = `<div id="Articles">${
-			ArticleParser.Parse(docJsonData).join("")
-		}</div>`;
+		this.elemColle.main.innerHTML = ArticleParser.Parse(docJsonData).join("");
 	}
 
 	static renderLightboxOverlay(imgSrc) {

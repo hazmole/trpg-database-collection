@@ -13,13 +13,13 @@ class KamigakariShunt extends ShuntBase {
     function getLayoutUrl(pageItem) {
       switch(pageItem.handler) {
         case "home":   return `${BASE_URL}/pages/home.html`;
-        case "docs":   return `${BASE_URL}/pages/article.html`;
+        case "docs":   return `shared/pages/article.html`;
         case "custom": return pageItem.params.layout? `${BASE_URL}/${pageItem.params.layout}`: null;
       }
     }
     function getScriptUrl(pageItem) {
       switch(pageItem.handler) {
-        case "docs":   return `${BASE_URL}/pages/article.js`;
+        case "docs":   return `shared/pages/article.js`;
         case "custom": return pageItem.params.script? `${BASE_URL}/${pageItem.params.script}`: null;
       }
     }

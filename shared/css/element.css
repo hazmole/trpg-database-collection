@@ -1,5 +1,5 @@
 /* Misc */
-div { flex-shrink: 0; }
+* { flex-shrink: 0; }
 .easyRow { display:flex; flex-direction:row; } 
 .hide { display: none !important; }
 

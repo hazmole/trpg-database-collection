@@ -1,44 +1,47 @@
-* { flex-shrink: 0; }
-
-h2:first-child,
-h3:first-child,
-h4:first-child { margin-top: 0; }
-h2, h3, h4, h5, h6 { margin-bottom: 0; }
-h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
-h5 { font-size: 1em; margin-top: 1em; }
-h6 { font-size: 1em; margin-top: 1em; }
+:root {
+	--doc_color_toc-link-text: #333;
+}
 
 /* Basic Layer */
-#PageWrapper {
+.page__article-wrapper {
 	display: grid;
 	grid-template-columns: 1fr 200px;
-	margin: 0;
 	max-width: 1000px;
+	margin: 0;
 }
-#ArticleContainer {
+
+.article__container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	padding: 1rem;
 	width: calc(100% - 2rem);
 }
-#Articles { width: 100%; }
-#TocContainer {
+.article__colume {
+	width: 100%;
+}
+
+.article__toc-container {
 	position: sticky;
 	top: 1rem;
 	height: fit-content;
 	background: rgba(255,255,255,.3);
 	padding: 1rem;
 }
-#TocContainer a { font-size: 0.8em; color: #360909; }
-#TocToggleBtn, .toc-close { display: none; }
+.article__toc-container a {
+	font-size: 0.8em;
+	color: var(--doc_color_toc-link-text);
+}
 
-/* Site Layer for Mobile */
+.article__toc-toggle-btn .toc-close {
+	display: none;
+}
+
 @media (max-width: 900px) {
-	#PageWrapper {
+	.page__article-wrapper {
 		grid-template-columns: 1fr;
 	}
 
-	#TocContainer {
+	.article__toc-container {
 		position: fixed;
 		top: 0; right: -100%;
 		width: 200px; height: 100vh;
@@ -48,10 +51,9 @@ h6 { font-size: 1em; margin-top: 1em; }
 		transition: 0.3s ease;
 		border-left: none;
 	}
-	#TocContainer.active { right: 0; }
+	.article__toc-container.active { right: 0; }
 
-	/* 浮動按鈕：位於右下角 */
-	#TocToggleBtn {
+	.article__toc-toggle-btn {
 		display: block;
 		position: fixed;
 		bottom: 20px;
@@ -64,25 +66,45 @@ h6 { font-size: 1em; margin-top: 1em; }
 	}
 }
 
-/* Article Styles */
-.section {
+/* Title */
+.article__colume h2:first-child,
+.article__colume h3:first-child,
+.article__colume h4:first-child { margin-top: 0; }
+
+.article__colume h2,
+.article__colume h3,
+.article__colume h4,
+.article__colume h5,
+.article__colume h6 { margin-bottom: 0; }
+
+.article__colume h3 { margin:1.5rem 0 5px 0; border-bottom: 1px solid; }
+.article__colume h5 { font-size: 1em; margin-top: 1em; }
+.article__colume h6 { font-size: 1em; margin-top: 1em; }
+
+
+
+
+
+/* Section Paragraphs */
+.article__colume .section {
 	background-color: white;
+	color: black;
 	border: 1px solid;
 	padding: 10px;
 	margin-bottom: 1rem;
 }
-.section p {
+.article__colume .section p {
 	text-indent: 1em;
 	margin: .3em;
 }
-.section li > p {
+.article__colume .section li > p {
 	text-indent: 0;
 }
-.section p:first-child, h3+p, h4+p { margin-top:0; }
-.section p:last-child { margin-bottom:0; }
+.article__colume .section p:first-child, h3+p, h4+p { margin-top:0; }
+.article__colume .section p:last-child { margin-bottom:0; }
 
-.section li { margin-top: .5em; }
-.section li:first-child { margin-top: 0px; }
+.article__colume .section li { margin-top: .5em; }
+.article__colume .section li:first-child { margin-top: 0px; }
 
 
 /* Component: Sidebar */
