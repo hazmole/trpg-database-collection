@@ -1,0 +1,146 @@
+:root {
+  --advsrch_color_select-btn-default: #cccccc;
+  --advsrch_color_select-btn-yes:     #2a75ff;
+  --advsrch_color_select-btn-no:      #bf1717;
+  --advsrch_color_dualrange-text-current: #80d0ff;
+}
+
+.advsrch__overlay {
+	position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 9999; 
+}
+.advsrch__overlay.active {
+	opacity: 1;
+  visibility: visible;
+}
+.advsrch__modal-card {
+  background-color: #333; border: #666 double 3px;
+  width: 100%;
+  max-width: 1080px; max-height: 85vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.advsrch__modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+.advsrch__modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #d2af46;
+}
+
+.advsrch__modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+}
+.advsrch__modal-close-btn:hover {
+  color: #4b5563;
+}
+
+/* Option Container */
+.advsrch__option-wrapper {
+  margin: 10px 0;
+}
+.advsrch__option-title {
+  width: fit-content;
+  font-weight: bold;
+  padding: 2px 16px;
+  font-size: 16px;
+  color: white;
+}
+.advsrch__option-content {
+  display: flex; flex-wrap: wrap; padding: 0 16px; gap: 3px;
+}
+
+
+/* Type: Selection */
+.advsrch__option-content .select-item {
+  padding: 2px 10px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  cursor: pointer;
+	font-size: .9em;
+  background: var(--advsrch_color_select-btn-default); color:black;
+}
+.advsrch__option-content .select-item.yes {
+  background: var(--advsrch_color_select-btn-yes); color:white;
+}
+.advsrch__option-content .select-item.no {
+  background: var(--advsrch_color_select-btn-no); color:white;
+}
+
+/* Type: Dual-Slider */
+.advsrch__option-content .dual-slider {
+	margin: 8px 8px 0 8px;
+	width: 100%;
+	max-width: 680px;
+	margin-bottom: 32px;
+}
+.advsrch__option-content .dual-slider-text {
+	font-family: 'system-ui';
+	color: var(--advsrch_color_dualrange-text-current);
+	width: 32px;
+	text-align: center;
+}
+.custom-nouislider.noUi-target {
+  background: #e5e7eb;
+  border: none;
+  border-radius: 4px;
+  height: 6px;
+  box-shadow: none;
+}
+.custom-nouislider .noUi-connect {
+  background: var(--advsrch_color_select-btn-yes);
+}
+.custom-nouislider .noUi-handle {
+  width: 18px !important;
+  height: 18px !important;
+  right: -9px !important;
+  top: -6px !important;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--advsrch_color_select-btn-yes);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+.custom-nouislider .noUi-handle:active {
+  cursor: grabbing;
+  transform: scale(1.15); /* 按住時微微放大，手機端體感極佳 */
+  background-color: #f0f6ff;
+}
+.custom-nouislider .noUi-handle::before,
+.custom-nouislider .noUi-handle::after {
+  display: none;
+}
+.custom-nouislider .noUi-marker-horizontal.noUi-marker-large {
+	height: 10px;
+}
+.custom-nouislider .noUi-value-horizontal {
+	font-size: 0.9em;
+	font-family: 'system-ui';
+}
+.custom-nouislider .noUi-pips-horizontal {
+	height: fit-content;
+}
+.custom-nouislider .noUi-marker,
+.custom-nouislider .noUi-marker-large {
+	background: #999999;
+}

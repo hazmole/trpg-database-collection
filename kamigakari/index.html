@@ -1,0 +1,46 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="神我狩 - 秘逆書庫資料站">
+  <meta property="og:type" content="website">
+  <script src="./config.js"></script>
+  <script src="../shared/js/authenticator.js"></script>
+  <script src="../shared/js/css-loader.js"></script>
+  <script src="../shared/js/fetcher.js"></script>
+  <script src="../shared/js/navbar.js"></script>
+  <script src="../shared/js/router.js"></script>
+  <script src="../shared/js/utils.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  
+  <script src="./js/parser-talent.js"></script>
+  <script src="./js/parser-item.js"></script>
+  <script src="./js/parser-enemy.js"></script>
+  <script src="./js/parser-faq.js"></script>
+  <script src="./js/shunt.js"></script>
+  <script src="./js/sorter.js"></script>
+  <script>
+    const router = new CoreRouter({
+      shunt:   KamigakariShunt,
+      title:   Config.Title,
+      pageMap: Config.PageHandlerMap,
+    });
+    router.run();
+
+    const navbarCtl = new NavBarCtrl(Config.Title, Config.NavbarIndex);
+    navbarCtl.run();
+    
+  </script>
+</head>
+<body class="site__base">
+  <header class="site__header">
+    <button id="SiteMenu_ToggleBtn" class="site__menu-btn">☰</button>
+    <div id="SiteTitle" class="site__header--title"></div>
+  </header>
+
+  <div class="site__body">
+    <aside id="SiteMenu" class="site__menu"></aside>
+    <main id="SiteContent" class="site__content"></main>
+  </div>
+</body>

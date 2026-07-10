@@ -1,0 +1,183 @@
+.itemlist__body h2,
+.itemlist__body h3,
+.itemlist__body h4 {
+  margin-bottom: .5em;
+}
+
+.itemlist__header {
+  display: flex;
+	position: sticky;
+	flex-wrap: wrap;
+	align-items: center;
+	background: #141414;
+  color: white;
+  top: 0;
+	z-index: 100;
+	padding: 0 15px;
+	height: 50px;
+  gap: 5px;
+}
+
+.itemlist__body {
+	overflow: auto;
+	padding: 1rem;
+	max-width: 1024px;
+}
+.itemlist__title {
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+
+.itemlist__description {
+	font-size: .9em;
+	margin: 1rem 0;
+}
+
+.itemlist__toolbar {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+}
+@media (max-width: 600px) {
+	.itemlist__toolbar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+/* Tab - select */
+.itemlist__tab {
+	position: relative;
+}
+.itemlist__tab > a {
+	display: block;
+	padding: 5px 10px;
+	color: #999;
+	text-decoration: none;
+	border-radius: 5px;
+	border: solid 2px rgba(255, 255, 255, 0);
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+.itemlist__tab:hover > a, 
+.itemlist__tab.active > a {
+	color: #fff;
+	border: solid 2px rgba(255, 255, 255, .5);
+}
+.itemlist__tab:hover {
+	background-color: rgb(70, 70, 70);
+}
+
+.itemlist__tab_dropdown {
+	background-color: black;
+  color: white;
+  border-color: rgba(255, 255, 255, .5);
+}
+.itemlist__tab_dropdown:hover,
+.itemlist__tab_dropdown:focus {
+	background-color: rgb(70, 70, 70);
+}
+
+/* Toolbar: Advance-search-button */
+.itemlist__advsrch_btn {
+	display: inline-flex;
+	gap: 5px; align-items: center;
+	background-color: #333; color: #aaa;
+	border: 1px solid #333; padding: 0 10px 0 5px;
+	border-radius: 4px;
+	font-size: 14px;
+	height: 36px;
+	cursor: pointer;
+}
+.itemlist__advsrch_btn:hover  {
+	color: #fff;
+	text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+.itemlist__advsrch_icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  
+	color: #d2af46;
+  background-color: currentColor; 
+  
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* Toolbar: Sort */
+.itemlist__sort_wrapper {
+	display: inline-flex;
+	align-items: center;
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 4px;
+	overflow: hidden;
+	height: 36px;
+}
+.itemlist__sort_icon {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 0 10px;
+	background-color: #333; 
+	color: #fff;
+	font-size: 13px;
+	font-weight: 500;
+	height: 100%;
+	user-select: none;
+}
+.itemlist__sort_select {
+	border: none !important; 
+	border-radius: 0 !important;
+	padding: 0 30px 0 12px !important;
+	margin: 0 !important;
+	height: 100% !important;
+	
+	font-size: 14px;
+	color: #333;
+	background-color: transparent;
+	cursor: pointer;
+	
+	appearance: none;
+}
+
+/* Toolbar: Search-bar */
+.itemlist__searchbar_wrapper {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid #333;
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: #fff;
+	height: 36px;
+	flex: 1 1 38px;
+	margin-bottom: 10px;
+}
+.itemlist__searchbar_icon {
+	width: 40px;
+	height: 100%;
+	background-color: #333;
+	
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 16px;
+}
+.itemlist__searchbar_input {
+	border: none !important;
+	padding: 0 12px !important;
+	margin: 0 !important;
+	height: 100% !important;
+	width: 100%;
+	font-size: 1em;
+	color: black;
+	background-color: transparent;
+}
+.itemlist__searchbar_input::placeholder {
+	color: #aaa;
+	font-size: .9em;
+}

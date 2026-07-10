@@ -1,0 +1,42 @@
+:root {
+  --doc_color_toc-link-text: #360909;
+}
+
+.article__container h3,
+.article__container h4,
+.article__container h5,
+.article__container h6 {
+  padding-left: .3em;
+}
+
+.article__container h3 {
+  background-color: #2b4910;
+  color: white;
+  padding-bottom: .1em;
+}
+.article__container h4 {
+  background-color: #d5ebcf;
+}
+
+
+.faq-entry { margin-bottom: .8em; }
+.faq-entry > .faq-title {
+  background-color: #cecece;
+  font-weight: bold;
+  font-size: .9em;
+  padding-left: 5px;
+}
+.faq-entry > .faq-ref {
+  width: fit-content;
+  background-color: black; color: #ededed;
+  font-size: .8em;
+  margin: .3em 0;
+  padding: .1em .4em;
+}
+.faq-entry > .faq-text {
+  margin: .4em 0;
+  font-size: .9em;
+  text-indent: 1.3em hanging;
+}
+.faq-entry ul,
+.faq-entry ul > li { margin-top: 0; }

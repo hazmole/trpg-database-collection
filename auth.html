@@ -1,0 +1,114 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="金鑰/驗證 - 秘逆書庫資料站">
+	<meta property="og:type" content="website">
+	<title>金鑰/驗證 - 秘逆書庫資料站</title>
+	<script src="./shared/js/authenticator.js"></script>
+	<style>
+		.site__wrapper {
+			background-color: black;
+			color: white;
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			height: calc(100vh);
+			width: calc(100vw);
+		}
+
+		h2 {
+			color: wheat;
+			font-size: 46px;
+			margin: 10px 0;
+		}
+
+		.site__lock-img {
+			width: 200px;
+		}
+
+		.site__info-msg {
+			background-color: rgba(255, 255, 255, .2);
+			padding: .8em;
+			border-radius: 10px;
+			margin-bottom: 1em;
+		}
+		
+		.input-row {
+			display: flex;
+			flex-direction: row;
+			gap: 5px;
+		}
+
+		input[type=text] {
+			border: 2px solid black;
+			height: 30px;
+			width: 100%;
+			border-radius: 50px;
+			padding: 4px 11px 4px 31px;
+			font-size: 16px;
+			color: #555;
+		}
+
+		#AuthButton {
+			width: 100;
+			background-color: #66FF66;
+			border-color: green;
+			cursor: pointer;
+		}
+		#AuthButton:hover {
+			background-color: #00FF00;
+		}
+		#SystemName {
+			color: wheat;
+		}
+		#ErrorMessage {
+			margin: 1em 0;
+			color: #ff3636;
+		}
+	</style>
+	<script>
+		window.onload = () => {
+			const systemKey = getSystemByUrl();
+			const systemName = MyAuth.getSystemName(systemKey);
+
+			document.getElementById("SystemName").innerText = (systemName)? systemName: "未知";
+			document.getElementById("Password").focus();
+		};
+
+		function pressKey() {
+			if (event.key === 'Enter') { sendAuth() }
+		}
+
+		function sendAuth() {
+			const systemKey = getSystemByUrl();
+			const inputVal = document.getElementById("Password").value;
+			if (MyAuth.auth(systemKey, inputVal)) {
+				document.getElementById("ErrorMessage").innerText = "密碼錯誤！";
+			}
+		}
+
+		function getSystemByUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get('system') || "";
+		}
+	</script>
+</head>
+<body class="site__wrapper">
+	<h2>秘匿書庫/金鑰驗證</h2>
+
+	<img class="site__lock-img" src="./shared/img/lock-icon.svg">
+
+	<div class="site__info-msg">
+		<p>您正在嘗試造訪 <span id="SystemName"></span> 區域。</p>
+		<p>這個區域的內容受到版權保護，請確認您已經得到了正確的造訪權限。<br>在下方輸入驗證金鑰，方可進入此區域。</p>
+	</div>
+
+	<div class="input-row">
+		<input  id="Password" type="text" onkeyup="pressKey()">
+		<button id="AuthButton" onClick="sendAuth()">驗證</button>
+	</div>
+	<div id="ErrorMessage"></div>
+
+</body>
+</html>
