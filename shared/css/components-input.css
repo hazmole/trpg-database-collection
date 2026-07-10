@@ -42,13 +42,6 @@ option:focus { background: #99939f; }
 option:checked { font-weight: bold; }
 option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 
-::picker(select) { opacity: 0; transition: all 0.4s allow-discrete; }
-::picker(select):popover-open { opacity: 1; }
-@starting-style {
-	::picker(select):popover-open { opacity: 0; }
-}
-
-
 
 /* input [type=text] */
 input[type=text] {

@@ -1,0 +1,11 @@
+{
+  "name": "css-building",
+  "version": "1.0.0",
+  "type": "module", 
+  "scripts": {
+    "build:css": "node build-css.js"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.22.1"
+  }
+}
