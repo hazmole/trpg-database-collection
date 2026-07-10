@@ -28,3 +28,26 @@ ToggleUtils.click = function(currentElem) {
   currentElem.classList.toggle('active');
   siblingElem.classList.toggle('active');
 }
+
+
+const Utils = {};
+Utils.getBaseURL = function() {
+  const isGitHub = window.location.hostname.includes('github.io');
+  const folderName = window.location.pathname.split('/')[1];
+  return (isGitHub) ? `/${folderName}/` : '/';
+}
+Utils.htmlToNode = function(htmlText) {
+	const template = document.createElement('template');
+	template.innerHTML = htmlText;
+
+	const nNodes = template.content.childNodes.length;
+	if (nNodes !== 1) {
+		throw new Error(
+			`html parameter must represent a single node; got ${nNodes}. ` +
+			'Note that leading or trailing spaces around an element in your ' +
+			'HTML, like " <img/> ", get parsed as text nodes neighbouring ' +
+			'the element; call .trim() on your input to avoid this.'
+		);
+	}
+	return template.content.firstChild;
+}

@@ -1,19 +1,18 @@
-class ArticleParser {
+export class ArticleParser {
 
 	static ParserPlugin = {};
 
-	constructor() {
+	constructor(cfg) {
 		// initialize
 		this.MOBILE_WIDTH = 900;
-		this.elemColle = {};
+		this.elemColle = {
+			main: cfg.mainElem,
+			toc: cfg.tocElem,
+			tocToggleBtn: cfg.tocBtnElem,
+		};
 	}
 
 	build(docJsonData, tocDepth = 2) {
-		// fetch Element from document
-		this.elemColle.main         = document.querySelector(".article__colume");
-		this.elemColle.toc          = document.querySelector(".article__toc-container");
-		this.elemColle.tocToggleBtn = document.querySelector(".article__toc-toggle-btn");
-
 		// Render
 		this._initTocToggleBtn();
 		this._renderToc(docJsonData, tocDepth);
@@ -59,6 +58,12 @@ class ArticleParser {
 
 	_renderMainContent(docJsonData) {
 		this.elemColle.main.innerHTML = ArticleParser.Parse(docJsonData).join("");
+
+		this.elemColle.main.querySelectorAll(".Image img").forEach(elem => {
+			elem.addEventListener('click', () => {
+				ArticleParser.renderLightboxOverlay(elem.src);
+			});
+		});
 	}
 
 	static renderLightboxOverlay(imgSrc) {
@@ -151,7 +156,7 @@ class ArticleParser {
 
 	static handleImage(item) {
 		// ReqField: url, (style)
-		return `<div class="Image"><img src=${item.url} style="${item.style}" onclick="showLightbox(this)"/></div>`;
+		return `<div class="Image"><img src=${item.url} style="${item.style}"/></div>`;
 	}
 	static handleNote(item) {
 		// ReqField: text
@@ -296,25 +301,4 @@ class ArticleParser {
 			return `<h6>${txt}</h6>`;
 		}
 	}
-}
-
-
-function htmlToNode(html) {
-	const template = document.createElement('template');
-	template.innerHTML = html;
-
-	const nNodes = template.content.childNodes.length;
-	if (nNodes !== 1) {
-		throw new Error(
-			`html parameter must represent a single node; got ${nNodes}. ` +
-			'Note that leading or trailing spaces around an element in your ' +
-			'HTML, like " <img/> ", get parsed as text nodes neighbouring ' +
-			'the element; call .trim() on your input to avoid this.'
-		);
-	}
-	return template.content.firstChild;
-}
-
-function showLightbox(elem) {
-	ArticleParser.renderLightboxOverlay(elem.src);
 }
