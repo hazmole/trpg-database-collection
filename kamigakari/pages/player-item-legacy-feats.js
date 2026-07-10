@@ -1,8 +1,6 @@
-export async function run() {
+export async function run( pageCtrl ) {
   const dataList = await Fetcher.fetchJSON('./data/items-legacy-feat.json');
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
-
+	
   pageCtrl.setTitle("神器能力");
   pageCtrl.disableDescription();
   pageCtrl.enableTabs({

@@ -1,7 +1,5 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const dataList = (await Fetcher.fetchJSON('./data/facades.json'));
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	const options = [
 		{ text: "表職業①／一般", value: "1" },

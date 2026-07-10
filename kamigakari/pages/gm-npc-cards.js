@@ -1,8 +1,6 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const dataList = (await Fetcher.fetchJSON('./data/npc-cards.json'));
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
-
+	
 	pageCtrl.setTitle("NPC");
 	pageCtrl.setDescription([
 		"這個列出了一些這個世界中的重要人物，同時也是點綴故事的配角們 ── NPC。",

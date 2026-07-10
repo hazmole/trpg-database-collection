@@ -1,7 +1,5 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const dataList = (await Fetcher.fetchJSON('./data/anomalies.json'));
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	pageCtrl.setTitle("法則障礙");
 	pageCtrl.setDescription([

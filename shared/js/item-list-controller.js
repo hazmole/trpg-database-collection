@@ -48,7 +48,7 @@ export class ItemListCtrl {
   constructor(cfg) {
     // define elemRef
     this.elemRef = {};
-    this.elemRef.itemContainer = document.getElementById(cfg.itemContainerID);
+    this.elemRef.itemContainer = cfg.itemContainerElem;
     this.elemRef.SortBase = null;
     this.elemRef.SortSelector = null;
     this.elemRef.advanceSearchOverlay = null;
@@ -127,8 +127,8 @@ export class ItemListCtrl {
   enableSort(cfg) {
     // fetch DOM Elem
     const featureCfg = this.sortCfg;
-    const baseDOM = document.getElementById(cfg.elemID);
-    const inputDOM = document.getElementById(cfg.elemID_selector);
+    const baseDOM = cfg.elem_wrapper;
+    const inputDOM = cfg.elem_selector;
     if (!baseDOM || !inputDOM) {
       console.error(`Cannot find element: ${cfg.elemID_selector}`);
       return ;
@@ -176,18 +176,18 @@ export class ItemListCtrl {
   /**
    * Enable Feature: Simple-Search
    * @param {Object} cfg
-   * @param {string} cfg.elemID         - ID of Simple-Search DOM 
-   * @param {string} cfg.elemID_input   - ID of Simple-Search Input DOM
-   * @param {string} cfg.placeholder    - placeholder text
+   * @param {string} cfg.elem_wrapper  - DOM of Simple-Search Wrapper
+   * @param {string} cfg.elem_input    - DOM of Simple-Search Input
+   * @param {string} cfg.placeholder   - placeholder text
    * @param {MatchingFunction} cfg.matchFunc    - isMactch function
    */
   enableSimpleSearch(cfg) {
     // fetch DOM Elem
     const featureCfg = this.simpleSearchCfg;
-    const elemDOM = document.getElementById(cfg.elemID);
-    const inputDOM = document.getElementById(cfg.elemID_input);
+    const elemDOM = cfg.elem_wrapper;
+    const inputDOM = cfg.elem_input;
     if (!elemDOM || !inputDOM) {
-      console.error(`Cannot find element: ${cfg.elemID}`);
+      console.error(`Cannot find element`);
       return ;
     }
     
@@ -225,12 +225,11 @@ export class ItemListCtrl {
   enableAdvanceSearch(cfg) {
     // fetch DOM Elem
     const featureCfg = this.advanceSearchCfg;
-    const elemDOM = document.getElementById(cfg.elemID);
-    const btnDOM = document.getElementById(cfg.elemID_btn);
-    const overlayDOM = document.getElementById(cfg.elemID_overlay);
-    const overlayBodyDOM = overlayDOM.querySelector(".advsrch-modal-body");
-    const overlayCloseBtnDOM = overlayDOM.querySelector(".modal-close-btn");
-    if (!elemDOM || !btnDOM || !overlayDOM) {
+    const btnDOM = cfg.elem_btn;
+    const overlayDOM = cfg.elem_overlay;
+    const overlayBodyDOM = overlayDOM.querySelector(".advsrch__modal-body");
+    const overlayCloseBtnDOM = overlayDOM.querySelector(".advsrch__modal-close-btn");
+    if (!btnDOM || !overlayDOM) {
       console.error(`Cannot find element: ${cfg.elemID}`);
       return ;
     }
@@ -252,7 +251,7 @@ export class ItemListCtrl {
       featureCfg.options[opt.title] = optConfig;
       // draw container
       overlayBodyDOM.insertAdjacentHTML('beforeend', this.#DOM_AdvSearchOptContainer(opt));
-      const containerDOM = overlayBodyDOM.querySelector(".advsrch-opt-entry:last-child").querySelector(".content-wrapper");
+      const containerDOM = overlayBodyDOM.querySelector(".advsrch__option-wrapper:last-child").querySelector(".advsrch__option-content");
       // draw contents
       switch(opt.type) {
 
@@ -321,7 +320,7 @@ export class ItemListCtrl {
     featureCfg.enable = true;
     featureCfg.matchFunc = cfg.matchFunc;
     // render DOM
-    elemDOM.classList.remove("hide");
+    btnDOM.classList.remove("hide");
   }
 
   // ========================
@@ -340,9 +339,9 @@ export class ItemListCtrl {
     return `<option value="${opt.value}"><span class="label">${opt.text}</span></option>`;
   }
   #DOM_AdvSearchOptContainer(opt) {
-    return `<div class="advsrch-opt-entry">
-        <div class="title">${opt.title}</div>
-        <div class="content-wrapper" data-search-type="${opt.type}"></div>
+    return `<div class="advsrch__option-wrapper">
+        <div class="advsrch__option-title">${opt.title}</div>
+        <div class="advsrch__option-content" data-search-type="${opt.type}"></div>
       </div>`;
   }
   #DOM_AdvSearchOpt_SelectionBtn(opt) {

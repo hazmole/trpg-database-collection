@@ -1,18 +1,14 @@
-const modeleI = await import(`./item-list-controller.js`); 
+export class DataPageCtrl {
 
-export class GeneralDataPageCtrl {
-
-  constructor() {
+  constructor(cfg) {
     // init DOM Elem
     this.elemRef = {};
-    this.elemRef.header        = document.getElementById("ContextHeader");
-    this.elemRef.title         = document.getElementById("Name");
-    this.elemRef.description   = document.getElementById("Description");
+    this.elemRef.header        = cfg.headerElem;
+    this.elemRef.title         = cfg.titleElem;
+    this.elemRef.description   = cfg.descElem;
 
     // item Controller
-    this.itemCtrl = new modeleI.ItemListCtrl({
-      itemContainerID: "DataContainer",
-    });
+    this.itemCtrl = cfg.itemCtrl;
 
     // define config
     this.tabCfg = {
@@ -37,7 +33,7 @@ export class GeneralDataPageCtrl {
   enableTabs(cfg) {
     // render options
     this.elemRef.header.innerHTML = cfg.options
-      .map(opt => `<div id="Tab-${opt.value}" class="TabItem"><a href="javascript:void(0)">${opt.text}</a></div>`)
+      .map(opt => `<div id="Tab-${opt.value}" class="itemlist__tab"><a href="javascript:void(0)">${opt.text}</a></div>`)
       .join('');
     
     // set default value
@@ -70,8 +66,8 @@ export class GeneralDataPageCtrl {
     // render options
     const elemArr = cfg.options
       .map(opt => `<option value="${opt.value}"><span class="label">${opt.text}</span></option>`);
-    this.elemRef.header.innerHTML = `<select id="DropdownMenu">${elemArr.join('')}</select>`;
-    const dropdownElem = this.elemRef.header.querySelector(`#DropdownMenu`);
+    this.elemRef.header.innerHTML = `<select class="itemlist__tab_dropdown">${elemArr.join('')}</select>`;
+    const dropdownElem = this.elemRef.header.querySelector(`.itemlist__tab_dropdown`);
 
     // set default value
     const urlParams = new URLSearchParams(window.location.search);
@@ -105,23 +101,22 @@ export class GeneralDataPageCtrl {
   reassignSort(cfg) { this.itemCtrl.reassignSort(cfg); }
   enableSort(cfg) {
     this.itemCtrl.enableSort({
-      elemID: "SortingGroup",
-      elemID_selector: "SortingSelect",
+      elem_wrapper: document.querySelector(".itemlist__sort_wrapper"),
+      elem_selector: document.querySelector(".itemlist__sort_select"),
       ...cfg,
     });
   }
   enableSimpleSearch(cfg) {
     this.itemCtrl.enableSimpleSearch({
-      elemID: "SearchGroup",
-      elemID_input: "SearchInput",
+      elem_wrapper: document.querySelector(".itemlist__searchbar_wrapper"),
+      elem_input: document.querySelector(".itemlist__searchbar_input"),
       ...cfg,
     });
   }
   enableAdvanceSearch(cfg) {
     this.itemCtrl.enableAdvanceSearch({
-      elemID: "AdvanceSearchBtn",
-      elemID_btn: "AdvanceSearchBtn",
-      elemID_overlay: "AdvanceSearchOverlay",
+      elem_btn:     document.querySelector(".itemlist__advsrch_btn"),
+      elem_overlay: document.querySelector(".advsrch__overlay"),
       ...cfg,
     });
   }

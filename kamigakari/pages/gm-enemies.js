@@ -1,8 +1,5 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const dataList = (await Fetcher.fetchJSON('./data/enemies.json'));
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
-
 	dataList.sort(SorterUtils.compareEnemy(dataList));
 
 	pageCtrl.setTitle("敵人一覽");

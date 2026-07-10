@@ -1,7 +1,5 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const dataList = await Fetcher.fetchJSON('./data/items-sacrament.json');
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	pageCtrl.disableHeader();
 	pageCtrl.setTitle("常備品");

@@ -69,24 +69,6 @@
 
 
 
-#ContextHeader {
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	padding: 0 10px;
-	height: 50px;
-	background: #141414; color: white;
-
-	position: sticky;
-	top: 0;
-	z-index: 100;
-}
-#ContextBody {
-	overflow: auto;
-	padding: 1rem;
-	max-width: 1024px;
-}
-
 
 /* input [type=text] */
 input[type=text] {
@@ -100,55 +82,7 @@ input[type=text] {
 }
 input[type=text]:focus { outline: none; }
 
-/* select */
-select,
-::picker(select) {
-	appearance: base-select;
-}
-select {
-	border: 2px solid #dddddd;
-	background: #eeeeee; color: #000;
-	min-width: 250px;
-	padding: 4px 10px;
-	transition: 0.4s;
-	font-size: 1em;
-}
-select:hover, select:focus { background: #dddddd; }
-select::picker-icon { color: #999999; margin-top: 5px; }
-select:open::picker-icon { rotate: 180deg; margin-top: 1px; }
 
-::picker(select) {
-	border: none;
-	background: none;
-	top: calc(anchor(bottom) + 1px);
-	max-height: 460px;
-}
-
-option {
-	display: flex;
-	justify-content: flex-start;
-	gap: 20px;
-
-	border: 2px solid #dddddd;
-	background: #eeeeee;
-	padding: 10px;
-	transition: 0.4s;
-}
-option:first-of-type { border-radius: 8px 8px 0 0; }
-option:last-of-type  { border-radius: 0 0 8px 8px; }
-option:not(option:last-of-type) { border-bottom: none; }
-option:nth-of-type(odd) { background: white; }
-
-option:hover,
-option:focus { background: #99939f; }
-option:checked { font-weight: bold; }
-option::checkmark { order: 1; margin-left: auto; content: "✔"; }
-
-::picker(select) { opacity: 0; transition: all 0.4s allow-discrete; }
-::picker(select):popover-open { opacity: 1; }
-@starting-style {
-	::picker(select):popover-open { opacity: 0; }
-}
 
 /* select: sort */
 .SortGroup {
@@ -193,91 +127,8 @@ option::checkmark { order: 1; margin-left: auto; content: "✔"; }
 .SortGroup select.SelectSort:focus { outline: none; }
 
 /* select: Advance search button */
-.AdvSearchBtn {
-	display: inline-flex;
-	gap: 5px; align-items: center;
-	background-color: #333; color: #aaa;
-	border: 1px solid #333; padding: 0 10px 0 5px;
-	border-radius: 4px;
-	font-size: 14px;
-	height: 36px;
-	cursor: pointer;
-}
-.AdvSearchBtn:hover {
-	color: #fff;
-	text-shadow: 0 0 10px rgba(255,255,255,0.8);
-}
-.AdvSearchBtn > .icon-filter {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  
-	color: #d2af46;
-  background-color: currentColor; 
-  
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'><path d='M22 3H2l8 9.46V19l4 2v-8.54L22 3z'/></svg>") no-repeat center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
 
-#AdvanceSearchOverlay {
-	position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 9999; 
-}
-#AdvanceSearchOverlay.active {
-	opacity: 1; visibility: visible;
-}
-#AdvanceSearchOverlay .modal-card {
-  background-color: #333; border: #aaa double 3px;
-  width: 100%;
-  max-width: 1080px; /* 桌機版限制寬度 */
-  border-radius: 12px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  max-height: 85vh; /* 避免超出螢幕高度 */
-  
-  /* 卡片飄入動畫：預設稍微向下偏移並縮小 */
-  transform: translateY(20px) scale(0.95);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.advsrch-modal-card {
-  background-color: #333; border: #666 double 3px;
-  width: 100%;
-  max-width: 1080px; max-height: 85vh;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-}
-.advsrch-modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 16px;
-}
-.advsrch-modal-header h3 { margin: 0; font-size: 18px; color: #d2af46; }
-.advsrch-modal-footer {
-	display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  padding: 5px 16px;
-  border-top: 1px solid #555555;
-}
-.modal-close-btn {
-	background: none; border: none; font-size: 28px; color: #9ca3af; cursor: pointer; line-height: 1;
-}
-.modal-close-btn:hover { color: #4b5563; }
+
 .btn-primary, .btn-secondary { padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; }
 .btn-primary { background-color: #2563eb; color: white; }
 .btn-primary:hover { background-color: #1d4ed8; }

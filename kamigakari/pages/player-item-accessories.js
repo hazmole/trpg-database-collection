@@ -1,10 +1,8 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const normalDataList = await Fetcher.fetchJSON('./data/items-accessory.json');
 	const relicDataList = (await Fetcher.fetchJSON('./data/items-legacy.json')).filter(item => {
 		return item.type.includes("裝飾");
 	});
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	pageCtrl.setTitle("裝飾");
 	pageCtrl.setDescription([

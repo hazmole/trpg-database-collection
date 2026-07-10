@@ -1,9 +1,13 @@
 @import "../../shared/css/layout.css";
-@import "../../shared/css/element.css";
+@import "../../shared/css/components.css";
+@import "../../shared/css/components-input.css";
+@import "../../shared/css/components-advance-search.css";
 @import "../../shared/css/page-article.css";
+@import "../../shared/css/page-items.css";
 
 @import "layout.css";
-@import "article.css";
+@import "page-article.css";
+@import "page-items.css";
 
 @import "list-entry.css";
 @import "list-entry-custom.css";

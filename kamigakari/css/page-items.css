@@ -1,0 +1,9 @@
+.itemlist__description {
+  border-radius: 10px;
+  padding: .5em;
+  color: black;
+
+  background: #ffedad;
+  border: 0;
+}
+

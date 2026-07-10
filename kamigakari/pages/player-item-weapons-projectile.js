@@ -1,11 +1,8 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const filterFunc = (item) => item.type.includes("射擊");
 	const normalDataList = (await Fetcher.fetchJSON('./data/items-weapon.json')).filter(filterFunc);
 	const relicDataList = (await Fetcher.fetchJSON('./data/items-legacy.json')).filter(filterFunc);
 	const upgradeDataList = (await Fetcher.fetchJSON('./data/items-weapon-upgrade.json')).filter(filterFunc);
-
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	pageCtrl.setTitle("射擊武器／形狀：射擊");
 	pageCtrl.setDescription([

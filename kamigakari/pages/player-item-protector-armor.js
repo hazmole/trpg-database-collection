@@ -1,10 +1,7 @@
-export async function run() {
+export async function run( pageCtrl ) {
 	const filterFunc = (item) => item.type.includes("鎧");
 	const normalDataList = (await Fetcher.fetchJSON('./data/items-protector.json')).filter(filterFunc);
 	const relicDataList = (await Fetcher.fetchJSON('./data/items-legacy.json')).filter(filterFunc);
-
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
 
 	pageCtrl.setTitle("防具／鎧");
 	pageCtrl.setDescription([

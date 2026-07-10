@@ -1,11 +1,8 @@
-export async function run() {
+export async function run( pageCtrl ) {
   const dataList = await Fetcher.fetchJSON('./data/talents-common.json');
-	const moduleT = await import(`./general-data-page-template-ctrl.js`);
-	const pageCtrl = new moduleT.GeneralDataPageCtrl();
-
   dataList.sort(SorterUtils.compareTalent(dataList));
-  pageCtrl.setParseFunc(CustomParser.talent);
 
+  pageCtrl.setParseFunc(CustomParser.talent);
 	pageCtrl.enableDropdownTabs({
 		options: [
 			{ text: "共通天賦",         value: "normal" },
