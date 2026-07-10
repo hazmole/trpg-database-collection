@@ -284,7 +284,7 @@ export class ArticleParser {
 		const retArr = [];
 
 		item.datas.forEach(data => {
-			retArr.push(parserFunc(data));
+			retArr.push(parserFunc(data, ArticleParser));
 		});
 
 		return `<div class="customDataList">${retArr.join('')}</div>`;

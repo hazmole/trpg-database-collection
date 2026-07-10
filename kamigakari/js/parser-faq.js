@@ -1,12 +1,11 @@
 var CustomParser;
 if(!CustomParser) CustomParser = {};
 
-CustomParser.faq = function(entryItem) {
+CustomParser.faq = function(entryItem, docParser) {
   // ReqField: title, reference, Q, A
-
   var answerText = entryItem.A;
   if (Array.isArray(entryItem.A)) {
-    answerText = entryItem.A[0] + ArticleParser.Parse(entryItem.A.slice(1));
+    answerText = entryItem.A[0] + docParser.Parse(entryItem.A.slice(1));
   }
 
   return `<div class="faq-entry">
