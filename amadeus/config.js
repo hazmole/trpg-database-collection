@@ -1,5 +1,8 @@
 const INDEX = [
 	{ title: "首頁", pid: "home" },
+	{ title: "規則單元", members: [
+		{ title: "創建角色", pid: "doc-core-rule-character-creation" },
+	]},
 	{ title: "玩家資料庫", members: [
 		{ title: "神群", members: [
 			{ title: "希臘神群", pid: "data-deities-greek" },
@@ -22,7 +25,8 @@ const INDEX = [
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
-
+	"doc-core-rule-character-creation": {
+		title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
 }
 
 const Config = {
