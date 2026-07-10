@@ -87,10 +87,7 @@ const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
 	"data-ancestries": {
-		title: "種族一覽", handler: 'custom', params: {
-			layout: 'pages/player-ancestries.html',
-			script: 'pages/player-ancestries.js',
-		}},
+		title: "種族一覽", handler: 'data', script: 'pages/player-ancestries.js' },
 
 	"data-facets": {
 		title: "稱號一覽", handler: 'custom', params: {

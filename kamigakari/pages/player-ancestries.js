@@ -1,56 +1,56 @@
-export async function run() {
+export async function run( pageCtrl ) {
   // Get JSON Data
-  const itemData   = await Fetcher.fetchJSON('./data/ancestries.json');
+  const ancData   = await Fetcher.fetchJSON('./data/ancestries.json');
   const talentData = await Fetcher.fetchJSON('./data/talents-ancestry.json');
-  const itemNameList = Object.keys(itemData);
+  talentData.sort(SorterUtils.compareTalent(talentData));
 
-  // Get DOM Element
-  const dropdownElem = document.getElementById('DropdownMenu');
-  // Get RID from URL Params
-  const itemID = getUrlItemID();
-  CoreRouter.setUrlParams('key', itemID);
-  
-  // Main Tasks
-  appendOptions();
-  initListener();
-  renderPage(itemID);
+  const options = Object.keys(ancData).map((name, idx) => {
+    return { text: name, value: name };
+  });
+
+  pageCtrl.setParseFunc(CustomParser.talent);
+	pageCtrl.enableDropdownTabs({
+		options: options,
+		onChangeFunc: () => renderPage(),
+	});
+
+  renderPage();
 
   //=======================
-  function getUrlItemID() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlRaceID = urlParams.get('key');
-    return (itemNameList.includes(urlRaceID))? urlRaceID: itemNameList[0];
-  }
-  function appendOptions() {
-    dropdownElem.innerHTML = itemNameList.map( key => {
-      return `<option value="${key}"><span class="label">${key}</span></option>`
-    }).join('');
-    dropdownElem.value = itemID;
-  }
-  function initListener() {
-    dropdownElem.addEventListener('change', (e) => {
-      const newItemID = e.target.value;
-      // Write URL Params
-      CoreRouter.setUrlParams('key', newItemID);
-      renderPage(newItemID);
-    });
-  }
-  function renderPage(itemID) {
-    const itemObj = itemData[itemID];
-    const talentList = talentData
-      .filter( t => t.type===`ancestry-${itemID}` )
-      .sort(SorterUtils.compareTalent(talentData));
+  function renderPage() {
+    const tabID = pageCtrl.tabCfg.tabID;
+    const tabInfo = ancData[tabID];
 
-    CoreRouter.setSiteTitle(`種族 - ${itemID}`);
-    document.getElementById("Name").textContent = itemObj.name;
-    document.getElementById("Description").innerHTML = itemObj.desc.join('<br>');
-    document.getElementById("FeatName").textContent = itemObj.feat.name;
-    document.getElementById("FeatEffect").innerHTML = itemObj.feat.effect.join('<br>');
-    document.getElementById("AttrPhysical").innerHTML = _renderAttributeRow("戰士", itemObj.states.phy);
-    document.getElementById("AttrGeneral").innerHTML = _renderAttributeRow("泛用", itemObj.states.gen);
-    document.getElementById("AttrMagical").innerHTML = _renderAttributeRow("魔法", itemObj.states.mgc);
-    document.getElementById("TalentsContainer").innerHTML = _renderTalents(talentList);
+    pageCtrl.setTitle(tabInfo.name);
+    pageCtrl.setDescription(tabInfo.desc);
+    pageCtrl.setCustomBlock(renderCustomBlock(tabInfo));
+
+    const newTalentList = talentData.filter( t => t.type===`ancestry-${tabID}` );
+    pageCtrl.setItems(newTalentList);
+    pageCtrl.displayItemList();
   }
+
+  function renderCustomBlock(tabInfo) {
+    return `
+    <div>
+      <h4>能力值類型</h4>
+      <table class="custom__statetable">
+        <tr><th>類型</th><th>體力</th><th>敏捷</th><th>知性</th><th>精神</th><th>幸運</th></tr>
+        <tr id="AttrPhysical">${_renderAttributeRow("戰士", tabInfo.states.phy)}</tr>
+        <tr id="AttrGeneral" >${_renderAttributeRow("泛用", tabInfo.states.phy)}</tr>
+        <tr id="AttrMagical" >${_renderAttributeRow("魔法", tabInfo.states.phy)}</tr>
+      </table>
+
+      <h4>種族特典</h4>
+      <div class="custom__information">
+        <div><b>${tabInfo.feat.name}</b></div>
+        <div>${tabInfo.feat.effect.join('<br>')}</div>
+      </div>
+
+      <h4>種族天賦一覽</h4>
+    </div>`;
+  }
+
   //=======================
   function _renderAttributeRow(labelText, data) {
     const arr = [ `<td class="title">${labelText}</td>` ];
@@ -61,8 +61,6 @@ export async function run() {
     arr.push(`<td>${ data.luc }</td>`);
     return arr.join('');
   }
-  function _renderTalents(dataList) {
-    return dataList.map( data => CustomParser.talent(data) ).join('');
-  }
+
 }
 

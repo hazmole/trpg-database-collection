@@ -6,6 +6,7 @@ export class DataPageCtrl {
     this.elemRef.header        = cfg.headerElem;
     this.elemRef.title         = cfg.titleElem;
     this.elemRef.description   = cfg.descElem;
+    this.elemRef.customBlock   = cfg.customElem;
 
     // item Controller
     this.itemCtrl = cfg.itemCtrl;
@@ -26,6 +27,10 @@ export class DataPageCtrl {
   }
   setDescription(textArr) {
     this.elemRef.description.innerHTML = textArr.join('<br>');
+  }
+  setCustomBlock(htmlText) {
+    this.elemRef.customBlock.innerHTML = htmlText;
+    this.elemRef.customBlock.classList.remove("hide");
   }
   
   // ================

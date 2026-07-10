@@ -7,6 +7,7 @@ export async function run(params) {
     header:        document.querySelector(".itemlist__header"),
     title:         document.querySelector(".itemlist__title"),
     description:   document.querySelector(".itemlist__description"),
+    customBlock:   document.querySelector(".itemlist__customblock"),
     itemContainer: document.querySelector("#DataContainer"),
   };
 
@@ -17,6 +18,7 @@ export async function run(params) {
     headerElem: elemRef.header,
     titleElem:  elemRef.title,
     descElem:   elemRef.description,
+    customElem: elemRef.customBlock,
     itemCtrl:   itemCtrl,
   });
 

@@ -1,3 +1,9 @@
+.itemlist__body h2,
+.itemlist__body h3,
+.itemlist__body h4 {
+  margin-bottom: .5em;
+}
+
 .itemlist__header {
   display: flex;
 	position: sticky;

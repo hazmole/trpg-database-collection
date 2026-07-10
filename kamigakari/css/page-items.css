@@ -7,3 +7,26 @@
   border: 0;
 }
 
+.custom__information {
+  border-radius: 10px;
+  padding: .5em;
+  background: white;
+  border: 1px solid black;
+}
+
+.custom__statetable {
+  border-spacing: 0;
+  border: 2px #777 solid;
+}
+.custom__statetable th,
+.custom__statetable td {
+  width: 50px;
+  text-align: center;
+}
+.custom__statetable th { background: #333; color: white; font-size: 14px; }
+.custom__statetable td { background: #fff; font-family: system-ui; }
+.custom__statetable td.title { background-color: #ccc; font-family: auto; }
+.custom__statetable tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
+
+.custom__statetable.split-colume tr:not(:last-child) td { border-bottom: 1px solid #a5a5a5; }
+.custom__statetable.split-colume td:not(:last-child) { border-right: 1px solid gray; }
