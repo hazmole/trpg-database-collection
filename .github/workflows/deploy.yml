@@ -32,6 +32,21 @@ jobs:
       - name: Compile and Minify CSS
         run: npm run build:css
 
+      # Step 5: 準備 dist 目錄
+      - name: Prepare Dist Folder
+        run: |
+          mkdir -p dist
+          rsync -av --progress . dist/ \
+            --exclude node_modules \
+            --exclude .git \
+            --exclude .gitignore \
+            --exclude .github \
+            --exclude .vscode \
+            --exclude dist \
+            --exclude package.json \
+            --exclude package-lock.json \
+            --exclude build-css.js
+
       # Step 6: 部署到 GitHub Pages
       # 這個 Action 會自動建立一個 gh-pages 分支，並把 dist 資料夾內的成果塞進去
       - name: Deploy to GitHub Pages
