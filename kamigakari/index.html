@@ -10,6 +10,7 @@
   <script src="../shared/js/fetcher.js"></script>
   <script src="../shared/js/navbar.js"></script>
   <script src="../shared/js/router.js"></script>
+  <script src="../shared/js/parser-for-article.js"></script>
   <script src="../shared/js/utils.js"></script>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
@@ -28,6 +29,10 @@
       pageMap: Config.PageHandlerMap,
     });
     router.run();
+
+    Object.entries(CustomParser).forEach(([key, parser]) => {
+      ArticleParser.register(key, parser);
+    });
 
     const navbarCtl = new NavBarCtrl(Config.Title, Config.NavbarIndex);
     navbarCtl.run();

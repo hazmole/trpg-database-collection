@@ -1,4 +1,4 @@
-export class ArticleParser {
+class ArticleParser {
 
 	static ParserPlugin = {};
 
@@ -284,7 +284,7 @@ export class ArticleParser {
 		const retArr = [];
 
 		item.datas.forEach(data => {
-			retArr.push(parserFunc(data, ArticleParser));
+			retArr.push(parserFunc(data));
 		});
 
 		return `<div class="customDataList">${retArr.join('')}</div>`;
