@@ -47,7 +47,7 @@ class NavBarCtrl {
 
 	_initClickListener() {
 		this.elemColle.menuElem.addEventListener('click', (e) => {
-			const linkElem = e.target.closest('.NavLink');
+			const linkElem = e.target.closest('.menu__link');
 			if (!linkElem) return ;
 
 			// Mouse's MiddleBtn || CtrlBtn + Click 
@@ -98,7 +98,7 @@ class NavBarCtrl {
 		
 		// toggle Active
 		const elem = elemArr[0];
-		elem.classList.add("Active");
+		elem.classList.add("active");
 		if (NavBarCtrl.activePageBtnElem == elem) return ;
 		if (NavBarCtrl.activePageBtnElem) {
 			NavBarCtrl.activePageBtnElem.classList.remove("active");
