@@ -18,11 +18,16 @@ async function buildAll() {
   console.log('🚀 開始編譯與壓縮原生 CSS...');
 
   for (const project of projects) {
+    const htmlPath = path.join(project, 'index.html');
     const inputPath = path.join(project, 'css', 'main.css');
     const outputDir = path.join(project, 'css');
     const outputPath = path.join(outputDir, 'main.min.css');
 
     // 檢查原始碼檔案是否存在，避免噴錯
+    if (!fs.existsSync(htmlPath)) {
+      console.warn(`⚠️ 找不到專案 ${project} 的入口檔案: ${htmlPath}，跳過。`);
+      continue;
+    }
     if (!fs.existsSync(inputPath)) {
       console.warn(`⚠️ 找不到專案 ${project} 的入口檔案: ${inputPath}，跳過。`);
       continue;
@@ -54,6 +59,12 @@ async function buildAll() {
       console.error('\n-----------------------------------------');
       process.exit(1); // 讓 GitHub Action 知道出錯了並中斷
     }
+
+    // 處理 html 檔案路徑
+    let htmlContent = fs.readFileSync(htmlPath, 'utf-8');
+    htmlContent = htmlContent.replace(/main\.css/g, 'main.min.css');
+    fs.writeFileSync(htmlPath, htmlContent, 'utf-8');
+    console.log(`🎯 已自動將 ${htmlPath} 轉換為正式版 CSS 路徑`);
   }
   
   console.log('🎉 所有 CSS 打包完成！');
