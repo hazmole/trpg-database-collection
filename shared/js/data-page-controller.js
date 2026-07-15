@@ -95,6 +95,7 @@ export class DataPageCtrl {
 
   // disable functionality
   disableHeader() { this.elemRef.header.classList.add('hide'); }
+  disableTitle() { this.elemRef.title.classList.add('hide'); }
   disableDescription() { this.elemRef.description.classList.add('hide'); }
 
 

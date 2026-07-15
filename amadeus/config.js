@@ -27,6 +27,9 @@ const MAP = {
 
 	"doc-core-rule-character-creation": {
 		title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
+
+	"data-background": {
+		title: "背景", handler: 'data', script: 'pages/player-background.js' },
 }
 
 const Config = {
