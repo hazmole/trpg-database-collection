@@ -28,6 +28,9 @@ export async function run( pageCtrl ) {
   }
 
   function renderCustomBlock(tabInfo) {
+    var firstProphecyBlock = (tabInfo.prophecy)? _renderFirstProphecyBlock(tabInfo): "";
+    var specialRuleBlock = (tabInfo.rules)? _renderSpecialRuleBlock(tabInfo): "";
+
     return `
     <div class="easyRow" style="align-items: start">
       <div style="flex-shrink: 1;" >  
@@ -39,11 +42,8 @@ export async function run( pageCtrl ) {
         ${ tabInfo.offset.map(oData => _renderAttrOffset(oData)).join('') }
         </div>
 
-        <h4>最初的預言表</h4>
-        <table class="custom__table prophercy">
-          <tr><th class="dice">d6</th><th colspan="2">效果</th></tr>
-          ${_renderProphecies(tabInfo.prophecy)}
-        </table>
+        ${firstProphecyBlock}
+        ${specialRuleBlock}
       </div
       <div>
         <img class="custom__background_image" src="imgs/${tabInfo.image}"/>
@@ -53,6 +53,19 @@ export async function run( pageCtrl ) {
     施工中...`;
   }
 
+  function _renderSpecialRuleBlock(tabInfo) {
+    return `<h4>特殊規則</h4>
+            <div class="custom__special-rules">
+              ${tabInfo.rules.join("<br/>")}
+            </div>`;
+  }
+  function _renderFirstProphecyBlock(tabInfo) {
+    return `<h4>最初的預言表</h4>
+            <table class="custom__table prophecy">
+              <tr><th class="dice">d6</th><th colspan="2">效果</th></tr>
+              ${_renderProphecies(tabInfo.prophecy)}
+            </table>`;
+  }
   function _renderProphecies(prophecyArr) {
     return prophecyArr.map((pData, idx) => {
       const parts = pData.split("：");
@@ -62,10 +75,12 @@ export async function run( pageCtrl ) {
   function _renderAttrOffset(oData) {
     var text = '???';
     switch(oData) {
-    case "shift": text = "升階"; break;
-    case "up-1":  text = "上升1"; break;
-    case "up-2":  text = "上升2"; break;
-    case "down-1": text = "下降1"; break;
+    case "shift":   text = "升階"; break;
+    case "shift-A": text = "限定升階(A)"; break;
+    case "degrade": text = "降階"; break;
+    case "up-1":    text = "上升1"; break;
+    case "up-2":    text = "上升2"; break;
+    case "down-1":  text = "下降1"; break;
     }
 
     return `<div class="custom__attroffset ${oData}">${text}</div>`;
