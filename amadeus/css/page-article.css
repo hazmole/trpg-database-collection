@@ -33,3 +33,7 @@
   color: #374a6d;
   text-align: right;
 }
+
+.article__toc-container > div {
+  line-height: 1.5em;
+}

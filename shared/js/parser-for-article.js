@@ -92,9 +92,8 @@ class ArticleParser {
 		this.ParserPlugin[key] = parser;
 	}
 
-	static Parse(docScript) {
+	static Parse(docScript, depth = 1) {
 		var outputArr = [];
-		var depth = 1;
 
 		docScript.forEach( entry => {
 			outputArr.push( this.handleEntry(entry, depth) );
