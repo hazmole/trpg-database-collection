@@ -72,6 +72,7 @@ number.rev {
 	
 	background: #2a2a2a;
 	color: #aaa;
+	cursor: pointer;
 }
 .ToggleBtnWrapper .ToggleBtnBox {
 	width: 16px;
@@ -106,10 +107,16 @@ number.rev {
 }
 
 .ToggleExpandContent {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
 	overflow: hidden;
 	background: #1a1a1a;
+	transition: opacity 0.2s ease;
 }
 .ToggleExpandContent.active {
-	display: block;
+	opacity: 1;
+	visibility: visible;
+	max-height: 100%;
+	height: auto;
 }

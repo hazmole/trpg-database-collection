@@ -25,6 +25,7 @@ export async function run( pageCtrl ) {
 		}
 	});
 
+	pageCtrl.setItems(dataList);
 	pageCtrl.setParseFunc(CustomParser.item);
 	pageCtrl.displayItemList();
 

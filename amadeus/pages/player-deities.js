@@ -5,6 +5,7 @@ export async function run() {
     header:        document.querySelector(".itemlist__header"),
     title:         document.querySelector(".itemlist__title"),
     description:   document.querySelector(".itemlist__description"),
+    biasContainer:    document.querySelector(".itemlist__dieties_bias_container"),
     dietiesContainer: document.querySelector(".itemlist__dieties_container"),
     itemContainer:    document.querySelector("#DataContainer"),
   };
@@ -46,15 +47,24 @@ export async function run() {
 
     pageCtrl.setTitle(`${tabID}神群`);
     pageCtrl.setItems(clusterBoons);
+    
     _renderDieties(clusterDieties);
-    // pageCtrl.setDescription([ArticleParser.Parse(tabInfo.desc, 3).join('')]);
+    _renderBias(tabInfo.bias);
+    pageCtrl.setDescription([ArticleParser.Parse(tabInfo.desc, 3).join('')]);
     // const newDataList = boonData.filter( t => t.category===`background-${tabID}` );
     // pageCtrl.setItems(newDataList);
     pageCtrl.displayItemList(clusterDieties);
   }
 
-  function _renderDieties(datas) {
-    elemRef.dietiesContainer.innerHTML = datas.map(d => `
+  function _renderBias(data_arr) {
+    elemRef.biasContainer.innerHTML = data_arr.map(d => `
+      <div class="itemlist__dieties_bias_entry">
+        <div class="itemlist__dieties_bias_entry_speaker">${d.cluster}神群</div>
+        <div class="itemlist__dieties_bias_entry_speechbox">${d.opinion.join('<br>')}</div>
+      </div>`).join('');
+  }
+  function _renderDieties(data_arr) {
+    elemRef.dietiesContainer.innerHTML = data_arr.map(d => `
       <div class="itemlist__dieties_diety">
         <img src="imgs/head_${d.image}">
         <div class="itemlist__dieties_diety_name">${d.name}</div>
