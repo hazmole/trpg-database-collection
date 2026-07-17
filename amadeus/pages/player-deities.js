@@ -5,8 +5,8 @@ export async function run() {
     header:        document.querySelector(".itemlist__header"),
     title:         document.querySelector(".itemlist__title"),
     description:   document.querySelector(".itemlist__description"),
-    biasContainer:    document.querySelector(".itemlist__dieties_bias_container"),
-    dietiesContainer: document.querySelector(".itemlist__dieties_container"),
+    biasContainer:    document.querySelector(".custom__dieties_bias_container"),
+    dietiesContainer: document.querySelector(".custom__dieties_container"),
     itemContainer:    document.querySelector("#DataContainer"),
   };
   const itemCtrl = new moduleI.ItemListCtrl({
@@ -58,17 +58,27 @@ export async function run() {
 
   function _renderBias(data_arr) {
     elemRef.biasContainer.innerHTML = data_arr.map(d => `
-      <div class="itemlist__dieties_bias_entry">
-        <div class="itemlist__dieties_bias_entry_speaker">${d.cluster}神群</div>
-        <div class="itemlist__dieties_bias_entry_speechbox">${d.opinion.join('<br>')}</div>
+      <div class="custom__dieties_bias_entry">
+        <div class="custom__dieties_bias_entry_speaker ${d.cluster}">${d.cluster}神群</div>
+        <div class="custom__dieties_bias_entry_speechbox">${d.opinion.join('<br>')}</div>
       </div>`).join('');
   }
   function _renderDieties(data_arr) {
-    elemRef.dietiesContainer.innerHTML = data_arr.map(d => `
-      <div class="itemlist__dieties_diety">
-        <img src="imgs/head_${d.image}">
-        <div class="itemlist__dieties_diety_name">${d.name}</div>
-      </div>`).join('');
+    for (let i=0; i<data_arr.length; i++) {
+      const data = data_arr[i];
+      elemRef.dietiesContainer.insertAdjacentHTML('beforeend', `
+        <div class="custom__dieties_diety" onclick="">
+          <img src="imgs/head_${data.image}">
+          <div class="custom__dieties_diety_name">${data.name}</div>
+        </div>`);
+      const DOM = elemRef.dietiesContainer.querySelector(".custom__dieties_diety:last-child");
+      DOM.addEventListener('click', () => { openDietyInfo(data) });
+    }
+  }
+
+  function openDietyInfo(dietyInfo) {
+
+    console.log(dietyInfo);
   }
 }
 
