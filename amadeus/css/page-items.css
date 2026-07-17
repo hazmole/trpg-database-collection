@@ -1,9 +1,14 @@
 .itemlist__description {
   border-radius: 10px;
   padding: .5em;
-  color: black;
-
   background-color: #e0e0e0;
+  color: black;
+}
+.itemlist__description > p {
+  margin: 5px 0;
+}
+.itemlist__description > p:first-child {
+  margin-top: 0;
 }
 
 .custom__background_image {
@@ -39,6 +44,7 @@
   width: 60px;
   text-align: center;
 }
+.custom__attroffset.shift-A  { width: 110px; }
 .custom__attroffset.shift,
 .custom__attroffset.shift-A  { background-color: #fff3cd; color: #664d03; }
 .custom__attroffset.up-1,
@@ -54,6 +60,148 @@
 }
 
 
-.itemlist__description > p:first-child {
-  margin-top: 0;
+.custom__dieties_container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.custom__dieties_diety {
+  width: 100px;
+  border: #000000 1px solid;
+  cursor: pointer;
+}
+.custom__dieties_diety img { width: 100%; }
+.custom__dieties_diety_name {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0050b9;
+}
+
+.custom__dieties_diety:hover {
+  background: #a2e3e7;
+  border-color: #227ea8;
+}
+.custom__dieties_diety:hover .custom__dieties_diety_name {
+  color: #016fff;
+}
+
+.custom__dieties_bias_container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.custom__dieties_bias_entry {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.custom__dieties_bias_entry_speaker {
+  width: 100px;
+  font-weight: bold;
+  margin: 5px 10px 0 0;
+  text-align: center;
+}
+.custom__dieties_bias_entry_speechbox {
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px 15px;
+  flex-grow: 1;
+  line-height: 1;
+  font-size: 14px;
+  width: calc(100% - 150px);
+
+  display: flex;
+  align-items: center;
+}
+.custom__dieties_bias_entry_speechbox::before {
+  content: "";
+  position: absolute;
+  left: -10px; 
+  top: 9px; 
+  
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #000000; 
+  
+  display: block;
+  width: 0;
+}
+.custom__dieties_bias_entry_speechbox::after {
+  content: "";
+  position: absolute;
+  left: -9px; 
+  top: 9px; 
+  
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 10px solid #ffffff; 
+  
+  display: block;
+  width: 0;
+}
+
+.custom__dieties_bias_entry_speaker.希臘 { background-color: #e3f2fd; color: #1565c0; }
+.custom__dieties_bias_entry_speaker.大和 { background-color: #fbe9e7; color: #c53929; }
+.custom__dieties_bias_entry_speaker.埃及 { background-color: #fff8e1; color: #b78103; }
+.custom__dieties_bias_entry_speaker.克蘇魯 { background-color: #e8f5e9; color: #2e7d32; }
+.custom__dieties_bias_entry_speaker.北歐 { background-color: #e0f7fa; color: #00838f; }
+.custom__dieties_bias_entry_speaker.中華 { background-color: #e0f2f1; color: #00695c; }
+.custom__dieties_bias_entry_speaker.凱爾特 { background-color: #eceff1; color: #37474f; }
+.custom__dieties_bias_entry_speaker.印度 { background-color: #f3e5f5; color: #6a1b9a; }
+.custom__dieties_bias_entry_speaker.中美洲 { background-color: #fff3e0; color: #e65100; }
+
+
+.window__modal.diety-info {
+  background-color: white;
+  overflow-y: auto;
+}
+.custom__diety-modal {
+  padding: .8em 1em;
+}
+.custom__diety-modal_name {
+  font-size: x-large;
+  font-weight: bold;
+}
+.custom__diety-modal_title {
+  font-weight: bold;
+  font-style: italic;
+  color: #91a5b3;
+  margin-bottom: 1em;
+}
+.custom__diety-modal_portrait {
+  width: 300px; height: 300px;
+  display: flex;
+  align-items: center;
+}
+.custom__diety-modal_portrait > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.custom__diety-modal_description {
+  background-color: #e0e0e0;
+  padding: .8em;
+  border-radius: 10px;
+  height: 80px;
+  overflow-y: auto;
+  font-size: 14px;
+  margin-bottom: .5em;
+}
+.custom__diety-modal_attribute {
+  width: 60px;
+  border: 1px solid black;
+}
+.custom__diety-modal_attribute .title {
+  background-color: #000000; color: white;
+  text-align: center;
+}
+.custom__diety-modal_attribute .value {
+  text-align: center;
+  padding: 5px 0;
+  font-size: 18px;
+  font-family: 'Segoe UI';
 }
