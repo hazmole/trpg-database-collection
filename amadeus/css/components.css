@@ -1,0 +1,22 @@
+.ToggleBtnWrapper {
+  background: none;
+  color: black;
+  padding: 5px 0;
+}
+.ToggleBtnWrapper .ToggleBtnBox {
+  border: black 2px solid;
+}
+.ToggleBtnWrapper .icon-chevron {
+  background-color: black; 
+}
+.ToggleBtnWrapper:hover .ToggleBtn { border-color: #aaa; }
+.ToggleBtnWrapper:hover .icon-chevron { background-color: #aaa; }
+.ToggleBtnWrapper:hover .ToggleBtnLabel { color: black; text-shadow: 0 0 10px rgba(0, 0, 0, 0.75); }
+
+.ToggleBtnLabel h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.ToggleExpandContent {
+  background: none;
+}
