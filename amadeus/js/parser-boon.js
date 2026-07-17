@@ -20,7 +20,7 @@ CustomParser.boon = function(data) {
       <div class="itemlist__entry_blockCell" style="width:50px;">
         <div class="check"></div><div>${data.check}</div>
       </div>
-      <div class="itemlist__entry_blockCell" style="width:100px;">
+      <div class="itemlist__entry_blockCell" style="width:120px;">
         <div class="tags"></div><div>${data.tags.map(t => `[${t}]`).join('')}</div>
       </div>
       <div class="itemlist__entry_field">${getEffect()}</div>
@@ -30,7 +30,8 @@ CustomParser.boon = function(data) {
     function getCategoryText(){
       const parts = data.category.split('-');
       switch(parts[0]){
-        case "background": parts[0]="背景"; break;
+        case "background": return `背景-${parts[1]}`;
+        case "dcluster":   return `${parts[1]}神群`;
       }
       return `${parts.join('-')}`;
     }
