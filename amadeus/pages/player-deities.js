@@ -41,7 +41,7 @@ export async function run() {
     const tabID = pageCtrl.tabCfg.tabID;
     const tabInfo = clData[tabID];
 
-    const clusterBoons = boonData.filter( t => t.category===`background-創世之子`);
+    const clusterBoons = boonData.filter( t => t.category===`dcluster-${tabID}`);
     const clusterDieties = dtData.filter( t => t.category===`diety-${tabID}` );
 
     pageCtrl.setTitle(`${tabID}神群`);
