@@ -1,9 +1,9 @@
 export async function run( pageCtrl ) {
   const bgData = await Fetcher.fetchJSON('./data/background.json');
+  const boonData = await Fetcher.fetchJSON('./data/boons.json');
   //dataList.sort(SorterUtils.compareTalent(dataList));
 
-
-  //pageCtrl.setParseFunc(CustomParser.talent);
+  pageCtrl.setParseFunc(CustomParser.boon);
   const tabs = Object.values(bgData).map(bg => {
     return { text: bg.name, value: bg.name };
   });
@@ -21,10 +21,10 @@ export async function run( pageCtrl ) {
     const tabID = pageCtrl.tabCfg.tabID;
     const tabInfo = bgData[tabID];
 
-
+    const newDataList = boonData.filter( t => t.category===`background-${tabID}` );
+    pageCtrl.setItems(newDataList);
     pageCtrl.setCustomBlock(renderCustomBlock(tabInfo));
-    
-    //pageCtrl.displayItemList();
+    pageCtrl.displayItemList();
   }
 
   function renderCustomBlock(tabInfo) {
@@ -49,8 +49,7 @@ export async function run( pageCtrl ) {
         <img class="custom__background_image" src="imgs/${tabInfo.image}"/>
       </div>
     </div>
-    <h4>背景恩惠</h4>
-    施工中...`;
+    <h4>背景恩惠</h4>`;
   }
 
   function _renderSpecialRuleBlock(tabInfo) {

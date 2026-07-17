@@ -1,0 +1,40 @@
+/* Boons */
+.itemlist__entry_blockCell .type:before   { content: "分類"; }
+.itemlist__entry_blockCell .factor:before { content: "條件"; }
+.itemlist__entry_blockCell .check:before  { content: "判定"; }
+.itemlist__entry_blockCell .tags:before   { content: "標籤"; }
+
+.factor-red { background-color: #9b0000; color: white; padding: 2px; }
+.factor-blu { background-color: #0035a8; color: white; padding: 2px; }
+.factor-grn { background-color: #006b0e; color: white; padding: 2px; }
+.factor-blk { background-color: #000000; color: white; padding: 2px; }
+.factor-wht { background-color: #cfcfcf; color: black; padding: 2px; }
+
+
+
+.itemlist__dieties_container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.itemlist__dieties_diety {
+  width: 100px;
+  border: #000000 1px solid;
+  cursor: pointer;
+}
+.itemlist__dieties_diety img { width: 100%; }
+.itemlist__dieties_diety_name {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0050b9;
+}
+
+.itemlist__dieties_diety:hover {
+  background: #a2e3e7;
+  border-color: #227ea8;
+}
+.itemlist__dieties_diety:hover .itemlist__dieties_diety_name {
+  color: #016fff;
+}

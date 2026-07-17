@@ -13,6 +13,7 @@
   <script src="../shared/js/parser-for-article.js"></script>
   <script src="../shared/js/utils.js"></script>
   
+  <script src="./js/parser-boon.js"></script>
   <script src="./js/shunt.js"></script>
   <script>
     const router = new CoreRouter({
@@ -21,6 +22,10 @@
       pageMap: Config.PageHandlerMap,
     });
     router.run();
+
+    Object.entries(CustomParser).forEach(([key, parser]) => {
+      ArticleParser.register(key, parser);
+    });
 
     const navbarCtl = new NavBarCtrl(Config.Title, Config.NavbarIndex);
     navbarCtl.run();
