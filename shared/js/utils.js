@@ -29,6 +29,50 @@ ToggleUtils.click = function(currentElem) {
   siblingElem.classList.toggle('active');
 }
 
+const WindowUtils = {};
+WindowUtils.close = function(evt) {
+  const layoutDOM = WindowUtils._getLayout();
+  if (!evt || evt.target === layoutDOM) {   
+    layoutDOM.classList.remove('active');
+    WindowUtils.modalDOM.classList = "window__modal";
+    WindowUtils.containerDOM.innerHTML = "";
+  }
+}
+WindowUtils.open = function() {
+  const layoutDOM = WindowUtils._getLayout();
+  setTimeout(() => { layoutDOM.classList.add("active")}, 0);
+}
+WindowUtils.assignModalClass = function(classArr) {
+  const layoutDOM = WindowUtils._getLayout();
+  classArr.forEach(classname => {
+    WindowUtils.modalDOM.classList.add(classname);
+  });
+}
+WindowUtils.appendElement = function(htmlText) {
+  const layoutDOM = WindowUtils._getLayout();
+  WindowUtils.containerDOM.insertAdjacentHTML('beforeend', htmlText);
+}
+WindowUtils._getLayout = function() {
+  if (!WindowUtils.layoutDOM) {
+    layoutDOM = Utils.htmlToNode(`
+      <div class="window__layout">
+        <div class="window__modal">
+          <button class="window__modal-close-btn">&times;</button>
+          <div class="window__modal-container"></div>
+        </div>
+      </div>`);
+    layoutDOM.addEventListener('click', (e) => { WindowUtils.close(e)} );
+    layoutDOM.querySelector(".window__modal-close-btn").addEventListener('click', () => { WindowUtils.close()} );
+    document.body.append(layoutDOM);
+
+    WindowUtils.layoutDOM = layoutDOM;
+    WindowUtils.modalDOM = layoutDOM.querySelector(".window__modal");
+    WindowUtils.containerDOM = layoutDOM.querySelector(".window__modal-container");
+  }
+  return WindowUtils.layoutDOM;
+}
+
+
 
 const Utils = {};
 Utils.getBaseURL = function() {
@@ -38,7 +82,7 @@ Utils.getBaseURL = function() {
 }
 Utils.htmlToNode = function(htmlText) {
 	const template = document.createElement('template');
-	template.innerHTML = htmlText;
+	template.innerHTML = htmlText.trim();
 
 	const nNodes = template.content.childNodes.length;
 	if (nNodes !== 1) {
