@@ -1,7 +1,8 @@
 class Shunt {
 
   constructor(pageItem) {
-    const BASE_URL = window.location.pathname.substring(1);
+    const pathParts = window.location.pathname.split('/');
+    const BASE_URL = pathParts[pathParts.length-2];
 
     this.layoutUrl = getLayoutUrl(pageItem) || '';
     this.scriptUrl = getScriptUrl(pageItem) || '';
