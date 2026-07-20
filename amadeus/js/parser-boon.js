@@ -31,6 +31,7 @@ CustomParser.boon = function(data) {
       const parts = data.category.split('-');
       switch(parts[0]){
         case "background": return `背景-${parts[1]}`;
+        case "diety":      return `親神-${parts[1]}`;
         case "dcluster":   return `${parts[1]}神群`;
       }
       return `${parts.join('-')}`;

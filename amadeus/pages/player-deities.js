@@ -1,4 +1,4 @@
-export async function run() {
+export async function run( params ) {
   const moduleI = await import(`${Utils.getBaseURL()}shared/js/item-list-controller.js`); 
   const moduleP = await import(`${Utils.getBaseURL()}shared/js/data-page-controller.js`); 
   const elemRef = {
@@ -19,40 +19,32 @@ export async function run() {
     customElem: elemRef.customBlock,
     itemCtrl:   itemCtrl,
   });
+  pageCtrl.disableHeader();
+  pageCtrl.setParseFunc(CustomParser.boon);
 
   
-  const clData = await Fetcher.fetchJSON('./data/diety-cluster.json');
-  const dtData = await Fetcher.fetchJSON('./data/dieties.json');
-  const boonData = await Fetcher.fetchJSON('./data/boons.json');
-  const tabs = Object.values(clData).map(cl => {
-    return { text: `${cl.name}神群`, value: cl.name };
-  });
 
-  pageCtrl.setParseFunc(CustomParser.boon);
-  pageCtrl.enableDropdownTabs({
-		options: tabs,
-		onChangeFunc: () => renderPage(),
-  });
+  const infoData = await Fetcher.fetchJSON(`./data/dieties-${params.uid}.json`);
+  const boonData = await Fetcher.fetchJSON('./data/boons.json');
+
 
   
   renderPage()
 
   //=======================
   function renderPage() {
-    const tabID = pageCtrl.tabCfg.tabID;
-    const tabInfo = clData[tabID];
+    const clusterName = infoData.cluster.name;
+    const clusterInfo = infoData.cluster;
 
-    const clusterBoons = boonData.filter( t => t.category===`dcluster-${tabID}`);
-    const clusterDieties = dtData.filter( t => t.category===`diety-${tabID}` );
+    const clusterBoons = boonData.filter( t => t.category===`dcluster-${clusterName}`);
+    const clusterDieties = infoData.dieties;
 
-    pageCtrl.setTitle(`${tabID}神群`);
+    pageCtrl.setTitle(`${clusterName}神群`);
     pageCtrl.setItems(clusterBoons);
     
     _renderDieties(clusterDieties);
-    _renderBias(tabInfo.bias);
-    pageCtrl.setDescription([ArticleParser.Parse(tabInfo.desc, 3).join('')]);
-    // const newDataList = boonData.filter( t => t.category===`background-${tabID}` );
-    // pageCtrl.setItems(newDataList);
+    _renderBias(clusterInfo.bias);
+    pageCtrl.setDescription([ArticleParser.Parse(clusterInfo.desc, 3).join('')]);
     pageCtrl.displayItemList(clusterDieties);
   }
 
