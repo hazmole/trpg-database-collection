@@ -101,7 +101,7 @@
 .custom__dieties_bias_entry_speaker {
   width: 100px;
   font-weight: bold;
-  margin: 5px 10px 0 0;
+  margin: 3px 10px 0 0;
   text-align: center;
 }
 .custom__dieties_bias_entry_speechbox {
@@ -110,7 +110,7 @@
   color: #000000;
   border: 1px solid #000000;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 10px 15px 8px 15px;
   flex-grow: 1;
   line-height: 1;
   font-size: 14px;

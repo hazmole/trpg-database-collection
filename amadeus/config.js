@@ -8,8 +8,8 @@ const INDEX = [
 	{ title: "玩家資料庫", members: [
 		{ title: "神群", members: [
 		  { title: "希臘神群", pid: "data-deities-greek" },
-		// 	{ title: "大和神群", pid: "data-deities-japan" },
-		// 	{ title: "埃及神群", pid: "data-deities-egypt" },
+		 	{ title: "大和神群", pid: "data-deities-yamato" },
+		 	{ title: "埃及神群", pid: "data-deities-egypt" },
 		// 	{ title: "克蘇魯神群", pid: "data-deities-cthulhu" },
 		// 	{ title: "北歐神群", pid: "data-deities-nordic" },
 		// 	{ title: "泰坦神群", pid: "data-deities-titan" },
@@ -35,11 +35,20 @@ const MAP = {
 		title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
 	
 	"data-deities-greek": {
-		title: "神群與親神", handler: 'custom', params: {
-			layout: 'pages/player-deities.html',
-			script: 'pages/player-deities.js',
-			uid: 'greek',
-		}},
+		title: "希臘神群", handler: 'custom', params: {
+			layout: 'pages/player-deities.html', script: 'pages/player-deities.js', uid: 'greek' }
+		},
+	
+	"data-deities-yamato": {
+		title: "大和神群", handler: 'custom', params: {
+			layout: 'pages/player-deities.html', script: 'pages/player-deities.js', uid: 'yamato' }
+		},
+	
+	"data-deities-egypt": {
+		title: "埃及神群", handler: 'custom', params: {
+			layout: 'pages/player-deities.html', script: 'pages/player-deities.js', uid: 'egypt' }
+		},
+
 	"data-background": {
 		title: "背景", handler: 'data', script: 'pages/player-background.js' },
 }
