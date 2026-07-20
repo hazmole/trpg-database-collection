@@ -6,8 +6,8 @@ const INDEX = [
 		{ title: "3. 行為判定", pid: "doc-core-rule-dice-check" },
 	]},
 	{ title: "玩家資料庫", members: [
-		{ title: "神群與親神", pid: "data-deities" },
-		//  { title: "希臘神群", pid: "data-deities-greek" },
+		{ title: "神群", members: [
+		  { title: "希臘神群", pid: "data-deities-greek" },
 		// 	{ title: "大和神群", pid: "data-deities-japan" },
 		// 	{ title: "埃及神群", pid: "data-deities-egypt" },
 		// 	{ title: "克蘇魯神群", pid: "data-deities-cthulhu" },
@@ -17,6 +17,7 @@ const INDEX = [
 		// 	{ title: "凱爾特神群", pid: "data-deities-celtic" },
 		// 	{ title: "印度神群", pid: "data-deities-india" },
 		// 	{ title: "中美洲神群", pid: "data-deities-america" },
+		]},
 		{ title: "背景", pid: "data-background" },
 		// { title: "泛用恩惠", pid: "data-common-boon" },
 		// { title: "道具", pid: "data-item" },
@@ -33,10 +34,11 @@ const MAP = {
 	"doc-core-rule-dice-check": {
 		title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
 	
-	"data-deities": {
+	"data-deities-greek": {
 		title: "神群與親神", handler: 'custom', params: {
 			layout: 'pages/player-deities.html',
 			script: 'pages/player-deities.js',
+			uid: 'greek',
 		}},
 	"data-background": {
 		title: "背景", handler: 'data', script: 'pages/player-background.js' },
