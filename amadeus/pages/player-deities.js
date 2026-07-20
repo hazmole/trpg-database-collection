@@ -44,7 +44,10 @@ export async function run( params ) {
     
     _renderDieties(clusterDieties);
     _renderBias(clusterInfo.bias);
-    pageCtrl.setDescription([ArticleParser.Parse(clusterInfo.desc, 3).join('')]);
+    pageCtrl.elemRef.description.innerHTML = (clusterInfo.desc.map(p => {
+      if (p.startsWith("●")) return `<h4>${p}</h4>`;
+      return `<p>${p}</p>`;
+    })).join('');
     pageCtrl.displayItemList(clusterDieties);
   }
 
