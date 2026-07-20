@@ -99,14 +99,3 @@ class CoreRouter {
 		window.history.pushState({ additionalInformation: 'Updated the URL with JS' }, '', path+`?${urlParams.toString()}`);
 	}
 };
-
-class ShuntBase {
-
-	constructor(_pageItem) {
-		this.layoutUrl = '';
-    this.scriptUrl = '';
-    this.params = null;
-	}
-
-
-}

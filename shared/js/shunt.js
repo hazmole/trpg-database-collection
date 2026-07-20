@@ -1,9 +1,7 @@
-class KamigakariShunt extends ShuntBase {
+class Shunt {
 
   constructor(pageItem) {
-    super();
-
-    const BASE_URL = 'amadeus';
+    const BASE_URL = window.location.pathname.substring(1);
 
     this.layoutUrl = getLayoutUrl(pageItem) || '';
     this.scriptUrl = getScriptUrl(pageItem) || '';

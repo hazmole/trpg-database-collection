@@ -10,14 +10,14 @@
   <script src="../shared/js/fetcher.js"></script>
   <script src="../shared/js/navbar.js"></script>
   <script src="../shared/js/router.js"></script>
+  <script src="../shared/js/shunt.js"></script>
   <script src="../shared/js/parser-for-article.js"></script>
   <script src="../shared/js/utils.js"></script>
   
   <script src="./js/parser-boon.js"></script>
-  <script src="./js/shunt.js"></script>
   <script>
     const router = new CoreRouter({
-      shunt:   KamigakariShunt,
+      shunt:   Shunt,
       title:   Config.Title,
       pageMap: Config.PageHandlerMap,
     });
