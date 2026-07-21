@@ -10,7 +10,7 @@ const INDEX = [
 		  { title: "希臘神群", pid: "data-deities-greek" },
 		 	{ title: "大和神群", pid: "data-deities-yamato" },
 		 	{ title: "埃及神群", pid: "data-deities-egypt" },
-		// 	{ title: "克蘇魯神群", pid: "data-deities-cthulhu" },
+		 	{ title: "克蘇魯神群", pid: "data-deities-cthulhu" },
 		// 	{ title: "北歐神群", pid: "data-deities-nordic" },
 		// 	{ title: "泰坦神群", pid: "data-deities-titan" },
 		// 	{ title: "中華神群", pid: "data-deities-china" },
@@ -47,6 +47,11 @@ const MAP = {
 	"data-deities-egypt": {
 		title: "埃及神群", handler: 'custom', params: {
 			layout: 'pages/player-deities.html', script: 'pages/player-deities.js', uid: 'egypt' }
+		},
+	
+	"data-deities-cthulhu": {
+		title: "克蘇魯神群", handler: 'custom', params: {
+			layout: 'pages/player-deities.html', script: 'pages/player-deities.js', uid: 'cthulhu' }
 		},
 
 	"data-background": {
