@@ -25,7 +25,7 @@ export async function run( params ) {
   
 
   const infoData = await Fetcher.fetchJSON(`./data/dieties-${params.uid}.json`);
-  const boonData = await Fetcher.fetchJSON('./data/boons.json');
+  const boonData = await Fetcher.fetchJSON(`./data/boons-${params.uid}.json`);
 
 
   
