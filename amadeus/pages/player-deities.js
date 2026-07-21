@@ -25,7 +25,8 @@ export async function run( params ) {
   
 
   const infoData = await Fetcher.fetchJSON(`./data/dieties-${params.uid}.json`);
-  const boonData = await Fetcher.fetchJSON(`./data/boons-${params.uid}.json`);
+  const boonData = (await Fetcher.fetchJSON(`./data/boons-${params.uid}.json`));
+  boonData.sort(SorterUtils.compareBoons(boonData));
 
 
   
