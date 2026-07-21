@@ -178,10 +178,13 @@
   width: 300px; height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .custom__diety-modal_portrait > img {
   max-width: 100%;
   max-height: 100%;
+  width: auto;
+  height: auto;
 }
 .custom__diety-modal_description {
   background-color: #e0e0e0;
