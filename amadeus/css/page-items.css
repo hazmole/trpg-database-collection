@@ -187,6 +187,8 @@
   height: auto;
 }
 .custom__diety-modal_description {
+  display: flex;
+  align-items: center;
   background-color: #e0e0e0;
   padding: .8em;
   border-radius: 10px;
