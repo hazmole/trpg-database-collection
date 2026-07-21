@@ -1,7 +1,7 @@
 export async function run( pageCtrl ) {
   const bgData = await Fetcher.fetchJSON('./data/background.json');
   const boonData = await Fetcher.fetchJSON('./data/boons.json');
-  //dataList.sort(SorterUtils.compareTalent(dataList));
+  boonData.sort(SorterUtils.compareBoons(boonData));
 
   pageCtrl.setParseFunc(CustomParser.boon);
   const tabs = Object.values(bgData).map(bg => {
