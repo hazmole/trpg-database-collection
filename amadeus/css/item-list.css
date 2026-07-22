@@ -1,8 +1,8 @@
 /* Boons */
-.itemlist__entry_blockCell .type:before   { content: "分類"; }
-.itemlist__entry_blockCell .factor:before { content: "條件"; }
-.itemlist__entry_blockCell .check:before  { content: "判定"; }
-.itemlist__entry_blockCell .tags:before   { content: "標籤"; }
+.itemlist__entry_blockCell > .type:before   { content: "分類"; }
+.itemlist__entry_blockCell > .factor:before { content: "條件"; }
+.itemlist__entry_blockCell > .check:before  { content: "判定"; }
+.itemlist__entry_blockCell > .tags:before   { content: "標籤"; }
 
 .factor-red { background-color: #9b0000; color: white; padding: 2px; }
 .factor-blu { background-color: #0035a8; color: white; padding: 2px; }
@@ -10,3 +10,8 @@
 .factor-blk { background-color: #000000; color: white; padding: 2px; }
 .factor-wht { background-color: #cfcfcf; color: black; padding: 2px; }
 
+.itemlist__entry_blockCell .type + div:nth-child(2) { display: flex; align-items: center; gap: 2px; justify-content: center; }
+.itemlist__entry_blockCell .type + div:nth-child(2)::before { width: 16px; padding-top: 2px; }
+.itemlist__entry_blockCell .type.輔助 + div:nth-child(2)::before { content: url("../imgs/icon-auxiliary.svg"); }
+.itemlist__entry_blockCell .type.術式 + div:nth-child(2)::before { content: url("../imgs/icon-sorcery.svg"); }
+.itemlist__entry_blockCell .type.常駐 + div:nth-child(2)::before { content: url("../imgs/icon-permanent.svg"); }

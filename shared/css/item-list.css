@@ -61,10 +61,10 @@
 	padding: 0 5px 5px 5px;
 	width: 60px;
 }
-.itemlist__entry_blockCell > div {
+.itemlist__entry_blockCell > div:nth-child(2) {
 	flex-grow: 1;
 }
-.itemlist__entry_blockCell > div:before {
+.itemlist__entry_blockCell > div:first-child::before {
 	display: block;
 	font-size: 10px;
 	width: clac(100% + 10px);
