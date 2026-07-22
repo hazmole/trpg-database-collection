@@ -6,9 +6,14 @@
 }
 .itemlist__description > p {
   margin: 5px 0;
+  text-indent: 1em;
 }
 .itemlist__description > p:first-child {
   margin-top: 0;
+}
+.itemlist__description > h5 {
+  font-size: 1em;
+  margin: 5px 0;
 }
 
 .custom__background_image {
@@ -112,7 +117,7 @@
   border-radius: 5px;
   padding: 10px 15px 8px 15px;
   flex-grow: 1;
-  line-height: 1;
+  line-height: 1.2;
   font-size: 14px;
   width: calc(100% - 150px);
 

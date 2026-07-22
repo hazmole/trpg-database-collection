@@ -63,6 +63,9 @@
 }
 .itemlist__entry_blockCell > div:nth-child(2) {
 	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .itemlist__entry_blockCell > div:first-child::before {
 	display: block;
