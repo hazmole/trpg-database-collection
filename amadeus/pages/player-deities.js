@@ -28,7 +28,7 @@ export async function run( params ) {
   const boonData = (await Fetcher.fetchJSON(`./data/boons-${params.uid}.json`));
   boonData.sort(SorterUtils.compareBoons(boonData));
 
-
+  var diety_index = null;
   
   renderPage()
 
@@ -74,9 +74,37 @@ export async function run( params ) {
   }
 
   function openDietyInfo(dietyInfo) {
-    const boons = boonData.filter( t => t.category===`diety-${dietyInfo.name}`);
     WindowUtils.assignModalClass(["diety-info"]);
-    WindowUtils.appendElement(`
+    WindowUtils.appendElement(getDietyInfoDOM(dietyInfo));
+    diety_index = infoData.dieties.findIndex(d => d.name === dietyInfo.name);
+    
+    // build nav
+    const layoutDOM = WindowUtils._getLayout();
+    layoutDOM.insertAdjacentHTML('afterbegin', `<div class="custom__window-ctrl-btn prev"></div>`);
+    layoutDOM.insertAdjacentHTML('beforeend', `<div class="custom__window-ctrl-btn next"></div>`);
+    const prevBtn = layoutDOM.querySelector(".custom__window-ctrl-btn.prev");
+    const nextBtn = layoutDOM.querySelector(".custom__window-ctrl-btn.next");
+    prevBtn.addEventListener('click', () => {
+      diety_index = (diety_index <= 0)? (infoData.dieties.length-1): diety_index-1;
+      resetDietyInfo();
+    });
+    nextBtn.addEventListener('click', () => {
+      diety_index = (diety_index >= infoData.dieties.length-1)? 0: diety_index+1;
+      resetDietyInfo();
+    });
+
+    WindowUtils.open();
+  }
+
+  function resetDietyInfo() {
+    const newDietyInfo = infoData.dieties[diety_index];
+    const layoutDOM = WindowUtils._getLayout();
+    layoutDOM.querySelector(".diety-info").innerHTML = getDietyInfoDOM(newDietyInfo);
+  }
+
+  function getDietyInfoDOM(dietyInfo) {
+    const boons = boonData.filter( t => t.category===`diety-${dietyInfo.name}`);
+    return `
       <div class="custom__diety-modal">
         <div class="custom__diety-modal_name">${dietyInfo.name}</div>
         <div class="custom__diety-modal_title">${dietyInfo.title.join('／')}</div>
@@ -120,9 +148,7 @@ export async function run( params ) {
         <div class="custom__diety-modal_boons">
           ${boons.map(b => CustomParser.boon(b)).join('')}
         </div>
-      </div>`);
-
-    WindowUtils.open();
+      </div>`
   }
 
   function convertColor(c) {

@@ -34,8 +34,10 @@ WindowUtils.close = function(evt) {
   const layoutDOM = WindowUtils._getLayout();
   if (!evt || evt.target === layoutDOM) {   
     layoutDOM.classList.remove('active');
-    WindowUtils.modalDOM.classList = "window__modal";
-    WindowUtils.containerDOM.innerHTML = "";
+    setTimeout(() => {
+      layoutDOM.remove();
+      WindowUtils.layoutDOM = null;
+    }, 200);
   }
 }
 WindowUtils.open = function() {

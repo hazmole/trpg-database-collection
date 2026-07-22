@@ -1,0 +1,109 @@
+<script>
+  function convertMdToJson() {
+    const textarea_md = document.querySelector("textarea.md");
+    const lineArr = textarea_md.value.split('\n').map(l => l.trim()).filter(l => l !== "");
+    
+    // Step 1. build linked structure
+    const rootGroup = newGroup(0, null);
+    var curGroup = rootGroup;
+    lineArr.forEach(line => {
+      if (line.startsWith("#")) {
+        const match = line.match(/^#+/);
+        const count = match ? match[0].length : 0;
+        const title = line.substring(count+1);
+
+        if (count > curGroup.depth) {
+          while (count > curGroup.depth) {
+            const g = newGroup(curGroup.depth + 1, curGroup);
+            curGroup.children.push(g);
+            curGroup = g;
+          }
+          curGroup.title = title;
+
+        } else if (count <= curGroup.depth) {
+          while (count <= curGroup.depth) {
+            curGroup = curGroup.parent;
+          }
+          const g = newGroup(curGroup.depth + 1, curGroup, title);
+          curGroup.children.push(g);
+          curGroup = g;
+        }
+      } else {
+        curGroup.children.push(line);
+      }
+    });
+
+    // Step 2. convert
+    const jsonData = recursiveConvert(rootGroup);
+    
+    // export result
+    const textarea_json = document.querySelector("textarea.json");
+    textarea_json.value = JSON.stringify(jsonData, null, 2);
+  }
+
+  function recursiveConvert(iObj) {
+    if (typeof iObj === "string") return iObj;
+    const jsonObj = {
+      type: "section",
+      title: iObj.title,
+      entries: [],
+    };
+    if (!jsonObj.title) delete jsonObj.title;
+    iObj.children.forEach(cObj => {
+      jsonObj.entries.push(recursiveConvert(cObj));
+    });
+    return jsonObj;
+  }
+
+  function newGroup(depth, parent, title) {
+    const group = {
+      depth: depth,
+      parent: parent,
+      children: [],
+    };
+    if (!!title) group.title = title;
+    return group;
+  }
+
+</script>
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+  .panel {
+    flex-grow: 1;
+  }
+  .title {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+  }
+  .area {
+    border: 1px solid black;
+    width: 100%;
+    height: 90vh;
+  }
+  .control {
+    display: flex;
+    justify-content: center;
+    margin: .5em;
+  }
+  button {
+    padding: 10px;
+  }
+</style>
+<div class="container">
+  <div class="panel">
+    <div class="title">MetaData</div>
+    <textarea class="area md"></textarea>
+  </div>
+  <div class="panel">
+    <div class="title">JSONData</div>
+    <textarea class="area json"></textarea>
+  </div>
+</div>
+<div class="control">
+  <button onClick="convertMdToJson()">MD -> JSON</button>
+</div>
