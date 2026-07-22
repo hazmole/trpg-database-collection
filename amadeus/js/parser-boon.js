@@ -12,7 +12,7 @@ CustomParser.boon = function(data) {
         <div class="title"><div ${titleModifyStyle}>${getName()}</div></div>
       </div>
       <div class="itemlist__entry_blockCell" style="width:50px;">
-        <div class="type"></div><div>${data.type}</div>
+        <div class="type ${data.type}"></div><div>${data.type}</div>
       </div>
       <div class="itemlist__entry_blockCell" style="width:100px;">
         <div class="factor"></div><div>${getFactor()}</div>

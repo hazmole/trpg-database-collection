@@ -47,6 +47,7 @@ export async function run( params ) {
     _renderBias(clusterInfo.bias);
     pageCtrl.elemRef.description.innerHTML = (clusterInfo.desc.map(p => {
       if (p.startsWith("●")) return `<h4>${p}</h4>`;
+      if (p.startsWith("○")) return `<h5>${p}</h5>`;
       return `<p>${p}</p>`;
     })).join('');
     pageCtrl.displayItemList(clusterDieties);
@@ -83,7 +84,7 @@ export async function run( params ) {
           <div class="custom__diety-modal_portrait"><img src="imgs/${dietyInfo.image}" width="100%" /></div>
           <div style="flex: 1">
             <div class="custom__diety-modal_description">${dietyInfo.desc.join('<br>')}</div>
-            <div style="margin: .5em 0"><b>權能</b>：${dietyInfo.authority.join('、')}</div>
+            <div style="margin: .5em 0"><b>權能</b>：${dietyInfo.authority.map(t => `[${t}]`).join('')}</div>
             <div style="margin: .5em 0"><b>神性武器</b>：${dietyInfo.weapon}</div>
             <div style="margin: .5em 0"><b>屬性</b>：<span class="factor-${convertColor(dietyInfo.color)}">${dietyInfo.color}</span></div>
             <div style="margin: .2em 0"><b>能力值</b></div>
