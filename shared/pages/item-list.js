@@ -22,5 +22,5 @@ export async function run(params) {
     itemCtrl:   itemCtrl,
   });
 
-  await moduleCustom.run(pageCtrl);
+  await moduleCustom.run(pageCtrl, params.params);
 }

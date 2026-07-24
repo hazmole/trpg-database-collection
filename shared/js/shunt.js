@@ -32,6 +32,7 @@ class Shunt {
         };
         case "data":   return {
           script: `${BASE_URL}/${pageItem.script}`,
+          params: pageItem.params,
         };
         case "custom": return pageItem.params;
       }

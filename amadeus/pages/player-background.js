@@ -1,28 +1,22 @@
-export async function run( pageCtrl ) {
+export async function run( pageCtrl, params ) {
   const bgData = await Fetcher.fetchJSON('./data/background.json');
   const boonData = await Fetcher.fetchJSON('./data/boons.json');
   boonData.sort(SorterUtils.compareBoons(boonData));
 
-  pageCtrl.setParseFunc(CustomParser.boon);
-  const tabs = Object.values(bgData).map(bg => {
-    return { text: bg.name, value: bg.name };
-  });
-	pageCtrl.enableDropdownTabs({
-		options: tabs,
-		onChangeFunc: () => renderPage(),
-	});
-
+  pageCtrl.disableHeader();
   pageCtrl.disableTitle();
   pageCtrl.disableDescription();
+  
   renderPage();
 
   //=======================
   function renderPage() {
-    const tabID = pageCtrl.tabCfg.tabID;
+    const tabID = params.uid;
     const tabInfo = bgData[tabID];
 
     const newDataList = boonData.filter( t => t.category===`background-${tabID}` );
     pageCtrl.setItems(newDataList);
+    pageCtrl.setParseFunc(CustomParser.boon);
     pageCtrl.setCustomBlock(renderCustomBlock(tabInfo));
     pageCtrl.displayItemList();
   }
