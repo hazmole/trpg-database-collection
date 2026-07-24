@@ -1,9 +1,19 @@
 const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "規則單元", members: [
-		{ title: "1. 創建角色", pid: "doc-core-rule-character-creation" },
-		{ title: "2. 命運之輪", pid: "doc-core-rule-wheel-of-fate" },
-		{ title: "3. 行為判定", pid: "doc-core-rule-dice-check" },
+		{ title: "前言", pid: "doc-core-rule-preface" },
+		{ title: "創建角色", pid: "doc-core-rule-character-creation" },
+		{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
+		{ title: "行為判定", pid: "doc-core-rule-dice-check" },
+		{ title: "劇次", pid: "doc-core-rule-session" },
+		{ title: "導入階段", pid: "doc-core-rule-introduction-phase" },
+		{ title: "冒險階段", pid: "doc-core-rule-adventure-phase" },
+		{ title: "主要行動", pid: "doc-core-rule-main-action" },
+		{ title: "自由行動", pid: "doc-core-rule-free-action" },
+		{ title: "主控場景", pid: "doc-core-rule-master-scene" },
+		{ title: "戰鬥", pid: "doc-core-rule-combat" },
+		{ title: "決戰階段", pid: "doc-core-rule-showdown-phase" },
+		{ title: "結束階段", pid: "doc-core-rule-ending-phase" },
 	]},
 	{ title: "玩家資料庫", members: [
 		{ title: "神群", members: [
@@ -26,6 +36,8 @@ const INDEX = [
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
+	"doc-core-rule-preface": {
+		title: "前言", handler: 'docs', url: "docs/core-doc-rule-preface.json" },
 	"doc-core-rule-character-creation": {
 		title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
 	"doc-core-rule-wheel-of-fate": {
