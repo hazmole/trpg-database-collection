@@ -37,3 +37,12 @@
 .article__toc-container > div {
   line-height: 1.5em;
 }
+
+
+.custom__article_quote_wrapper {
+  padding: 0 20px;
+  color: #374a6d;
+  font-style: italic;
+  margin-bottom: 1em;
+}
+.custom__article_quote_author { text-align: right; font-weight: bold; }

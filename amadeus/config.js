@@ -3,17 +3,27 @@ const INDEX = [
 	{ title: "規則單元", members: [
 		{ title: "前言", pid: "doc-core-rule-preface" },
 		{ title: "創建角色", pid: "doc-core-rule-character-creation" },
-		{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
-		{ title: "行為判定", pid: "doc-core-rule-dice-check" },
-		{ title: "劇次", pid: "doc-core-rule-session" },
-		{ title: "導入階段", pid: "doc-core-rule-introduction-phase" },
-		{ title: "冒險階段", pid: "doc-core-rule-adventure-phase" },
-		{ title: "主要行動", pid: "doc-core-rule-main-action" },
-		{ title: "自由行動", pid: "doc-core-rule-free-action" },
-		{ title: "主控場景", pid: "doc-core-rule-master-scene" },
-		{ title: "戰鬥", pid: "doc-core-rule-combat" },
-		{ title: "決戰階段", pid: "doc-core-rule-showdown-phase" },
-		{ title: "結束階段", pid: "doc-core-rule-ending-phase" },
+		{ title: "基本規則", members: [
+			{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
+			{ title: "行為判定", pid: "doc-core-rule-dice-check" },
+			//{ title: "使用恩惠", pid: "doc-core-rule-" },
+			//{ title: "武器與道具", pid: "doc-core-rule-" },
+			//{ title: "戰鬥", pid: "doc-core-rule-" },
+		]},
+		{ title: "進行遊戲", members: [
+			//{ title: "劇次", pid: "doc-core-rule-" },
+			//{ title: "導入階段", pid: "doc-core-rule-" },
+			//{ title: "冒險階段", pid: "doc-core-rule-" },
+			//{ title: "冒險階段的行動", pid: "doc-core-rule-" },
+			//{ title: "主控場景", pid: "doc-core-rule-" },
+			//{ title: "決戰階段", pid: "doc-core-rule-" },
+			//{ title: "結束階段", pid: "doc-core-rule-" },
+		]},
+		{ title: "主持遊戲", members: [
+			//{ title: "GM 與劇本", pid: "doc-core-rule-" },
+			//{ title: "怪物與威脅", pid: "doc-core-rule-" },
+			{ title: "世界觀設定", pid: "doc-core-gm-world-settings" },
+		]},
 	]},
 	{ title: "玩家資料庫", members: [
 		{ title: "神群", members: [
@@ -55,6 +65,7 @@ const MAP = {
 		title: "命運之輪", handler: 'docs', url: 'docs/core-doc-rule-wheel-of-fate.json' },
 	"doc-core-rule-dice-check": {
 		title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
+	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
 
 	/* 資料:神群 */
 	"data-deities-greek": {

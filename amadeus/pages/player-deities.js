@@ -115,7 +115,7 @@ export async function run( params ) {
             <div style="margin: .5em 0"><b>權能</b>：${dietyInfo.authority.map(t => `[${t}]`).join('')}</div>
             <div style="margin: .5em 0"><b>神性武器</b>：${dietyInfo.weapon}</div>
             <div style="margin: .5em 0"><b>屬性</b>：<span class="factor-${convertColor(dietyInfo.color)}">${dietyInfo.color}</span></div>
-            <div style="margin: .2em 0"><b>能力值</b></div>
+            <div style="margin: .2em 0"><b>血脈值</b></div>
             <div class="easyRow" style="gap:5px">
               <div class="custom__diety-modal_attribute">
                 <div class="title">武勇</div>
