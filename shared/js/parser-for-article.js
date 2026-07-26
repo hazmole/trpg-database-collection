@@ -181,14 +181,15 @@ class ArticleParser {
 		return `<div class="flexRow">${ret.join('')}</div>`;
 	}
 	static handleList(item, depth) {
-		// ReqField: entries, (number)
+		// ReqField: entries, (title), (number)
 		const tag = (item.number)? 'ol': 'ul';
+		const title = (item.title)? `<h5>${item.title}</h5>`: "";
 
 		var ret = [];
 		for(var entry of item.entries){
 			ret.push(`<li>${this.handleEntry(entry, depth+1)}</li>`);
 		}
-		return `<${tag}>${ret.join('')}</${tag}>`;
+		return `${title}<${tag}>${ret.join('')}</${tag}>`;
 	}
 	static handleTable(item, depth) {
 		// ReqField: rows, colStyles, (caption), (bodyClass), (bodyStyle), (withoutHeader)

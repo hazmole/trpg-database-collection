@@ -133,8 +133,8 @@
 .section table.docTable tr                { background: white; }
 .section table.docTable tr:nth-child(odd) { background: rgba(0,0,0,.1); }
 
-.section table td > p,
-.section table th > p { text-indent: 0; }
+.article__colume .section table td > p,
+.article__colume .section table th > p { text-indent: 0; }
 
 /* Component: flexRow */
 .section .flexRow {
