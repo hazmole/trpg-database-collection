@@ -3,6 +3,8 @@
 .itemlist__entry_blockCell > .factor:before { content: "條件"; }
 .itemlist__entry_blockCell > .check:before  { content: "判定"; }
 .itemlist__entry_blockCell > .tags:before   { content: "標籤"; }
+.itemlist__entry_blockCell > .power:before   { content: "威力"; }
+.itemlist__entry_blockCell > .cost:before   { content: "價格"; }
 
 .factor-red { background-color: #9b0000; color: white; padding: 2px; }
 .factor-blu { background-color: #0035a8; color: white; padding: 2px; }
@@ -15,3 +17,44 @@
 .itemlist__entry_blockCell .type.輔助 + div:nth-child(2)::before { content: url("../imgs/icon-auxiliary.svg"); }
 .itemlist__entry_blockCell .type.術式 + div:nth-child(2)::before { content: url("../imgs/icon-sorcery.svg"); }
 .itemlist__entry_blockCell .type.常駐 + div:nth-child(2)::before { content: url("../imgs/icon-permanent.svg"); }
+
+.itemlist__entry_field .body_pros,
+.itemlist__entry_field .body_cons { text-indent: 3em hanging; }
+.itemlist__entry_field .item_tags { display: flex; flex-direction: row; gap: 2px; }
+.custom__item_tag {
+  position: relative;
+  background-color: white;
+  padding: 2px 5px;
+  border: solid black 1px;
+  font-family: system-ui;
+}
+.custom__item_tag:hover {
+  background-color: #b3f4ff;
+}
+
+.custom__item_tag::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: 125%;
+	left: 0;
+	
+	background-color: #d9f8fd;
+	color: black;
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid #2368a1;
+	
+	font-size: 13px;
+	line-height: 1.5;
+	white-space: normal;
+  font-weight: bold;
+	width: 350px; 
+	z-index: 1000;
+	
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s ease;
+}
+.custom__item_tag:hover::after {
+	opacity: 1;
+}

@@ -7,7 +7,7 @@ const INDEX = [
 			{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
 			{ title: "行為判定", pid: "doc-core-rule-dice-check" },
 			//{ title: "使用恩惠", pid: "doc-core-rule-" },
-			//{ title: "武器與道具", pid: "doc-core-rule-" },
+			{ title: "武器與道具", pid: "doc-core-rule-item-and-weapon" },
 			//{ title: "戰鬥", pid: "doc-core-rule-" },
 		]},
 		{ title: "進行遊戲", members: [
@@ -50,21 +50,18 @@ const INDEX = [
 			{ title: "化身", pid: "data-background-avatar" },
 		]},
 		// { title: "泛用恩惠", pid: "data-common-boon" },
-		// { title: "道具", pid: "data-item" },
+		{ title: "道具", pid: "data-item" },
 	]},
 ];
 
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
-	"doc-core-rule-preface": {
-		title: "前言", handler: 'docs', url: "docs/core-doc-rule-preface.json" },
-	"doc-core-rule-character-creation": {
-		title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
-	"doc-core-rule-wheel-of-fate": {
-		title: "命運之輪", handler: 'docs', url: 'docs/core-doc-rule-wheel-of-fate.json' },
-	"doc-core-rule-dice-check": {
-		title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
+	"doc-core-rule-preface": { title: "前言", handler: 'docs', url: "docs/core-doc-rule-preface.json" },
+	"doc-core-rule-character-creation": { title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
+	"doc-core-rule-wheel-of-fate": { title: "命運之輪", handler: 'docs', url: 'docs/core-doc-rule-wheel-of-fate.json' },
+	"doc-core-rule-dice-check": { title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
+	"doc-core-rule-item-and-weapon": { title: "道具與武器", handler: "docs", url: "docs/core-doc-rule-item-weapon.json" },
 	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
 
 	/* 資料:神群 */
@@ -99,6 +96,7 @@ const MAP = {
 	"data-background-orphan":     { title: "背景 - 喪失之子", params: { uid: '喪失之子' }, handler: 'data', script: 'pages/player-background.js' },
 	"data-background-avatar":     { title: "背景 - 化身",     params: { uid: '化身' },     handler: 'data', script: 'pages/player-background.js' },
 
+	"data-item": { title: "道具", handler: 'data', script: 'pages/player-item.js' },
 }
 
 const Config = {
