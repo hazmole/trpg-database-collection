@@ -8,13 +8,14 @@ SorterUtils.compareBoons = function(list){
 	};
 };
 
-SorterUtils.compareEnemy = function(list) {
-	const typeOrder = [ "humanoid", "beast", "insect", "plant", "machine", "undead", "eudemon", "demon" ];
-	return function(a, b) {
-		if(a.type != b.type) return typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type);
-		if(a.level != b.level) return a.level - b.level;
-		return list.indexOf(a) - list.indexOf(b);
-	}
+SorterUtils.compareItem = function(list) {
+	const typeOrder = [ "常備品", "消耗品" ];
+	return SorterUtils.compareCustom(list, (data) => {
+		return {
+			type: typeOrder.indexOf(data.type),
+			cost: (data.cost == "-")? Math.max :data.cost,
+		};
+	}, ['type', 'cost']);
 }
 
 SorterUtils.compareCustom = function(list, refFactory, keyOrder) {

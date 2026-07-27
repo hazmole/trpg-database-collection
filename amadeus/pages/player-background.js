@@ -1,6 +1,6 @@
 export async function run( pageCtrl, params ) {
   const bgData = await Fetcher.fetchJSON('./data/background.json');
-  const boonData = await Fetcher.fetchJSON('./data/boons.json');
+  const boonData = await Fetcher.fetchJSON('./data/boons-background.json');
   boonData.sort(SorterUtils.compareBoons(boonData));
 
   pageCtrl.disableHeader();
