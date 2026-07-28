@@ -6,13 +6,13 @@ const INDEX = [
 		{ title: "基本規則", members: [
 			{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
 			{ title: "行為判定", pid: "doc-core-rule-dice-check" },
-			//{ title: "使用恩惠", pid: "doc-core-rule-" },
+			{ title: "使用恩惠", pid: "doc-core-rule-using-gift" },
 			{ title: "武器與道具", pid: "doc-core-rule-item-and-weapon" },
 			//{ title: "戰鬥", pid: "doc-core-rule-" },
 		]},
 		{ title: "進行遊戲", members: [
-			//{ title: "劇次", pid: "doc-core-rule-" },
-			//{ title: "導入階段", pid: "doc-core-rule-" },
+			{ title: "劇次", pid: "doc-core-gameplay-session" },
+			{ title: "導入階段", pid: "doc-core-gameplay-intro" },
 			//{ title: "冒險階段", pid: "doc-core-rule-" },
 			//{ title: "冒險階段的行動", pid: "doc-core-rule-" },
 			//{ title: "主控場景", pid: "doc-core-rule-" },
@@ -61,7 +61,10 @@ const MAP = {
 	"doc-core-rule-character-creation": { title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
 	"doc-core-rule-wheel-of-fate": { title: "命運之輪", handler: 'docs', url: 'docs/core-doc-rule-wheel-of-fate.json' },
 	"doc-core-rule-dice-check": { title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
+	"doc-core-rule-using-gift": { title: "使用恩惠", handler: 'docs', url: 'docs/core-doc-rule-using-gift.json' },
 	"doc-core-rule-item-and-weapon": { title: "道具與武器", handler: "docs", url: "docs/core-doc-rule-item-weapon.json" },
+	"doc-core-gameplay-session": { title: "劇次", handler: "docs", url: "docs/core-doc-gameplay-session.json" },
+	"doc-core-gameplay-intro": { title: "導入階段", handler: "docs", url: "docs/core-doc-gameplay-intro.json" },
 	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
 
 	/* 資料:神群 */

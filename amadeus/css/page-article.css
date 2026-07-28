@@ -20,6 +20,13 @@
 .article__container h5 {
   text-decoration: underline;
 }
+.article__container h6 {
+  color: #025989;
+}
+.article__container h6::before {
+  content: "●";
+  margin-right: 5px;
+}
 
 .article__toc-container {
 	background: #e0e0e0;
