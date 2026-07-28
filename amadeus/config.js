@@ -8,6 +8,7 @@ const INDEX = [
 			{ title: "行為判定", pid: "doc-core-rule-dice-check" },
 			{ title: "使用恩惠", pid: "doc-core-rule-using-gift" },
 			{ title: "武器與道具", pid: "doc-core-rule-item-and-weapon" },
+			{ title: "變調", pid: "doc-core-rule-condition" },
 			//{ title: "戰鬥", pid: "doc-core-rule-" },
 		]},
 		{ title: "進行遊戲", members: [
@@ -63,6 +64,7 @@ const MAP = {
 	"doc-core-rule-dice-check": { title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
 	"doc-core-rule-using-gift": { title: "使用恩惠", handler: 'docs', url: 'docs/core-doc-rule-using-gift.json' },
 	"doc-core-rule-item-and-weapon": { title: "道具與武器", handler: "docs", url: "docs/core-doc-rule-item-weapon.json" },
+	"doc-core-rule-condition": { title: "變調", handler: "docs", url: "docs/core-doc-rule-condition.json" },
 	"doc-core-gameplay-session": { title: "劇次", handler: "docs", url: "docs/core-doc-gameplay-session.json" },
 	"doc-core-gameplay-intro": { title: "導入階段", handler: "docs", url: "docs/core-doc-gameplay-intro.json" },
 	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
