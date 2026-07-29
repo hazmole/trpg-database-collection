@@ -43,9 +43,10 @@ class CoreRouter {
 			if (this.shuntClass) {
 				const pageHdlr = new this.shuntClass(pageInfo);
 
+				const [layout, script] = await this.loadResource(pageHdlr.layoutUrl, pageHdlr.scriptUrl);
+				this.renderLayout(layout);
 				BlockUtils.block();
-				await this.renderLayout(pageHdlr.layoutUrl);
-				await this.runScript(pageHdlr.scriptUrl, pageHdlr.params);
+				await this.runScript(script, pageHdlr.params);
 			}
 		} catch (err) {
 			this.renderSiteTitle('');
@@ -76,15 +77,17 @@ class CoreRouter {
 		}
 	}
 
-	async renderLayout(layoutUrl) {
-		if (!layoutUrl) return ;
-		const template = await Fetcher.fetchHTML(`${this.baseUrl}${layoutUrl}`);
+	async loadResource(layoutUrl, scriptUrl) {
+		const layout = (layoutUrl)? await Fetcher.fetchHTML(`${this.baseUrl}${layoutUrl}`): null;
+		const module = (scriptUrl)? await import(`${this.baseUrl}${scriptUrl}`): null;
+		return [layout, module];
+	}
+	renderLayout(template) {
 		this.renderMainContainer(template);
 	}
-	async runScript(scriptUrl, scriptParams) {
-		if (!scriptUrl) return ;
-		const module = await import(`${this.baseUrl}${scriptUrl}`);
-		await module.run(scriptParams);
+	async runScript(script, scriptParams) {
+		if (!script) return ;
+		await script.run(scriptParams);
 	}
 
 

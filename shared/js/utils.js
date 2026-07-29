@@ -1,21 +1,32 @@
 
 const BlockUtils = {};
 
+BlockUtils.timer = null;
+BlockUtils.clearTimer = function(){
+  if (BlockUtils.timer) {
+    clearTimeout(BlockUtils.timer);
+    BlockUtils.timer = null;
+  }
+}
 BlockUtils.block = function(){
   if (document.getElementById('BlockUIOverlay')) return ;
+  BlockUtils.clearTimer();
 
-  const bgElem = document.createElement("div");
-  bgElem.id = "BlockUIOverlay";
-  bgElem.classList.add("block-ui__overlay");
-	
-  const iconElem = document.createElement("div");
-  iconElem.classList.add("block-ui__icon");
-  iconElem.innerHTML = `<div class="lds-dual-ring"></div>`;
+  BlockUtils.timer = setTimeout(() => {
+    const bgElem = document.createElement("div");
+    bgElem.id = "BlockUIOverlay";
+    bgElem.classList.add("block-ui__overlay");
+    
+    const iconElem = document.createElement("div");
+    iconElem.classList.add("block-ui__icon");
+    iconElem.innerHTML = `<div class="lds-dual-ring"></div>`;
 
-  bgElem.append(iconElem)
-	document.body.append(bgElem);
+    bgElem.append(iconElem)
+    document.body.append(bgElem);
+  }, 200);
 }
 BlockUtils.unblock = function(){
+  BlockUtils.clearTimer();
   if (document.getElementById('BlockUIOverlay')) {
     document.getElementById('BlockUIOverlay').remove();
   }
