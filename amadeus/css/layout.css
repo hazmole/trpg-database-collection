@@ -1,3 +1,7 @@
 :root {
   --site_color_header-bg: #2296da;
 }
+
+.site__header--title { 
+	font-family: "MantouSans";
+}

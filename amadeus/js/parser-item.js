@@ -68,7 +68,7 @@ function GetTagExplain(tagText) {
   if (tagText == ("對空B")) return `使用此武器攻擊飛行狀態的目標時，命中判定得到 +1 修正，威力上升 2D6。攻擊後消耗該武器。`;
   if (tagText == ("對潛A")) return `使用此武器攻擊潛水狀態的目標時，命中判定得到 +1 修正，威力上升 2D6。`;
   if (tagText == ("對潛B")) return `使用此武器攻擊潛水狀態的目標時，命中判定得到 +1 修正，威力上升 2D6。攻擊後消耗該武器。`;
-  if (tagText.startsWith("靈擊")) return `使用此武器攻擊後，該輪期間的妨礙判定得到 +${n} 修正。`;
+  if (tagText.startsWith("靈擊")) return `使用此武器攻擊後，該輪期間的妨害判定得到 +${n} 修正。`;
   if (tagText.startsWith("華麗")) return `使用此武器攻擊決定傷害時，可以將 ${n} 顆傷害骰轉化為氛圍骰。(轉化後的骰子不會計入傷害)`;
   if (tagText.startsWith("特攻")) return `使用此武器對符合標籤的目標攻擊時，威力上升 1D6。這個效果不會疊加。`;
   if (tagText.startsWith("減輕")) return `裝備期間，受到符合標籤的目標的傷害時，使傷害減輕 ${n} 點。這個效果不會疊加。`;
@@ -76,7 +76,7 @@ function GetTagExplain(tagText) {
   if (tagText == ("樂器")) return `使用此武器攻擊時，可以消費 1D6【生命力】，改為用【愛】進行命中判定。`;
   if (tagText.startsWith("騎乘")) return `裝備期間，移動判定得到 +${n} 修正。`;
   if (tagText == ("靈氣")) return `使用此武器攻擊帶有 [詛咒] 標籤的目標時，攻擊自動命中（達成值視為 6）。此外，若目標未持有 [靈氣] 道具，則無法進行防禦判定。`;
-  if (tagText == ("易用")) return `使用此武器攻擊時，可以改為用【愛】進行命中判定。且命中判定時的能力值階級 D 被視為 C。`;
+  if (tagText == ("易用")) return `使用此武器攻擊時，可以改為用【技術】進行命中判定。且命中判定時的能力值階級 D 被視為 C。`;
   if (tagText == ("巨殺")) return `使用此武器攻擊本體或威脅時，傷害上升等同其等級的數值。`;
   if (tagText == ("咒葬")) return `必須消費 1 個【供品】或放置 1 個黑色因果才能使用此武器進行攻擊。`;
   if (tagText == ("崩壞")) return `若使用此武器攻擊時發生大失敗，此武器破壞。`;
