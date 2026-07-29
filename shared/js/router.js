@@ -78,8 +78,8 @@ class CoreRouter {
 	}
 
 	async loadResource(layoutUrl, scriptUrl) {
-		const layout = await Fetcher.fetchHTML(`${this.baseUrl}${layoutUrl}`);
-		const module = await import(`${this.baseUrl}${scriptUrl}`);
+		const layout = (layoutUrl)? await Fetcher.fetchHTML(`${this.baseUrl}${layoutUrl}`): null;
+		const module = (scriptUrl)? await import(`${this.baseUrl}${scriptUrl}`): null;
 		return [layout, module];
 	}
 	renderLayout(template) {

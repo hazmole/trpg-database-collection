@@ -1,8 +1,8 @@
 const INDEX = [
 	{ title: "首頁", pid: "home" },
 	{ title: "規則單元", members: [
-		{ title: "前言", pid: "doc-core-rule-preface" },
-		{ title: "創建角色", pid: "doc-core-rule-character-creation" },
+		{ title: "前言", pid: "doc-core-preface" },
+		{ title: "創建角色", pid: "doc-core-character-creation" },
 		{ title: "基本規則", members: [
 			{ title: "命運之輪", pid: "doc-core-rule-wheel-of-fate" },
 			{ title: "行為判定", pid: "doc-core-rule-dice-check" },
@@ -20,11 +20,11 @@ const INDEX = [
 		{ title: "遊戲流程", members: [
 			{ title: "劇次", pid: "doc-core-gameplay-session" },
 			{ title: "導入階段", pid: "doc-core-gameplay-intro" },
-			//{ title: "冒險階段", pid: "doc-core-rule-" },
-			//{ title: "冒險階段的行動", pid: "doc-core-rule-" },
-			//{ title: "主控場景", pid: "doc-core-rule-" },
-			//{ title: "決戰階段", pid: "doc-core-rule-" },
-			//{ title: "結束階段", pid: "doc-core-rule-" },
+			{ title: "冒險階段", pid: "doc-core-gameplay-adventure" },
+			//{ title: "冒險階段的行動", pid: "doc-core-gameplay-adventure-actions" },
+			//{ title: "主控場景", pid: "doc-core-gameplay-master-scene" },
+			//{ title: "決戰階段", pid: "doc-core-gameplay-finale" },
+			//{ title: "結束階段", pid: "doc-core-gameplay-conclusion" },
 		]},
 		{ title: "主持遊戲", members: [
 			//{ title: "GM 與劇本", pid: "doc-core-rule-" },
@@ -64,8 +64,8 @@ const INDEX = [
 const MAP = {
 	"home": { title: "首頁", handler: "home" },
 
-	"doc-core-rule-preface": { title: "前言", handler: 'docs', url: "docs/core-doc-rule-preface.json" },
-	"doc-core-rule-character-creation": { title: "創建角色", handler: 'docs', url: 'docs/core-doc-rule-character-creation.json' },
+	"doc-core-preface": { title: "前言", handler: 'docs', url: "docs/core-doc-preface.json" },
+	"doc-core-character-creation": { title: "創建角色", handler: 'docs', url: 'docs/core-doc-character-creation.json' },
 	"doc-core-rule-wheel-of-fate": { title: "命運之輪", handler: 'docs', url: 'docs/core-doc-rule-wheel-of-fate.json' },
 	"doc-core-rule-dice-check": { title: "行為判定", handler: 'docs', url: 'docs/core-doc-rule-dice-check.json' },
 	"doc-core-rule-using-gift": { title: "使用恩惠", handler: 'docs', url: 'docs/core-doc-rule-using-gift.json' },
@@ -78,6 +78,7 @@ const MAP = {
 	"doc-core-combat-status-and-battlefield": { title: "特殊狀態與戰場", handler: "docs", url: "docs/core-doc-combat-status-and-battlefield.json" },
 	"doc-core-gameplay-session": { title: "劇次", handler: "docs", url: "docs/core-doc-gameplay-session.json" },
 	"doc-core-gameplay-intro": { title: "導入階段", handler: "docs", url: "docs/core-doc-gameplay-intro.json" },
+	"doc-core-gameplay-adventure": { title: "冒險階段", handler: "docs", url: "docs/core-doc-gameplay-adventure.json" },
 	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
 
 	/* 資料:神群 */
