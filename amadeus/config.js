@@ -21,10 +21,10 @@ const INDEX = [
 			{ title: "劇次", pid: "doc-core-gameplay-session" },
 			{ title: "導入階段", pid: "doc-core-gameplay-intro" },
 			{ title: "冒險階段", pid: "doc-core-gameplay-adventure" },
-			//{ title: "冒險階段的行動", pid: "doc-core-gameplay-adventure-actions" },
-			//{ title: "主控場景", pid: "doc-core-gameplay-master-scene" },
-			//{ title: "決戰階段", pid: "doc-core-gameplay-finale" },
-			//{ title: "結束階段", pid: "doc-core-gameplay-conclusion" },
+			{ title: "冒險階段的行動", pid: "doc-core-gameplay-adventure-actions" },
+			{ title: "主控場景", pid: "doc-core-gameplay-master-scene" },
+			{ title: "決戰階段", pid: "doc-core-gameplay-finale" },
+			{ title: "結束階段", pid: "doc-core-gameplay-conclusion" },
 		]},
 		{ title: "主持遊戲", members: [
 			//{ title: "GM 與劇本", pid: "doc-core-rule-" },
@@ -56,7 +56,7 @@ const INDEX = [
 			{ title: "喪失之子", pid: "data-background-orphan" },
 			{ title: "化身", pid: "data-background-avatar" },
 		]},
-		// { title: "泛用恩惠", pid: "data-common-boon" },
+		{ title: "泛用恩惠", pid: "data-common-boon" },
 		{ title: "道具", pid: "data-item" },
 	]},
 ];
@@ -79,6 +79,10 @@ const MAP = {
 	"doc-core-gameplay-session": { title: "劇次", handler: "docs", url: "docs/core-doc-gameplay-session.json" },
 	"doc-core-gameplay-intro": { title: "導入階段", handler: "docs", url: "docs/core-doc-gameplay-intro.json" },
 	"doc-core-gameplay-adventure": { title: "冒險階段", handler: "docs", url: "docs/core-doc-gameplay-adventure.json" },
+	"doc-core-gameplay-adventure-actions": { title: "冒險階段的行動", handler: "docs", url: "docs/core-doc-gameplay-main-actions.json" },
+	"doc-core-gameplay-master-scene": { title: "主控場景", handler: "docs", url: "docs/core-doc-gameplay-master-scene.json" },
+	"doc-core-gameplay-finale": { title: "決戰階段", handler: "docs", url: "docs/core-doc-gameplay-finale.json" },
+	"doc-core-gameplay-conclusion": { title: "結束階段", handler: "docs", url: "docs/core-doc-gameplay-conclusion.json" },
 	"doc-core-gm-world-settings": { title: "世界觀設定", handler: 'docs', url: 'docs/core-doc-gm-world-settings.json' },
 
 	/* 資料:神群 */
@@ -112,7 +116,7 @@ const MAP = {
 	"data-background-changeling": { title: "背景 - 替換之子", params: { uid: '替換之子' }, handler: 'data', script: 'pages/player-background.js' },
 	"data-background-orphan":     { title: "背景 - 喪失之子", params: { uid: '喪失之子' }, handler: 'data', script: 'pages/player-background.js' },
 	"data-background-avatar":     { title: "背景 - 化身",     params: { uid: '化身' },     handler: 'data', script: 'pages/player-background.js' },
-
+	"data-common-boon": { title: "泛用恩惠", handler: 'data', script: 'pages/player-common-boon.js' },
 	"data-item": { title: "道具", handler: 'data', script: 'pages/player-item.js' },
 }
 
