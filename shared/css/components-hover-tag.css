@@ -2,6 +2,7 @@
 	position: absolute;
 	bottom: 125%;
 	left: 0;
+	margin-left: -100px;
 	
 	background-color: #d9f8fd;
 	color: black;
