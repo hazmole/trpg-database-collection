@@ -32,29 +32,20 @@
   background-color: #b3f4ff;
 }
 
-.custom__item_tag::after {
-	content: attr(data-tooltip);
-	position: absolute;
-	bottom: 125%;
-	left: 0;
-	
-	background-color: #d9f8fd;
-	color: black;
-	padding: 8px;
-	border-radius: 4px;
-	border: 1px solid #2368a1;
-	
-	font-size: 13px;
-	line-height: 1.5;
-	white-space: normal;
-  font-weight: bold;
-	width: 350px; 
-	z-index: 1000;
-	
-	opacity: 0;
-	pointer-events: none;
-	transition: all 0.2s ease;
+.custom__item_boon_weapon_line {
+  margin-top: .5em;
 }
-.custom__item_tag:hover::after {
-	opacity: 1;
+.custom__item_boon_weapon_line_label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.custom__item_boon_weapon_line_power {
+  padding: 3px 5px;
+  font-weight: bold;
+  font-family: system-ui;
+  background-color: #ff9393;
+}
+.custom__item_boon_weapon_line_tags {
+  display: inline-flex;
+  gap: 2px;
 }

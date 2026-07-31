@@ -57,6 +57,32 @@ CustomParser.boon = function(data) {
       }).join('');
     }
     function getEffect(){
-      return Array.isArray(data.effect)? data.effect.join('<br>'): data.effect.replace(/\n/g, '<br>');
+      const arr = Array.isArray(data.effect)? data.effect: [data.effect];
+      return arr
+        .map((text) => {
+          if (text.startsWith("武器：")) {
+            const parts = text.substring(3).split(" ");
+            const power = parts[0].substring(2);
+            const tags = parts[1]? (parts[1].split(/[\[\]]/).filter(t => t!="")): [];
+            
+            return `<div class="custom__item_boon_weapon_line">
+                <span class="custom__item_boon_weapon_line_label">武器</span>：
+                <span class="custom__item_boon_weapon_line_power">威力 ${power}</span>
+                <span class="custom__item_boon_weapon_line_tags">
+                  ${tags.map(t => parseTag(t)).join('')}
+                </span>
+              </div>`;
+          } else {
+            return text;
+          }
+        })
+        .join('<br>');
+    }
+
+    function parseTag(tagText) {
+      const parts = tagText.split("：");
+      const mainTag = `<b>${parts[0]}</b>`;
+      const attribute = (parts.length > 1)? `：${parts[1]}`: '';
+      return `<span class="custom__item_tag hovertag__base"><div class="hovertag__window">${HoverBuilder.weaponTag(parts[0])}</div>[${mainTag}${attribute}]</span>`;
     }
 };
