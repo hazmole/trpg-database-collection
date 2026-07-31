@@ -166,7 +166,7 @@ export async function run( params ) {
     if (!weapon) return '???';
     return `
       <span class="custom__item_boon_weapon_line_power">威力 ${weapon.power}</span>
-      <span class="custom__item_boon_weapon_line_tags">${weapon.effect.tags.map(t => parseTag(t)).join('')}</span>`;
+      <span class="custom__item_boon_weapon_line_tags">${weapon.effect.tags.map(t => parseTag(t)).join('')}</span>`.trim();
   }
   function parseTag(tagText) {
     const parts = tagText.split("：");
