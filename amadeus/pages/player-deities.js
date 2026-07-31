@@ -26,6 +26,7 @@ export async function run( params ) {
 
   const infoData = await Fetcher.fetchJSON(`./data/dieties-${params.uid}.json`);
   const boonData = (await Fetcher.fetchJSON(`./data/boons-${params.uid}.json`));
+  const itemData = (await Fetcher.fetchJSON(`./data/items.json`));
   boonData.sort(SorterUtils.compareBoons(boonData));
 
   var diety_index = null;
@@ -104,6 +105,7 @@ export async function run( params ) {
 
   function getDietyInfoDOM(dietyInfo) {
     const boons = boonData.filter( t => t.category===`diety-${dietyInfo.name}`);
+    const weapon = itemData.find( i => i.name===`${dietyInfo.weapon}`);
     return `
       <div class="custom__diety-modal">
         <div class="custom__diety-modal_name">${dietyInfo.name}</div>
@@ -113,7 +115,7 @@ export async function run( params ) {
           <div style="flex: 1">
             <div class="custom__diety-modal_description">${dietyInfo.desc.join('<br>')}</div>
             <div style="margin: .5em 0"><b>權能</b>：${dietyInfo.authority.map(t => `[${t}]`).join('')}</div>
-            <div style="margin: .5em 0"><b>神性武器</b>：${dietyInfo.weapon}</div>
+            <div style="margin: .5em 0"><b>神性武器</b>：${dietyInfo.weapon}：${parseWeaponInfo(weapon)}</div>
             <div style="margin: .5em 0"><b>屬性</b>：<span class="factor-${convertColor(dietyInfo.color)}">${dietyInfo.color}</span></div>
             <div style="margin: .2em 0"><b>血脈值</b></div>
             <div class="easyRow" style="gap:5px">
@@ -159,6 +161,18 @@ export async function run( params ) {
     case "白": return "wht";
     case "黑": return "blk";
     }
+  }
+  function parseWeaponInfo(weapon) {
+    if (!weapon) return '???';
+    return `
+      <span class="custom__item_boon_weapon_line_power">威力 ${weapon.power}</span>
+      <span class="custom__item_boon_weapon_line_tags">${weapon.effect.tags.map(t => parseTag(t)).join('')}</span>`;
+  }
+  function parseTag(tagText) {
+    const parts = tagText.split("：");
+    const mainTag = `<b>${parts[0]}</b>`;
+    const attribute = (parts.length > 1)? `：${parts[1]}`: '';
+    return `<span class="custom__item_tag hovertag__base"><div class="hovertag__window">${HoverBuilder.weaponTag(parts[0])}</div>[${mainTag}${attribute}]</span>`;
   }
 }
 
