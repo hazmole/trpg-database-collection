@@ -20,7 +20,7 @@ export async function run( pageCtrl ) {
 		cmpFunc: sortCmpFunc,
 	});
 	pageCtrl.enableSimpleSearch({
-		placeholder: "搜尋消耗品的名稱、效果...",
+		placeholder: "搜尋道具的名稱、效果...",
 		matchFunc: (item, keyword) => {
 			if (!keyword) return true;
 			if (item.name.includes(keyword)) return true;
