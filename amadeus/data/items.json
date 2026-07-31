@@ -14,7 +14,7 @@
 {"category":"item","name":"長槍","type":"常備品","cost":7,"power":"2D6","effect":{"content":[],"tags":["精度1","對空B"]},"desc":["特化於刺擊的長柄武器。在戰場或獵場等地被廣泛使用。"]},
 {"category":"item","name":"三叉戟","type":"常備品","cost":7,"power":"2D6","effect":{"content":[],"tags":["精度1","對潛B"]},"desc":["特化於瞄準水中獵物，槍尖分成三叉的長槍。"]},
 {"category":"item","name":"大劍","type":"常備品","cost":7,"power":"2D6+4","effect":{"content":[],"tags":["接近","特攻：巨人、獸"]},"desc":["雙手持握的巨大劍。適合用來對抗巨大的野獸。"]},
-{"category":"item","name":"杖","type":"常備品","cost":7,"power":"1D6","effect":{"content":[],"tags":["靈擊1","格檔1"]},"desc":["保護自身的法杖。寄宿著不可思議的力量，能擾亂敵人。"]},
+{"category":"item","name":"杖","type":"常備品","cost":7,"power":"1D6","effect":{"content":[],"tags":["靈擊1","格擋1"]},"desc":["保護自身的法杖。寄宿著不可思議的力量，能擾亂敵人。"]},
 {"category":"item","name":"雙面斧","type":"常備品","cost":8,"power":"3D6","effect":{"content":[],"tags":["接近","必殺1"]},"desc":["巨大的斧頭。非常強力。"]},
 {"category":"item","name":"大鐮刀","type":"常備品","cost":9,"power":"3D6","effect":{"content":[],"tags":["接近","精度-1","華麗1"]},"desc":["神話存在所持有的象徵性武器。"]},
 {"category":"item","name":"鐵扇","type":"常備品","cost":5,"power":"1D6+1","effect":{"content":[],"tags":["華麗1","裝甲1"]},"desc":["用鐵製扇骨製作的扇子。被用作暗器或防身武器。"]},
