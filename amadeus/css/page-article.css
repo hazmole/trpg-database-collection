@@ -45,6 +45,12 @@
   line-height: 1.5em;
 }
 
+.article__container .sidebar h4 {
+  background-color: transparent;
+}
+.article__container .sidebar h4::before {
+  content: "邊欄：";
+}
 
 .custom__article_quote_wrapper {
   padding: 0 20px;
