@@ -30,27 +30,29 @@ class ArticleParser {
 		});
 	}
 
-	_renderToc(docJsonData, tocDepth) {
+	_renderToc(docJsonData, tocDepth = 2) {
 		const arr = [];
 		docJsonData.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
 			if (sectionObj.title) {
 				const title = sectionObj.title;
 				arr.push(`<div><a href="#tag_h2_${title}">${title}</a></div>`);
 			}
-			sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
-				if (sectionObj.title) {
-					const title = sectionObj.title;
-					arr.push(`<div>．<a href="#tag_h3_${title}">${title}</a></div>`);
-				}
-				if (tocDepth >= 3) {
-					sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
-						if (sectionObj.title) {
-							const title = sectionObj.title;
-							arr.push(`<div>　 <a href="#tag_h4_${title}">${title}</a></div>`);
-						}
-					});
-				}
-			});
+			if (tocDepth >= 2) {
+				sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+					if (sectionObj.title) {
+						const title = sectionObj.title;
+						arr.push(`<div>．<a href="#tag_h3_${title}">${title}</a></div>`);
+					}
+					if (tocDepth >= 3) {
+						sectionObj.entries.filter( itemObj => itemObj.type == "section" ).forEach( (sectionObj, idx) => {
+							if (sectionObj.title) {
+								const title = sectionObj.title;
+								arr.push(`<div>　 <a href="#tag_h4_${title}">${title}</a></div>`);
+							}
+						});
+					}
+				});
+			}
 		});
 
 		this.elemColle.toc.innerHTML = arr.join("");
