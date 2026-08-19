@@ -30,6 +30,9 @@ const INDEX = [
 			//{ title: "GM 與劇本", pid: "doc-core-rule-" },
 			//{ title: "怪物與威脅", pid: "doc-core-rule-" },
 			{ title: "世界觀設定", pid: "doc-core-gm-world-settings" },
+			{ title: "神群聖地", members: [
+				{ title: "希臘神群聖地", pid: "data-sanctuary-greek" }
+			]},
 		]},
 	]},
 	{ title: "玩家資料庫", members: [
@@ -118,6 +121,9 @@ const MAP = {
 	"data-background-avatar":     { title: "背景 - 化身",     params: { uid: '化身' },     handler: 'data', script: 'pages/player-background.js' },
 	"data-common-boon": { title: "泛用恩惠", handler: 'data', script: 'pages/player-common-boon.js' },
 	"data-item": { title: "道具", handler: 'data', script: 'pages/player-item.js' },
+
+	/*  */
+	"data-sanctuary-greek": { title: "希臘神群聖地", params: { uid: 'greek' }, handler: 'data', script: 'pages/sanctuary.js' },
 }
 
 const Config = {
