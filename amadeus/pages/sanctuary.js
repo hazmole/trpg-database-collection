@@ -1,7 +1,6 @@
 export async function run( pageCtrl, params ) {
   const scData = await Fetcher.fetchJSON('./data/sanctuary.json');
   const itemDatas = await Fetcher.fetchJSON('./data/items.json');
-  //boonData.sort(SorterUtils.compareBoons(boonData));
 
   pageCtrl.disableHeader();
   pageCtrl.disableDescription();
@@ -24,8 +23,8 @@ export async function run( pageCtrl, params ) {
         if (!itemData) console.error("Missing Entry: " + itemName);
         return itemData;
       })
-      .filter( d => d != null );
-
+      .filter( d => d != null )
+    items.sort(cmpFunc(items));
 
     return `
     <div>
@@ -53,17 +52,25 @@ export async function run( pageCtrl, params ) {
   }
   function _renderTrialEntries(entryArr) {
     return entryArr.map((pData, idx) => {
-      return `<tr><td>${idx}</td><td>${pData}</td></tr>`
+      return `<tr><td>${idx+1}</td><td>${pData}</td></tr>`
     }).join('');
   }
   function _renderServices(entryArr) {
     return entryArr.map((pData, idx) => {
-      return `<div>
-        <b>${pData.name}</b>
-        <br>價格：${pData.cost} 神貨
-        <br>${pData.effect}
+      return `<div class="custom__sanctuary-service_panel">
+        <div class="custom__sanctuary-service_title">${pData.name}</div>
+        <div class="custom__sanctuary-service_cost">價格：${pData.cost} ${pData.cost !="參照"? "神貨": ""}</div>
+        <div class="custom__sanctuary-service_effect">${pData.effect.join('<br>')}</div>
       </div>`
     }).join('');
+  }
+
+  function cmpFunc(list) {
+    return SorterUtils.compareCustom(list, (data) => {
+      return {
+        cost: (data.cost == "-")? Math.max :data.cost,
+      };
+    }, ['cost']);
   }
 }
 
