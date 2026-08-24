@@ -31,7 +31,15 @@ const INDEX = [
 			//{ title: "怪物與威脅", pid: "doc-core-rule-" },
 			{ title: "世界觀設定", pid: "doc-core-gm-world-settings" },
 			{ title: "神群聖地", members: [
-				{ title: "希臘神群聖地", pid: "data-sanctuary-greek" }
+				{ title: "希臘神群聖地", pid: "data-sanctuary-greek" },
+				{ title: "大和神群聖地", pid: "data-sanctuary-yamato" },
+				{ title: "埃及神群聖地", pid: "data-sanctuary-egypt" },
+				{ title: "克蘇魯神群聖地", pid: "data-sanctuary-cthulhu" },
+				{ title: "北歐神群聖地", pid: "data-sanctuary-norse" },
+				{ title: "中華神群聖地", pid: "data-sanctuary-china" },
+				{ title: "凱爾特神群聖地", pid: "data-sanctuary-celtic" },
+				{ title: "印度神群聖地", pid: "data-sanctuary-india" },
+				{ title: "中美洲神群聖地", pid: "data-sanctuary-mesoamerica" },
 			]},
 		]},
 	]},
@@ -122,8 +130,16 @@ const MAP = {
 	"data-common-boon": { title: "泛用恩惠", handler: 'data', script: 'pages/player-common-boon.js' },
 	"data-item": { title: "道具", handler: 'data', script: 'pages/player-item.js' },
 
-	/*  */
+	/* 神群聖地 */
 	"data-sanctuary-greek": { title: "希臘神群聖地", params: { uid: 'greek' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-yamato": { title: "大和神群聖地", params: { uid: 'yamato' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-egypt": { title: "埃及神群聖地", params: { uid: 'egypt' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-cthulhu": { title: "克蘇魯神群聖地", params: { uid: 'cthulhu' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-norse": { title: "北歐神群聖地", params: { uid: 'norse' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-china": { title: "中華神群聖地", params: { uid: 'china' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-celtic": { title: "凱爾特神群聖地", params: { uid: 'celtic' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-india": { title: "印度神群聖地", params: { uid: 'india' }, handler: 'data', script: 'pages/sanctuary.js' },
+	"data-sanctuary-mesoamerica": { title: "中美洲神群聖地", params: { uid: 'mesoamerica' }, handler: 'data', script: 'pages/sanctuary.js' },
 }
 
 const Config = {
