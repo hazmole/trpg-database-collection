@@ -1,0 +1,49 @@
+---
+import GameLayout from '../../../layouts/GameLayout.astro';
+
+export async function getStaticPaths() {
+  const mds = import.meta.glob('../../../collections/**/*.md');
+  const paths = [];
+  for (const path in mds) {
+    // 範例路徑: ../../../collections/dnd/docs/combat.md
+    const parts = path.split('/');
+    const game = parts[3];
+    const docsIdx = parts.indexOf('docs');
+    const slugParts = parts.slice(docsIdx + 1);
+    const slug = slugParts.join('/').replace('.md', '');
+    
+    paths.push({ params: { game, slug } });
+  }
+  return paths;
+}
+
+const { game, slug } = Astro.params;
+
+let config = {};
+let post = null;
+
+try {
+  const configs = import.meta.glob('../../../collections/**/config.json', { eager: true });
+  const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
+  if (configKey) config = configs[configKey].default;
+
+  const mds = import.meta.glob('../../../collections/**/*.md', { eager: true });
+  const postKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/${slug}.md`));
+  if (postKey) post = mds[postKey];
+} catch (e) {}
+
+if (!post) return Astro.redirect(`${import.meta.env.BASE_URL}/${game}`);
+
+const { Content } = post;
+const title = post.frontmatter?.title || '規則文件';
+---
+
+<GameLayout game={game} title={title} config={config}>
+  <article class="markdown-body">
+    <Content />
+  </article>
+</GameLayout>
+
+<style>
+  .markdown-body { line-height: 1.7; }
+</style>

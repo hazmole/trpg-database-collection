@@ -1,0 +1,68 @@
+---
+import SidebarMenu from '../components/SidebarMenu.astro'; // 💡 引入剛剛建立的遞迴選單
+const { game, title, config } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{ `${title} - 規則資料站` }</title>
+    {game && <link rel="stylesheet" href={`${import.meta.env.BASE_URL}/${game}/theme.css`} />}
+  </head>
+  <body class="docs-layout">
+    <!-- 左側邊欄 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href={`${import.meta.env.BASE_URL}/${game}`} class="logo">
+          {title} 首頁
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        {config?.sidebar && <SidebarMenu items={config.sidebar} game={game} />}
+      </nav>
+    </aside>
+
+    <!-- 右側主內容區 -->
+    <main class="main-container">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  body.docs-layout {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color, #f9fafb);
+    color: var(--text-color, #1f2937);
+  }
+  .sidebar {
+    background-color: var(--header-bg, #ffffff);
+    border-right: 1px solid var(--border-color, #e5e7eb);
+    padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .sidebar-header .logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--link-color, #2563eb);
+  }
+  .sidebar-nav {
+    margin-top: 1.5rem;
+  }
+  .main-container {
+    padding: 3rem;
+    max-width: 900px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+</style>

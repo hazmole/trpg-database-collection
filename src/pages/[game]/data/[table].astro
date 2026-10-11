@@ -1,0 +1,41 @@
+---
+import GameLayout from '../../../layouts/GameLayout.astro';
+import DataTable from '../../../components/DataTable.jsx';
+
+export async function getStaticPaths() {
+  const jsonFiles = import.meta.glob('../../../collections/**/*.json');
+  const paths = [];
+  for (const path in jsonFiles) {
+    // 範例路徑: ../../../collections/dnd/data/items.json
+    const parts = path.split('/');
+    const game = parts[3];
+    const table = parts[parts.length - 1].replace('.json', '');
+    paths.push({ params: { game, table } });
+  }
+  return paths;
+}
+
+const { game, table } = Astro.params;
+
+let config = {};
+let tableData = [];
+
+try {
+  const configs = import.meta.glob('../../../collections/**/config.json', { eager: true });
+  const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
+  if (configKey) config = configs[configKey].default;
+
+  const jsonFiles = import.meta.glob('../../../collections/**/*.json', { eager: true });
+  const jsonKey = Object.keys(jsonFiles).find(p => p.includes(`/${game}/data/${table}.json`));
+  if (jsonKey) tableData = jsonFiles[jsonKey].default || [];
+} catch (e) {}
+---
+
+<GameLayout game={game} title="資料檢索" config={config}>
+  <h1>📊 資料檢索：{table.toUpperCase()}</h1>
+  <p>您可以在下方輸入關鍵字進行即時過濾，或點擊欄位進行排序。</p>
+  
+  <div style="margin-top: 2rem;">
+    <DataTable data={tableData} client:load />
+  </div>
+</GameLayout>

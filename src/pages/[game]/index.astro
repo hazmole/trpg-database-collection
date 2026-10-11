@@ -1,0 +1,53 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro';
+
+interface ConfigItem {
+  title: string;
+  sidebar: any;
+  default: ConfigItem;
+}
+
+export async function getStaticPaths() {
+  const themeFiles = import.meta.glob('../../collections/**/theme.css');
+  const paths = [];
+  for (const path in themeFiles) {
+    const parts = path.split('/');
+    const gameName = parts[parts.length - 2];
+    if (gameName) paths.push({ params: { game: gameName } });
+  }
+  return paths;
+}
+
+const { game } = Astro.params;
+
+// 動態載入該遊戲的 config.json 與簡介 Markdown
+let config = {};
+let displayName:string = "";
+let introPost = null;
+
+try {
+  const configs:Record<string, ConfigItem> = import.meta.glob('../../collections/**/config.json', { eager: true });
+  const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
+  if (configKey) {
+    config = configs[configKey].default;
+    displayName = configs[configKey].title || game;
+  }
+  
+  const mds = import.meta.glob('../../collections/**/*.md', { eager: true });
+  const introKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/introduction.md`) || p.includes(`/${game}/docs/`));
+  if (introKey) introPost = mds[introKey];
+} catch (e) {}
+
+const { Content } = introPost || {};
+---
+
+<GameLayout game={game} title={displayName} config={config}>
+  <div class="markdown-body">
+    <h1>{displayName} 規則資料庫</h1>
+    {Content ? <Content /> : <p>歡迎來到 {game.toUpperCase()} 規則庫，請從左側選單選擇想查閱的項目。</p>}
+  </div>
+</GameLayout>
+
+<style>
+  .markdown-body { line-height: 1.7; }
+</style>

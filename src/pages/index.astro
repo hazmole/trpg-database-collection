@@ -1,16 +1,85 @@
 ---
+// 自動掃描 collections 底下的遊戲資料夾
+const themeFiles = import.meta.glob('../collections/**/theme.css');
+const games: string[] = [];
+
+for (const path in themeFiles) {
+  const parts = path.split('/');
+  const gameName = parts[parts.length - 2];
+  if (gameName && !games.includes(gameName)) {
+    games.push(gameName);
+  }
+}
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRPG 規則資料庫總覽</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #0f172a;
+        color: #f8fafc;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .container {
+        text-align: center;
+        max-width: 600px;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #38bdf8;
+      }
+      p {
+        color: #94a3b8;
+        margin-bottom: 2rem;
+      }
+      .card-grid {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .game-card {
+        background: #1e293b;
+        border: 1px solid #334155;
+        padding: 2rem 2.5rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.25rem;
+        transition: transform 0.2s, border-color 0.2s;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .game-card:hover {
+        transform: translateY(-4px);
+        border-color: #38bdf8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>TRPG 規則資料庫</h1>
+      <p>請選擇您要查閱的規則系統入口：</p>
+      
+      <div class="card-grid">
+        {games.map((game) => (
+          <a href={`${import.meta.env.BASE_URL}/${game}`} class="game-card">
+            ⚔️ {game.toUpperCase()}
+          </a>
+        ))}
+      </div>
+    </div>
+  </body>
 </html>

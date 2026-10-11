@@ -1,0 +1,111 @@
+---
+const { items, game } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+
+interface SidebarItem {
+  title: string;
+  link?: string;
+  members?: SidebarItem[];
+}
+---
+
+<ul class="tree-menu">
+  {items.map((item:SidebarItem) => {
+    const hasMembers = item.members && item.members.length > 0;
+    
+    return (
+      <li class={hasMembers ? 'has-child' : ''}>
+        {hasMembers ? (
+          /* 目錄節點：沒有 link，點擊時觸發展開/收合 */
+          <div class="folder-toggle">
+            <span class="arrow">▶</span>
+            <span class="folder-title">{item.title}</span>
+          </div>
+        ) : (
+          /* 葉節點：有 link，點擊跳轉頁面 */
+          <a href={`${baseUrl}/${game}${item.link}`} class="page-link">
+            {item.title}
+          </a>
+        )}
+
+        {/* 如果有子項目，遞迴呼叫自己並預設收合 */}
+        {hasMembers && (
+          <div class="submenu-wrapper" style="display: none;">
+            <Astro.self items={item.members} game={game} />
+          </div>
+        )}
+      </li>
+    );
+  })}
+</ul>
+
+<script>
+  // 加上點擊展開/收合的互動邏輯
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.folder-toggle');
+    toggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const parentLi = toggle.parentElement;
+        if (!parentLi) return ;
+        parentLi.classList.toggle('open');
+        const submenu = parentLi.querySelector('.submenu-wrapper') as HTMLElement;
+        if (submenu) {
+          submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .tree-menu {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0.2rem 0;
+  }
+  /* 最外層清單不需要額外縮排 */
+  .sidebar-nav > .tree-menu {
+    padding-left: 0;
+  }
+  li {
+    margin: 0.3rem 0;
+  }
+  /* 目錄節點樣式 */
+  .folder-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    user-select: none;
+    color: var(--text-color, #1f2937);
+  }
+  .folder-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .arrow {
+    font-size: 0.75rem;
+    transition: transform 0.2s;
+  }
+  /* 當資料夾展開時，旋轉箭頭 */
+  li.open > .folder-toggle .arrow {
+    transform: rotate(90deg);
+  }
+  /* 葉節點連結樣式 */
+  .page-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .page-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--link-color, #2563eb);
+  }
+</style>

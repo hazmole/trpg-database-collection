@@ -1,0 +1,8 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --header-bg: #1f1f1f;
+  --border-color: #333333;
+  --link-color: #ef4444; /* D&D 風格紅 */
+}
+h1, h2 { color: #f87171; }

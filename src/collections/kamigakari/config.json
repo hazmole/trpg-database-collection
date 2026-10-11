@@ -1,0 +1,25 @@
+{
+  "title": "神我狩",
+  "sidebar": [
+    { "title": "全站搜尋", "link": "/search" },
+    { 
+      "title": "核心規則書", 
+      "members": [
+        { 
+          "title": "Ⅰ. 世界章節", 
+          "members": [
+            { "title": "世界觀", "link": "/docs/world/view" },
+            { "title": "世界的情勢", "link": "/docs/world/status" }
+          ] 
+        },
+        { 
+          "title": "Ⅱ. 玩家章節", 
+          "members": [
+            { "title": "角色創建", "link": "/docs/player/creation" }
+          ]
+        },
+        { "title": "GM指南", "link": "/docs/gm-guide" }
+      ]
+    }
+  ]
+}
