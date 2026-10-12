@@ -8,8 +8,8 @@
         { 
           "title": "Ⅰ. 世界章節", 
           "members": [
-            { "title": "世界觀", "link": "/docs/world/view" },
-            { "title": "世界的情勢", "link": "/docs/world/status" }
+            { "title": "世界觀", "link": "/docs/core_world_about" },
+            { "title": "世界的情勢", "link": "/docs/core_world_society" }
           ] 
         },
         { 

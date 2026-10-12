@@ -22,7 +22,7 @@ const { game } = Astro.params;
 
 // 動態載入該遊戲的 config.json 與簡介 Markdown
 let config = {};
-let displayName:string = "";
+let gameName: string = "";
 let introPost = null;
 
 try {
@@ -30,21 +30,21 @@ try {
   const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
   if (configKey) {
     config = configs[configKey].default;
-    displayName = configs[configKey].title || game;
+    gameName = configs[configKey].title || game;
   }
   
   const mds = import.meta.glob('../../collections/**/*.md', { eager: true });
-  const introKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/introduction.md`) || p.includes(`/${game}/docs/`));
+  const introKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/introduction.md`));
   if (introKey) introPost = mds[introKey];
 } catch (e) {}
 
 const { Content } = introPost || {};
 ---
 
-<GameLayout game={game} title={displayName} config={config}>
+<GameLayout game={game} title={gameName} config={config}>
   <div class="markdown-body">
-    <h1>{displayName} 規則資料庫</h1>
-    {Content ? <Content /> : <p>歡迎來到 {game.toUpperCase()} 規則庫，請從左側選單選擇想查閱的項目。</p>}
+    <h1>{gameName} 規則資料庫</h1>
+    {Content ? <Content /> : <p>歡迎來到 {gameName} 規則庫，請從左側選單選擇想查閱的項目。</p>}
   </div>
 </GameLayout>
 

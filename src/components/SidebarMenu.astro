@@ -1,37 +1,75 @@
 ---
-const { items, game } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
+import type { SidebarItem } from '../types';
+import { gameHref, hasCurrentDescendant, isCurrentLink, normalizePath } from '../utils/nav';
 
-interface SidebarItem {
-  title: string;
-  link?: string;
-  members?: SidebarItem[];
+interface Props {
+  items: SidebarItem[];
+  game: string;
+  /** 已規格化的目前路徑（不含 base 與多餘斜桿）；未傳入時自行由 Astro.url 推算 */
+  currentPath?: string;
 }
+
+const baseUrl = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const { items = [], game = '', currentPath: currentPathProp } = Astro.props;
+// 遞迴時由父層傳下來；最外層自行推算。Astro.url 在子目錄部署時可能已含 base，一律再規格化一次
+const currentPath = currentPathProp ?? normalizePath(Astro.url?.pathname, baseUrl);
 ---
 
 <ul class="tree-menu">
-  {items.map((item:SidebarItem) => {
-    const hasMembers = item.members && item.members.length > 0;
+  {items.map((item) => {
+    const members = item.members ?? [];
+    const hasMembers = members.length > 0;
+    const isCurrent = isCurrentLink(item.link, game, currentPath);
+    // 只要子樹內有目前頁面，這條資料夾鏈就預設展開（首屏即看到目前頁面）
+    const isOpen = isCurrent || hasCurrentDescendant(members, game, currentPath);
     
     return (
-      <li class={hasMembers ? 'has-child' : ''}>
+      <li class:list={{ 'has-child': hasMembers, open: hasMembers && isOpen, 'has-current': isCurrent }}>
         {hasMembers ? (
-          /* 目錄節點：沒有 link，點擊時觸發展開/收合 */
-          <div class="folder-toggle">
-            <span class="arrow">▶</span>
-            <span class="folder-title">{item.title}</span>
+          <div class="folder-row">
+            {item.link ? (
+              /* 資料夾同時也有頁面：標題是連結，收合交給右側的caret鈕 */
+              <a
+                href={gameHref(game, item.link, baseUrl)}
+                class:list={['folder-title-link', { 'is-current': isCurrent }]}
+                aria-current={isCurrent ? 'page' : undefined}
+              >
+                {item.title}
+              </a>
+            ) : (
+              /* 純目錄節點：點擊標題展開/收合（button 本身就有鍵盤支援） */
+              <button type="button" class="folder-toggle" data-nav-toggle aria-expanded={isOpen}>
+                <span class="arrow" aria-hidden="true">▶</span>
+                <span class="folder-title">{item.title}</span>
+              </button>
+            )}
+            {item.link && (
+              <button
+                type="button"
+                class="folder-caret"
+                data-nav-toggle
+                aria-expanded={isOpen}
+                aria-label={`展開或收合「${item.title}」`}
+              >
+                <span class="arrow" aria-hidden="true">▶</span>
+              </button>
+            )}
           </div>
         ) : (
-          /* 葉節點：有 link，點擊跳轉頁面 */
-          <a href={`${baseUrl}/${game}${item.link}`} class="page-link">
+          /* 葉節點：有 link，點擊跳轉頁面；目前頁面加上 highlight */
+          <a
+            href={gameHref(game, item.link, baseUrl)}
+            class:list={['page-link', { 'is-current': isCurrent }]}
+            aria-current={isCurrent ? 'page' : undefined}
+          >
             {item.title}
           </a>
         )}
 
-        {/* 如果有子項目，遞迴呼叫自己並預設收合 */}
+        {/* 遞迴呼叫自己；展開與否由 li.open 決定（交給 CSS，不再寫 inline style） */}
         {hasMembers && (
-          <div class="submenu-wrapper" style="display: none;">
-            <Astro.self items={item.members} game={game} />
+          <div class="submenu-wrapper">
+            <Astro.self items={members} game={game} currentPath={currentPath} />
           </div>
         )}
       </li>
@@ -40,42 +78,45 @@ interface SidebarItem {
 </ul>
 
 <script>
-  // 加上點擊展開/收合的互動邏輯
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggles = document.querySelectorAll('.folder-toggle');
-    toggles.forEach((toggle) => {
-      toggle.addEventListener('click', () => {
-        const parentLi = toggle.parentElement;
-        if (!parentLi) return ;
-        parentLi.classList.toggle('open');
-        const submenu = parentLi.querySelector('.submenu-wrapper') as HTMLElement;
-        if (submenu) {
-          submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
-        }
-      });
-    });
+  // 事件委派：一份 listener 就能處理所有遞迴層級的展開/收合（Astro 會把本元件的 script 去重，每頁只執行一次）
+  document.addEventListener('click', (event) => {
+    const trigger = (event.target as HTMLElement | null)?.closest?.('[data-nav-toggle]') as HTMLElement | null;
+    if (!trigger) return;
+    const item = trigger.closest('li.has-child');
+    if (!item) return;
+    const open = item.classList.toggle('open');
+    // 只更新本層（不含子資料夾）的按鈕狀態，維持 aria-expanded 與視覺一致
+    item
+      .querySelectorAll<HTMLElement>(':scope > .folder-row [data-nav-toggle]')
+      .forEach((button) => button.setAttribute('aria-expanded', String(open)));
   });
 </script>
 
 <style>
   .tree-menu {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 0;
     margin: 0.2rem 0;
   }
-  /* 最外層清單不需要額外縮排 */
   .sidebar-nav > .tree-menu {
     padding-left: 0;
   }
   li {
     margin: 0.3rem 0;
   }
-  /* 目錄節點樣式 */
+  
   .folder-toggle {
     cursor: pointer;
     display: flex;
+    width: 100%;
+    min-width: 0;
     align-items: center;
     gap: 0.4rem;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
     padding: 0.4rem 0.6rem;
     border-radius: 6px;
     font-weight: 600;
@@ -90,9 +131,71 @@ interface SidebarItem {
     font-size: 0.75rem;
     transition: transform 0.2s;
   }
-  /* 當資料夾展開時，旋轉箭頭 */
-  li.open > .folder-toggle .arrow {
+  /* 展開/收合完全由 li.open 驅動，避免 JS 與 inline style 互相搶 display */
+  .submenu-wrapper {
+    display: none;
+    padding-left: 1rem;
+  }
+  li.open > .submenu-wrapper {
+    display: block;
+  }
+  /* 資料夾展開時旋轉箭頭（.folder-row 之後標題可能是 button 或 a） */
+  li.open > .folder-row > .folder-toggle .arrow,
+  li.open > .folder-row > .folder-caret .arrow {
     transform: rotate(90deg);
+  }
+  li.open > .folder-row > .folder-toggle {
+    color: var(--link-color, #2563eb);
+  }
+  /* 標題與收合鈕同列 */
+  .folder-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+  .folder-row > .folder-toggle,
+  .folder-row > .folder-title-link {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .folder-title-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .folder-title-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .folder-caret {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .folder-caret:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  /* 目前頁面 highlight（同時由 GameLayout 捲入視圖） */
+  .page-link.is-current,
+  .folder-title-link.is-current {
+    background-color: rgba(37, 99, 235, 0.12);
+    background-color: color-mix(in srgb, var(--link-color, #2563eb) 14%, transparent);
+    box-shadow: inset 3px 0 0 var(--link-color, #2563eb);
+    color: var(--link-color, #2563eb);
+    font-weight: 700;
   }
   /* 葉節點連結樣式 */
   .page-link {
@@ -107,5 +210,19 @@ interface SidebarItem {
   .page-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--link-color, #2563eb);
+  }
+  /* mobile: 觸控命中區域至少約 44px（放最後，避免同特異性被上述規則蓋掉） */
+  @media (max-width: 900px) {
+    .page-link,
+    .folder-toggle,
+    .folder-title-link,
+    .folder-caret {
+      min-height: 2.75rem;
+    }
+    .page-link,
+    .folder-title-link,
+    .folder-title {
+      font-size: 1rem;
+    }
   }
 </style>

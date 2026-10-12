@@ -1,44 +1,196 @@
 ---
-import SidebarMenu from '../components/SidebarMenu.astro'; // 💡 引入剛剛建立的遞迴選單
-const { game, title, config } = Astro.props;
+import SidebarMenu from '../components/SidebarMenu.astro';
+import { normalizePath } from '../utils/nav';
+import type { GameConfig } from '../types';
+
+interface Props {
+  game?: string;
+  title?: string;
+  config?: GameConfig | null;
+  /** 可覆寫目前路徑（通常留空，由 Astro.url 推算）*/
+  currentPath?: string;
+  /** 頁面有提供 slot="toc" 時設為 true，才會多保留一條右側本頁大綱欄 */
+  hasToc?: boolean;
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const { game = '', title = '', config, currentPath: currentPathProp, hasToc: hasTocProp = false } = Astro.props;
+// Astro.url 在子目錄部署時可能已含 base，規格化後才能和 SidebarMenu 組出的路徑比對
+const currentPath = currentPathProp ?? normalizePath(Astro.url?.pathname, base);
+const sidebarItems = config?.sidebar ?? [];
+const homeHref = `${base}/${game}`.replace(/\/+$/, '') || '/';
+// 由頁面明確宣告（Astro.slots.has 在 dev 模式下會誤判成 true，變成一條空白右欄）
+const hasToc = Boolean(hasTocProp);
+
+// theme.css 放在 src/collections 而非 public/，必須經 Vite 打包才會有正確的 URL
+const themeUrls = import.meta.glob('../collections/*/theme.css', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>;
+const themeKey = Object.keys(themeUrls).find((path) => path.includes(`/${game}/theme.css`));
+const themeUrl = themeKey ? themeUrls[themeKey] : '';
 ---
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{ `${title} - 規則資料站` }</title>
-    {game && <link rel="stylesheet" href={`${import.meta.env.BASE_URL}/${game}/theme.css`} />}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>{title ? `${title} - 規則資料站` : '規則資料站'}</title>
+    {themeUrl && <link rel="stylesheet" href={themeUrl} />}
   </head>
-  <body class="docs-layout">
-    <!-- 左側邊欄 -->
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a href={`${import.meta.env.BASE_URL}/${game}`} class="logo">
-          {title} 首頁
-        </a>
-      </div>
-      <nav class="sidebar-nav">
-        {config?.sidebar && <SidebarMenu items={config.sidebar} game={game} />}
-      </nav>
-    </aside>
+  <body>
+    <div class="docs-layout" data-app-shell data-nav-open="false" data-has-toc={String(hasToc)}>
+      <!-- 解析到此行即標記「JS 可用」；沒有 JS 時下面的 mobile 抽屜樣式不會套用，選單退回一般區塊 -->
+      <script is:inline>
+        document.currentScript?.closest('[data-app-shell]')?.setAttribute('data-nav-ready', 'true');
+      </script>
 
-    <!-- 右側主內容區 -->
-    <main class="main-container">
-      <slot />
-    </main>
+      <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+      <!-- mobile 專用列：漢堡鈕 + 目前標題 -->
+      <header class="mobile-topbar">
+        <button
+          type="button"
+          class="nav-toggle"
+          data-nav-toggle-btn
+          aria-controls="docs-sidebar"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-icon" aria-hidden="true">☰</span>
+          <span class="nav-toggle-text">{title || game}</span>
+        </button>
+        <a class="topbar-home" href={homeHref}>首頁</a>
+      </header>
+
+      <!-- 點背景關閉抽屜 -->
+      <button type="button" class="sidebar-backdrop" data-nav-close-btn tabindex="-1" aria-hidden="true"></button>
+
+      <!-- 左側邊欄（mobile 時為離畫布抽屜） -->
+      <aside id="docs-sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <a href={homeHref} class="logo">
+            {title || game} 首頁
+          </a>
+        </div>
+        <nav class="sidebar-nav" aria-label="文件導覽">
+          {sidebarItems.length > 0 && (
+            <SidebarMenu items={sidebarItems} game={game} currentPath={currentPath} />
+          )}
+        </nav>
+      </aside>
+
+      <!-- 右側主內容區 -->
+      <main id="main-content" class="main-container">
+        <slot />
+      </main>
+
+      <!-- 最右側本頁大綱（≤1200px 隱藏，mobile 一律不出現）；用 div 包裝，landmark 由內部的 nav 負責 -->
+      {hasToc && (
+        <div class="page-toc">
+          <slot name="toc" />
+        </div>
+      )}
+    </div>
+
+    <script>
+      const shell = document.querySelector<HTMLElement>('[data-app-shell]');
+      const sidebar = document.getElementById('docs-sidebar');
+
+      if (shell && sidebar) {
+        const mqMobile = window.matchMedia('(max-width: 900px)');
+        let lockedOverflow = '';
+
+        const isOpen = () => shell.dataset.navOpen === 'true';
+        const setOpen = (open: boolean) => {
+          shell.dataset.navOpen = String(open);
+          document
+            .querySelectorAll<HTMLElement>('[data-nav-toggle-btn]')
+            .forEach((button) => button.setAttribute('aria-expanded', String(open)));
+          // 抽屜開啟時鎖住 body 滾動，避免在抽屜內滑動連背景一起捲動
+          if (open) {
+            lockedOverflow = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = lockedOverflow;
+          }
+        };
+
+        document.addEventListener('click', (event) => {
+          const target = event.target as HTMLElement | null;
+          if (!target || typeof target.closest !== 'function') return;
+          if (target.closest('[data-nav-toggle-btn]')) {
+            setOpen(!isOpen());
+            return;
+          }
+          if (target.closest('[data-nav-close-btn]')) {
+            setOpen(false);
+            return;
+          }
+          // 在 mobile 點選單連結後收起抽屜（桌面版不做任何事）
+          if (mqMobile.matches && target.closest('#docs-sidebar a[href]')) setOpen(false);
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && isOpen()) setOpen(false);
+        });
+
+        // 從 mobile 尺寸放大回桌面尺寸時，還原成兩欄佈局並清掉抽屜狀態
+        mqMobile.addEventListener('change', (event) => {
+          if (!event.matches) setOpen(false);
+        });
+
+        // 讓 highlight 的目前頁面項目出現在側欄可視範圍（只捲側欄，不影響主內容）
+        const active = sidebar.querySelector<HTMLElement>('.is-current');
+        if (active) {
+          const activeRect = active.getBoundingClientRect();
+          const sidebarRect = sidebar.getBoundingClientRect();
+          if (activeRect.top < sidebarRect.top || activeRect.bottom > sidebarRect.bottom) {
+            sidebar.scrollTop += activeRect.top - sidebarRect.top - sidebarRect.height / 2 + activeRect.height / 2;
+          }
+        }
+      }
+    </script>
   </body>
 </html>
 
 <style>
-  body.docs-layout {
+  body {
     margin: 0;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
     background-color: var(--bg-color, #f9fafb);
     color: var(--text-color, #1f2937);
+  }
+  /* 桌面：兩欄式（側欄固定寬，主內容流暢） */
+  .docs-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  /* 文件頁多一條「本頁大綱」欄；沒有 TOC 的頁面（如遊戲首頁）維持兩欄 */
+  .docs-layout[data-has-toc='true'] {
+    grid-template-columns: 280px minmax(0, 1fr) 15rem;
+  }
+  .skip-link {
+    position: absolute;
+    left: -999rem;
+  }
+  .skip-link:focus {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: var(--header-bg, #ffffff);
+    color: var(--link-color, #2563eb);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  }
+  /* 桌面版不需要 topbar 與遮罩 */
+  .mobile-topbar,
+  .sidebar-backdrop {
+    display: none;
   }
   .sidebar {
     background-color: var(--header-bg, #ffffff);
@@ -47,8 +199,11 @@ const { game, title, config } = Astro.props;
     position: sticky;
     top: 0;
     height: 100vh;
+    height: 100dvh;
     overflow-y: auto;
+    overscroll-behavior: contain;
     box-sizing: border-box;
+    scrollbar-width: thin;
   }
   .sidebar-header .logo {
     font-weight: bold;
@@ -60,9 +215,153 @@ const { game, title, config } = Astro.props;
     margin-top: 1.5rem;
   }
   .main-container {
-    padding: 3rem;
+    padding: 1rem;
     max-width: 900px;
     box-sizing: border-box;
     width: 100%;
+    min-width: 0;
+  }
+  /* 本頁大綱：跟著捲動停在頂部，內容過長時自己捲（不影響主內容） */
+  .page-toc {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
+    padding: 3rem 1rem 3rem 0.75rem;
+    border-left: 1px solid var(--border-color, #e5e7eb);
+    background-color: var(--header-bg, #fff);
+    scrollbar-width: thin;
+  }
+
+  /* 寬度不足時（含所有 mobile / 直屏 tablet）直接不顯示本頁大綱 */
+  @media (max-width: 1200px) {
+    .page-toc {
+      display: none;
+    }
+    .docs-layout[data-has-toc='true'] {
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+  }
+
+  /* ===== 響應式：≤900px 改成單欄 + 離畫布抽屜 ===== */
+  @media (max-width: 900px) {
+    .docs-layout {
+      display: block;
+    }
+    /* 沒有 JS 時（JS 成功載入才會標記 data-nav-ready）：選單退回一般區塊，確保仍能使用 */
+    .docs-layout:not([data-nav-ready="true"]) .sidebar {
+      position: static;
+      width: auto;
+      height: auto;
+      max-height: 45vh;
+      border-right: 0;
+      border-bottom: 1px solid var(--border-color, #e5e7eb);
+    }
+    .docs-layout[data-nav-ready="true"] .mobile-topbar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      padding: calc(0.5rem + env(safe-area-inset-top)) 0.75rem 0.5rem;
+      padding-left: calc(0.75rem + env(safe-area-inset-left));
+      background: var(--header-bg, #ffffff);
+      border-bottom: 1px solid var(--border-color, #e5e7eb);
+    }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 2.5rem;
+      max-width: 100%;
+      padding: 0 0.75rem;
+      border: 1px solid var(--border-color, #e5e7eb);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text-color, #1f2937);
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav-toggle-icon {
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+    .nav-toggle-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .topbar-home {
+      margin-left: auto;
+      padding: 0.5rem 0.6rem;
+      text-decoration: none;
+      color: var(--link-color, #2563eb);
+      font-weight: 600;
+    }
+    .sidebar-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      padding: 0;
+      border: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      cursor: pointer;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .docs-layout[data-nav-ready="true"] .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      width: min(86vw, 320px);
+      height: 100vh;
+      height: 100dvh;
+      padding-top: calc(1.25rem + env(safe-area-inset-top));
+      padding-left: calc(1.25rem + env(safe-area-inset-left));
+      box-shadow: 0 0 32px rgba(0, 0, 0, 0.35);
+      transform: translateX(-100%);
+      /* visibility 讓收合時的連結不會被 Tab 聚焦到 */
+      visibility: hidden;
+      transition: transform 0.28s ease, visibility 0.28s ease;
+    }
+    .docs-layout[data-nav-ready="true"][data-nav-open="true"] .sidebar {
+      transform: translateX(0);
+      visibility: visible;
+    }
+    .docs-layout[data-nav-open="true"] .sidebar-backdrop {
+      opacity: 1;
+      visibility: visible;
+    }
+    .main-container {
+      padding: 1.25rem 1rem calc(2.5rem + env(safe-area-inset-bottom));
+      padding-left: calc(1rem + env(safe-area-inset-left));
+      padding-right: calc(1rem + env(safe-area-inset-right));
+    }
+  }
+  /* 標題由 Markdown 渲染（沒有 scoped cid），用 :global 讓錨點跳轉時預留 mobile topbar 的空間 */
+  :global(.markdown-body :is(h1, h2, h3, h4, h5, h6)) {
+    scroll-margin-top: 5.5rem;
+  }
+  :global(.markdown-body :is(h1, h2, h3, h4, h5, h6):first-child) {
+    margin-top: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    :global(html) {
+      scroll-behavior: smooth;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .sidebar-backdrop {
+      transition: none;
+    }
   }
 </style>

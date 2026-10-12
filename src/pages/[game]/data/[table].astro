@@ -3,12 +3,13 @@ import GameLayout from '../../../layouts/GameLayout.astro';
 import DataTable from '../../../components/DataTable.jsx';
 
 export async function getStaticPaths() {
-  const jsonFiles = import.meta.glob('../../../collections/**/*.json');
+  // 只取各遊戲 data/ 底下的表格 json（* 不跨層級，纔不會掃到 config.json）
+  const jsonFiles = import.meta.glob('../../../collections/*/data/*.json');
   const paths = [];
   for (const path in jsonFiles) {
     // 範例路徑: ../../../collections/dnd/data/items.json
     const parts = path.split('/');
-    const game = parts[3];
+    const game = parts[parts.indexOf('collections') + 1];
     const table = parts[parts.length - 1].replace('.json', '');
     paths.push({ params: { game, table } });
   }

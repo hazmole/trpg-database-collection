@@ -1,13 +1,15 @@
 ---
 import GameLayout from '../../../layouts/GameLayout.astro';
+import TableOfContents from '../../../components/TableOfContents.astro';
+import type { ConfigColle, MdColle, MdItem } from '../../../types';
 
 export async function getStaticPaths() {
   const mds = import.meta.glob('../../../collections/**/*.md');
   const paths = [];
   for (const path in mds) {
-    // 範例路徑: ../../../collections/dnd/docs/combat.md
+    // 範例路徑: ../../../collections/dnd/docs/combat.md（glob 的 key 為相對路徑，game 在 'collections' 的下一段）
     const parts = path.split('/');
-    const game = parts[3];
+    const game = parts[parts.indexOf('collections') + 1];
     const docsIdx = parts.indexOf('docs');
     const slugParts = parts.slice(docsIdx + 1);
     const slug = slugParts.join('/').replace('.md', '');
@@ -20,14 +22,18 @@ export async function getStaticPaths() {
 const { game, slug } = Astro.params;
 
 let config = {};
-let post = null;
+let gameName: string = "";
+let post: (MdItem | null) = null;
 
 try {
-  const configs = import.meta.glob('../../../collections/**/config.json', { eager: true });
+  const configs: ConfigColle = import.meta.glob('../../../collections/**/config.json', { eager: true });
   const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
-  if (configKey) config = configs[configKey].default;
+  if (configKey) {
+    config = configs[configKey].default;
+    gameName = configs[configKey].title || game;
+  }
 
-  const mds = import.meta.glob('../../../collections/**/*.md', { eager: true });
+  const mds: MdColle = import.meta.glob('../../../collections/**/*.md', { eager: true });
   const postKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/${slug}.md`));
   if (postKey) post = mds[postKey];
 } catch (e) {}
@@ -35,15 +41,42 @@ try {
 if (!post) return Astro.redirect(`${import.meta.env.BASE_URL}/${game}`);
 
 const { Content } = post;
-const title = post.frontmatter?.title || '規則文件';
+// Astro 的 MarkdownInstance 提供 getHeadings()，其 slug 就是標題 id；
+// 只抓 h2~h3（h1 已是頁面標題），大綱太少就沒有右欄的必要
+const tocHeadings = (post.getHeadings?.() ?? []).filter((heading) => heading.depth >= 2 && heading.depth <= 3);
+const showToc = tocHeadings.length >= 2;
 ---
 
-<GameLayout game={game} title={title} config={config}>
+<GameLayout game={game} title={gameName} config={config} hasToc={showToc}>
   <article class="markdown-body">
     <Content />
   </article>
+  {showToc && <TableOfContents slot="toc" headings={tocHeadings} />}
 </GameLayout>
 
 <style>
-  .markdown-body { line-height: 1.7; }
+  .markdown-body {
+    line-height: 1.5;
+    padding: 1em;
+    background-color: rgba(255,255,255);
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+  }
+
+  :global(article.markdown-body p) {
+    text-indent: 1em;
+    margin: .5em 0;
+  }
+
+  :global(blockquote) {
+    background-color: #0003;
+    padding: 1em;
+    margin-left: 5em;
+    margin-right: -.3em;
+    font-size: .9em;
+  }
+  :global(blockquote > :first-child, blockquote > :last-child) {
+    margin: 0;
+  }
 </style>
