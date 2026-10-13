@@ -9,9 +9,10 @@ export interface SidebarItem {
 export type ConfigColle  = Record<string, ConfigItem>
 
 export interface ConfigItem {
+  key: string;
+  path: string;
   title: string;
   sidebar: any;
-  default: ConfigItem;
 }
 
 export type MdColle = Record<string, MdItem>

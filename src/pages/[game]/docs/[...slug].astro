@@ -2,6 +2,7 @@
 import GameLayout from '../../../layouts/GameLayout.astro';
 import TableOfContents from '../../../components/TableOfContents.astro';
 import type { ConfigColle, MdColle, MdItem } from '../../../types';
+import { getConfig } from '../../../utils/games';
 
 export async function getStaticPaths() {
   const mds = import.meta.glob('../../../collections/**/*.md');
@@ -21,16 +22,15 @@ export async function getStaticPaths() {
 
 const { game, slug } = Astro.params;
 
-let config = {};
-let gameName: string = "";
+let gameConfig = {};
+let gameTitle = "";
 let post: (MdItem | null) = null;
 
 try {
-  const configs: ConfigColle = import.meta.glob('../../../collections/**/config.json', { eager: true });
-  const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
-  if (configKey) {
-    config = configs[configKey].default;
-    gameName = configs[configKey].title || game;
+  const cfg = getConfig(game);
+  if(cfg) {
+    gameConfig = cfg;
+    gameTitle = cfg.title;
   }
 
   const mds: MdColle = import.meta.glob('../../../collections/**/*.md', { eager: true });
@@ -39,15 +39,15 @@ try {
 } catch (e) {}
 
 if (!post) return Astro.redirect(`${import.meta.env.BASE_URL}/${game}`);
-
 const { Content } = post;
+
 // Astro 的 MarkdownInstance 提供 getHeadings()，其 slug 就是標題 id；
 // 只抓 h2~h3（h1 已是頁面標題），大綱太少就沒有右欄的必要
 const tocHeadings = (post.getHeadings?.() ?? []).filter((heading) => heading.depth >= 2 && heading.depth <= 3);
 const showToc = tocHeadings.length >= 2;
 ---
 
-<GameLayout game={game} title={gameName} config={config} hasToc={showToc}>
+<GameLayout game={game} title={gameTitle} config={gameConfig} hasToc={showToc}>
   <article class="markdown-body">
     <Content />
   </article>

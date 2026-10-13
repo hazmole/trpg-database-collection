@@ -1,50 +1,42 @@
 ---
 import GameLayout from '../../layouts/GameLayout.astro';
-
-interface ConfigItem {
-  title: string;
-  sidebar: any;
-  default: ConfigItem;
-}
+import type { MdItem } from '../../types';
+import { getConfig, getConfigColle } from '../../utils/games';
 
 export async function getStaticPaths() {
-  const themeFiles = import.meta.glob('../../collections/**/theme.css');
-  const paths = [];
-  for (const path in themeFiles) {
-    const parts = path.split('/');
-    const gameName = parts[parts.length - 2];
-    if (gameName) paths.push({ params: { game: gameName } });
-  }
+  const colle = getConfigColle()
+  const paths = colle.map(cfg => {
+    return { params: { game: cfg.key } };
+  });
   return paths;
 }
 
 const { game } = Astro.params;
 
-// 動態載入該遊戲的 config.json 與簡介 Markdown
-let config = {};
-let gameName: string = "";
-let introPost = null;
+let gameConfig = {};
+let gameTitle = "";
+let post: MdItem | null = null;
 
 try {
-  const configs:Record<string, ConfigItem> = import.meta.glob('../../collections/**/config.json', { eager: true });
-  const configKey = Object.keys(configs).find(p => p.includes(`/${game}/`));
-  if (configKey) {
-    config = configs[configKey].default;
-    gameName = configs[configKey].title || game;
+  const cfg = getConfig(game);
+  if(cfg) {
+    gameConfig = cfg;
+    gameTitle = cfg.title;
   }
   
-  const mds = import.meta.glob('../../collections/**/*.md', { eager: true });
-  const introKey = Object.keys(mds).find(p => p.includes(`/${game}/docs/introduction.md`));
-  if (introKey) introPost = mds[introKey];
+  const files: Record<string, MdItem> = import.meta.glob("../../collections/**/introduction.md", { eager: true });
+  const postKey = Object.keys(files).find(p => p.includes(`/${game}/`)) || "";
+  if (postKey) post = files[postKey];
 } catch (e) {}
 
-const { Content } = introPost || {};
+const { Content } = post || {};
+
 ---
 
-<GameLayout game={game} title={gameName} config={config}>
+<GameLayout game={game} title={gameTitle} config={gameConfig}>
   <div class="markdown-body">
-    <h1>{gameName} 規則資料庫</h1>
-    {Content ? <Content /> : <p>歡迎來到 {gameName} 規則庫，請從左側選單選擇想查閱的項目。</p>}
+    <h1>{gameTitle} 規則資料庫</h1>
+    {Content ? <Content /> : <p>歡迎來到 {gameTitle} 規則庫，請從左側選單選擇想查閱的項目。</p>}
   </div>
 </GameLayout>
 
