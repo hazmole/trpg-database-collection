@@ -37,8 +37,8 @@ export async function run( pageCtrl ) {
       <table class="custom__statetable">
         <tr><th>類型</th><th>體力</th><th>敏捷</th><th>知性</th><th>精神</th><th>幸運</th></tr>
         <tr id="AttrPhysical">${_renderAttributeRow("戰士", tabInfo.states.phy)}</tr>
-        <tr id="AttrGeneral" >${_renderAttributeRow("泛用", tabInfo.states.phy)}</tr>
-        <tr id="AttrMagical" >${_renderAttributeRow("魔法", tabInfo.states.phy)}</tr>
+        <tr id="AttrGeneral" >${_renderAttributeRow("泛用", tabInfo.states.gen)}</tr>
+        <tr id="AttrMagical" >${_renderAttributeRow("魔法", tabInfo.states.mgc)}</tr>
       </table>
 
       <h4>種族特典</h4>
